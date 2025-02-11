@@ -3,3 +3,4 @@ numpy==1.26.0
 torch==2.6.0
 torchvision==0.21.0
 sentencepiece==0.2.0
+sentence_transformers==3.4.1
