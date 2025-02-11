@@ -1,0 +1,14 @@
+[
+    {
+        "question": "What color is the fire hydrant cap in the picture?",
+        "image_src": "https://c4.staticflickr.com/8/7211/7206072054_c53d53b97d_o.jpg",
+        "gt_answer": "The color of the fire hydrant cap in the image is yellow.",
+        "model_answer": "The fire hydrant cap in the picture is yellow."
+    },
+    {
+        "question": "Who is sitting on the bench?",
+        "image_src": "https://farm2.staticflickr.com/5443/7413067568_06a8d1eb64_o.jpg",
+        "gt_answer": "No one is sitting on the bench.",
+        "model_answer": "There is no one sitting on the bench in the image. It appears to be an empty bench."
+    }
+]
