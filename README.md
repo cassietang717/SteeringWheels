@@ -19,4 +19,4 @@ Distributed under the [MIT License](/LICENSE).
 
 ## Acknowledgments
 * [MMHal-Bench](https://huggingface.co/datasets/Shengcao1006/MMHal-Bench)
-* [llava-v1.5-7b](https://huggingface.co/liuhaotian/llava-v1.5-7b)
+* [llava-v1.5-7b](https://github.com/haotian-liu/LLaVA/tree/main)

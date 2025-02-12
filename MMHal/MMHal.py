@@ -6,7 +6,7 @@ import json
 from io import BytesIO
 from tqdm import tqdm
 
-processor = LlavaNextProcessor.from_pretrained("/net/scratch2/steeringwheel/llava-v1.6-vicuna-7b-hf",use_fast=True)
+processor = LlavaNextProcessor.from_pretrained("/net/scratch2/steeringwheel/llava-v1.6-vicuna-7b-hf", use_fast=True)
 model = LlavaNextForConditionalGeneration.from_pretrained("/net/scratch2/steeringwheel/llava-v1.6-vicuna-7b-hf", torch_dtype=torch.float16, low_cpu_mem_usage=True) 
 
 model.to("cuda:0")
@@ -22,7 +22,7 @@ results = []
 start_timing.record()
 
 for entry in tqdm(data, desc="Processing entries"):
-    question = entry["question"] + " Answer with about 20 words."
+    question = entry["question"] + " Answer with reasonable length (not too short or too long)."
     image_url = entry["image_src"]
     gt_answer = entry["gt_answer"]
 
@@ -48,7 +48,7 @@ for entry in tqdm(data, desc="Processing entries"):
 
     prompt = processor.apply_chat_template(conversation, add_generation_prompt=True)
     inputs = processor(images=image, text=prompt, return_tensors="pt").to("cuda:0")
-    output = model.generate(**inputs, use_cache=True, max_new_tokens=256)
+    output = model.generate(**inputs, use_cache=True, max_new_tokens=100)
 
     model_output = processor.decode(output[0], skip_special_tokens=True)
     model_answer = model_output.split("ASSISTANT:")[-1].strip()
@@ -67,6 +67,9 @@ for entry in tqdm(data, desc="Processing entries"):
     print(f"Ground truth: {gt_answer}")
     print(f"Model answer: {model_answer}")
     print("=" * 50)
+
+    if entry == 10:
+        break
 
 torch.cuda.synchronize()
 end_timing.record()

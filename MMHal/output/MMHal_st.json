@@ -5,10 +5,10 @@
             "Fire hydrant"
         ],
         "image_src": "https://c4.staticflickr.com/8/7211/7206072054_c53d53b97d_o.jpg",
-        "question": "What color is the fire hydrant cap in the picture? Answer with about 20 words.",
+        "question": "What color is the fire hydrant cap in the picture? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The color of the fire hydrant cap in the image is yellow.",
-        "model_answer": "Yellow",
-        "similarity_score": 0.5306934118270874
+        "model_answer": "The fire hydrant cap in the picture is yellow.",
+        "similarity_score": 0.9594454765319824
     },
     {
         "question_type": "adversarial",
@@ -17,10 +17,10 @@
             "Building"
         ],
         "image_src": "https://farm2.staticflickr.com/5443/7413067568_06a8d1eb64_o.jpg",
-        "question": "Who is sitting on the bench? Answer with about 20 words.",
+        "question": "Who is sitting on the bench? Answer with reasonable length (not too short or too long).",
         "gt_answer": "No one is sitting on the bench.",
-        "model_answer": "No one",
-        "similarity_score": 0.40083399415016174
+        "model_answer": "No one is sitting on the bench.",
+        "similarity_score": 1.0
     },
     {
         "question_type": "comparison",
@@ -32,10 +32,10 @@
             "Flower"
         ],
         "image_src": "https://farm8.staticflickr.com/137/383965780_db4815011c_o.jpg",
-        "question": "Which wooden stool has a vase with red flower on it? Answer with about 20 words.",
+        "question": "Which wooden stool has a vase with red flower on it? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The left wooden stool has a vase with a red flower on it.",
-        "model_answer": "Left",
-        "similarity_score": 0.1711072027683258
+        "model_answer": "The wooden stool with a vase with a red flower on it is the one on the left.",
+        "similarity_score": 0.9410646557807922
     },
     {
         "question_type": "counting",
@@ -47,10 +47,10 @@
             "Tree"
         ],
         "image_src": "https://c6.staticflickr.com/8/7618/16875241476_3b79e5d79b_o.jpg",
-        "question": "How many traffic lights are there in the image? Answer with about 20 words.",
+        "question": "How many traffic lights are there in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There are four traffic lights in the image.",
-        "model_answer": "3",
-        "similarity_score": 0.2368445098400116
+        "model_answer": "There are three traffic lights in the image.",
+        "similarity_score": 0.9210509657859802
     },
     {
         "question_type": "relation",
@@ -60,10 +60,10 @@
             "Building"
         ],
         "image_src": "https://farm3.staticflickr.com/3640/3576366805_eea15333d5_o.jpg",
-        "question": "What colors are the traffic signs at the top, in the middle, and at the bottom? Answer with about 20 words.",
+        "question": "What colors are the traffic signs at the top, in the middle, and at the bottom? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The traffic signs at the top and bottom are white, while the one in the center is blue.",
-        "model_answer": "Top: White, black, and red; Middle: Blue and white; Bottom: Yellow and black",
-        "similarity_score": 0.553902804851532
+        "model_answer": "The traffic signs at the top are white with black text. The middle sign is blue with white text. The bottom sign is yellow with black text.",
+        "similarity_score": 0.9016234278678894
     },
     {
         "question_type": "environment",
@@ -71,10 +71,10 @@
             "Wheel"
         ],
         "image_src": "https://c2.staticflickr.com/4/3452/3788392512_2a3f537219_o.jpg",
-        "question": "How would you describe the weather in the image? Answer with about 20 words.",
+        "question": "How would you describe the weather in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The photo was captured during nighttime, with a dark sky overhead. It depicts a Ferris wheel surrounded by people and illuminated by the lights.",
-        "model_answer": "Clear",
-        "similarity_score": 0.14633820950984955
+        "model_answer": "The weather in the image appears to be clear and dark, with no visible clouds or precipitation. The nighttime setting and the illuminated Ferris wheel suggest that it is a calm and still evening.",
+        "similarity_score": 0.7327901721000671
     },
     {
         "question_type": "holistic",
@@ -86,10 +86,10 @@
             "Window"
         ],
         "image_src": "https://c3.staticflickr.com/6/5558/14388226720_c54b67588a_o.jpg",
-        "question": "Describe the image in detail. Answer with about 20 words.",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
         "gt_answer": "The picture depicts a city street, recently dampened by rain, with a sidewalk lined by trees. There are several cars parked on the right, while others move along the road. A few pedestrians can be seen at a distance on the sidewalk, some of them holding umbrellas to protect themselves from the rain. The trees offer shade and lend a touch of nature to the urban setting. The scene exudes a sense of calm and serenity, emphasized by the glistening wet street and the nearly vacant walkway.",
-        "model_answer": "The image captures a rainy day in a city. The street is wet, reflecting the overcast sky. The sidewalk is lined with trees and street lamps, providing a sense of tranquility amidst the urban setting. A car is parked on the street, and a person can be seen walking on the sidewalk, adding life to the scene. The buildings in the background, though not clearly visible, contribute to the overall atmosphere of the city.",
-        "similarity_score": 0.8747193813323975
+        "model_answer": "The image captures a serene city street on a rainy day. The street, slick with rain, is lined with tall, slender trees that stand like sentinels on either side. The trees, their leaves a vibrant green, add a touch of nature to the urban landscape.\n\nThe street itself is a typical city scene. A sidewalk runs parallel to the street, providing a path for pedestrians. A few cars are parked along the",
+        "similarity_score": 0.8745585680007935
     },
     {
         "question_type": "other",
@@ -98,10 +98,10 @@
             "Telephone"
         ],
         "image_src": "https://c7.staticflickr.com/6/5506/11715451803_24861529ab_o.jpg",
-        "question": "How much is it per hour to park at the parking meter? Answer with about 20 words.",
+        "question": "How much is it per hour to park at the parking meter? Answer with reasonable length (not too short or too long).",
         "gt_answer": "It is $4 per hour to park at the parking meter.",
-        "model_answer": "$4.00 per hour",
-        "similarity_score": 0.5614398717880249
+        "model_answer": "The parking meter charges $4.00 per hour for parking.",
+        "similarity_score": 0.911471426486969
     },
     {
         "question_type": "attribute",
@@ -112,10 +112,10 @@
             "Building"
         ],
         "image_src": "https://c1.staticflickr.com/1/463/20076975362_949c5a1cdb_o.jpg",
-        "question": "What color are the two cars from right to left in the image? Answer with about 20 words.",
+        "question": "What color are the two cars from right to left in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The two cars from right to left in the image are black and blue.",
-        "model_answer": "Blue and black",
-        "similarity_score": 0.5114517211914062
+        "model_answer": "The two cars in the image are blue and black.",
+        "similarity_score": 0.9669222235679626
     },
     {
         "question_type": "adversarial",
@@ -125,10 +125,10 @@
             "Wheel"
         ],
         "image_src": "https://farm4.staticflickr.com/2503/3828840628_e625c9beb0_o.jpg",
-        "question": "What is the gender of the person riding the motorcycle in the image? Answer with about 20 words.",
+        "question": "What is the gender of the person riding the motorcycle in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "No one is riding the motorcycle by the roadside in the image.",
-        "model_answer": "Male",
-        "similarity_score": 0.007316693663597107
+        "model_answer": "The image does not provide enough information to confidently determine the gender of the person riding the motorcycle.",
+        "similarity_score": 0.5280413627624512
     },
     {
         "question_type": "comparison",
@@ -140,10 +140,10 @@
             "Auto part"
         ],
         "image_src": "https://c4.staticflickr.com/2/1196/1424845359_c4945d38f1_o.jpg",
-        "question": "In the image, which truck (left or right) has its door open? Answer with about 20 words.",
+        "question": "In the image, which truck (left or right) has its door open? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The fire truck, which is on the left side of the image, has its door open.",
-        "model_answer": "Left",
-        "similarity_score": 0.18208396434783936
+        "model_answer": "The truck on the left has its door open.",
+        "similarity_score": 0.7694421410560608
     },
     {
         "question_type": "counting",
@@ -160,10 +160,10 @@
             "Bicycle wheel"
         ],
         "image_src": "https://c7.staticflickr.com/1/100/315943393_e2c5dc5bd7_o.jpg",
-        "question": "How many bicycles are there in the image? Answer with about 20 words.",
+        "question": "How many bicycles are there in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "In the image, there are four bicycles: two at the front, one in the middle, and one in the distance.",
-        "model_answer": "4",
-        "similarity_score": 0.2790957987308502
+        "model_answer": "There are four bicycles in the image.",
+        "similarity_score": 0.9304184913635254
     },
     {
         "question_type": "relation",
@@ -173,10 +173,10 @@
             "Boat"
         ],
         "image_src": "https://c4.staticflickr.com/5/4086/5014730631_9c2701e063_o.jpg",
-        "question": "How is the yellow boat positioned in relation to the white yacht in the image? Answer with about 20 words.",
+        "question": "How is the yellow boat positioned in relation to the white yacht in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The yellow boat is positioned in front of the white yacht in the image.",
-        "model_answer": "The yellow boat is positioned in front of the white yacht.",
-        "similarity_score": 0.972863495349884
+        "model_answer": "The yellow boat is positioned in front of the white yacht, with the man standing on the yellow boat.",
+        "similarity_score": 0.8722949624061584
     },
     {
         "question_type": "environment",
@@ -191,10 +191,10 @@
             "Tree"
         ],
         "image_src": "https://c1.staticflickr.com/4/3386/3430256574_ab887d1df5_o.jpg",
-        "question": "What is the weather like in the image? Answer with about 20 words.",
+        "question": "What is the weather like in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "In the image, the weather appears to be either sunny or cloudy.",
-        "model_answer": "Cloudy",
-        "similarity_score": 0.7220406532287598
+        "model_answer": "The weather in the image appears to be overcast, with a cloudy sky.",
+        "similarity_score": 0.8368321657180786
     },
     {
         "question_type": "holistic",
@@ -206,10 +206,10 @@
             "Land vehicle"
         ],
         "image_src": "https://c8.staticflickr.com/5/4033/4523458956_0b78c6b298_o.jpg",
-        "question": "Describe the image in detail. Answer with about 20 words.",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
         "gt_answer": "The picture presents a yellow school bus stationed on an urban roadway, alongside a bicyclist. Positioned outside a tattoo establishment, the bus offers a unique urban backdrop. The road is notably calm, with the absence of other vehicles and passersby. The cyclist, equipped with a backpack and helmet, seems to be a student or a regular commuter. Given the tattoo parlor and the school bus, it's plausible that this area is a vibrant commercial or recreational hub frequented by shoppers, students, or those seeking leisure.",
-        "model_answer": "A man on a bicycle is signaling to a yellow school bus.",
-        "similarity_score": 0.6670817732810974
+        "model_answer": "The image captures a vibrant city scene. Dominating the frame is a yellow school bus, parked on the side of a street. The bus is adorned with a red stop sign, a universal symbol of caution. A blue and white striped awning extends from the bus, adding a touch of color to the scene.\n\nIn front of the bus, a man is seen riding a bicycle. He is dressed in a blue shirt and a",
+        "similarity_score": 0.7980325222015381
     },
     {
         "question_type": "other",
@@ -218,10 +218,10 @@
             "Fixed-wing aircraft"
         ],
         "image_src": "https://c2.staticflickr.com/8/7167/6555470659_4c69a30b73_o.jpg",
-        "question": "Which company owns the airplane displayed in the back of the image? Answer with about 20 words.",
+        "question": "Which company owns the airplane displayed in the back of the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The airplane in the background of the image is owned by Virgin Airlines.",
-        "model_answer": "United airlines",
-        "similarity_score": 0.4568675756454468
+        "model_answer": "The airplane in the back of the image belongs to United Airlines.",
+        "similarity_score": 0.7117319107055664
     },
     {
         "question_type": "attribute",
@@ -233,10 +233,10 @@
             "Human arm"
         ],
         "image_src": "https://farm4.staticflickr.com/3839/14901778703_09a206232c_o.jpg",
-        "question": "What are the colors of the shirts worn by the three men from left to right in the image? Answer with about 20 words.",
+        "question": "What are the colors of the shirts worn by the three men from left to right in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The three men from left to right in the image are wearing green, blue, and red shirts.",
-        "model_answer": "Green, blue, red",
-        "similarity_score": 0.43534642457962036
+        "model_answer": "The colors of the shirts worn by the three men from left to right in the image are green, blue, and red.",
+        "similarity_score": 0.9158990383148193
     },
     {
         "question_type": "adversarial",
@@ -255,10 +255,10 @@
             "Clothing"
         ],
         "image_src": "https://farm4.staticflickr.com/41/83372724_a17cceb078_o.jpg",
-        "question": "Which color are the glasses that the man in the image is wearing? Answer with about 20 words.",
+        "question": "Which color are the glasses that the man in the image is wearing? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The man is not wearing glasses.",
         "model_answer": "Black",
-        "similarity_score": 0.12125034630298615
+        "similarity_score": 0.12125023454427719
     },
     {
         "question_type": "comparison",
@@ -270,7 +270,7 @@
             "Mammal"
         ],
         "image_src": "https://farm1.staticflickr.com/3815/9340455006_25a885f7ef_o.jpg",
-        "question": "Who in the picture is wearing trousers? Answer with about 20 words.",
+        "question": "Who in the picture is wearing trousers? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The woman in the image wears the pants.",
         "model_answer": "Woman",
         "similarity_score": 0.5128394961357117
@@ -287,10 +287,10 @@
             "Human face"
         ],
         "image_src": "https://farm6.staticflickr.com/7307/16189396430_4dce91a9d7_o.jpg",
-        "question": "How many people are there in the image? Answer with about 20 words.",
+        "question": "How many people are there in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There are four people in the image.",
-        "model_answer": "4",
-        "similarity_score": 0.3743225336074829
+        "model_answer": "There are four people in the image.",
+        "similarity_score": 1.0
     },
     {
         "question_type": "relation",
@@ -305,10 +305,10 @@
             "Human hair"
         ],
         "image_src": "https://farm8.staticflickr.com/3063/2500640631_a4c9abd52c_o.jpg",
-        "question": "Where is the girl positioned among the three people in the image? Answer with about 20 words.",
+        "question": "Where is the girl positioned among the three people in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The girl stands on the right among the three individuals in the image.",
-        "model_answer": "Right",
-        "similarity_score": 0.14933259785175323
+        "model_answer": "The girl is positioned between the two older people in the image.",
+        "similarity_score": 0.6647131443023682
     },
     {
         "question_type": "environment",
@@ -328,10 +328,10 @@
             "Goggles"
         ],
         "image_src": "https://c1.staticflickr.com/3/2766/4264709756_1eb0e9ab45_o.jpg",
-        "question": "Is the man in the picture indoors or outdoors? Answer with about 20 words.",
+        "question": "Is the man in the picture indoors or outdoors? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The man in the photo is outside, sitting on a boat with several oxygen tanks around him.",
-        "model_answer": "Outdoors",
-        "similarity_score": 0.299134224653244
+        "model_answer": "The man in the picture is outdoors.",
+        "similarity_score": 0.5532036423683167
     },
     {
         "question_type": "holistic",
@@ -342,10 +342,10 @@
             "Building"
         ],
         "image_src": "https://c2.staticflickr.com/4/3501/4068897399_a729022693_o.jpg",
-        "question": "Describe the image in detail. Answer with about 20 words.",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
         "gt_answer": "The image captures a bustling street lined with various shops and an adjoining sidewalk. Several pedestrians are present, with two individuals notably passing a store with a green sign saying \"Hawkin's Bazaar\". At this store's entrance, a man stands, overseeing a spacious window display that houses diverse items, highlighted by a red and white sign. Interestingly, no trees or parked cars are present in the street. The mood is energetic, showcasing individuals engaged in their daily routines and shopping pursuits.",
-        "model_answer": "The image shows a storefront with a green awning. The store is named \"Hawkin's Bazaar\" and is described as a \"Humorous Life Store.\" The window display features Christmas decorations.",
-        "similarity_score": 0.7078664302825928
+        "model_answer": "The image captures a lively scene on a city street. Dominating the frame is a charming store named \"Hawkin's Bazaar\", as indicated by the green sign with white lettering. The store's facade is adorned with a festive display of Christmas decorations, adding a touch of holiday cheer to the urban setting.\n\nIn front of the store, a sidewalk is bustling with activity. Several people are seen walking by",
+        "similarity_score": 0.8566237092018127
     },
     {
         "question_type": "other",
@@ -357,10 +357,10 @@
             "Footwear"
         ],
         "image_src": "https://farm8.staticflickr.com/7445/8716117944_a272643aef_o.jpg",
-        "question": "What number is the fastest girl wearing in the picture? Answer with about 20 words.",
+        "question": "What number is the fastest girl wearing in the picture? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The fastest girl in the picture is wearing number 1097.",
-        "model_answer": "1097",
-        "similarity_score": 0.40950441360473633
+        "model_answer": "The fastest girl in the picture is wearing the number 1097.",
+        "similarity_score": 0.9969207644462585
     },
     {
         "question_type": "attribute",
@@ -368,10 +368,10 @@
             "Dog"
         ],
         "image_src": "https://farm4.staticflickr.com/8268/10172500456_1f40b6bd38_o.jpg",
-        "question": "What are the colors of the dogs from right to left? Answer with about 20 words.",
+        "question": "What are the colors of the dogs from right to left? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The colors of the two dogs from right to left are brown and black.",
-        "model_answer": "Black, brown, black",
-        "similarity_score": 0.44210121035575867
+        "model_answer": "The colors of the dogs from right to left are brown, black, and brown.",
+        "similarity_score": 0.9403478503227234
     },
     {
         "question_type": "adversarial",
@@ -380,10 +380,10 @@
             "Bird"
         ],
         "image_src": "https://c1.staticflickr.com/3/2935/13789278495_8545acd44c_o.jpg",
-        "question": "What is a vicuna standing in the sand looking at? Answer with about 20 words.",
+        "question": "What is a vicuna standing in the sand looking at? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There is no vicuna in the image.",
-        "model_answer": "Palm tree",
-        "similarity_score": 0.12390829622745514
+        "model_answer": "A vicuna standing in the sand is looking at a painting of a toucan.",
+        "similarity_score": 0.4036813974380493
     },
     {
         "question_type": "comparison",
@@ -392,10 +392,10 @@
             "Cat"
         ],
         "image_src": "https://farm8.staticflickr.com/195/502006488_2d907443d8_o.jpg",
-        "question": "Which cat (left, right or middle) in the image opens its mouth? Answer with about 20 words.",
+        "question": "Which cat (left, right or middle) in the image opens its mouth? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The cat on the right side of the image opens its mouth.",
-        "model_answer": "Middle",
-        "similarity_score": 0.1652292013168335
+        "model_answer": "The cat on the right in the image opens its mouth.",
+        "similarity_score": 0.9870162606239319
     },
     {
         "question_type": "counting",
@@ -404,10 +404,10 @@
             "Plant"
         ],
         "image_src": "https://c3.staticflickr.com/6/5223/5775946611_ef789718ed_o.jpg",
-        "question": "How many zebras are there in the image? Answer with about 20 words.",
+        "question": "How many zebras are there in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There are six zebras in the image.",
-        "model_answer": "6",
-        "similarity_score": 0.3419603705406189
+        "model_answer": "There are six zebras in the image.",
+        "similarity_score": 1.0
     },
     {
         "question_type": "relation",
@@ -417,10 +417,10 @@
             "Tree"
         ],
         "image_src": "https://c6.staticflickr.com/2/1333/965561501_0b7e9aed90_o.jpg",
-        "question": "Which sheep is in front of the other sheep? Answer with about 20 words.",
+        "question": "Which sheep is in front of the other sheep? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The sheep in front of the other sheep is a white sheep.",
-        "model_answer": "White one",
-        "similarity_score": 0.2670780420303345
+        "model_answer": "The sheep in the foreground is standing in front of the other sheep.",
+        "similarity_score": 0.8561760187149048
     },
     {
         "question_type": "environment",
@@ -436,10 +436,10 @@
             "Human body"
         ],
         "image_src": "https://c7.staticflickr.com/4/3210/2938079244_9e814f0e7a_o.jpg",
-        "question": "How was the weather when this picture was captured? Answer with about 20 words.",
+        "question": "How was the weather when this picture was captured? Answer with reasonable length (not too short or too long).",
         "gt_answer": "When this photo was taken, it was dark at night. This photo shows a horse race at night.",
-        "model_answer": "Dark",
-        "similarity_score": 0.5151288509368896
+        "model_answer": "The weather in the picture appears to be dark and possibly rainy, as the jockeys are wearing helmets with visors and the horses are running on a track with artificial lighting. The darkness suggests that it is nighttime, and the artificial lighting is necessary to ensure the safety of the jockeys and horses. The presence of rain would make the track wet and potentially more challenging for the horses and jockeys to navigate.",
+        "similarity_score": 0.6517081260681152
     },
     {
         "question_type": "other",
@@ -448,10 +448,10 @@
             "Mammal"
         ],
         "image_src": "https://c6.staticflickr.com/5/4079/4883309412_53b0b853d5_o.jpg",
-        "question": "Out of the four animals, how many giraffes are there in the image? Answer with about 20 words.",
+        "question": "Out of the four animals, how many giraffes are there in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "In the image, there are two rhinos, a giraffe, and a wild horse.",
-        "model_answer": "1",
-        "similarity_score": 0.1539708822965622
+        "model_answer": "There are two giraffes in the image.",
+        "similarity_score": 0.7416795492172241
     },
     {
         "question_type": "attribute",
@@ -459,10 +459,10 @@
             "Fruit"
         ],
         "image_src": "https://farm1.staticflickr.com/3758/12521323285_97a94c8cbc_o.jpg",
-        "question": "Is the kiwi in the front fresh or dried? Answer with about 20 words.",
+        "question": "Is the kiwi in the front fresh or dried? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The kiwi in the front is dried. There are four dried pieces of kiwi in the front, and three fresh ones in the back.",
-        "model_answer": "Fresh",
-        "similarity_score": 0.3373755216598511
+        "model_answer": "The kiwi in the front is dried.",
+        "similarity_score": 0.8784629106521606
     },
     {
         "question_type": "adversarial",
@@ -471,10 +471,10 @@
             "Bread"
         ],
         "image_src": "https://c6.staticflickr.com/9/8834/18414801440_47f21894da_o.jpg",
-        "question": "Is the jam on the bread made of strawberry? Answer with about 20 words.",
+        "question": "Is the jam on the bread made of strawberry? Answer with reasonable length (not too short or too long).",
         "gt_answer": "In fact, this photo only shows a cut and toasted bread slice. There is no jam on it.",
-        "model_answer": "Yes",
-        "similarity_score": 0.03914400935173035
+        "model_answer": "Yes, the jam on the bread is made of strawberry.",
+        "similarity_score": 0.6100024580955505
     },
     {
         "question_type": "comparison",
@@ -484,10 +484,10 @@
             "Food"
         ],
         "image_src": "https://farm6.staticflickr.com/5209/5322693484_868ba39c68_o.jpg",
-        "question": "Compare the tomatoes in the photo. Answer with about 20 words.",
+        "question": "Compare the tomatoes in the photo. Answer with reasonable length (not too short or too long).",
         "gt_answer": "There are three tomatoes from the same vine in the photo. The tomato on the left side is red and ripe, while the two tomatoes in the middle and on the right side are yellow and unripe.",
-        "model_answer": "The tomatoes in the photo are ripe and yellow.",
-        "similarity_score": 0.7883039712905884
+        "model_answer": "In the photo, there are three tomatoes hanging from a vine. The tomato on the left is a bright red color, indicating that it is ripe and ready for consumption. The tomato in the middle is a yellowish-orange color, which suggests that it is still in the process of ripening and may not be as sweet or flavorful as the red tomato. The tomato on the right is also a bright red color, similar to the first tom",
+        "similarity_score": 0.8667279481887817
     },
     {
         "question_type": "counting",
@@ -499,10 +499,10 @@
             "Seafood"
         ],
         "image_src": "https://c2.staticflickr.com/3/2374/2519330533_597840098a_o.jpg",
-        "question": "How many oysters can you see in the photo? Answer with about 20 words.",
+        "question": "How many oysters can you see in the photo? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There are five oysters visible in the photo.",
-        "model_answer": "6",
-        "similarity_score": 0.2464141696691513
+        "model_answer": "There are six oysters visible in the photo.",
+        "similarity_score": 0.938496470451355
     },
     {
         "question_type": "relation",
@@ -514,10 +514,10 @@
             "Cookie"
         ],
         "image_src": "https://farm7.staticflickr.com/5186/5757505875_8578d2fc37_o.jpg",
-        "question": "Is the bowl with broccoli on top of the bowl with meatballs? Answer with about 20 words.",
+        "question": "Is the bowl with broccoli on top of the bowl with meatballs? Answer with reasonable length (not too short or too long).",
         "gt_answer": "No, the bowl with broccoli is next to the bowl of meatballs.",
-        "model_answer": "Yes",
-        "similarity_score": 0.18879461288452148
+        "model_answer": "Yes, the bowl with broccoli is on top of the bowl with meatballs.",
+        "similarity_score": 0.9263861775398254
     },
     {
         "question_type": "environment",
@@ -536,10 +536,10 @@
             "Seafood"
         ],
         "image_src": "https://c2.staticflickr.com/9/8726/16685252757_e1c32c0e1f_o.jpg",
-        "question": "Is this photo taken in a restaurant, a kitchen, or anywhere else? Answer with about 20 words.",
+        "question": "Is this photo taken in a restaurant, a kitchen, or anywhere else? Answer with reasonable length (not too short or too long).",
         "gt_answer": "This photo is taken outdoors, likely on a beach, where a man is cooking on a grill.",
-        "model_answer": "Kitchen",
-        "similarity_score": 0.2778601050376892
+        "model_answer": "The photo appears to be taken at an outdoor event or gathering, possibly a street food stall or a similar setting. The presence of a grill with food being cooked and a crowd of people suggests that this is not a typical indoor restaurant or kitchen environment. The exact location cannot be determined with certainty, but it is not a typical indoor dining space.",
+        "similarity_score": 0.671643853187561
     },
     {
         "question_type": "holistic",
@@ -550,10 +550,10 @@
             "Vegetable"
         ],
         "image_src": "https://farm7.staticflickr.com/1420/4722330374_2425fd36eb_o.jpg",
-        "question": "Describe the activities in this image. Answer with about 20 words.",
+        "question": "Describe the activities in this image. Answer with reasonable length (not too short or too long).",
         "gt_answer": "In this image we can see a man and two young girls preparing food. The man seems to be a chef with a suit but no hat. The two girls seem to be interns, wearing aprons with a \"BRITANNIA HOTEL\" logo. The man seems to be guiding the girls to prepare the food. In front of them, there is a table with food on it. From left to right, there is a metal bowl of vegetables on a red cutting board, and two plates of meat, possibly saussages.",
-        "model_answer": "Three people preparing food in a kitchen.",
-        "similarity_score": 0.5972435474395752
+        "model_answer": "In the image, there are three individuals engaged in a cooking activity. Two of them are wearing aprons with the text \"BRITANNI HOTEL\" on them, suggesting they might be chefs or staff at the Britanni Hotel. The third person is not wearing an apron and appears to be observing or assisting in the cooking process. They are standing around a table that has a plate of food on it, which includes what looks like sliced",
+        "similarity_score": 0.7420623302459717
     },
     {
         "question_type": "other",
@@ -565,10 +565,10 @@
             "Food"
         ],
         "image_src": "https://c5.staticflickr.com/7/6064/6097499605_d06c51eed9_o.jpg",
-        "question": "From this photo, how much does each jerk chicken dumpling cost? Answer with about 20 words.",
+        "question": "From this photo, how much does each jerk chicken dumpling cost? Answer with reasonable length (not too short or too long).",
         "gt_answer": "Each jerk chicken dumpling costs 5 pounds.",
-        "model_answer": "\u00a35.00",
-        "similarity_score": 0.3057857155799866
+        "model_answer": "The photo shows a menu with the price of jerk chicken dumplings listed as \u00a35.00.",
+        "similarity_score": 0.7466701865196228
     },
     {
         "question_type": "attribute",
@@ -577,10 +577,10 @@
             "Parachute"
         ],
         "image_src": "https://c5.staticflickr.com/8/7141/6705513453_b025140503_o.jpg",
-        "question": "What are the colors of the parachutes in the sky? Answer with about 20 words.",
+        "question": "What are the colors of the parachutes in the sky? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There are three parachutes in the sky. The one on the left is light green. The one on the top right is orange. The one on the bottom right is blue.",
-        "model_answer": "Green, blue, and orange",
-        "similarity_score": 0.5178056955337524
+        "model_answer": "The parachutes in the sky are green, blue, and orange.",
+        "similarity_score": 0.9263964891433716
     },
     {
         "question_type": "adversarial",
@@ -589,10 +589,10 @@
             "Ball (Object)"
         ],
         "image_src": "https://c7.staticflickr.com/9/8387/8506072922_e7f6c6ca49_o.jpg",
-        "question": "Describe the person playing tennis in this photo. Answer with about 20 words.",
+        "question": "Describe the person playing tennis in this photo. Answer with reasonable length (not too short or too long).",
         "gt_answer": "No, there is only a tennis racket and a ball on the ground. No one is playing tennis in this photo.",
-        "model_answer": "Tennis player is not visible in the photo.",
-        "similarity_score": 0.6254006028175354
+        "model_answer": "In the photo, there is a tennis racket with a blue and white design, resting on a green tennis court. The racket is positioned on the right side of the image, with the handle pointing towards the top right corner. A yellow tennis ball is placed on the left side of the racket, near the bottom of the image. The court itself appears to be well-maintained, with a clear boundary marked by a white line. There is no person visible in the",
+        "similarity_score": 0.7151147127151489
     },
     {
         "question_type": "comparison",
@@ -600,10 +600,10 @@
             "Surfboard"
         ],
         "image_src": "https://c2.staticflickr.com/5/4126/4958794254_c3f9677682_o.jpg",
-        "question": "Compare the two surfboards in the photo. Answer with about 20 words.",
+        "question": "Compare the two surfboards in the photo. Answer with reasonable length (not too short or too long).",
         "gt_answer": "The two surfboards have different looks. The surfboard on the top has a white and wood color with a simple design. The other one on the bottom is red, with a more complex white and black pattern in the front.",
-        "model_answer": "One surfboard is red and black, while the other is white and black.",
-        "similarity_score": 0.8686469793319702
+        "model_answer": "The two surfboards in the photo are quite different in design and purpose. The surfboard on the left appears to be a longboard, which is typically used for cruising, carving, and long-distance paddling. Longboards are known for their stability and ease of use, making them popular among beginners and those who prefer a more relaxed surfing style.\n\nThe surfboard on the right is a shortboard, which is designed for high-",
+        "similarity_score": 0.7471238970756531
     },
     {
         "question_type": "counting",
@@ -614,10 +614,10 @@
             "Tree"
         ],
         "image_src": "https://c4.staticflickr.com/4/3048/2603285498_e8e6c82214_o.jpg",
-        "question": "How many horses are there in the photo? Answer with about 20 words.",
+        "question": "How many horses are there in the photo? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There are three horses in the photo.",
-        "model_answer": "3",
-        "similarity_score": 0.18448686599731445
+        "model_answer": "There are three horses in the photo.",
+        "similarity_score": 1.0000001192092896
     },
     {
         "question_type": "relation",
@@ -628,10 +628,10 @@
             "Table"
         ],
         "image_src": "https://c4.staticflickr.com/5/4010/4459982881_b378f81b6f_o.jpg",
-        "question": "What is the color of the ball on the left? Answer with about 20 words.",
+        "question": "What is the color of the ball on the left? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The color of the ball on the left is red or orange.",
-        "model_answer": "Orange",
-        "similarity_score": 0.4468625485897064
+        "model_answer": "The color of the ball on the left is orange.",
+        "similarity_score": 0.9318283796310425
     },
     {
         "question_type": "environment",
@@ -644,10 +644,10 @@
             "Clothing"
         ],
         "image_src": "https://c4.staticflickr.com/6/5099/5483033051_fa3ecf0e0d_o.jpg",
-        "question": "Is this photo taken indoors or outdoors? Answer with about 20 words.",
+        "question": "Is this photo taken indoors or outdoors? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The photo is taken indoors, since there is a group of hockey players playing in an ice stadium.",
         "model_answer": "Indoors",
-        "similarity_score": 0.42230740189552307
+        "similarity_score": 0.42230746150016785
     },
     {
         "question_type": "holistic",
@@ -663,10 +663,10 @@
             "Human hand"
         ],
         "image_src": "https://c5.staticflickr.com/3/2929/13926846360_2449b5b12f_o.jpg",
-        "question": "Describe the activity in this photo. Answer with about 20 words.",
+        "question": "Describe the activity in this photo. Answer with reasonable length (not too short or too long).",
         "gt_answer": "In this photo, three players are playing soccer. The first player on the left wears a white and red uniform, and is controlling the ball. The other two players on the right side are from the other team. They wear blue and yellow uniforms. The player closer to the camera is competing with the first player to gain control of the ball, while the other player is at distance.",
-        "model_answer": "Soccer game in progress.",
-        "similarity_score": 0.6823469400405884
+        "model_answer": "In the photo, a soccer match is in progress on a grassy field. There are three players visible: one in a white and red striped jersey, another in a blue jersey, and a third player in a yellow jersey. The player in the white and red striped jersey is in the process of kicking the soccer ball, which is located on the ground in front of him. The other two players are positioned nearby, likely prepar",
+        "similarity_score": 0.822657585144043
     },
     {
         "question_type": "other",
@@ -679,10 +679,10 @@
             "Ball (Object)"
         ],
         "image_src": "https://farm5.staticflickr.com/3802/13407081714_0375f7b3e0_o.jpg",
-        "question": "Which tournament is this tennis competition? Answer with about 20 words.",
+        "question": "Which tournament is this tennis competition? Answer with reasonable length (not too short or too long).",
         "gt_answer": "From the text on the ground, this is the Indian Wells tournament.",
-        "model_answer": "Indian wells",
-        "similarity_score": 0.686224639415741
+        "model_answer": "This tennis competition is the Indian Wells Masters, which is one of the four Grand Slam tournaments.",
+        "similarity_score": 0.6510456800460815
     },
     {
         "question_type": "attribute",
@@ -701,10 +701,10 @@
             "Plumbing fixture"
         ],
         "image_src": "https://c3.staticflickr.com/4/3827/12255073776_5f17d88d21_o.jpg",
-        "question": "What color is the microwave? Answer with about 20 words.",
+        "question": "What color is the microwave? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The microwave is mainly silver, with a black panel.",
         "model_answer": "Silver",
-        "similarity_score": 0.43028193712234497
+        "similarity_score": 0.4302818179130554
     },
     {
         "question_type": "adversarial",
@@ -720,10 +720,10 @@
             "Window"
         ],
         "image_src": "https://farm2.staticflickr.com/1116/1411998044_37c3c4a234_o.jpg",
-        "question": "How many people are eating in this kitchen? Answer with about 20 words.",
+        "question": "How many people are eating in this kitchen? Answer with reasonable length (not too short or too long).",
         "gt_answer": "No one is eating in the kitchen. I can see a dining table and four chairs, but there are no people in the sitting there right now.",
-        "model_answer": "0",
-        "similarity_score": 0.20547492802143097
+        "model_answer": "There are four people eating in this kitchen.",
+        "similarity_score": 0.6053780317306519
     },
     {
         "question_type": "comparison",
@@ -736,10 +736,10 @@
             "Person"
         ],
         "image_src": "https://c3.staticflickr.com/4/3039/3018306107_51f8da54b3_o.jpg",
-        "question": "Compare the utensils in the picture. Answer with about 20 words.",
+        "question": "Compare the utensils in the picture. Answer with reasonable length (not too short or too long).",
         "gt_answer": "The picture shows a set of three utensils in different views with a white background: A knive with a blue handle, a spoon with a yellow handle, and a red fork with a red handle. They are all made of metal and plastic handle.",
-        "model_answer": "The utensils in the picture are made of plastic and have a Lego-like design.",
-        "similarity_score": 0.7522855401039124
+        "model_answer": "The image shows a creative and playful arrangement of utensils. On the left side, there are three forks, each with a different color and pattern. The middle forks are yellow and red, while the forks on the right are silver and blue. The utensils are stacked in a way that resembles a colorful tower, with the forks on the left being the base and the forks on the right being the top.\n\nIn the center",
+        "similarity_score": 0.7940292954444885
     },
     {
         "question_type": "counting",
@@ -750,10 +750,10 @@
             "Tool"
         ],
         "image_src": "https://c3.staticflickr.com/7/6153/6266717889_714dc304bd_o.jpg",
-        "question": "How many forks can you see? Answer with about 20 words.",
+        "question": "How many forks can you see? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There are two forks.",
-        "model_answer": "3",
-        "similarity_score": 0.13091476261615753
+        "model_answer": "There are four forks visible in the image.",
+        "similarity_score": 0.7807085514068604
     },
     {
         "question_type": "relation",
@@ -765,10 +765,10 @@
             "Kitchen utensil"
         ],
         "image_src": "https://farm7.staticflickr.com/4128/4967650364_6b23e0e7de_o.jpg",
-        "question": "What are the objects from right to left? Answer with about 20 words.",
+        "question": "What are the objects from right to left? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The objects from right to left are a lid, a spoon, and a coffee cup.",
-        "model_answer": "Spoon, coffee cup, coffee coaster",
-        "similarity_score": 0.7179552912712097
+        "model_answer": "Spoon, coffee cup, coffee cup lid",
+        "similarity_score": 0.8112483024597168
     },
     {
         "question_type": "environment",
@@ -787,10 +787,10 @@
             "Chair"
         ],
         "image_src": "https://c3.staticflickr.com/4/3213/3020281858_2d84b7bab7_o.jpg",
-        "question": "At what time is this photo taken? Answer with about 20 words.",
+        "question": "At what time is this photo taken? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The photo is taken during the day.",
-        "model_answer": "Daytime",
-        "similarity_score": 0.5642653107643127
+        "model_answer": "The photo appears to be taken during the day, as indicated by the natural light coming through the windows. The time of day is not explicitly visible in the image, but it is not nighttime.",
+        "similarity_score": 0.7518391609191895
     },
     {
         "question_type": "holistic",
@@ -800,10 +800,10 @@
             "Chair"
         ],
         "image_src": "https://farm6.staticflickr.com/4041/4234666745_63e51cc909_o.jpg",
-        "question": "Describe this photo in detail. Answer with about 20 words.",
+        "question": "Describe this photo in detail. Answer with reasonable length (not too short or too long).",
         "gt_answer": "This photo features a wooden dining table with four wooden or metal chairs around it. On the table there are two coasters and two glass cups. The table is set on a wooden floor. Behind the table are the wall and two windows.",
-        "model_answer": "The photo captures a cozy dining scene. A wooden table, adorned with a green tablecloth, is surrounded by four chairs. Two glasses rest on the table, ready for a meal. The room is warmly lit, with a window in the background allowing natural light to filter in.",
-        "similarity_score": 0.7125009298324585
+        "model_answer": "The photo captures a cozy dining scene. At the center of the image is a wooden dining table, its surface gleaming under the light. The table is surrounded by four chairs, two on each side, inviting one to sit and enjoy a meal. \n\nOn the table, there are two glasses, their contents unknown but adding to the ambiance. A plate is also present on the table, its contents hidden from view. \n\nThe room",
+        "similarity_score": 0.7755464315414429
     },
     {
         "question_type": "other",
@@ -818,10 +818,10 @@
             "Kitchen appliance"
         ],
         "image_src": "https://farm5.staticflickr.com/6005/5997807974_708c7602a0_o.jpg",
-        "question": "In the picture, which buttons should I use to control the stove above? Answer with about 20 words.",
+        "question": "In the picture, which buttons should I use to control the stove above? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There are 8 buttons in front of the stainless steel stove, two on the left and six on the right. Since there are also six stoves above, the buttons on the right should be associated with the stoves and used to control them. There is also a digital display to the left of the buttons that shows \"5:27\", which is possibly the current time.",
-        "model_answer": "Knobs",
-        "similarity_score": 0.36357003450393677
+        "model_answer": "In the image, you can see a modern gas stove with a control panel on the front. The control panel typically has knobs and buttons for controlling the stove's functions. To control the stove, you should use the knobs and buttons that correspond to the specific functions you want to control. For example, if you want to turn the burners on or off, you would use the knobs for the individual burners. If you want to control the heat of the",
+        "similarity_score": 0.663254976272583
     },
     {
         "question_type": "attribute",
@@ -830,10 +830,10 @@
             "Fashion accessory"
         ],
         "image_src": "https://farm8.staticflickr.com/8170/7962741614_51a3a8b874_o.jpg",
-        "question": "What color is the umbrella? Answer with about 20 words.",
+        "question": "What color is the umbrella? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The umbrella is colorful, containing purple, yellow, teal, and orange.",
-        "model_answer": "Rainbow",
-        "similarity_score": 0.41155609488487244
+        "model_answer": "The umbrella is colorful, featuring a combination of purple, yellow, orange, green, and blue.",
+        "similarity_score": 0.9201965928077698
     },
     {
         "question_type": "adversarial",
@@ -843,10 +843,10 @@
             "Fashion accessory"
         ],
         "image_src": "https://farm1.staticflickr.com/2572/4093922675_0e2f451fe0_o.jpg",
-        "question": "Describe the hands wearing the gloves. Answer with about 20 words.",
+        "question": "Describe the hands wearing the gloves. Answer with reasonable length (not too short or too long).",
         "gt_answer": "Only a pair of black gloves can be observed in the image. There are no hands shown in the image.",
-        "model_answer": "The hands are wearing black gloves.",
-        "similarity_score": 0.7505280375480652
+        "model_answer": "The hands wearing the gloves are positioned in a way that they are facing upwards, with the palms of the hands facing the camera. The gloves are black and appear to be made of a material that provides insulation, possibly for cold weather or outdoor activities. The hands are not visible, as the gloves cover them completely. The gloves have a design that includes a logo or emblem on the back of the hand, but the specific details of the logo are",
+        "similarity_score": 0.7239845991134644
     },
     {
         "question_type": "comparison",
@@ -856,10 +856,10 @@
             "Backpack"
         ],
         "image_src": "https://farm4.staticflickr.com/7444/12392564684_ffd19b5b55_o.jpg",
-        "question": "Compare the two different views of the backpack. Answer with about 20 words.",
+        "question": "Compare the two different views of the backpack. Answer with reasonable length (not too short or too long).",
         "gt_answer": "The image shows two different views of the same black backpack. On the left side, it shows the inside of the bag, containing a camera, two lenses an other accessories. On the right side, it shows the outside of the bag, and there is a \"Lowepro\" logo on it.",
-        "model_answer": "The backpack in the top view is open, revealing its contents, while the bottom view shows the backpack closed.",
-        "similarity_score": 0.5743667483329773
+        "model_answer": "The image shows two different views of the same backpack. The top view is an interior perspective, revealing the various compartments and the items stored inside. This view allows us to see the organization of the backpack, including the camera equipment and other personal items. The bottom view is an exterior perspective, showing the backpack's design and how it looks when worn. This view allows us to see the overall shape and size of the backpack, as well as any visible branding or",
+        "similarity_score": 0.7155377864837646
     },
     {
         "question_type": "counting",
@@ -868,10 +868,10 @@
             "Hat"
         ],
         "image_src": "https://farm7.staticflickr.com/6081/6150182374_f0923ac4b0_o.jpg",
-        "question": "How many black hats are there in the image? Answer with about 20 words.",
+        "question": "How many black hats are there in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There are five black hats in the image.",
-        "model_answer": "5",
-        "similarity_score": 0.2950610816478729
+        "model_answer": "There are four black hats in the image.",
+        "similarity_score": 0.9107362031936646
     },
     {
         "question_type": "relation",
@@ -879,10 +879,10 @@
             "Watch"
         ],
         "image_src": "https://c3.staticflickr.com/6/5554/14424649263_69118d3a3b_o.jpg",
-        "question": "Describe how the two watches are placed. Answer with about 20 words.",
+        "question": "Describe how the two watches are placed. Answer with reasonable length (not too short or too long).",
         "gt_answer": "There are two watches side by side in the photo. The black one is placed on top of and to the left of the red one.",
-        "model_answer": "The watches are placed side by side, with the larger watch on top of the smaller one.",
-        "similarity_score": 0.8402440547943115
+        "model_answer": "The two watches are placed side by side, with the larger watch on the left and the smaller watch on the right. The larger watch is positioned with its face facing the viewer, while the smaller watch is shown from the back, with its face facing away from the viewer. Both watches are displayed against a plain, light-colored background, which helps to highlight their features and design.",
+        "similarity_score": 0.7944575548171997
     },
     {
         "question_type": "environment",
@@ -891,10 +891,10 @@
             "Clothing"
         ],
         "image_src": "https://farm7.staticflickr.com/8308/7750080584_124d32aab3_o.jpg",
-        "question": "Is this photo taken indoors or outdoors? Answer with about 20 words.",
+        "question": "Is this photo taken indoors or outdoors? Answer with reasonable length (not too short or too long).",
         "gt_answer": "This photo shows a pair of green training shoes on a carpet, so this photo is taken indoors.",
         "model_answer": "Indoors",
-        "similarity_score": 0.4515247941017151
+        "similarity_score": 0.45152485370635986
     },
     {
         "question_type": "holistic",
@@ -909,10 +909,10 @@
             "Human body"
         ],
         "image_src": "https://c6.staticflickr.com/7/6032/6333054847_854b033191_o.jpg",
-        "question": "Describe the details in this photo. Answer with about 20 words.",
+        "question": "Describe the details in this photo. Answer with reasonable length (not too short or too long).",
         "gt_answer": "In the photo, a woman's hand is holding a man's hand. The woman's hand is wearing a diamond wedding ring, while the man's hand is wearing a simple wedding band. It seems that the woman is in a white dress and the man is in a black suit, but only a part can be seen in this photo. The image is black and white, except the wedding ring and band. This photo is likely taken in a wedding.",
-        "model_answer": "A couple's hands are interlocked, with rings on their fingers. The man's hand is on the woman's stomach, and they are both wearing nail polish.",
-        "similarity_score": 0.6127007007598877
+        "model_answer": "The photo captures a tender moment between two individuals, likely a couple, as they share a close embrace. The person on the left is wearing a white dress, which is adorned with a lace pattern, adding a touch of elegance to the attire. Their right hand is gently placed on the left hand of the other person, suggesting a sense of trust and intimacy.\n\nThe person on the right is dressed in a black suit, which contrasts",
+        "similarity_score": 0.6760480403900146
     },
     {
         "question_type": "other",
@@ -934,10 +934,10 @@
             "Human hair"
         ],
         "image_src": "https://c6.staticflickr.com/7/6231/6209347220_846cc7f471_o.jpg",
-        "question": "What can you see in the reflection from the sunglasses? Answer with about 20 words.",
+        "question": "What can you see in the reflection from the sunglasses? Answer with reasonable length (not too short or too long).",
         "gt_answer": "A man wearing a top hat and a suit is wearing this pair of sunglasses. From the reflection in his sunglasses, I can vaguely see some people, but not the man himself.",
-        "model_answer": "People",
-        "similarity_score": 0.28077229857444763
+        "model_answer": "In the reflection from the sunglasses, I can see the man wearing a top hat and a white shirt. The sunglasses are likely reflecting the light from the environment, which is why the man's face is visible in the reflection.",
+        "similarity_score": 0.8019695281982422
     },
     {
         "question_type": "attribute",
@@ -945,10 +945,10 @@
             "Table"
         ],
         "image_src": "https://farm7.staticflickr.com/4069/4654958099_df8364a87f_o.jpg",
-        "question": "What is the color of the laptop? Answer with about 20 words.",
+        "question": "What is the color of the laptop? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The color of the laptop is silver (or white). A black color sticker is on the laptop.",
-        "model_answer": "Silver",
-        "similarity_score": 0.3732428550720215
+        "model_answer": "The laptop is silver.",
+        "similarity_score": 0.7920972108840942
     },
     {
         "question_type": "adversarial",
@@ -956,10 +956,10 @@
             "Computer mouse"
         ],
         "image_src": "https://c6.staticflickr.com/8/7012/6406526537_1c876dded4_o.jpg",
-        "question": "What is playing on the monitor? Answer with about 20 words.",
+        "question": "What is playing on the monitor? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There is no monitor in the image.",
-        "model_answer": "Nothing",
-        "similarity_score": 0.16608934104442596
+        "model_answer": "There is no image or video playing on the monitor in the image. The Apple mouse is sitting on a white surface, and the monitor is turned off.",
+        "similarity_score": 0.7029248476028442
     },
     {
         "question_type": "comparison",
@@ -970,10 +970,10 @@
             "Telephone"
         ],
         "image_src": "https://farm6.staticflickr.com/4013/4548634745_977535091a_o.jpg",
-        "question": "Which electronic device is larger? Answer with about 20 words.",
+        "question": "Which electronic device is larger? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The iPod touch on the left is larger than the iPod nano on the right.",
-        "model_answer": "Ipod",
-        "similarity_score": 0.4750407934188843
+        "model_answer": "The electronic device on the left is larger than the one on the right.",
+        "similarity_score": 0.6273329257965088
     },
     {
         "question_type": "counting",
@@ -984,10 +984,10 @@
             "Mobile phone"
         ],
         "image_src": "https://c1.staticflickr.com/2/1029/3352759027_94cb468a1f_o.jpg",
-        "question": "How many mobile phones are there in the image? Answer with about 20 words.",
+        "question": "How many mobile phones are there in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There is one mobile phone in the image.",
-        "model_answer": "2",
-        "similarity_score": 0.10697972774505615
+        "model_answer": "There are two mobile phones in the image.",
+        "similarity_score": 0.9300311803817749
     },
     {
         "question_type": "environment",
@@ -995,10 +995,10 @@
             "Mule"
         ],
         "image_src": "https://c1.staticflickr.com/6/5174/5393711070_4509c31205_o.jpg",
-        "question": "Where was the photo taken? Answer with about 20 words.",
+        "question": "Where was the photo taken? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The photo was taken outside with plants and mountains as surroundings.",
-        "model_answer": "Desert",
-        "similarity_score": 0.35821080207824707
+        "model_answer": "The photo was taken in a field.",
+        "similarity_score": 0.6585785150527954
     },
     {
         "question_type": "holistic",
@@ -1007,10 +1007,10 @@
             "Person"
         ],
         "image_src": "https://farm4.staticflickr.com/7415/12673135324_0973fca7b2_o.jpg",
-        "question": "Describe the image in detail. Answer with about 20 words.",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
         "gt_answer": "In this image, I see a book, a pen, and a television on a table. The TV screen shows a man wearing a tie and a suit speaking in a park.",
-        "model_answer": "A man on a television screen.",
-        "similarity_score": 0.4737010598182678
+        "model_answer": "The image captures a moment of quiet reflection, featuring a television screen displaying a news program. The screen is turned on, and the news program is in progress. The news anchor, a man with glasses, is seen in the middle of the screen, his face focused on the camera. He is dressed in a suit and tie, suggesting a formal or professional setting.\n\nThe television is mounted on a wall, and a notebook is placed on a table in front of it, perhaps",
+        "similarity_score": 0.6261886358261108
     },
     {
         "question_type": "other",
@@ -1019,10 +1019,10 @@
             "Computer keyboard"
         ],
         "image_src": "https://farm5.staticflickr.com/1430/1172644431_3dabdd34b5_o.jpg",
-        "question": "Is this a Macbook or Windows laptop? Answer with about 20 words.",
+        "question": "Is this a Macbook or Windows laptop? Answer with reasonable length (not too short or too long).",
         "gt_answer": "This is a Macbook, as indicated by the presence of the Apple logo on the keyboard.",
-        "model_answer": "Macbook",
-        "similarity_score": 0.6682057976722717
+        "model_answer": "This is a MacBook laptop.",
+        "similarity_score": 0.7347345352172852
     },
     {
         "question_type": "attribute",
@@ -1034,10 +1034,10 @@
             "Pillow"
         ],
         "image_src": "https://farm4.staticflickr.com/8297/7818684444_d3de1dd27a_o.jpg",
-        "question": "What are the colors of the pillows from left to right? Answer with about 20 words.",
+        "question": "What are the colors of the pillows from left to right? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The colors of the pillows from left to right are white (or grey), yellow, and white (or grey).",
-        "model_answer": "Blue, white, yellow",
-        "similarity_score": 0.535463273525238
+        "model_answer": "The colors of the pillows from left to right are light blue, light blue, and light blue.",
+        "similarity_score": 0.835418164730072
     },
     {
         "question_type": "adversarial",
@@ -1049,10 +1049,10 @@
             "Bed"
         ],
         "image_src": "https://c3.staticflickr.com/4/3169/2653797190_f42908d6e5_o.jpg",
-        "question": "What is the color of the chair in the image? Answer with about 20 words.",
+        "question": "What is the color of the chair in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There is no chair in the image.",
-        "model_answer": "Tan",
-        "similarity_score": 0.09168297797441483
+        "model_answer": "The color of the chair in the image is yellow.",
+        "similarity_score": 0.5762344002723694
     },
     {
         "question_type": "comparison",
@@ -1064,10 +1064,10 @@
             "Building"
         ],
         "image_src": "https://farm7.staticflickr.com/2026/2236797328_6c02e4d416_o.jpg",
-        "question": "Which pillow is closer to the camera? Answer with about 20 words.",
+        "question": "Which pillow is closer to the camera? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The pillow on the right side of the bed is closer to the camera.",
-        "model_answer": "Right",
-        "similarity_score": 0.09771493077278137
+        "model_answer": "The pillow on the right is closer to the camera.",
+        "similarity_score": 0.9149608612060547
     },
     {
         "question_type": "counting",
@@ -1083,10 +1083,10 @@
             "Billiard table"
         ],
         "image_src": "https://farm1.staticflickr.com/7426/9421545611_004f98acc2_o.jpg",
-        "question": "How many chairs are there in the image? Answer with about 20 words.",
+        "question": "How many chairs are there in the image? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There are two chairs in the image.",
-        "model_answer": "3",
-        "similarity_score": 0.053498782217502594
+        "model_answer": "There are three chairs in the image.",
+        "similarity_score": 0.8302477598190308
     },
     {
         "question_type": "relation",
@@ -1096,10 +1096,10 @@
             "Human body"
         ],
         "image_src": "https://farm5.staticflickr.com/8035/8063845568_6b183760bc_o.jpg",
-        "question": "Which pillow is in front of the other pillows? Answer with about 20 words.",
+        "question": "Which pillow is in front of the other pillows? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There are three pillows. The gray pillow in the middle with the red \"paper\" handprint pattern is in front of the other pillows. The other two pillows are white and have a red \"scissors\" handprint pattern and a \"stone\" handprint pattern, respectively.",
-        "model_answer": "Gray",
-        "similarity_score": 0.2395833134651184
+        "model_answer": "The pillow in the front is the one with the red hand on it.",
+        "similarity_score": 0.620465874671936
     },
     {
         "question_type": "environment",
@@ -1113,10 +1113,10 @@
             "Fireplace"
         ],
         "image_src": "https://c2.staticflickr.com/4/3700/9536149248_661b279f89_o.jpg",
-        "question": "What was the weather like when this photo was taken? Answer with about 20 words.",
+        "question": "What was the weather like when this photo was taken? Answer with reasonable length (not too short or too long).",
         "gt_answer": "When this photo was taken, it was already night and the sky was dark.",
-        "model_answer": "Cold",
-        "similarity_score": 0.2116120606660843
+        "model_answer": "The weather in the photo appears to be cold, as indicated by the presence of a fireplace and the use of a fireplace in the living room. The fireplace is lit, suggesting that it is being used to provide warmth in the space. The presence of a fireplace in a living room is typically associated with colder weather, as it is a common way to heat a home during the winter months.",
+        "similarity_score": 0.2988732159137726
     },
     {
         "question_type": "holistic",
@@ -1124,10 +1124,10 @@
             "Bed"
         ],
         "image_src": "https://farm6.staticflickr.com/2446/3859505368_6e432fbae2_o.jpg",
-        "question": "Describe the image in detail. Answer with about 20 words.",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
         "gt_answer": "In this image we can see two deck beds with pillows on them and carpet on the floor. The Beds are mainly in the blue color and the pillows are yellow with blue strips.",
-        "model_answer": "The image shows two bunk beds with blue mattresses and yellow pillows. The beds are placed next to each other in a room with a white wall and a brick floor.",
-        "similarity_score": 0.7071020603179932
+        "model_answer": "The image captures a cozy bedroom scene. Dominating the space are two bunk beds, each adorned with a blue mattress. The mattresses are neatly made, with a single yellow pillow resting on each. The beds are positioned against a pristine white wall, creating a stark contrast.\n\nThe floor beneath is a warm beige, providing a soft contrast to the cool blue of the beds. A woven rug",
+        "similarity_score": 0.6940335035324097
     },
     {
         "question_type": "other",
@@ -1139,10 +1139,10 @@
             "Toilet"
         ],
         "image_src": "https://farm3.staticflickr.com/1040/990306359_60994704df_o.jpg",
-        "question": "Is the toilet paper used? Answer with about 20 words.",
+        "question": "Is the toilet paper used? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The toilet paper has not been used because it was folded into a decorative shape.",
-        "model_answer": "No",
-        "similarity_score": 0.010067395865917206
+        "model_answer": "No, the toilet paper is not used.",
+        "similarity_score": 0.8188457489013672
     },
     {
         "question_type": "attribute",
@@ -1150,10 +1150,10 @@
             "Book"
         ],
         "image_src": "https://farm4.staticflickr.com/3048/2971924328_aeaf1258e0_o.jpg",
-        "question": "What color are these books? Answer with about 20 words.",
+        "question": "What color are these books? Answer with reasonable length (not too short or too long).",
         "gt_answer": "These books are red and white.",
-        "model_answer": "Red",
-        "similarity_score": 0.47614356875419617
+        "model_answer": "The books in the image are predominantly red and yellow.",
+        "similarity_score": 0.8718606233596802
     },
     {
         "question_type": "adversarial",
@@ -1164,10 +1164,10 @@
             "Flowerpot"
         ],
         "image_src": "https://c1.staticflickr.com/3/2631/4208064606_58b6907c83_o.jpg",
-        "question": "What is in the vase? Answer with about 20 words.",
+        "question": "What is in the vase? Answer with reasonable length (not too short or too long).",
         "gt_answer": "Nothing is in the vase.",
-        "model_answer": "Nothing",
-        "similarity_score": 0.31874459981918335
+        "model_answer": "The vase is empty.",
+        "similarity_score": 0.8151644468307495
     },
     {
         "question_type": "comparison",
@@ -1175,10 +1175,10 @@
             "Vase"
         ],
         "image_src": "https://farm2.staticflickr.com/3779/9040237050_b0af7bbf73_o.jpg",
-        "question": "Which vase looks larger? Answer with about 20 words.",
+        "question": "Which vase looks larger? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The vase on the right appears larger. Both vases are white with blue and red flowers delicately painted on them.",
-        "model_answer": "Right",
-        "similarity_score": 0.052552320063114166
+        "model_answer": "The vase on the right appears to be larger than the one on the left. This is evident from the perspective of the image, where the right vase occupies a larger portion of the frame.",
+        "similarity_score": 0.7845484018325806
     },
     {
         "question_type": "counting",
@@ -1190,10 +1190,10 @@
             "Christmas tree"
         ],
         "image_src": "https://c7.staticflickr.com/3/2629/4219489460_4447e9da03_o.jpg",
-        "question": "How many teddy bears are on the stairs? Answer with about 20 words.",
+        "question": "How many teddy bears are on the stairs? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There are six teddy bears on the stairs.",
-        "model_answer": "7",
-        "similarity_score": 0.22724851965904236
+        "model_answer": "There are six teddy bears on the stairs.",
+        "similarity_score": 0.9999999403953552
     },
     {
         "question_type": "relation",
@@ -1205,10 +1205,10 @@
             "Building"
         ],
         "image_src": "https://c2.staticflickr.com/4/3810/9899405365_e2df3063b2_o.jpg",
-        "question": "Which color flowers are on top, and which color flowers are on the bottom? Answer with about 20 words.",
+        "question": "Which color flowers are on top, and which color flowers are on the bottom? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The blue flowers are on top, and the white flowers are on the bottom.",
-        "model_answer": "Blue on top, white on bottom",
-        "similarity_score": 0.5424816012382507
+        "model_answer": "The blue flowers are on top, and the white flowers are on the bottom.",
+        "similarity_score": 1.0000001192092896
     },
     {
         "question_type": "environment",
@@ -1223,10 +1223,10 @@
             "Furniture"
         ],
         "image_src": "https://c7.staticflickr.com/8/7234/7014520149_78feda0bef_o.jpg",
-        "question": "What was the weather like when this photo was taken? Answer with about 20 words.",
+        "question": "What was the weather like when this photo was taken? Answer with reasonable length (not too short or too long).",
         "gt_answer": "When this photo was taken, it was already night and the sky was dark.",
-        "model_answer": "Sunny",
-        "similarity_score": 0.3454972803592682
+        "model_answer": "The weather in the photo appears to be indoors, as the room is decorated for a party with streamers and balloons, and there are no visible signs of outdoor conditions. The presence of a dining table and chairs suggests that the event is taking place in a home setting, which is typically not exposed to outdoor elements.",
+        "similarity_score": 0.24943047761917114
     },
     {
         "question_type": "holistic",
@@ -1251,10 +1251,10 @@
             "Teddy bear"
         ],
         "image_src": "https://farm6.staticflickr.com/225/489474293_a1e7bea6bc_o.jpg",
-        "question": "Describe the image in detail. Answer with about 20 words.",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
         "gt_answer": "The image features a baby lying in a crib, which is placed in a room with a white background. The baby is wearing a diaper and is sleeping soundly. There are three stuffed animals hanging above the crib, providing a cozy and comforting atmosphere for the baby.",
-        "model_answer": "A baby is sleeping in a white crib.",
-        "similarity_score": 0.6063207387924194
+        "model_answer": "The image captures a serene moment of a baby's sleep. The baby, dressed in a white onesie, is peacefully resting on a white crib mattress. The crib, with its white walls and a white canopy, provides a calm and soothing environment for the baby's slumber.\n\nAdding a touch of whimsy to the scene are two stuffed animals, a brown dog and a white rabbit, hanging from the",
+        "similarity_score": 0.8024388551712036
     },
     {
         "question_type": "other",
@@ -1262,10 +1262,10 @@
             "Book"
         ],
         "image_src": "https://c8.staticflickr.com/8/7295/9019477149_f7d04cdb65_o.jpg",
-        "question": "What is the name of the book? Answer with about 20 words.",
+        "question": "What is the name of the book? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The name of the book is \"Proverbial Philosophy.\"",
-        "model_answer": "Proverbial philosophy",
-        "similarity_score": 0.7753822207450867
+        "model_answer": "The book is titled \"PROVERBIAL PHILOSOPHY.\"",
+        "similarity_score": 0.9665336012840271
     },
     {
         "question_type": "attribute",
@@ -1273,10 +1273,10 @@
             "Fruit"
         ],
         "image_src": "https://farm8.staticflickr.com/2730/4272595396_785d273725_o.jpg",
-        "question": "What is the color of the pot? Answer with about 20 words.",
+        "question": "What is the color of the pot? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The color of the pot is silver, with red cherries inside.",
-        "model_answer": "Silver",
-        "similarity_score": 0.47005265951156616
+        "model_answer": "The color of the pot is silver.",
+        "similarity_score": 0.794974684715271
     },
     {
         "question_type": "adversarial",
@@ -1287,10 +1287,10 @@
             "Tap"
         ],
         "image_src": "https://c1.staticflickr.com/2/1425/689823158_b0bff45e0f_o.jpg",
-        "question": "What is being washed in the sink? Answer with about 20 words.",
+        "question": "What is being washed in the sink? Answer with reasonable length (not too short or too long).",
         "gt_answer": "Nothing is being washed in the sink.",
-        "model_answer": "Nothing",
-        "similarity_score": 0.27274128794670105
+        "model_answer": "The sink is being used to wash a toothbrush.",
+        "similarity_score": 0.5663481950759888
     },
     {
         "question_type": "comparison",
@@ -1300,10 +1300,10 @@
             "Refrigerator"
         ],
         "image_src": "https://farm6.staticflickr.com/8094/8431126135_cd1cf303e7_o.jpg",
-        "question": "Which washing machine is taller? Answer with about 20 words.",
+        "question": "Which washing machine is taller? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The right washing machine with the top load design is taller. Both are white in color.",
-        "model_answer": "Left",
-        "similarity_score": 0.11822278797626495
+        "model_answer": "The washing machine on the right is taller than the one on the left.",
+        "similarity_score": 0.8179147839546204
     },
     {
         "question_type": "counting",
@@ -1314,10 +1314,10 @@
             "Baked goods"
         ],
         "image_src": "https://c3.staticflickr.com/8/7145/6599551311_4afa756cf7_o.jpg",
-        "question": "How many chickens are cooked? Answer with about 20 words.",
+        "question": "How many chickens are cooked? Answer with reasonable length (not too short or too long).",
         "gt_answer": "There is one cooked chicken in the image.",
-        "model_answer": "1",
-        "similarity_score": 0.1557070016860962
+        "model_answer": "There is one chicken cooked in the image.",
+        "similarity_score": 0.9897941946983337
     },
     {
         "question_type": "relation",
@@ -1326,10 +1326,10 @@
             "Bathroom accessory"
         ],
         "image_src": "https://farm5.staticflickr.com/28/58465322_592ff01d31_o.jpg",
-        "question": "What is placed on the tissue paper roll? Answer with about 20 words.",
+        "question": "What is placed on the tissue paper roll? Answer with reasonable length (not too short or too long).",
         "gt_answer": "A screwdriver is placed on the tissue paper roll.",
-        "model_answer": "Toilet brush",
-        "similarity_score": 0.2540469169616699
+        "model_answer": "A toothbrush is placed on the tissue paper roll.",
+        "similarity_score": 0.6974002122879028
     },
     {
         "question_type": "environment",
@@ -1347,10 +1347,10 @@
             "Sink"
         ],
         "image_src": "https://c2.staticflickr.com/8/7518/16269340471_154a27d9df_o.jpg",
-        "question": "What time was the photo taken? Answer with about 20 words.",
+        "question": "What time was the photo taken? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The photo was taken at daytime.",
-        "model_answer": "Daytime",
-        "similarity_score": 0.703178882598877
+        "model_answer": "The photo was taken during the day, as indicated by the natural light coming through the window.",
+        "similarity_score": 0.7484363913536072
     },
     {
         "question_type": "holistic",
@@ -1358,10 +1358,10 @@
             "Food"
         ],
         "image_src": "https://c6.staticflickr.com/4/3247/3045172470_2e407f3602_o.jpg",
-        "question": "Describe the image in detail. Answer with about 20 words.",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
         "gt_answer": "In this image, I can see food items (likely Baozi or buns) on papers and a tong kept on a metal stand in an oven and I can see steam on the glass. There are nine of them, arranged into a 3 x 3 grid.",
-        "model_answer": "The image shows a tray of freshly made dumplings.",
-        "similarity_score": 0.4367403984069824
+        "model_answer": "The image captures a moment in a kitchen, where a tray of freshly made dumplings is being prepared. The tray, made of stainless steel, is filled with eight dumplings, each one a delicate white color. They are neatly arranged in two rows of four, with the top row slightly overlapping the bottom row.\n\nThe dumplings are not yet cooked, as evidenced by the steam rising from them",
+        "similarity_score": 0.42349186539649963
     },
     {
         "question_type": "other",
@@ -1376,9 +1376,9 @@
             "Plumbing fixture"
         ],
         "image_src": "https://farm7.staticflickr.com/1385/5164137805_a2499e3ca9_o.jpg",
-        "question": "What is shown in the mirror? Answer with about 20 words.",
+        "question": "What is shown in the mirror? Answer with reasonable length (not too short or too long).",
         "gt_answer": "The mirrow shows the reflection of the washing machine.",
-        "model_answer": "Washing machine",
-        "similarity_score": 0.6729996204376221
+        "model_answer": "The mirror shows a washing machine.",
+        "similarity_score": 0.7930029630661011
     }
 ]
