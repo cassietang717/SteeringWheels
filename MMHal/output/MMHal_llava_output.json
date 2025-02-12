@@ -1,0 +1,1572 @@
+[
+    {
+        "question_type": "attribute",
+        "image_content": [
+            "Fire hydrant"
+        ],
+        "image_src": "https://c4.staticflickr.com/8/7211/7206072054_c53d53b97d_o.jpg",
+        "question": "What color is the fire hydrant cap in the picture? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The color of the fire hydrant cap in the image is yellow.",
+        "llava_model_answer": "The fire hydrant cap in the picture is yellow.",
+        "llama_hallucination_analysis": "The LMM response accurately reflects the provided information from the image and the standard human-generated answer.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "adversarial",
+        "image_content": [
+            "Door",
+            "Building"
+        ],
+        "image_src": "https://farm2.staticflickr.com/5443/7413067568_06a8d1eb64_o.jpg",
+        "question": "Who is sitting on the bench? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No one is sitting on the bench.",
+        "llava_model_answer": "No one is sitting on the bench.",
+        "llama_hallucination_analysis": "The response provided by the LMM is accurate and aligns with the standard human-generated answer. There is no introduction of incorrect or unsupported information.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6.0
+    },
+    {
+        "question_type": "comparison",
+        "image_content": [
+            "Vase",
+            "Houseplant",
+            "Stool",
+            "Coffee table",
+            "Flower"
+        ],
+        "image_src": "https://farm8.staticflickr.com/137/383965780_db4815011c_o.jpg",
+        "question": "Which wooden stool has a vase with red flower on it? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The left wooden stool has a vase with a red flower on it.",
+        "llava_model_answer": "The wooden stool with a vase with a red flower on it is the one on the left.",
+        "llama_hallucination_analysis": "The LMM response accurately describes the wooden stool with a vase and red flower, aligning with the standard human-generated answer. No additional information is introduced that contradicts the given context.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "counting",
+        "image_content": [
+            "Traffic light",
+            "Building",
+            "House",
+            "Street light",
+            "Tree"
+        ],
+        "image_src": "https://c6.staticflickr.com/8/7618/16875241476_3b79e5d79b_o.jpg",
+        "question": "How many traffic lights are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are four traffic lights in the image.",
+        "llava_model_answer": "There are three traffic lights in the image.",
+        "llama_hallucination_analysis": "The LMM response is partially correct but does not align with the provided details, which indicate the presence of four traffic lights.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "relation",
+        "image_content": [
+            "Traffic sign",
+            "Traffic light",
+            "Building"
+        ],
+        "image_src": "https://farm3.staticflickr.com/3640/3576366805_eea15333d5_o.jpg",
+        "question": "What colors are the traffic signs at the top, in the middle, and at the bottom? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The traffic signs at the top and bottom are white, while the one in the center is blue.",
+        "llava_model_answer": "The traffic signs at the top are white with black text. The middle sign is blue with white text. The bottom sign is yellow with black text.",
+        "llama_hallucination_analysis": "The LMM response accurately describes the colors of the traffic signs, matching the standard human-generated answer.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "environment",
+        "image_content": [
+            "Wheel"
+        ],
+        "image_src": "https://c2.staticflickr.com/4/3452/3788392512_2a3f537219_o.jpg",
+        "question": "How would you describe the weather in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The photo was captured during nighttime, with a dark sky overhead. It depicts a Ferris wheel surrounded by people and illuminated by the lights.",
+        "llava_model_answer": "The weather in the image appears to be clear and dark, with no visible clouds or precipitation. The nighttime setting and the illuminated Ferris wheel suggest that it is a calm and still evening.",
+        "llama_hallucination_analysis": "The LMM response accurately describes the weather in the image as clear and dark, with a nighttime setting. However, it could be more informative about the specific details of the scene.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "holistic",
+        "image_content": [
+            "Building",
+            "Street light",
+            "Tree",
+            "Traffic sign",
+            "Window"
+        ],
+        "image_src": "https://c3.staticflickr.com/6/5558/14388226720_c54b67588a_o.jpg",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The picture depicts a city street, recently dampened by rain, with a sidewalk lined by trees. There are several cars parked on the right, while others move along the road. A few pedestrians can be seen at a distance on the sidewalk, some of them holding umbrellas to protect themselves from the rain. The trees offer shade and lend a touch of nature to the urban setting. The scene exudes a sense of calm and serenity, emphasized by the glistening wet street and the nearly vacant walkway.",
+        "llava_model_answer": "The image captures a serene city street on a rainy day. The street, slick with rain, is lined with tall, slender trees that stand like sentinels on either side. The trees, their leaves a vibrant green, add a touch of nature to the urban landscape.\n\nThe street itself is a typical city scene. A sidewalk runs parallel to the street, providing a path for pedestrians. A few cars are parked along the",
+        "llama_hallucination_analysis": "The LMM response contains hallucination because it incorrectly describes the trees as 'tall, slender' and 'their leaves a vibrant green', which is not supported by the provided image details. The image only shows a 'Tree' without any specific characteristics.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "other",
+        "image_content": [
+            "Parking meter",
+            "Telephone"
+        ],
+        "image_src": "https://c7.staticflickr.com/6/5506/11715451803_24861529ab_o.jpg",
+        "question": "How much is it per hour to park at the parking meter? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "It is $4 per hour to park at the parking meter.",
+        "llava_model_answer": "The parking meter charges $4.00 per hour for parking.",
+        "llama_hallucination_analysis": "The LMM response is fully confident and accurate, providing the exact rate for parking at the parking meter without any additional or incorrect information.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "attribute",
+        "image_content": [
+            "Car",
+            "Wheel",
+            "Land vehicle",
+            "Building"
+        ],
+        "image_src": "https://c1.staticflickr.com/1/463/20076975362_949c5a1cdb_o.jpg",
+        "question": "What color are the two cars from right to left in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The two cars from right to left in the image are black and blue.",
+        "llava_model_answer": "The two cars in the image are blue and black.",
+        "llama_hallucination_analysis": "The LMM response is very informative as it directly answers the user's question. However, upon closer inspection, it does not contain any hallucination as it simply lists the colors of the two cars from right to left in the image, which aligns with the standard human-generated answer.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "adversarial",
+        "image_content": [
+            "Tire",
+            "Motorcycle",
+            "Wheel"
+        ],
+        "image_src": "https://farm4.staticflickr.com/2503/3828840628_e625c9beb0_o.jpg",
+        "question": "What is the gender of the person riding the motorcycle in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No one is riding the motorcycle by the roadside in the image.",
+        "llava_model_answer": "The image does not provide enough information to confidently determine the gender of the person riding the motorcycle.",
+        "llama_hallucination_analysis": "The LMM response is correct in stating that the image does not provide enough information to determine the gender of the person riding the motorcycle. However, the user question assumes the presence of a person riding the motorcycle, which contradicts the standard human-generated answer stating that no one is riding the motorcycle.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "comparison",
+        "image_content": [
+            "Wheel",
+            "Building",
+            "Truck",
+            "Person",
+            "Auto part"
+        ],
+        "image_src": "https://c4.staticflickr.com/2/1196/1424845359_c4945d38f1_o.jpg",
+        "question": "In the image, which truck (left or right) has its door open? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The fire truck, which is on the left side of the image, has its door open.",
+        "llava_model_answer": "The truck on the left has its door open.",
+        "llama_hallucination_analysis": "The LMM response does not contain hallucination as it only provides the information present in the image and does not introduce any incorrect or unsupported information. The response directly answers the question without any over-extrapolation or incorrect interpretation.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "counting",
+        "image_content": [
+            "Tree",
+            "Plant",
+            "Person",
+            "Land vehicle",
+            "Bicycle helmet",
+            "Sports equipment",
+            "Bicycle",
+            "Vehicle",
+            "Mammal",
+            "Bicycle wheel"
+        ],
+        "image_src": "https://c7.staticflickr.com/1/100/315943393_e2c5dc5bd7_o.jpg",
+        "question": "How many bicycles are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In the image, there are four bicycles: two at the front, one in the middle, and one in the distance.",
+        "llava_model_answer": "There are four bicycles in the image.",
+        "llama_hallucination_analysis": "The LMM response is a straightforward statement of the number of bicycles in the image, which is accurate according to the standard human-generated answer.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "relation",
+        "image_content": [
+            "Person",
+            "Mammal",
+            "Boat"
+        ],
+        "image_src": "https://c4.staticflickr.com/5/4086/5014730631_9c2701e063_o.jpg",
+        "question": "How is the yellow boat positioned in relation to the white yacht in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The yellow boat is positioned in front of the white yacht in the image.",
+        "llava_model_answer": "The yellow boat is positioned in front of the white yacht, with the man standing on the yellow boat.",
+        "llama_hallucination_analysis": "The LMM response introduces an incorrect detail by mentioning the man standing on the yellow boat, which is not present or implied in the given image contents or the standard human-generated answer.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "environment",
+        "image_content": [
+            "Train",
+            "Skyscraper",
+            "Car",
+            "Land vehicle",
+            "Plant",
+            "Vehicle",
+            "Wheel",
+            "Tree"
+        ],
+        "image_src": "https://c1.staticflickr.com/4/3386/3430256574_ab887d1df5_o.jpg",
+        "question": "What is the weather like in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In the image, the weather appears to be either sunny or cloudy.",
+        "llava_model_answer": "The weather in the image appears to be overcast, with a cloudy sky.",
+        "llama_hallucination_analysis": "The LMM response does not contain hallucination as it only mentions the sky condition based on the given information. However, it is somewhat limited in scope as it does not consider other weather conditions such as wind, temperature, or precipitation.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "holistic",
+        "image_content": [
+            "Wheel",
+            "Bus",
+            "Person",
+            "Auto part",
+            "Land vehicle"
+        ],
+        "image_src": "https://c8.staticflickr.com/5/4033/4523458956_0b78c6b298_o.jpg",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The picture presents a yellow school bus stationed on an urban roadway, alongside a bicyclist. Positioned outside a tattoo establishment, the bus offers a unique urban backdrop. The road is notably calm, with the absence of other vehicles and passersby. The cyclist, equipped with a backpack and helmet, seems to be a student or a regular commuter. Given the tattoo parlor and the school bus, it's plausible that this area is a vibrant commercial or recreational hub frequented by shoppers, students, or those seeking leisure.",
+        "llava_model_answer": "The image captures a vibrant city scene. Dominating the frame is a yellow school bus, parked on the side of a street. The bus is adorned with a red stop sign, a universal symbol of caution. A blue and white striped awning extends from the bus, adding a touch of color to the scene.\n\nIn front of the bus, a man is seen riding a bicycle. He is dressed in a blue shirt and a",
+        "llama_hallucination_analysis": "The LMM response contains hallucination due to the presence of a red stop sign and a blue and white striped awning, which are not mentioned in the provided image contents or the standard human-generated answer.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 2
+    },
+    {
+        "question_type": "other",
+        "image_content": [
+            "Person",
+            "Fixed-wing aircraft"
+        ],
+        "image_src": "https://c2.staticflickr.com/8/7167/6555470659_4c69a30b73_o.jpg",
+        "question": "Which company owns the airplane displayed in the back of the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The airplane in the background of the image is owned by Virgin Airlines.",
+        "llava_model_answer": "The airplane in the back of the image belongs to United Airlines.",
+        "llama_hallucination_analysis": "The LMM response incorrectly identifies the owner of the airplane as United Airlines, which is not supported by the provided details.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "attribute",
+        "image_content": [
+            "Plant",
+            "Tree",
+            "Man",
+            "Sports equipment",
+            "Human arm"
+        ],
+        "image_src": "https://farm4.staticflickr.com/3839/14901778703_09a206232c_o.jpg",
+        "question": "What are the colors of the shirts worn by the three men from left to right in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The three men from left to right in the image are wearing green, blue, and red shirts.",
+        "llava_model_answer": "The colors of the shirts worn by the three men from left to right in the image are green, blue, and red.",
+        "llama_hallucination_analysis": "The LMM response is identical to the standard human-generated answer, indicating that it accurately reflects the information provided.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "adversarial",
+        "image_content": [
+            "Human head",
+            "Boy",
+            "Human ear",
+            "Human eye",
+            "Human mouth",
+            "Human face",
+            "Man",
+            "Human hair",
+            "Human body",
+            "Mammal",
+            "Human nose",
+            "Clothing"
+        ],
+        "image_src": "https://farm4.staticflickr.com/41/83372724_a17cceb078_o.jpg",
+        "question": "Which color are the glasses that the man in the image is wearing? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The man is not wearing glasses.",
+        "llava_model_answer": "Black",
+        "llama_hallucination_analysis": "The LMM response 'Black' is not supported by the provided details. The image does not show any glasses, and the standard human-generated answer states that the man is not wearing glasses. Therefore, the response contains hallucination.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "comparison",
+        "image_content": [
+            "Clothing",
+            "Human body",
+            "Person",
+            "Man",
+            "Mammal"
+        ],
+        "image_src": "https://farm1.staticflickr.com/3815/9340455006_25a885f7ef_o.jpg",
+        "question": "Who in the picture is wearing trousers? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The woman in the image wears the pants.",
+        "llava_model_answer": "Woman",
+        "llama_hallucination_analysis": "The LMM response does not contain hallucination as it only mentions 'Woman', which is a correct interpretation of the given information. However, it contradicts the provided standard human-generated answer, which states that the woman in the image wears the pants.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "counting",
+        "image_content": [
+            "Girl",
+            "Human head",
+            "Human hair",
+            "Mammal",
+            "Dog",
+            "Person",
+            "Human face"
+        ],
+        "image_src": "https://farm6.staticflickr.com/7307/16189396430_4dce91a9d7_o.jpg",
+        "question": "How many people are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are four people in the image.",
+        "llava_model_answer": "There are four people in the image.",
+        "llama_hallucination_analysis": "The LMM response is accurate and aligns with the provided details. It correctly counts the number of people in the image without introducing any incorrect information.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "relation",
+        "image_content": [
+            "Mammal",
+            "Human nose",
+            "Human mouth",
+            "Human face",
+            "Clothing",
+            "Poster",
+            "Person",
+            "Human hair"
+        ],
+        "image_src": "https://farm8.staticflickr.com/3063/2500640631_a4c9abd52c_o.jpg",
+        "question": "Where is the girl positioned among the three people in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The girl stands on the right among the three individuals in the image.",
+        "llava_model_answer": "The girl is positioned between the two older people in the image.",
+        "llama_hallucination_analysis": "The LMM response introduces incorrect information not supported by the image contents and the user question.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "environment",
+        "image_content": [
+            "Human face",
+            "Fashion accessory",
+            "Human arm",
+            "Human hair",
+            "Human head",
+            "Human leg",
+            "Man",
+            "Human mouth",
+            "Sunglasses",
+            "Human body",
+            "Swimwear",
+            "Boy",
+            "Goggles"
+        ],
+        "image_src": "https://c1.staticflickr.com/3/2766/4264709756_1eb0e9ab45_o.jpg",
+        "question": "Is the man in the picture indoors or outdoors? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The man in the photo is outside, sitting on a boat with several oxygen tanks around him.",
+        "llava_model_answer": "The man in the picture is outdoors.",
+        "llama_hallucination_analysis": "The LMM response is informative and aligns with the provided image details, which include 'Human face', 'Human body', and 'Human leg'. These details suggest an outdoor environment, such as a beach or a pool. The response does not introduce any incorrect or unsupported information.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "holistic",
+        "image_content": [
+            "Window",
+            "Clothing",
+            "Person",
+            "Building"
+        ],
+        "image_src": "https://c2.staticflickr.com/4/3501/4068897399_a729022693_o.jpg",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The image captures a bustling street lined with various shops and an adjoining sidewalk. Several pedestrians are present, with two individuals notably passing a store with a green sign saying \"Hawkin's Bazaar\". At this store's entrance, a man stands, overseeing a spacious window display that houses diverse items, highlighted by a red and white sign. Interestingly, no trees or parked cars are present in the street. The mood is energetic, showcasing individuals engaged in their daily routines and shopping pursuits.",
+        "llava_model_answer": "The image captures a lively scene on a city street. Dominating the frame is a charming store named \"Hawkin's Bazaar\", as indicated by the green sign with white lettering. The store's facade is adorned with a festive display of Christmas decorations, adding a touch of holiday cheer to the urban setting.\n\nIn front of the store, a sidewalk is bustling with activity. Several people are seen walking by",
+        "llama_hallucination_analysis": "The LMM response introduces a hallucination by mentioning Christmas decorations, which are not present or implied in the given image or context. Additionally, it fails to accurately describe the scene, such as the presence of trees or parked cars.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "other",
+        "image_content": [
+            "Person",
+            "Clothing",
+            "Sports equipment",
+            "Mammal",
+            "Footwear"
+        ],
+        "image_src": "https://farm8.staticflickr.com/7445/8716117944_a272643aef_o.jpg",
+        "question": "What number is the fastest girl wearing in the picture? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The fastest girl in the picture is wearing number 1097.",
+        "llava_model_answer": "The fastest girl in the picture is wearing the number 1097.",
+        "llama_hallucination_analysis": "The LMM response aligns with the standard human-generated answer, but it does not provide any additional information about the picture. The response does not contain hallucination because it only repeats the provided information.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "attribute",
+        "image_content": [
+            "Dog"
+        ],
+        "image_src": "https://farm4.staticflickr.com/8268/10172500456_1f40b6bd38_o.jpg",
+        "question": "What are the colors of the dogs from right to left? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The colors of the two dogs from right to left are brown and black.",
+        "llava_model_answer": "The colors of the dogs from right to left are brown, black, and brown.",
+        "llama_hallucination_analysis": "The LMM response introduces an additional color (brown) that is not supported by the provided details, which only mention two dogs with colors brown and black. This is an example of hallucination.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "adversarial",
+        "image_content": [
+            "Animal",
+            "Bird"
+        ],
+        "image_src": "https://c1.staticflickr.com/3/2935/13789278495_8545acd44c_o.jpg",
+        "question": "What is a vicuna standing in the sand looking at? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no vicuna in the image.",
+        "llava_model_answer": "A vicuna standing in the sand is looking at a painting of a toucan.",
+        "llama_hallucination_analysis": "The LMM response contains hallucination as it introduces a painting of a toucan which is not present or implied in the given image or context. The vicuna is looking at the painting, but there is no vicuna in the image and no information about the vicuna's surroundings or what it is looking at.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "comparison",
+        "image_content": [
+            "Mammal",
+            "Cat"
+        ],
+        "image_src": "https://farm8.staticflickr.com/195/502006488_2d907443d8_o.jpg",
+        "question": "Which cat (left, right or middle) in the image opens its mouth? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The cat on the right side of the image opens its mouth.",
+        "llava_model_answer": "The cat on the right in the image opens its mouth.",
+        "llama_hallucination_analysis": "The LMM response accurately identifies the cat that opens its mouth, but does not provide any additional information. It matches the given human-generated answer and does not introduce any incorrect information.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "counting",
+        "image_content": [
+            "Zebra",
+            "Plant"
+        ],
+        "image_src": "https://c3.staticflickr.com/6/5223/5775946611_ef789718ed_o.jpg",
+        "question": "How many zebras are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are six zebras in the image.",
+        "llava_model_answer": "There are six zebras in the image.",
+        "llama_hallucination_analysis": "The LMM response is identical to the standard human-generated answer, suggesting that it accurately conveys the information present in the image. However, the response does not provide any additional context or insights, which limits its informativeness.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "relation",
+        "image_content": [
+            "Plant",
+            "Sheep",
+            "Tree"
+        ],
+        "image_src": "https://c6.staticflickr.com/2/1333/965561501_0b7e9aed90_o.jpg",
+        "question": "Which sheep is in front of the other sheep? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The sheep in front of the other sheep is a white sheep.",
+        "llava_model_answer": "The sheep in the foreground is standing in front of the other sheep.",
+        "llama_hallucination_analysis": "The LMM response accurately describes the relative positions of the sheep without introducing any unsupported or fabricated information.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "environment",
+        "image_content": [
+            "Footwear",
+            "Sports equipment",
+            "Clothing",
+            "Person",
+            "Helmet",
+            "Animal",
+            "Man",
+            "Human leg",
+            "Human body"
+        ],
+        "image_src": "https://c7.staticflickr.com/4/3210/2938079244_9e814f0e7a_o.jpg",
+        "question": "How was the weather when this picture was captured? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "When this photo was taken, it was dark at night. This photo shows a horse race at night.",
+        "llava_model_answer": "The weather in the picture appears to be dark and possibly rainy, as the jockeys are wearing helmets with visors and the horses are running on a track with artificial lighting. The darkness suggests that it is nighttime, and the artificial lighting is necessary to ensure the safety of the jockeys and horses. The presence of rain would make the track wet and potentially more challenging for the horses and jockeys to navigate.",
+        "llama_hallucination_analysis": "The LMM response does not contain any hallucination. It accurately interprets the image contents and provides a reasonable explanation for the weather conditions.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "other",
+        "image_content": [
+            "Rhinoceros",
+            "Mammal"
+        ],
+        "image_src": "https://c6.staticflickr.com/5/4079/4883309412_53b0b853d5_o.jpg",
+        "question": "Out of the four animals, how many giraffes are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In the image, there are two rhinos, a giraffe, and a wild horse.",
+        "llava_model_answer": "There are two giraffes in the image.",
+        "llama_hallucination_analysis": "The LMM response includes incorrect information not supported by the provided details.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "attribute",
+        "image_content": [
+            "Fruit"
+        ],
+        "image_src": "https://farm1.staticflickr.com/3758/12521323285_97a94c8cbc_o.jpg",
+        "question": "Is the kiwi in the front fresh or dried? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The kiwi in the front is dried. There are four dried pieces of kiwi in the front, and three fresh ones in the back.",
+        "llava_model_answer": "The kiwi in the front is dried.",
+        "llama_hallucination_analysis": "The LMM response is a concise statement that directly answers the user's question. However, it lacks detailed information about the number of fresh and dried kiwis, which is provided in the standard human-generated answer.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "adversarial",
+        "image_content": [
+            "Dessert",
+            "Bread"
+        ],
+        "image_src": "https://c6.staticflickr.com/9/8834/18414801440_47f21894da_o.jpg",
+        "question": "Is the jam on the bread made of strawberry? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In fact, this photo only shows a cut and toasted bread slice. There is no jam on it.",
+        "llava_model_answer": "Yes, the jam on the bread is made of strawberry.",
+        "llama_hallucination_analysis": "The LMM response contains hallucination because it introduces the incorrect information that there is jam on the bread.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 0
+    },
+    {
+        "question_type": "comparison",
+        "image_content": [
+            "Vegetable",
+            "Tomato",
+            "Food"
+        ],
+        "image_src": "https://farm6.staticflickr.com/5209/5322693484_868ba39c68_o.jpg",
+        "question": "Compare the tomatoes in the photo. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are three tomatoes from the same vine in the photo. The tomato on the left side is red and ripe, while the two tomatoes in the middle and on the right side are yellow and unripe.",
+        "llava_model_answer": "In the photo, there are three tomatoes hanging from a vine. The tomato on the left is a bright red color, indicating that it is ripe and ready for consumption. The tomato in the middle is a yellowish-orange color, which suggests that it is still in the process of ripening and may not be as sweet or flavorful as the red tomato. The tomato on the right is also a bright red color, similar to the first tom",
+        "llama_hallucination_analysis": "The LMM response does not introduce any incorrect or unsupported information. However, it could be more informative and detailed, as the standard human-generated answer provides a more comprehensive description of the tomatoes.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "counting",
+        "image_content": [
+            "Oyster",
+            "Food",
+            "Invertebrate",
+            "Animal",
+            "Seafood"
+        ],
+        "image_src": "https://c2.staticflickr.com/3/2374/2519330533_597840098a_o.jpg",
+        "question": "How many oysters can you see in the photo? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are five oysters visible in the photo.",
+        "llava_model_answer": "There are six oysters visible in the photo.",
+        "llama_hallucination_analysis": "The LMM response introduces incorrect information not supported by the provided details.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "relation",
+        "image_content": [
+            "Dessert",
+            "Baked goods",
+            "Broccoli",
+            "Fast food",
+            "Cookie"
+        ],
+        "image_src": "https://farm7.staticflickr.com/5186/5757505875_8578d2fc37_o.jpg",
+        "question": "Is the bowl with broccoli on top of the bowl with meatballs? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No, the bowl with broccoli is next to the bowl of meatballs.",
+        "llava_model_answer": "Yes, the bowl with broccoli is on top of the bowl with meatballs.",
+        "llama_hallucination_analysis": "The LMM response introduces incorrect information about the arrangement of the bowls.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "environment",
+        "image_content": [
+            "Snack",
+            "Clothing",
+            "Mammal",
+            "Person",
+            "Human body",
+            "Human hand",
+            "Fast food",
+            "Food",
+            "Man",
+            "Human arm",
+            "Woman",
+            "Seafood"
+        ],
+        "image_src": "https://c2.staticflickr.com/9/8726/16685252757_e1c32c0e1f_o.jpg",
+        "question": "Is this photo taken in a restaurant, a kitchen, or anywhere else? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "This photo is taken outdoors, likely on a beach, where a man is cooking on a grill.",
+        "llava_model_answer": "The photo appears to be taken at an outdoor event or gathering, possibly a street food stall or a similar setting. The presence of a grill with food being cooked and a crowd of people suggests that this is not a typical indoor restaurant or kitchen environment. The exact location cannot be determined with certainty, but it is not a typical indoor dining space.",
+        "llama_hallucination_analysis": "The LMM response is somewhat informative and does not introduce any incorrect information.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "holistic",
+        "image_content": [
+            "Man",
+            "Food",
+            "Clothing",
+            "Vegetable"
+        ],
+        "image_src": "https://farm7.staticflickr.com/1420/4722330374_2425fd36eb_o.jpg",
+        "question": "Describe the activities in this image. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In this image we can see a man and two young girls preparing food. The man seems to be a chef with a suit but no hat. The two girls seem to be interns, wearing aprons with a \"BRITANNIA HOTEL\" logo. The man seems to be guiding the girls to prepare the food. In front of them, there is a table with food on it. From left to right, there is a metal bowl of vegetables on a red cutting board, and two plates of meat, possibly saussages.",
+        "llava_model_answer": "In the image, there are three individuals engaged in a cooking activity. Two of them are wearing aprons with the text \"BRITANNI HOTEL\" on them, suggesting they might be chefs or staff at the Britanni Hotel. The third person is not wearing an apron and appears to be observing or assisting in the cooking process. They are standing around a table that has a plate of food on it, which includes what looks like sliced",
+        "llama_hallucination_analysis": "The LMM response introduces hallucination by assuming the individuals are chefs or staff at the Britanni Hotel, which is not supported by the provided details. The response also assumes the presence of a plate of food with sliced items, which is not explicitly mentioned in the image contents or standard human-generated answer.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "other",
+        "image_content": [
+            "Fast food",
+            "Clothing",
+            "Snack",
+            "Person",
+            "Food"
+        ],
+        "image_src": "https://c5.staticflickr.com/7/6064/6097499605_d06c51eed9_o.jpg",
+        "question": "From this photo, how much does each jerk chicken dumpling cost? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Each jerk chicken dumpling costs 5 pounds.",
+        "llava_model_answer": "The photo shows a menu with the price of jerk chicken dumplings listed as \u00a35.00.",
+        "llama_hallucination_analysis": "The LMM response accurately reflects the given information by stating the price of jerk chicken dumplings from the menu, which is \u00a35.00. This aligns with the standard human-generated answer.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "attribute",
+        "image_content": [
+            "Sports equipment",
+            "Parachute"
+        ],
+        "image_src": "https://c5.staticflickr.com/8/7141/6705513453_b025140503_o.jpg",
+        "question": "What are the colors of the parachutes in the sky? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are three parachutes in the sky. The one on the left is light green. The one on the top right is orange. The one on the bottom right is blue.",
+        "llava_model_answer": "The parachutes in the sky are green, blue, and orange.",
+        "llama_hallucination_analysis": "The LMM response provides a concise and accurate description of the parachute colors. However, it lacks detail and context, which could be considered somewhat informative. Unfortunately, it also lacks the specific colors mentioned in the standard human-generated answer.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 4
+    },
+    {
+        "question_type": "adversarial",
+        "image_content": [
+            "Tennis racket",
+            "Ball (Object)"
+        ],
+        "image_src": "https://c7.staticflickr.com/9/8387/8506072922_e7f6c6ca49_o.jpg",
+        "question": "Describe the person playing tennis in this photo. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No, there is only a tennis racket and a ball on the ground. No one is playing tennis in this photo.",
+        "llava_model_answer": "In the photo, there is a tennis racket with a blue and white design, resting on a green tennis court. The racket is positioned on the right side of the image, with the handle pointing towards the top right corner. A yellow tennis ball is placed on the left side of the racket, near the bottom of the image. The court itself appears to be well-maintained, with a clear boundary marked by a white line. There is no person visible in the",
+        "llama_hallucination_analysis": "The LMM response introduces incorrect information about the tennis court and the person playing tennis, which is not supported by the provided details.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "comparison",
+        "image_content": [
+            "Surfboard"
+        ],
+        "image_src": "https://c2.staticflickr.com/5/4126/4958794254_c3f9677682_o.jpg",
+        "question": "Compare the two surfboards in the photo. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The two surfboards have different looks. The surfboard on the top has a white and wood color with a simple design. The other one on the bottom is red, with a more complex white and black pattern in the front.",
+        "llava_model_answer": "The two surfboards in the photo are quite different in design and purpose. The surfboard on the left appears to be a longboard, which is typically used for cruising, carving, and long-distance paddling. Longboards are known for their stability and ease of use, making them popular among beginners and those who prefer a more relaxed surfing style.\n\nThe surfboard on the right is a shortboard, which is designed for high-",
+        "llama_hallucination_analysis": "The LMM response introduces an incorrect interpretation by stating that the surfboard on the left is a longboard, which is not supported by the provided image or context. The image only shows two surfboards, but it does not provide any information about their types or characteristics. Therefore, the LMM's classification of the surfboards as longboard and shortboard is an over-extrapolation.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "counting",
+        "image_content": [
+            "Horse",
+            "Person",
+            "Mammal",
+            "Tree"
+        ],
+        "image_src": "https://c4.staticflickr.com/4/3048/2603285498_e8e6c82214_o.jpg",
+        "question": "How many horses are there in the photo? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are three horses in the photo.",
+        "llava_model_answer": "There are three horses in the photo.",
+        "llama_hallucination_analysis": "The response provided by the LMM is accurate and aligns with the given information. There is no indication of hallucination, as the answer directly matches the standard human-generated answer.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6.0
+    },
+    {
+        "question_type": "relation",
+        "image_content": [
+            "Ball (Object)",
+            "Furniture",
+            "Billiard table",
+            "Table"
+        ],
+        "image_src": "https://c4.staticflickr.com/5/4010/4459982881_b378f81b6f_o.jpg",
+        "question": "What is the color of the ball on the left? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The color of the ball on the left is red or orange.",
+        "llava_model_answer": "The color of the ball on the left is orange.",
+        "llama_hallucination_analysis": "The LMM response is accurate and does not introduce any incorrect information. It provides a clear and concise answer to the user's question.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "environment",
+        "image_content": [
+            "Person",
+            "Mammal",
+            "Sports equipment",
+            "Footwear",
+            "Helmet",
+            "Clothing"
+        ],
+        "image_src": "https://c4.staticflickr.com/6/5099/5483033051_fa3ecf0e0d_o.jpg",
+        "question": "Is this photo taken indoors or outdoors? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The photo is taken indoors, since there is a group of hockey players playing in an ice stadium.",
+        "llava_model_answer": "Indoors",
+        "llama_hallucination_analysis": "The LMM response does not provide any incorrect information, but it is very brief. Based on the image contents, the user question, and the standard human-generated answer, the photo is indeed taken indoors.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "holistic",
+        "image_content": [
+            "Human arm",
+            "Footwear",
+            "Football",
+            "Clothing",
+            "Man",
+            "Mammal",
+            "Human body",
+            "Sports equipment",
+            "Human hand"
+        ],
+        "image_src": "https://c5.staticflickr.com/3/2929/13926846360_2449b5b12f_o.jpg",
+        "question": "Describe the activity in this photo. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In this photo, three players are playing soccer. The first player on the left wears a white and red uniform, and is controlling the ball. The other two players on the right side are from the other team. They wear blue and yellow uniforms. The player closer to the camera is competing with the first player to gain control of the ball, while the other player is at distance.",
+        "llava_model_answer": "In the photo, a soccer match is in progress on a grassy field. There are three players visible: one in a white and red striped jersey, another in a blue jersey, and a third player in a yellow jersey. The player in the white and red striped jersey is in the process of kicking the soccer ball, which is located on the ground in front of him. The other two players are positioned nearby, likely prepar",
+        "llama_hallucination_analysis": "The LMM response accurately describes the scene in the photo, including the presence of a soccer match and the players' jerseys. However, it does not specify the action of the player in the white and red striped jersey as kicking the ball, but rather as controlling it. This minor discrepancy does not constitute hallucination.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "other",
+        "image_content": [
+            "Person",
+            "Footwear",
+            "Tennis racket",
+            "Sports equipment",
+            "Human arm",
+            "Ball (Object)"
+        ],
+        "image_src": "https://farm5.staticflickr.com/3802/13407081714_0375f7b3e0_o.jpg",
+        "question": "Which tournament is this tennis competition? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "From the text on the ground, this is the Indian Wells tournament.",
+        "llava_model_answer": "This tennis competition is the Indian Wells Masters, which is one of the four Grand Slam tournaments.",
+        "llama_hallucination_analysis": "The LMM response introduces incorrect information by mentioning the Indian Wells Masters as one of the four Grand Slam tournaments, which is not supported by the provided details.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 2
+    },
+    {
+        "question_type": "attribute",
+        "image_content": [
+            "Home appliance",
+            "Cupboard",
+            "Cabinetry",
+            "Kitchen appliance",
+            "Countertop",
+            "Microwave oven",
+            "Furniture",
+            "Sink",
+            "Drawer",
+            "Refrigerator",
+            "House",
+            "Plumbing fixture"
+        ],
+        "image_src": "https://c3.staticflickr.com/4/3827/12255073776_5f17d88d21_o.jpg",
+        "question": "What color is the microwave? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The microwave is mainly silver, with a black panel.",
+        "llava_model_answer": "Silver",
+        "llama_hallucination_analysis": "The LMM response is a concise answer to the user's question, but it lacks context and comparison to the provided human-generated answer.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "adversarial",
+        "image_content": [
+            "House",
+            "Cupboard",
+            "Kitchen & dining room table",
+            "Cabinetry",
+            "Home appliance",
+            "Table",
+            "Kitchen appliance",
+            "Chair",
+            "Window"
+        ],
+        "image_src": "https://farm2.staticflickr.com/1116/1411998044_37c3c4a234_o.jpg",
+        "question": "How many people are eating in this kitchen? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No one is eating in the kitchen. I can see a dining table and four chairs, but there are no people in the sitting there right now.",
+        "llava_model_answer": "There are four people eating in this kitchen.",
+        "llama_hallucination_analysis": "The LMM response contains a hallucination because it includes details that are not present in the image or the given context. The image does not show any people eating in the kitchen, and the standard human-generated answer also states that no one is eating in the kitchen.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "comparison",
+        "image_content": [
+            "Kitchen utensil",
+            "Fork",
+            "Spoon",
+            "Tableware",
+            "Toy",
+            "Person"
+        ],
+        "image_src": "https://c3.staticflickr.com/4/3039/3018306107_51f8da54b3_o.jpg",
+        "question": "Compare the utensils in the picture. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The picture shows a set of three utensils in different views with a white background: A knive with a blue handle, a spoon with a yellow handle, and a red fork with a red handle. They are all made of metal and plastic handle.",
+        "llava_model_answer": "The image shows a creative and playful arrangement of utensils. On the left side, there are three forks, each with a different color and pattern. The middle forks are yellow and red, while the forks on the right are silver and blue. The utensils are stacked in a way that resembles a colorful tower, with the forks on the left being the base and the forks on the right being the top.\n\nIn the center",
+        "llama_hallucination_analysis": "The LMM response introduces incorrect information by stating that the forks are stacked in a colorful tower and that the utensils are in the center. This information is not present or implied in the image or the prior context.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 2
+    },
+    {
+        "question_type": "counting",
+        "image_content": [
+            "Kitchen utensil",
+            "Fork",
+            "Tableware",
+            "Tool"
+        ],
+        "image_src": "https://c3.staticflickr.com/7/6153/6266717889_714dc304bd_o.jpg",
+        "question": "How many forks can you see? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are two forks.",
+        "llava_model_answer": "There are four forks visible in the image.",
+        "llama_hallucination_analysis": "The LMM response introduces an incorrect number of forks, which is not supported by the image contents or prior context.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 2
+    },
+    {
+        "question_type": "relation",
+        "image_content": [
+            "Coffee cup",
+            "Spoon",
+            "Mug",
+            "Tableware",
+            "Kitchen utensil"
+        ],
+        "image_src": "https://farm7.staticflickr.com/4128/4967650364_6b23e0e7de_o.jpg",
+        "question": "What are the objects from right to left? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The objects from right to left are a lid, a spoon, and a coffee cup.",
+        "llava_model_answer": "Spoon, coffee cup, coffee cup lid",
+        "llama_hallucination_analysis": "The LMM response introduces hallucination by including 'coffee cup lid', which is not present or implied in the image or the prior context.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "environment",
+        "image_content": [
+            "Sink",
+            "Gas stove",
+            "Shelf",
+            "Furniture",
+            "Drawer",
+            "Home appliance",
+            "Cabinetry",
+            "Table",
+            "Cupboard",
+            "Countertop",
+            "House",
+            "Chair"
+        ],
+        "image_src": "https://c3.staticflickr.com/4/3213/3020281858_2d84b7bab7_o.jpg",
+        "question": "At what time is this photo taken? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The photo is taken during the day.",
+        "llava_model_answer": "The photo appears to be taken during the day, as indicated by the natural light coming through the windows. The time of day is not explicitly visible in the image, but it is not nighttime.",
+        "llama_hallucination_analysis": "The LMM response aligns with the given information, stating the time of day is not explicitly visible in the image but it is not nighttime. However, it does not provide any specific time of day, which is reasonable given the input details.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "holistic",
+        "image_content": [
+            "Kitchen & dining room table",
+            "Window",
+            "Chair"
+        ],
+        "image_src": "https://farm6.staticflickr.com/4041/4234666745_63e51cc909_o.jpg",
+        "question": "Describe this photo in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "This photo features a wooden dining table with four wooden or metal chairs around it. On the table there are two coasters and two glass cups. The table is set on a wooden floor. Behind the table are the wall and two windows.",
+        "llava_model_answer": "The photo captures a cozy dining scene. At the center of the image is a wooden dining table, its surface gleaming under the light. The table is surrounded by four chairs, two on each side, inviting one to sit and enjoy a meal. \n\nOn the table, there are two glasses, their contents unknown but adding to the ambiance. A plate is also present on the table, its contents hidden from view. \n\nThe room",
+        "llama_hallucination_analysis": "The LMM response introduces hallucination by mentioning a plate and its contents, which are not present or implied in the provided details.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "other",
+        "image_content": [
+            "Home appliance",
+            "Toaster",
+            "Oven",
+            "Furniture",
+            "Gas stove",
+            "Drawer",
+            "Cabinetry",
+            "Kitchen appliance"
+        ],
+        "image_src": "https://farm5.staticflickr.com/6005/5997807974_708c7602a0_o.jpg",
+        "question": "In the picture, which buttons should I use to control the stove above? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are 8 buttons in front of the stainless steel stove, two on the left and six on the right. Since there are also six stoves above, the buttons on the right should be associated with the stoves and used to control them. There is also a digital display to the left of the buttons that shows \"5:27\", which is possibly the current time.",
+        "llava_model_answer": "In the image, you can see a modern gas stove with a control panel on the front. The control panel typically has knobs and buttons for controlling the stove's functions. To control the stove, you should use the knobs and buttons that correspond to the specific functions you want to control. For example, if you want to turn the burners on or off, you would use the knobs for the individual burners. If you want to control the heat of the",
+        "llama_hallucination_analysis": "The LMM response is somewhat informative but introduces incorrect information regarding the stove's control panel and the specific functions it controls. The response does not align with the provided details, which only mention a gas stove with a control panel but do not specify its exact layout or functions.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "attribute",
+        "image_content": [
+            "Umbrella",
+            "Fashion accessory"
+        ],
+        "image_src": "https://farm8.staticflickr.com/8170/7962741614_51a3a8b874_o.jpg",
+        "question": "What color is the umbrella? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The umbrella is colorful, containing purple, yellow, teal, and orange.",
+        "llava_model_answer": "The umbrella is colorful, featuring a combination of purple, yellow, orange, green, and blue.",
+        "llama_hallucination_analysis": "The LMM response introduces a hallucination by including the color 'green' which is not present in the standard human-generated answer.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 2
+    },
+    {
+        "question_type": "adversarial",
+        "image_content": [
+            "Glove",
+            "Clothing",
+            "Fashion accessory"
+        ],
+        "image_src": "https://farm1.staticflickr.com/2572/4093922675_0e2f451fe0_o.jpg",
+        "question": "Describe the hands wearing the gloves. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Only a pair of black gloves can be observed in the image. There are no hands shown in the image.",
+        "llava_model_answer": "The hands wearing the gloves are positioned in a way that they are facing upwards, with the palms of the hands facing the camera. The gloves are black and appear to be made of a material that provides insulation, possibly for cold weather or outdoor activities. The hands are not visible, as the gloves cover them completely. The gloves have a design that includes a logo or emblem on the back of the hand, but the specific details of the logo are",
+        "llama_hallucination_analysis": "The LMM response introduces hallucination as it describes hands and their position, which is not present or implied in the image or the standard human-generated answer.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "comparison",
+        "image_content": [
+            "Hiking equipment",
+            "Clothing",
+            "Backpack"
+        ],
+        "image_src": "https://farm4.staticflickr.com/7444/12392564684_ffd19b5b55_o.jpg",
+        "question": "Compare the two different views of the backpack. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The image shows two different views of the same black backpack. On the left side, it shows the inside of the bag, containing a camera, two lenses an other accessories. On the right side, it shows the outside of the bag, and there is a \"Lowepro\" logo on it.",
+        "llava_model_answer": "The image shows two different views of the same backpack. The top view is an interior perspective, revealing the various compartments and the items stored inside. This view allows us to see the organization of the backpack, including the camera equipment and other personal items. The bottom view is an exterior perspective, showing the backpack's design and how it looks when worn. This view allows us to see the overall shape and size of the backpack, as well as any visible branding or",
+        "llama_hallucination_analysis": "The LMM response is generally accurate but introduces some ambiguity regarding the items stored inside the backpack.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "counting",
+        "image_content": [
+            "Clothing",
+            "Hat"
+        ],
+        "image_src": "https://farm7.staticflickr.com/6081/6150182374_f0923ac4b0_o.jpg",
+        "question": "How many black hats are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are five black hats in the image.",
+        "llava_model_answer": "There are four black hats in the image.",
+        "llama_hallucination_analysis": "The LMM response accurately counts the number of black hats in the image, but it does not align with the standard human-generated answer.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "relation",
+        "image_content": [
+            "Watch"
+        ],
+        "image_src": "https://c3.staticflickr.com/6/5554/14424649263_69118d3a3b_o.jpg",
+        "question": "Describe how the two watches are placed. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are two watches side by side in the photo. The black one is placed on top of and to the left of the red one.",
+        "llava_model_answer": "The two watches are placed side by side, with the larger watch on the left and the smaller watch on the right. The larger watch is positioned with its face facing the viewer, while the smaller watch is shown from the back, with its face facing away from the viewer. Both watches are displayed against a plain, light-colored background, which helps to highlight their features and design.",
+        "llama_hallucination_analysis": "The LMM response introduces incorrect information regarding the orientation of the watches and the background, which is not present or implied in the image or the standard human-generated answer.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 2
+    },
+    {
+        "question_type": "environment",
+        "image_content": [
+            "Footwear",
+            "Clothing"
+        ],
+        "image_src": "https://farm7.staticflickr.com/8308/7750080584_124d32aab3_o.jpg",
+        "question": "Is this photo taken indoors or outdoors? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "This photo shows a pair of green training shoes on a carpet, so this photo is taken indoors.",
+        "llava_model_answer": "Indoors",
+        "llama_hallucination_analysis": "The LMM response is a simple 'yes' or 'no' answer, which indicates that it is taken indoors. However, the provided information does not explicitly state whether the photo is taken indoors or outdoors. The standard human-generated answer provides a more detailed explanation, which implies that the photo is taken indoors based on the presence of a carpet.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "holistic",
+        "image_content": [
+            "Man",
+            "Person",
+            "Clothing",
+            "Human hand",
+            "Human arm",
+            "Fashion accessory",
+            "Woman",
+            "Human body"
+        ],
+        "image_src": "https://c6.staticflickr.com/7/6032/6333054847_854b033191_o.jpg",
+        "question": "Describe the details in this photo. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In the photo, a woman's hand is holding a man's hand. The woman's hand is wearing a diamond wedding ring, while the man's hand is wearing a simple wedding band. It seems that the woman is in a white dress and the man is in a black suit, but only a part can be seen in this photo. The image is black and white, except the wedding ring and band. This photo is likely taken in a wedding.",
+        "llava_model_answer": "The photo captures a tender moment between two individuals, likely a couple, as they share a close embrace. The person on the left is wearing a white dress, which is adorned with a lace pattern, adding a touch of elegance to the attire. Their right hand is gently placed on the left hand of the other person, suggesting a sense of trust and intimacy.\n\nThe person on the right is dressed in a black suit, which contrasts",
+        "llama_hallucination_analysis": "The LMM response introduces incorrect information that is not supported by the provided details.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 2
+    },
+    {
+        "question_type": "other",
+        "image_content": [
+            "Cowboy hat",
+            "Man",
+            "Human face",
+            "Clothing",
+            "Human nose",
+            "Fedora",
+            "Human head",
+            "Glasses",
+            "Beard",
+            "Goggles",
+            "Human mouth",
+            "Human body",
+            "Mammal",
+            "Sunglasses",
+            "Human hair"
+        ],
+        "image_src": "https://c6.staticflickr.com/7/6231/6209347220_846cc7f471_o.jpg",
+        "question": "What can you see in the reflection from the sunglasses? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "A man wearing a top hat and a suit is wearing this pair of sunglasses. From the reflection in his sunglasses, I can vaguely see some people, but not the man himself.",
+        "llava_model_answer": "In the reflection from the sunglasses, I can see the man wearing a top hat and a white shirt. The sunglasses are likely reflecting the light from the environment, which is why the man's face is visible in the reflection.",
+        "llama_hallucination_analysis": "The LMM response introduces incorrect information by stating that the reflection in the sunglasses is the man's face. This contradicts the standard human-generated answer, which mentions that the reflection is 'vaguely see some people, but not the man himself.' Additionally, the LMM incorrectly assumes that the man is wearing a top hat, which is not supported by the image contents.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "attribute",
+        "image_content": [
+            "Table"
+        ],
+        "image_src": "https://farm7.staticflickr.com/4069/4654958099_df8364a87f_o.jpg",
+        "question": "What is the color of the laptop? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The color of the laptop is silver (or white). A black color sticker is on the laptop.",
+        "llava_model_answer": "The laptop is silver.",
+        "llama_hallucination_analysis": "The LMM response is accurate and does not introduce any incorrect information.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "adversarial",
+        "image_content": [
+            "Computer mouse"
+        ],
+        "image_src": "https://c6.staticflickr.com/8/7012/6406526537_1c876dded4_o.jpg",
+        "question": "What is playing on the monitor? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no monitor in the image.",
+        "llava_model_answer": "There is no image or video playing on the monitor in the image. The Apple mouse is sitting on a white surface, and the monitor is turned off.",
+        "llama_hallucination_analysis": "The LMM response contains hallucination due to the incorrect statement that the monitor is turned off. This information is not supported by the provided details, which only include an image of a computer mouse.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "comparison",
+        "image_content": [
+            "Ipod",
+            "Mobile phone",
+            "Human hand",
+            "Telephone"
+        ],
+        "image_src": "https://farm6.staticflickr.com/4013/4548634745_977535091a_o.jpg",
+        "question": "Which electronic device is larger? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The iPod touch on the left is larger than the iPod nano on the right.",
+        "llava_model_answer": "The electronic device on the left is larger than the one on the right.",
+        "llama_hallucination_analysis": "The LMM response is somewhat informative, but it lacks specificity and detail. It correctly identifies the left device as larger, but it fails to provide any further information or context.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "counting",
+        "image_content": [
+            "Person",
+            "Telephone",
+            "Human hand",
+            "Mobile phone"
+        ],
+        "image_src": "https://c1.staticflickr.com/2/1029/3352759027_94cb468a1f_o.jpg",
+        "question": "How many mobile phones are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is one mobile phone in the image.",
+        "llava_model_answer": "There are two mobile phones in the image.",
+        "llama_hallucination_analysis": "The LMM response contains hallucination as it incorrectly states that there are two mobile phones in the image. This is not supported by the provided details, which only show one mobile phone.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "environment",
+        "image_content": [
+            "Mule"
+        ],
+        "image_src": "https://c1.staticflickr.com/6/5174/5393711070_4509c31205_o.jpg",
+        "question": "Where was the photo taken? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The photo was taken outside with plants and mountains as surroundings.",
+        "llava_model_answer": "The photo was taken in a field.",
+        "llama_hallucination_analysis": "The LMM response 'The photo was taken in a field' is somewhat informative as it provides a location, but it lacks specific details and contradicts the standard human-generated answer which describes the surroundings as 'plants and mountains'.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "holistic",
+        "image_content": [
+            "Television",
+            "Person"
+        ],
+        "image_src": "https://farm4.staticflickr.com/7415/12673135324_0973fca7b2_o.jpg",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In this image, I see a book, a pen, and a television on a table. The TV screen shows a man wearing a tie and a suit speaking in a park.",
+        "llava_model_answer": "The image captures a moment of quiet reflection, featuring a television screen displaying a news program. The screen is turned on, and the news program is in progress. The news anchor, a man with glasses, is seen in the middle of the screen, his face focused on the camera. He is dressed in a suit and tie, suggesting a formal or professional setting.\n\nThe television is mounted on a wall, and a notebook is placed on a table in front of it, perhaps",
+        "llama_hallucination_analysis": "The LMM response contains some hallucination. It incorrectly assumes the presence of a notebook on a table in front of the TV and incorrectly describes the news anchor's appearance (glasses). The LMM also incorrectly describes the TV as being mounted on a wall, when the image only shows a person and a TV.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 2
+    },
+    {
+        "question_type": "other",
+        "image_content": [
+            "Laptop",
+            "Computer keyboard"
+        ],
+        "image_src": "https://farm5.staticflickr.com/1430/1172644431_3dabdd34b5_o.jpg",
+        "question": "Is this a Macbook or Windows laptop? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "This is a Macbook, as indicated by the presence of the Apple logo on the keyboard.",
+        "llava_model_answer": "This is a MacBook laptop.",
+        "llama_hallucination_analysis": "The LMM response accurately identifies the laptop as a Macbook, but it lacks evidence to support this claim. The provided image content only includes a laptop and a computer keyboard, with no visible Apple logo. Therefore, the response contains hallucination.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "attribute",
+        "image_content": [
+            "Sofa bed",
+            "Loveseat",
+            "Studio couch",
+            "Bed",
+            "Pillow"
+        ],
+        "image_src": "https://farm4.staticflickr.com/8297/7818684444_d3de1dd27a_o.jpg",
+        "question": "What are the colors of the pillows from left to right? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The colors of the pillows from left to right are white (or grey), yellow, and white (or grey).",
+        "llava_model_answer": "The colors of the pillows from left to right are light blue, light blue, and light blue.",
+        "llama_hallucination_analysis": "The LMM response introduces incorrect information about the colors of the pillows, which are not supported by the provided image contents or the standard human-generated answer.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "adversarial",
+        "image_content": [
+            "Window",
+            "House",
+            "Sofa bed",
+            "Studio couch",
+            "Bed"
+        ],
+        "image_src": "https://c3.staticflickr.com/4/3169/2653797190_f42908d6e5_o.jpg",
+        "question": "What is the color of the chair in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no chair in the image.",
+        "llava_model_answer": "The color of the chair in the image is yellow.",
+        "llama_hallucination_analysis": "The LMM response includes a fabricated fact (the color of the chair) that is not present or implied in the image or prior context.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "comparison",
+        "image_content": [
+            "Pillow",
+            "Bed",
+            "Furniture",
+            "House",
+            "Building"
+        ],
+        "image_src": "https://farm7.staticflickr.com/2026/2236797328_6c02e4d416_o.jpg",
+        "question": "Which pillow is closer to the camera? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The pillow on the right side of the bed is closer to the camera.",
+        "llava_model_answer": "The pillow on the right is closer to the camera.",
+        "llama_hallucination_analysis": "The LMM response is mostly accurate but lacks detail. It correctly identifies the pillow on the right as closer to the camera, which aligns with the standard human-generated answer.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "counting",
+        "image_content": [
+            "Coffee table",
+            "Furniture",
+            "Sofa bed",
+            "Table",
+            "Chair",
+            "House",
+            "Sports equipment",
+            "Window",
+            "Billiard table"
+        ],
+        "image_src": "https://farm1.staticflickr.com/7426/9421545611_004f98acc2_o.jpg",
+        "question": "How many chairs are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are two chairs in the image.",
+        "llava_model_answer": "There are three chairs in the image.",
+        "llama_hallucination_analysis": "The LMM response introduces an incorrect count of chairs in the image, which is not supported by the provided image contents or the standard human-generated answer.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "relation",
+        "image_content": [
+            "Pillow",
+            "Human arm",
+            "Human body"
+        ],
+        "image_src": "https://farm5.staticflickr.com/8035/8063845568_6b183760bc_o.jpg",
+        "question": "Which pillow is in front of the other pillows? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are three pillows. The gray pillow in the middle with the red \"paper\" handprint pattern is in front of the other pillows. The other two pillows are white and have a red \"scissors\" handprint pattern and a \"stone\" handprint pattern, respectively.",
+        "llava_model_answer": "The pillow in the front is the one with the red hand on it.",
+        "llama_hallucination_analysis": "The LMM response contains a hallucination because it does not provide enough context to determine which pillow has the red hand on it. The provided image contents only mention a pillow, a human arm, and a human body, but do not specify the handprints or their locations.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "environment",
+        "image_content": [
+            "Table",
+            "Furniture",
+            "Chair",
+            "Couch",
+            "House",
+            "Kitchen & dining room table",
+            "Fireplace"
+        ],
+        "image_src": "https://c2.staticflickr.com/4/3700/9536149248_661b279f89_o.jpg",
+        "question": "What was the weather like when this photo was taken? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "When this photo was taken, it was already night and the sky was dark.",
+        "llava_model_answer": "The weather in the photo appears to be cold, as indicated by the presence of a fireplace and the use of a fireplace in the living room. The fireplace is lit, suggesting that it is being used to provide warmth in the space. The presence of a fireplace in a living room is typically associated with colder weather, as it is a common way to heat a home during the winter months.",
+        "llama_hallucination_analysis": "The LMM response introduces a hallucination by assuming the fireplace is being used to provide warmth, which is not directly supported by the image contents. The presence of a fireplace does suggest it's colder, but the inference that it's being used to heat the space is not implied.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 4
+    },
+    {
+        "question_type": "holistic",
+        "image_content": [
+            "Bed"
+        ],
+        "image_src": "https://farm6.staticflickr.com/2446/3859505368_6e432fbae2_o.jpg",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In this image we can see two deck beds with pillows on them and carpet on the floor. The Beds are mainly in the blue color and the pillows are yellow with blue strips.",
+        "llava_model_answer": "The image captures a cozy bedroom scene. Dominating the space are two bunk beds, each adorned with a blue mattress. The mattresses are neatly made, with a single yellow pillow resting on each. The beds are positioned against a pristine white wall, creating a stark contrast.\n\nThe floor beneath is a warm beige, providing a soft contrast to the cool blue of the beds. A woven rug",
+        "llama_hallucination_analysis": "The LMM response introduces a few inaccuracies and over-extrapolations. The image only contains 'Bed' which is singular, not two bunk beds. The LMM also adds details like a white wall, a woven rug, and the specific colors of the bed and pillow. These are not supported by the provided details.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "other",
+        "image_content": [
+            "Bathroom cabinet",
+            "Toilet paper",
+            "Bathroom accessory",
+            "Door",
+            "Toilet"
+        ],
+        "image_src": "https://farm3.staticflickr.com/1040/990306359_60994704df_o.jpg",
+        "question": "Is the toilet paper used? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The toilet paper has not been used because it was folded into a decorative shape.",
+        "llava_model_answer": "No, the toilet paper is not used.",
+        "llama_hallucination_analysis": "The LMM response does not contain hallucination as it directly answers the user question based on the given context.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "attribute",
+        "image_content": [
+            "Book"
+        ],
+        "image_src": "https://farm4.staticflickr.com/3048/2971924328_aeaf1258e0_o.jpg",
+        "question": "What color are these books? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "These books are red and white.",
+        "llava_model_answer": "The books in the image are predominantly red and yellow.",
+        "llama_hallucination_analysis": "The LMM response introduces an incorrect color 'yellow' which is not present or implied in the given image or prior context. The correct colors mentioned in the standard human-generated answer are red and white.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 2
+    },
+    {
+        "question_type": "adversarial",
+        "image_content": [
+            "Tableware",
+            "Bowl",
+            "Vase",
+            "Flowerpot"
+        ],
+        "image_src": "https://c1.staticflickr.com/3/2631/4208064606_58b6907c83_o.jpg",
+        "question": "What is in the vase? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Nothing is in the vase.",
+        "llava_model_answer": "The vase is empty.",
+        "llama_hallucination_analysis": "The response 'The vase is empty' is accurate and supported by the given information. It does not introduce any incorrect or unsupported information.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "comparison",
+        "image_content": [
+            "Vase"
+        ],
+        "image_src": "https://farm2.staticflickr.com/3779/9040237050_b0af7bbf73_o.jpg",
+        "question": "Which vase looks larger? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The vase on the right appears larger. Both vases are white with blue and red flowers delicately painted on them.",
+        "llava_model_answer": "The vase on the right appears to be larger than the one on the left. This is evident from the perspective of the image, where the right vase occupies a larger portion of the frame.",
+        "llama_hallucination_analysis": "The LMM response aligns with the given information and does not introduce any incorrect or unsupported details.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "counting",
+        "image_content": [
+            "Tree",
+            "Teddy bear",
+            "Plant",
+            "Mammal",
+            "Christmas tree"
+        ],
+        "image_src": "https://c7.staticflickr.com/3/2629/4219489460_4447e9da03_o.jpg",
+        "question": "How many teddy bears are on the stairs? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are six teddy bears on the stairs.",
+        "llava_model_answer": "There are six teddy bears on the stairs.",
+        "llama_hallucination_analysis": "The LMM response directly matches the standard human-generated answer without providing any additional information. This indicates a lack of creativity in the response but ensures accuracy.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "relation",
+        "image_content": [
+            "Flower",
+            "Houseplant",
+            "Flowerpot",
+            "Table",
+            "Building"
+        ],
+        "image_src": "https://c2.staticflickr.com/4/3810/9899405365_e2df3063b2_o.jpg",
+        "question": "Which color flowers are on top, and which color flowers are on the bottom? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The blue flowers are on top, and the white flowers are on the bottom.",
+        "llava_model_answer": "The blue flowers are on top, and the white flowers are on the bottom.",
+        "llama_hallucination_analysis": "The LMM response matches the provided standard human-generated answer, but there is no image content that supports the presence of flowers, blue flowers, or white flowers. However, since the LMM response does not introduce any new information not present in the standard answer, it does not contain hallucination.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "environment",
+        "image_content": [
+            "Person",
+            "Chair",
+            "Window",
+            "Clothing",
+            "Table",
+            "Building",
+            "House",
+            "Furniture"
+        ],
+        "image_src": "https://c7.staticflickr.com/8/7234/7014520149_78feda0bef_o.jpg",
+        "question": "What was the weather like when this photo was taken? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "When this photo was taken, it was already night and the sky was dark.",
+        "llava_model_answer": "The weather in the photo appears to be indoors, as the room is decorated for a party with streamers and balloons, and there are no visible signs of outdoor conditions. The presence of a dining table and chairs suggests that the event is taking place in a home setting, which is typically not exposed to outdoor elements.",
+        "llama_hallucination_analysis": "The LMM response contains hallucination because it mentions'streamers and balloons' which are not present or implied in the image contents. The presence of a dining table and chairs is a correct inference, but the conclusion that the event is taking place in a home setting is also reasonable, given the context of the image.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "holistic",
+        "image_content": [
+            "Human arm",
+            "Human body",
+            "Infant bed",
+            "Human leg",
+            "Person",
+            "Human nose",
+            "Clothing",
+            "Furniture",
+            "Human ear",
+            "Human eye",
+            "Human face",
+            "Human mouth",
+            "Human head",
+            "Boy",
+            "Human hair",
+            "Animal",
+            "Mammal",
+            "Teddy bear"
+        ],
+        "image_src": "https://farm6.staticflickr.com/225/489474293_a1e7bea6bc_o.jpg",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The image features a baby lying in a crib, which is placed in a room with a white background. The baby is wearing a diaper and is sleeping soundly. There are three stuffed animals hanging above the crib, providing a cozy and comforting atmosphere for the baby.",
+        "llava_model_answer": "The image captures a serene moment of a baby's sleep. The baby, dressed in a white onesie, is peacefully resting on a white crib mattress. The crib, with its white walls and a white canopy, provides a calm and soothing environment for the baby's slumber.\n\nAdding a touch of whimsy to the scene are two stuffed animals, a brown dog and a white rabbit, hanging from the",
+        "llama_hallucination_analysis": "The LMM response contains hallucination due to the presence of a brown dog and a white rabbit, which are not mentioned in the image contents or the standard human-generated answer.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "other",
+        "image_content": [
+            "Book"
+        ],
+        "image_src": "https://c8.staticflickr.com/8/7295/9019477149_f7d04cdb65_o.jpg",
+        "question": "What is the name of the book? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The name of the book is \"Proverbial Philosophy.\"",
+        "llava_model_answer": "The book is titled \"PROVERBIAL PHILOSOPHY.\"",
+        "llama_hallucination_analysis": "The LMM response does not contain any hallucination as it accurately provides the title of the book, which is 'PROVERBIAL PHILOSOPHY.'",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "attribute",
+        "image_content": [
+            "Fruit"
+        ],
+        "image_src": "https://farm8.staticflickr.com/2730/4272595396_785d273725_o.jpg",
+        "question": "What is the color of the pot? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The color of the pot is silver, with red cherries inside.",
+        "llava_model_answer": "The color of the pot is silver.",
+        "llama_hallucination_analysis": "The LMM response is accurate in stating the color of the pot as silver, which aligns with the provided standard human-generated answer. However, it does not provide any additional information that could be considered hallucination.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "adversarial",
+        "image_content": [
+            "Bathroom accessory",
+            "Personal care",
+            "Sink",
+            "Tap"
+        ],
+        "image_src": "https://c1.staticflickr.com/2/1425/689823158_b0bff45e0f_o.jpg",
+        "question": "What is being washed in the sink? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Nothing is being washed in the sink.",
+        "llava_model_answer": "The sink is being used to wash a toothbrush.",
+        "llama_hallucination_analysis": "The LMM response introduces a fabricated fact (a toothbrush is being washed) that is not supported by the provided details (the image contents and standard human-generated answer).",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 1
+    },
+    {
+        "question_type": "comparison",
+        "image_content": [
+            "Kitchen appliance",
+            "Washing machine",
+            "Refrigerator"
+        ],
+        "image_src": "https://farm6.staticflickr.com/8094/8431126135_cd1cf303e7_o.jpg",
+        "question": "Which washing machine is taller? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The right washing machine with the top load design is taller. Both are white in color.",
+        "llava_model_answer": "The washing machine on the right is taller than the one on the left.",
+        "llama_hallucination_analysis": "The LMM response correctly identifies the washing machine on the right as taller, aligning with the standard human-generated answer. However, the response does not provide a reason or description of the difference in height, which could be considered somewhat informative. Nevertheless, it does not contain any hallucination.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    },
+    {
+        "question_type": "counting",
+        "image_content": [
+            "Turkey",
+            "Bird",
+            "Animal",
+            "Baked goods"
+        ],
+        "image_src": "https://c3.staticflickr.com/8/7145/6599551311_4afa756cf7_o.jpg",
+        "question": "How many chickens are cooked? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is one cooked chicken in the image.",
+        "llava_model_answer": "There is one chicken cooked in the image.",
+        "llama_hallucination_analysis": "The LMM response is accurate and does not introduce any incorrect information.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "relation",
+        "image_content": [
+            "Toilet paper",
+            "Bathroom accessory"
+        ],
+        "image_src": "https://farm5.staticflickr.com/28/58465322_592ff01d31_o.jpg",
+        "question": "What is placed on the tissue paper roll? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "A screwdriver is placed on the tissue paper roll.",
+        "llava_model_answer": "A toothbrush is placed on the tissue paper roll.",
+        "llama_hallucination_analysis": "The LMM response introduces a fabricated object that is not present or implied in the given image or context, indicating a hallucination.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 2
+    },
+    {
+        "question_type": "environment",
+        "image_content": [
+            "Countertop",
+            "Tap",
+            "Kitchen appliance",
+            "Window",
+            "Oven",
+            "House",
+            "Microwave oven",
+            "Cabinetry",
+            "Home appliance",
+            "Plumbing fixture",
+            "Sink"
+        ],
+        "image_src": "https://c2.staticflickr.com/8/7518/16269340471_154a27d9df_o.jpg",
+        "question": "What time was the photo taken? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The photo was taken at daytime.",
+        "llava_model_answer": "The photo was taken during the day, as indicated by the natural light coming through the window.",
+        "llama_hallucination_analysis": "The LMM response correctly identifies the time of day as daytime based on the natural light coming through the window, which is supported by the image contents.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 6
+    },
+    {
+        "question_type": "holistic",
+        "image_content": [
+            "Food"
+        ],
+        "image_src": "https://c6.staticflickr.com/4/3247/3045172470_2e407f3602_o.jpg",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In this image, I can see food items (likely Baozi or buns) on papers and a tong kept on a metal stand in an oven and I can see steam on the glass. There are nine of them, arranged into a 3 x 3 grid.",
+        "llava_model_answer": "The image captures a moment in a kitchen, where a tray of freshly made dumplings is being prepared. The tray, made of stainless steel, is filled with eight dumplings, each one a delicate white color. They are neatly arranged in two rows of four, with the top row slightly overlapping the bottom row.\n\nThe dumplings are not yet cooked, as evidenced by the steam rising from them",
+        "llama_hallucination_analysis": "The LMM response introduces hallucination as it includes details not present or implied in the given image, standard human-generated answer, or prior context.",
+        "llama_hallucination_evaluation": "yes",
+        "llama_hallucination_rating": 2
+    },
+    {
+        "question_type": "other",
+        "image_content": [
+            "Bathroom accessory",
+            "Washing machine",
+            "Drawer",
+            "Furniture",
+            "Bathroom cabinet",
+            "Cabinetry",
+            "Sink",
+            "Plumbing fixture"
+        ],
+        "image_src": "https://farm7.staticflickr.com/1385/5164137805_a2499e3ca9_o.jpg",
+        "question": "What is shown in the mirror? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The mirrow shows the reflection of the washing machine.",
+        "llava_model_answer": "The mirror shows a washing machine.",
+        "llama_hallucination_analysis": "The LMM response does not contain hallucination because it directly answers the question with a simple statement that matches the standard human-generated answer. However, it lacks additional context or details that would make the response more informative.",
+        "llama_hallucination_evaluation": "no",
+        "llama_hallucination_rating": 5
+    }
+]

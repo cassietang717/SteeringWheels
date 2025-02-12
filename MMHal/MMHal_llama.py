@@ -1,15 +1,8 @@
 import json
 import torch
-from transformers import AutoTokenizer, LlamaForCausalLM, AutoModelForCausalLM
-import re
+from transformers import AutoTokenizer, LlamaForCausalLM
 from tqdm import tqdm
-
-tokenizer = AutoTokenizer.from_pretrained("/net/scratch2/steeringwheel/llama-3.1-8B")
-
-# model = LlamaForCausalLM.from_pretrained("/net/scratch2/steeringwheel/llama-3.1-8B", torch_dtype=torch.float16, device_map="auto")
-# #model = AutoModelForCausalLM.from_pretrained("/net/scratch2/steeringwheel/llama-3.1-8B")
-# model.to("cuda:0")
-# model = torch.compile(model)
+import re
 
 template = '''Please act as an **impartial and objective judge** and evaluate the quality of the response provided by a Large Multimodal Model (LMM) to the given user question. Your evaluation should be based on the following criteria:
 
@@ -58,9 +51,7 @@ A hallucination occurs when the LMM **includes details that are not present or i
 
 ---
 ### **Expected Output Format (JSON)**
-Do not repeat the prompt, only provide the following JSON output filled in with your final evaluation.
-
-Your response **must** be structured in the following **JSON format**:
+Your response **must** be structured in the following **JSON format** only. Do not include explanations, preamble, or any extra text:
 
 ```json
 {{
@@ -70,36 +61,78 @@ Your response **must** be structured in the following **JSON format**:
 }}
 '''
 
+tokenizer = AutoTokenizer.from_pretrained("/net/scratch2/steeringwheel/Llama-3.1-8B-Instruct")
+
+model = LlamaForCausalLM.from_pretrained("/net/scratch2/steeringwheel/Llama-3.1-8B-Instruct", torch_dtype=torch.float16, device_map="auto")
+model.to("cuda:0")
+model = torch.compile(model)
+
+
 with open("output/MMHal_output.json", "r") as json_file:
-    data = json.load(json_file)
+   data = json.load(json_file)
+
+
+start_timing = torch.cuda.Event(enable_timing=True)
+end_timing = torch.cuda.Event(enable_timing=True)
+
+results = []
+start_timing.record()
+
 
 for entry in tqdm(data, desc="Processing entries"):
-    question = entry["question"]
-    image_content = entry["image_content"]
-    question_type = entry["question_type"]
+   question = entry["question"]
+   image_content = entry["image_content"]
+   question_type = entry["question_type"]
 
-    model_answer = entry["model_answer"]
-    gt_answer = entry["gt_answer"]
+   model_answer = entry["model_answer"]
+   gt_answer = entry["gt_answer"]
 
-    image_url = entry["image_src"]
+   image_url = entry["image_src"]
 
-    filled_prompt = template.format(image_content, question, gt_answer, model_answer)
+   filled_prompt = template.format(image_content, question, gt_answer, model_answer)
+   conversation = [
+   {
+      "role": "user",
+      "content": filled_prompt,
+   }]
 
-    conversation = [
-    {
-        "role": "user",
-        "content": filled_prompt,
-    }]
+   tokenized_chat = tokenizer.apply_chat_template(conversation, tokenize=True, add_generation_prompt=True, return_tensors="pt")
+   outputs = model.generate(tokenized_chat.to("cuda:0"), max_new_tokens=256)
+   
+   input_len = tokenized_chat.shape[-1]
+   decoded_model_output = tokenizer.decode(outputs[0, input_len:], skip_special_tokens=True)
 
-    tokenized_chat = tokenizer.apply_chat_template(conversation, tokenize=True, add_generation_prompt=True, return_tensors="pt")
-    print(tokenizer.decode(tokenized_chat))
-    #inputs = tokenizer(filled_prompt, return_tensors="pt").to("cuda:0")
-    #inputs = tokenizer.apply_chat_template(conversation, add_generation_prompt=True, return_tensors="pt").to("cuda:0")
-    #inputs = tokenizer(text=prompt, return_tensors="pt").to("cuda:0")
+   match = re.search(r"({.*?})", decoded_model_output, re.DOTALL)
+   model_output = match.group(1)
 
-   #  output = model.generate(**inputs, use_cache=True)#, max_new_tokens=100)
+   parsed_output = json.loads(model_output)
 
-   #  model_output = tokenizer.decode(output[0], skip_special_tokens=True)
+   explanation = parsed_output["explanation"]
+   hallucination = parsed_output["hallucination"]
+   rating = parsed_output["rating"]
 
-    #print(model_output)
-    print("=" * 50)
+   result_entry = {
+        "question_type": question_type,
+        "image_content": image_content,
+        "image_src": image_url,
+        "question": question,
+        "gt_answer": gt_answer,
+        "llava_model_answer": model_answer,
+        "llama_hallucination_analysis": explanation,
+        "llama_hallucination_evaluation": hallucination,
+        "llama_hallucination_rating": rating
+    }
+   results.append(result_entry)
+
+   print(f"Processed question: {question}")
+   print(f"Ground truth: {gt_answer}")
+   print(f"Llava Model answer: {model_answer}")
+   print(model_output)
+   print("=" * 50)
+
+torch.cuda.synchronize()
+end_timing.record()
+print(f"Runtime: {.001 * start_timing.elapsed_time(end_timing):.4f} seconds")
+
+with open("output/MMHal_llava_output.json", "w") as outfile:
+    json.dump(results, outfile, indent=4)

@@ -32,7 +32,9 @@ The project is dependent on packages specified in [`requirements.txt`](./require
 Distributed under the [MIT License](/LICENSE).
 
 ## Acknowledgments
-* [MMHal-Bench](https://huggingface.co/datasets/Shengcao1006/MMHal-Bench)
+* [sentence transformer](https://huggingface.co/sentence-transformers)
+* [llama-3.1-8b-instruct](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct)
 * [llava-v1.5-7b](https://github.com/haotian-liu/LLaVA/tree/main)
+* [MMHal-Bench](https://huggingface.co/datasets/Shengcao1006/MMHal-Bench)
 * [Truthful_QA](https://huggingface.co/datasets/truthfulqa/truthful_qa)
 * [HaluEval](https://github.com/RUCAIBox/HaluEval/tree/main/data)
