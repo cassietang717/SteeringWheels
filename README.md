@@ -10,6 +10,7 @@
 * [`llava_example.py`](./MMHal/llava_example.py): example of hallucination with llava-7b on a single image data
 * [`MMHal.py`](./MMHal/MMHal.py): use llava-7b to process data from MMHal-bench and generate outputs and save it to [`MMHal_output.json`](./MMHal/output/MMHal_output.json)
 * [`MMHal_st_eval.py`](./MMHal/MMHal_st_eval.py): use sentence transformer to evaluate the similarity between the ground truth answer and the model answer and save it to [`MMHal_st.json`](./MMHal/output/MMHal_st.json)
+* [`MMHal_llama_eval.py`](./MMHal/MMHal_llama_eval.py): use llama-3.1-8b to evaluate the hallucination between the ground truth answer and the model answer and save it to [`MMHal_llava.json`](./MMHal/output/MMHal_llava.json)
 
 ## Collect Activation Package
 ### text dataset

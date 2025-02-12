@@ -134,5 +134,5 @@ torch.cuda.synchronize()
 end_timing.record()
 print(f"Runtime: {.001 * start_timing.elapsed_time(end_timing):.4f} seconds")
 
-with open("output/MMHal_llava_output.json", "w") as outfile:
+with open("output/MMHal_llava.json", "w") as outfile:
     json.dump(results, outfile, indent=4)
