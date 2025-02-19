@@ -39,3 +39,4 @@ Distributed under the [MIT License](/LICENSE).
 * [MMHal-Bench](https://huggingface.co/datasets/Shengcao1006/MMHal-Bench)
 * [Truthful_QA](https://huggingface.co/datasets/truthfulqa/truthful_qa)
 * [HaluEval](https://github.com/RUCAIBox/HaluEval/tree/main/data)
+* [HaloQuest](https://github.com/google/haloquest)
