@@ -21,8 +21,6 @@ start_timing.record()
 HaloQuest_df = pd.read_csv("data/haloquest.csv")
 filtered_HaloQuest_df = HaloQuest_df[HaloQuest_df["hallucination type"] != "visual challenge"]
 
-filtered_HaloQuest_df = filtered_HaloQuest_df.sample(frac=.1)
-
 for _, entry in tqdm(filtered_HaloQuest_df.iterrows(), total=filtered_HaloQuest_df.shape[0], desc="Processing entries"):
     question = entry["question"] + " Answer with reasonable length (not too short or too long)."
     image_url = entry["url"]

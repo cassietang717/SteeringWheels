@@ -1,18 +1,13 @@
 import os
-import sys
 from tqdm import tqdm
 import numpy as np
-import pandas as pd
-import warnings
 import math
-import pickle
 import glob
 from functools import partial
 from PIL import Image
 import requests
 from io import BytesIO
 import matplotlib.pyplot as plt
-from einops import rearrange
 from baukit import Trace, TraceDict
 
 import torch
@@ -43,7 +38,7 @@ def format_prompt(image, question, answer, processor):
 def get_prompt_pairs(dataset, processor):
     all_prompt_pairs = [None] * len(dataset["train"])
 
-    for i, entry in tqdm(enumerate(dataset["train"]), desc="Tokenizing prompts"):
+    for i, entry in tqdm(enumerate(dataset["train"]), total=len(dataset["train"]), desc="Tokenizing prompts"):
         question = entry["question"]
         gt_answer = entry["gt_answer"]
         hallucinated_answer = entry["llava_model_answer"]
@@ -121,12 +116,17 @@ def plot_pca_comparison(gt_activations, hallucinated_activations, name, layer_nu
         pca_gt = pca_features[:gt_features.shape[0]]
         pca_hallu = pca_features[gt_features.shape[0]:]
 
+        concat_x_values = np.concatenate([pca_gt[:, 0], pca_hallu[:, 0]])
+        lower_bound = np.percentile(concat_x_values, 15)
+        upper_bound = np.percentile(concat_x_values, 85)
+
         ax = axes[layer_id]
-        ax.scatter(pca_gt[:, 0], pca_gt[:, 1], label='GT', color='blue', s=10)
+        ax.scatter(pca_gt[:, 0], pca_gt[:, 1], label='Ground Truth', color='blue', s=10)
         ax.scatter(pca_hallu[:, 0], pca_hallu[:, 1], label='Hallucinated', 
                    color='red', alpha=0.5, edgecolor='black', s=10)
 
         ax.set_title(f'Layer {layer_id}')
+        ax.set_xlim(lower_bound, upper_bound)
         ax.set_xlabel('PC1')
         ax.set_ylabel('PC2')
         ax.legend()
@@ -143,12 +143,65 @@ def load_chunks(file_pattern):
     chunks = [np.load(chunk_file) for chunk_file in chunk_files]
     return np.concatenate(chunks, axis=0)
 
-    # Load layer-wise activations
-    layer_wise_pattern = f"/net/scratch2/steeringwheel/dwlyu/features/llava_7B_tqa_gen_end_q_layer_wise_*.npy"
-    all_layer_wise_activations = load_chunks(layer_wise_pattern)
 
-    # Load head-wise activations
-    head_wise_pattern = f"/net/scratch2/steeringwheel/dwlyu/features/llava_7B_tqa_gen_end_q_head_wise_*.npy"
-    all_head_wise_activations = load_chunks(head_wise_pattern)
+def get_com_directions(num_layers, num_heads, train_idx, gt_head_wise_activations, hallucinated_head_wise_activations):
+    com_directions = []
+    for layer in tqdm(range(num_layers), desc="Getting com directions from layers"):
+        for head in range(num_heads):
+            gt_activations = gt_head_wise_activations[train_idx, layer, head, :] #(T, 128)
+            hallucinated_activations = hallucinated_head_wise_activations[train_idx, layer, head, :] #(T, 128)
 
-    print("Successfully loaded all chunks!")
+            gt_mass_mean = np.mean(gt_activations, axis=0)
+            hallucinated_mass_mean = np.mean(hallucinated_activations, axis=0)
+
+            com_directions.append(gt_mass_mean - hallucinated_mass_mean)
+    
+    com_directions = np.array(com_directions)
+    return com_directions
+
+
+def train_probes(seed, train_set_idxs, val_set_idxs, gt_head_wise_activations, hallucinated_head_wise_activations, num_layers, num_heads):
+    X_train = np.concatenate([gt_head_wise_activations[train_set_idxs], hallucinated_head_wise_activations[train_set_idxs]], axis=0) # (2T, 32, 32, 128)
+    y_train = np.concatenate([np.ones(len(train_set_idxs)), np.zeros(len(train_set_idxs))], axis=0)
+
+    X_val = np.concatenate([gt_head_wise_activations[val_set_idxs], hallucinated_head_wise_activations[val_set_idxs]], axis=0) # (2V, 32, 32, 128)
+    y_val = np.concatenate([np.ones(len(val_set_idxs)), np.zeros(len(val_set_idxs))], axis=0)
+
+    all_head_accs = []
+    for layer in tqdm(range(num_layers), desc="training probes on layers"): 
+        for head in range(num_heads): 
+            X_train_head = X_train[:, layer, head, :] # (2T, 128)
+            X_val_head = X_val[:, layer, head, :] # (2V, 128)
+
+            clf = LogisticRegression(random_state=seed, max_iter=1000).fit(X_train_head, y_train)
+
+            y_val_pred = clf.predict(X_val_head)
+            acc = accuracy_score(y_val, y_val_pred)
+            all_head_accs.append(acc)
+
+    all_head_accs = np.array(all_head_accs)
+    return all_head_accs
+
+
+def flattened_idx_to_layer_head(flattened_idx, num_heads):
+    return flattened_idx // num_heads, flattened_idx % num_heads
+
+
+def get_top_heads(train_idxs, val_idxs, gt_head_wise_activations, hallucinated_head_wise_activations, num_layers, num_heads, seed, num_to_intervene, use_random_dir=False):
+    all_head_accs_np = train_probes(seed, train_idxs, val_idxs, gt_head_wise_activations, hallucinated_head_wise_activations, num_layers, num_heads)
+    all_head_accs_np = all_head_accs_np.reshape(num_layers, num_heads)
+
+    top_acc_idxs = np.argsort(all_head_accs_np.flatten())[::-1][:num_to_intervene]
+    top_head_idxs = [flattened_idx_to_layer_head(idx, num_heads) for idx in top_acc_idxs]
+
+    if use_random_dir: 
+        random_idxs = np.random.choice(num_heads * num_layers, num_heads * num_layers, replace=False)
+        top_head_idxs = [flattened_idx_to_layer_head(idx, num_heads) for idx in random_idxs[:num_to_intervene]]
+
+    return top_head_idxs
+
+
+def layer_head_to_flattened_idx(layer, head, num_heads):
+    return layer * num_heads + head
+
+

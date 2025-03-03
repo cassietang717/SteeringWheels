@@ -39,9 +39,9 @@ class ITI_Intervener():
     def reset(self):
         self.states = []
         self.actions = []
-    def __call__(self, b): 
-        self.states.append(b[0, -1].detach().clone())  # original b is (batch_size=1, seq_len, #head x D_head), now it's (#head x D_head)
-        action = self.direction.to(b.device)
+    def __call__(self, base, source): 
+        self.states.append(base[0, -1].detach().clone())  # original b is (batch_size=1, seq_len, #head x D_head), now it's (#head x D_head)
+        action = self.direction.to(base.device)
         self.actions.append(action.detach().clone())
-        b[0, -1] = b[0, -1] + action * self.multiplier
-        return b
+        base[0, -1] = base[0, -1] + action * self.multiplier
+        return base

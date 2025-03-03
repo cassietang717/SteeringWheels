@@ -1,21 +1,13 @@
-import os
 from tqdm import tqdm
 import numpy as np
-import pickle
-import sys
-
-import numpy as np
-import pickle
 import argparse
-import json
 
 import pyvene as pv
 import torch
 from datasets import load_dataset
-from transformers import AutoTokenizer, AutoModel, AutoModelForCausalLM
 from transformers import LlavaNextProcessor, LlavaNextForConditionalGeneration
 
-from interveners import wrapper, Collector, ITI_Intervener
+from interveners import wrapper, Collector
 from utils import get_prompt_pairs, get_activations_pyvene, save_activations, plot_pca_comparison
 
 
