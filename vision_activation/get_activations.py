@@ -8,7 +8,7 @@ from datasets import load_dataset
 from transformers import LlavaNextProcessor, LlavaNextForConditionalGeneration
 
 from interveners import wrapper, Collector
-from utils import get_prompt_pairs, get_activations_pyvene, save_activations, plot_pca_comparison
+from utils import get_prompt_pairs, get_activations_pyvene, save_activations, plot_layer_pca_comparison
 
 
 def main(): 
@@ -31,13 +31,14 @@ def main():
     print("Loading models")
     processor = LlavaNextProcessor.from_pretrained("/net/scratch2/steeringwheel/llava-v1.6-vicuna-7b-hf", use_fast=True)
     model_llava = LlavaNextForConditionalGeneration.from_pretrained("/net/scratch2/steeringwheel/llava-v1.6-vicuna-7b-hf", torch_dtype=torch.float16, low_cpu_mem_usage=True) 
-    model = model_llava.language_model
+    model = model_llava
     device = "cuda"
     model = model.to(device)
 
     if args.dataset_name == "HaloQuest": 
         dataset = load_dataset("csv", data_files="../HaloQuest/output/HaloQuest_llama.csv")
         dataset = dataset.filter(lambda entry: entry["llama_hallucination_evaluation"] == "yes")
+        dataset["train"] = dataset["train"].select(range(25))
         formatter = get_prompt_pairs
     else:
         raise ValueError(f"Wrong Dataset Choice: {args.dataset_name}")
@@ -52,7 +53,7 @@ def main():
         collector = Collector(head=-1)
         pv_config = {
             # (batch_size, seq_len, hidden_dim=num_heads * D_head)
-            "component": f"model.layers[{i}].self_attn.o_proj.input",
+            "component": f"model.language_model.layers[{i}].self_attn.o_proj.input",
             "intervention": wrapper(collector)
         }
         collectors[i] = collector
@@ -84,12 +85,12 @@ def main():
     gt_layer_wise_activations, gt_head_wise_activations = np.stack(gt_layer_wise_activations), np.stack(gt_head_wise_activations)
     hallucinated_layer_wise_activations, hallucinated_head_wise_activations = np.stack(hallucinated_layer_wise_activations), np.stack(hallucinated_head_wise_activations)
 
+    plot_layer_pca_comparison(gt_layer_wise_activations, hallucinated_layer_wise_activations, "HaloQuest_layer_wise", layer_num=33)
+    plot_layer_pca_comparison(gt_head_wise_activations, hallucinated_head_wise_activations, "HaloQuest_head_wise", layer_num=32)
+
     if args.save == 1:
-        save_activations(gt_layer_wise_activations, gt_head_wise_activations, "HaloQuest_gt")
+        #save_activations(gt_layer_wise_activations, gt_head_wise_activations, "HaloQuest_gt")
         save_activations(hallucinated_layer_wise_activations, hallucinated_head_wise_activations, "HaloQuest_hallucinated")
-    
-    plot_pca_comparison(gt_layer_wise_activations, hallucinated_layer_wise_activations, "HaloQuest_layer_wise", layer_num=33)
-    plot_pca_comparison(gt_head_wise_activations, hallucinated_head_wise_activations, "HaloQuest_head_wise", layer_num=32)
 
 
 if __name__ == '__main__':
