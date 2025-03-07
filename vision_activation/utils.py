@@ -105,9 +105,13 @@ def get_prompt_pairs(dataset, processor):
         hallucinated_answer = entry["llava_model_answer"]
         image_url = entry["image_url"]
 
-        response = requests.get(image_url)
-        image_bytes = BytesIO(response.content)
-        image = Image.open(image_bytes)
+        try:
+            response = requests.get(image_url)
+            image_bytes = BytesIO(response.content)
+            image = Image.open(image_bytes)
+        except Exception as e:
+            print(f"Error processing image URL {image_url}: {e}")
+            continue
 
         gt_tokenized = format_prompt(image, question, gt_answer, processor)
         hallucinated_tokenized = format_prompt(image, question, hallucinated_answer, processor)
@@ -121,9 +125,9 @@ def get_activations_pyvene(pv_model, collectors, prompt, device):
     with torch.no_grad():
         prompt = prompt.to(device)
         output = pv_model({"input_ids": prompt["input_ids"], 
-                           #"pixel_values": prompt["pixel_values"], 
+                           "pixel_values": prompt["pixel_values"], 
+                           "image_sizes": prompt["image_sizes"], 
                            "output_hidden_states": True})[1]
-
 
     # Input → Self-Attention → o_proj → Residual Connection → LayerNorm → [hidden_states] → MLP → Residual Connection → LayerNorm → Next Layer
     # Collector hook: Input → Self-Attention → Collector (captures o_proj.input) → o_proj → Residual Connection -> ...
@@ -145,15 +149,15 @@ def get_activations_pyvene(pv_model, collectors, prompt, device):
     return hidden_states, head_wise_hidden_states
 
 
-def save_activations(layer_wise_activations, head_wise_activations, name, chunk_size=100):
-    print(f"Saving {name} layer wise activations in chunks")
-    for i in range(0, len(layer_wise_activations), chunk_size):
-        chunk = layer_wise_activations[i: i+chunk_size]
-        np.save(f"/net/scratch2/steeringwheel/weiyitian/activations/HaloQuest/{name}_layer_wise_{i // chunk_size}.npy", chunk)
-    print(f"Saving {name} head wise activations in chunks")
-    for i in range(0, len(head_wise_activations), chunk_size):
-        chunk = head_wise_activations[i:i+chunk_size]
-        np.save(f"/net/scratch2/steeringwheel/weiyitian/activations/HaloQuest/{name}_head_wise_{i // chunk_size}.npy", chunk)
+def save_activations(gt_activations, hallucinated_activations, layer_type, chunk_size=100):
+    print(f"Saving ground truth {layer_type} wise activations in chunks")
+    for i in range(0, len(gt_activations), chunk_size):
+        chunk = gt_activations[i: i+chunk_size]
+        np.save(f"/net/scratch2/steeringwheel/weiyitian/activations/HaloQuest/HaloQuest_gt_{layer_type}_wise_{i // chunk_size}.npy", chunk)
+    print(f"Saving hallucinated {layer_type} wise activations in chunks")
+    for i in range(0, len(hallucinated_activations), chunk_size):
+        chunk = hallucinated_activations[i:i+chunk_size]
+        np.save(f"/net/scratch2/steeringwheel/weiyitian/activations/HaloQuest/HaloQuest_hallucinated_{layer_type}_wise_{i // chunk_size}.npy", chunk)
 
 
 def plot_layer_pca_comparison(gt_activations, hallucinated_activations, name, layer_num=32):
@@ -182,9 +186,9 @@ def plot_layer_pca_comparison(gt_activations, hallucinated_activations, name, la
         upper_bound = np.percentile(concat_x_values, 85)
 
         ax = axes[layer_id]
-        ax.scatter(pca_gt[:, 0], pca_gt[:, 1], label='Ground Truth', color='blue', s=10)
+        ax.scatter(pca_gt[:, 0], pca_gt[:, 1], label='Ground Truth', color='#f9bebb', s=10)
         ax.scatter(pca_hallu[:, 0], pca_hallu[:, 1], label='Hallucinated', 
-                   color='red', alpha=0.5, edgecolor='black', s=10)
+                   color='#84c3b7', alpha=0.3, s=10)
 
         ax.set_title(f'Layer {layer_id}')
         ax.set_xlim(lower_bound, upper_bound)
@@ -292,16 +296,14 @@ def apply_interventions(dataset, test_idx, intervened_model, processor, file_nam
 
             prompt = processor.apply_chat_template(conversation=conversation, add_generation_prompt=True)
             inputs = processor(images=image, text=prompt, return_tensors="pt").to("cuda:0")
-            input_ids = inputs["input_ids"]
-            print(input_ids)
-            _, output = intervened_model.generate({'input_ids': input_ids})
-            # print(input_ids)
-            # output = intervened_model.generate(**inputs, use_cache=True, max_new_tokens=100)#[1]
-            print(output)
-            #output = intervened_model.generate(**inputs, max_new_tokens=100)
-
+            #_, output = intervened_model.generate({'input_ids': inputs["input_ids"]})
+            _, output = intervened_model.generate({"input_ids": inputs["input_ids"],
+                                                "attention_mask": inputs["attention_mask"],
+                                               "pixel_values": inputs["pixel_values"], 
+                                               "image_sizes": inputs["image_sizes"]}, 
+                                               max_new_tokens=100)
+            
             model_output = processor.decode(output[0], skip_special_tokens=True)
-            print(model_output)
             model_answer = model_output.split("ASSISTANT:")[-1].strip()
 
             result_entry = {
@@ -332,6 +334,9 @@ def llama_evaluate(df, file_name):
     model = LlamaForCausalLM.from_pretrained("/net/scratch2/steeringwheel/Llama-3.1-8B-Instruct", torch_dtype=torch.float16, device_map="auto")
     model.to("cuda:0")
     model = torch.compile(model)
+
+    if tokenizer.pad_token_id is None:
+        tokenizer.pad_token = tokenizer.eos_token
 
     results = []
     for _, entry in tqdm(df.iterrows(), total=df.shape[0], desc="Evaluating entries"):
@@ -400,7 +405,6 @@ def get_ce_loss_owt(orig_model, intervened_model, processor, device='cuda', num_
     dataset = dataset.shuffle()
     dataset = dataset.select(range(num_samples))
 
-    # len(owt) = num_samples
     owt = dataset.map(lambda x: {'input_ids': torch.tensor(processor(x['text'], return_tensors='pt')['input_ids'][:,:128])})
     owt.set_format(type='torch', columns=['input_ids'])
     
@@ -410,17 +414,19 @@ def get_ce_loss_owt(orig_model, intervened_model, processor, device='cuda', num_
         for i in tqdm(rand_idxs, desc="Computing CE loss on OWT"):
             input_ids = owt[i]['input_ids'][:, :128].to(device)
 
-            orig_output = orig_model({'input_ids': input_ids, 'labels': input_ids})
+            orig_output = orig_model(input_ids=input_ids, labels=input_ids)
             orig_loss = orig_output.loss
             orig_losses[i] = orig_loss.item()
 
             intervened_output = intervened_model({'input_ids': input_ids, 'labels': input_ids})
-            intervened_loss = intervened_output.loss
+            intervened_loss = intervened_output[1].loss
             intervened_losses[i] = intervened_loss.item()
 
     orig_ce, intervened_ce = np.mean(orig_losses), np.mean(intervened_losses)
     print(f"CE loss on OWT before steering: {orig_ce}")
     print(f"CE loss on OWT after steering: {intervened_ce}")
+
+    return orig_ce, intervened_ce
 
 
 def calculate_kl_divergence(probs1_tensor, probs2_tensor):
@@ -444,11 +450,11 @@ def get_kl_divergence_owt(orig_model, intervened_model, processor, device='cuda'
         for i in tqdm(rand_idxs, desc="Computing KL divergence on OWT"):
             input_ids = owt[i]['input_ids'][:, :128].to(device)
 
-            orig_output = orig_model({'input_ids': input_ids})
+            orig_output = orig_model(input_ids=input_ids)
             orig_logits = orig_output.logits.cpu().type(torch.float32)
             orig_probs = F.softmax(orig_logits, dim=-1)
 
-            intervened_output = intervened_model({'input_ids': input_ids})
+            intervened_output = intervened_model({'input_ids': input_ids})[1]
             intervened_logits = intervened_output.logits.cpu().type(torch.float32)
             intervened_probs = F.softmax(intervened_logits, dim=-1)
 
@@ -459,6 +465,7 @@ def get_kl_divergence_owt(orig_model, intervened_model, processor, device='cuda'
 
     kl = np.mean(kl_divgs)
     print(f"KL-divergence between original model and the steered model: {kl}")
+    return kl
 
 
 def get_hallucination_num_after_steering(llama_result_file):
@@ -475,7 +482,7 @@ def get_hallucination_num_after_steering(llama_result_file):
     return total_entries, hallucination_count, hallucination_proportion
 
 
-def eval_ce_kl_owt(orig_model, intervened_model, processor, top_heads_by_layer, llama_result, file_name, device='cuda', num_samples=10):
+def eval_ce_kl_owt(orig_model, intervened_model, processor, top_heads_by_layer, llama_result, file_name, device='cuda', num_samples=100):
     orig_ce, intervened_ce = get_ce_loss_owt(orig_model, intervened_model, processor, device, num_samples)
     kl = get_kl_divergence_owt(orig_model, intervened_model, processor, device, num_samples)
     total_entries, hallucination_count, hallucination_proportion = get_hallucination_num_after_steering(llama_result)
@@ -489,6 +496,7 @@ def eval_ce_kl_owt(orig_model, intervened_model, processor, top_heads_by_layer, 
         "hallucination_proportion_after_steering": hallucination_proportion,
         "top_heads_by_layer": top_heads_by_layer
     }
+
 
     with open(file_name, 'w') as f:
         json.dump(results, f, indent=4)
@@ -505,6 +513,7 @@ def plot_layer_head_PCA(gt_head_wise_activations, hallucinated_head_wise_activat
     gt_head_wise_activations = np.asarray(gt_head_wise_activations)
     hallucinated_head_wise_activations = np.asarray(hallucinated_head_wise_activations)
     
+    ax_ind = 0
     for layer, heads in top_heads_by_layer.items():
         for head in heads:
             gt_features = gt_head_wise_activations[:, layer, head, :] #(prompt_num x hidden_dim / head_num)
@@ -517,26 +526,28 @@ def plot_layer_head_PCA(gt_head_wise_activations, hallucinated_head_wise_activat
             pca_gt = pca_features[:gt_features.shape[0]]
             pca_hallu = pca_features[gt_features.shape[0]:]
 
+            ax = axes[ax_ind]
+            ax.scatter(pca_gt[:, 0], pca_gt[:, 1], label='Ground Truth', color='#f9bebb', s=10)
+            ax.scatter(pca_hallu[:, 0], pca_hallu[:, 1], label='Hallucinated', 
+                    color='#84c3b7', alpha=0.3, s=10)
+
             # concat_x_values = np.concatenate([pca_gt[:, 0], pca_hallu[:, 0]])
             # lower_bound = np.percentile(concat_x_values, 15)
             # upper_bound = np.percentile(concat_x_values, 85)
-
-            ax = axes[layer]
-            ax.scatter(pca_gt[:, 0], pca_gt[:, 1], label='Ground Truth', color='#f9bebb', s=10)
-            ax.scatter(pca_hallu[:, 0], pca_hallu[:, 1], label='Hallucinated', 
-                    color='#84c3b7', alpha=0.5, s=10)
+            # ax.set_xlim(lower_bound, upper_bound)
 
             ax.set_title(f'Layer {layer} Head {head}')
-            # ax.set_xlim(lower_bound, upper_bound)
             ax.set_xlabel('PC1')
             ax.set_ylabel('PC2')
             ax.legend()
+
+            ax_ind += 1
     
     for ax in axes[top_num_heads:]:
         fig.delaxes(ax)
 
     plt.tight_layout()
-    plt.savefig(f'figures/{file_name}_layer_head_PCA.png')
+    plt.savefig(f'{file_name}_layer_head_PCA.png')
 
 
 def ignore_warnings():

@@ -38,7 +38,7 @@ def main():
     if args.dataset_name == "HaloQuest": 
         dataset = load_dataset("csv", data_files="../HaloQuest/output/HaloQuest_llama.csv")
         dataset = dataset.filter(lambda entry: entry["llama_hallucination_evaluation"] == "yes")
-        dataset["train"] = dataset["train"].select(range(25))
+        #dataset["train"] = dataset["train"].select(range(350))
         formatter = get_prompt_pairs
     else:
         raise ValueError(f"Wrong Dataset Choice: {args.dataset_name}")
@@ -46,14 +46,14 @@ def main():
     
     prompt_pairs = formatter(dataset, processor)
 
-    num_hidden_layers = model.config.num_hidden_layers
+    num_hidden_layers = model.language_model.config.num_hidden_layers
 
     collectors, pv_configs = [None] * num_hidden_layers, [None] * num_hidden_layers
     for i in range(num_hidden_layers):
         collector = Collector(head=-1)
         pv_config = {
             # (batch_size, seq_len, hidden_dim=num_heads * D_head)
-            "component": f"model.language_model.layers[{i}].self_attn.o_proj.input",
+            "component": f"language_model.model.layers[{i}].self_attn.o_proj.input",
             "intervention": wrapper(collector)
         }
         collectors[i] = collector
@@ -89,8 +89,8 @@ def main():
     plot_layer_pca_comparison(gt_head_wise_activations, hallucinated_head_wise_activations, "HaloQuest_head_wise", layer_num=32)
 
     if args.save == 1:
-        #save_activations(gt_layer_wise_activations, gt_head_wise_activations, "HaloQuest_gt")
-        save_activations(hallucinated_layer_wise_activations, hallucinated_head_wise_activations, "HaloQuest_hallucinated")
+        save_activations(gt_head_wise_activations, hallucinated_head_wise_activations, "head")
+        save_activations(gt_layer_wise_activations, hallucinated_layer_wise_activations, "layer")
 
 
 if __name__ == '__main__':
