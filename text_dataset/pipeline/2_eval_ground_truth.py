@@ -58,7 +58,7 @@ for entry in tqdm(dataset_path, desc="Processing entries"):
     reason = entry["reason"]
 
     prompt_support = f"""
-    Your task is to evaluate whether the ground truth aligns well with the evidence in supporting the claim.
+    Your task is to determine if the ground truth can indicate that the evidence **supports** the claim.
     
     Answer strictly with either "Yes" or "No" without additional explanations.
 
