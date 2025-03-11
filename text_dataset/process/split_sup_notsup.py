@@ -2,7 +2,7 @@ import json
 import pandas as pd
 
 # File path
-file_path = "./test_dataset/output/answers/hall_answers.jsonl"
+file_path = "./text_dataset/output/answers/hall_answers.jsonl"
 
 subline1 = []
 subline2 = []
@@ -18,8 +18,8 @@ with open(file_path, "r", encoding="utf-8") as file:
         if label_text == "not_supported" and answer_text == "supported":
             subline2.append(data)
 
-save_path_sub1 = "./test_dataset/output/answers/hall_sup.jsonl"
-save_path_sub2 = "./test_dataset/output/answers/hall_notsup.jsonl"
+save_path_sub1 = "./text_dataset/output/answers/hall_sup.jsonl"
+save_path_sub2 = "./text_dataset/output/answers/hall_notsup.jsonl"
 
 with open(save_path_sub1, "w", encoding="utf-8") as file:
     for entry in subline1:

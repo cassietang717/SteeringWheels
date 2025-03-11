@@ -39,7 +39,7 @@ os.makedirs(save_filepath, exist_ok=True)
 if save_file == "save_file1":
     save_file = os.path.join(save_filepath, "hallsup_output.jsonl")
 else:
-    save_file = os.path.join(save_filepath, "hallnotsup_output2.jsonl")
+    save_file = os.path.join(save_filepath, "hallnotsup_output.jsonl")
 
 if dataset_path == "dataset_path1":
     dataset_path = "./text_dataset/output/answers/hall_sup.jsonl"
