@@ -1,11 +1,11 @@
 from .utilities import format_ft_comp, format_end2end_prompt, split_multi_answer
 from .configs import ANSWER_COL, INCORRECT_COL
 # from datasets import load_metric
-import openai
+# import openai
 import numpy as np
 import pandas as pd
 import warnings
-# from t5.evaluation import metrics
+from t5.evaluation import metrics
 from time import sleep
 
 import logging

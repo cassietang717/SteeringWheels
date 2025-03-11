@@ -2,7 +2,7 @@ import argparse
 from . import models
 from . import metrics
 from . import utilities
-import openai
+# import openai
 from .configs import ENGINE_MAP
 import warnings
 import pandas as pd
