@@ -4,7 +4,7 @@ import argparse
 
 import pyvene as pv
 import torch
-from datasets import load_dataset
+from datasets import load_dataset, concatenate_datasets
 from transformers import LlavaNextProcessor, LlavaNextForConditionalGeneration
 
 from interveners import wrapper, Collector
@@ -36,9 +36,13 @@ def main():
     model = model.to(device)
 
     if args.dataset_name == "HaloQuest": 
-        dataset = load_dataset("csv", data_files="../HaloQuest/output/HaloQuest_llama.csv")
+        #dataset_non_vc = load_dataset("csv", data_files="../HaloQuest/output/HaloQuest_llama.csv")
+        dataset_vc = load_dataset("csv", data_files="../HaloQuest/output/HaloQuest_llama_vc.csv")
+        dataset = dataset_vc["train"]
+        #dataset = concatenate_datasets([dataset_non_vc["train"], dataset_vc["train"]])
+
         dataset = dataset.filter(lambda entry: entry["llama_hallucination_evaluation"] == "yes")
-        #dataset["train"] = dataset["train"].select(range(350))
+        #dataset = dataset.select(range(10))
         formatter = get_prompt_pairs
     else:
         raise ValueError(f"Wrong Dataset Choice: {args.dataset_name}")
@@ -65,7 +69,7 @@ def main():
     gt_layer_wise_activations, hallucinated_layer_wise_activations = [None] * len(prompt_pairs), [None] * len(prompt_pairs)
     gt_head_wise_activations, hallucinated_head_wise_activations = [None] * len(prompt_pairs), [None] * len(prompt_pairs)
 
-    for i, prompt_pair in tqdm(enumerate(prompt_pairs), total=len(dataset["train"]), desc="Processing prompts"):
+    for i, prompt_pair in tqdm(enumerate(prompt_pairs), total=len(dataset), desc="Processing prompts"):
         gt_prompt, hallcuinated_prompt = prompt_pair
 
         gt_layer_wise_activation, gt_head_wise_activation = get_activations_pyvene(pv_model, collectors, gt_prompt, device)
