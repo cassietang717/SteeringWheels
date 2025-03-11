@@ -1,4 +1,5 @@
-from bot.llava import LLaVABot
+# import text_dataset.bot.llava
+from ..bot.llava import LLaVABot
 import json
 from tqdm import tqdm
 import os
@@ -33,23 +34,25 @@ prompt = args.prompt
 bot = LLaVABot()
 print("✅ Model and tokenizer loaded successfully!")
 
-save_filepath = "./output/ground_truth"
+save_filepath = "./text_dataset/output/ground_truth"
 os.makedirs(save_filepath, exist_ok=True)
-save_file1 = os.path.join(save_filepath, "hallsup_output.jsonl")
-print(save_file1)
-save_file2 = os.path.join(save_filepath, "hallnotsup_output.jsonl")
-print(save_file2)
+if save_file == "save_file1":
+    save_file = os.path.join(save_filepath, "hallsup_output.jsonl")
+else:
+    save_file = os.path.join(save_filepath, "hallnotsup_output2.jsonl")
 
-dataset_path1 = "./output/answers/hall_sup.jsonl"
-dataset_path2 = "./output/answers/hall_notsup.jsonl"
-with open(dataset_path1, 'r') as file:
-    dataset1 = [json.loads(line) for line in file]
+if dataset_path == "dataset_path1":
+    dataset_path = "./text_dataset/output/answers/hall_sup.jsonl"
+else:
+    dataset_path = "./text_dataset/output/answers/hall_notsup.jsonl"
 
-with open(dataset_path2, 'r') as file:
-    dataset2 = [json.loads(line) for line in file]
+with open(dataset_path, 'r') as file:
+    dataset = [json.loads(line) for line in file]
+
+print(dataset_path)
 
 results = []
-for entry in tqdm(dataset_path, desc="Processing entries"):
+for entry in tqdm(dataset, desc="Processing entries"):
     claim = entry["claim"]
     support_sentence = entry["support_sentence"]
     evidence = entry["evidence"]
@@ -57,7 +60,8 @@ for entry in tqdm(dataset_path, desc="Processing entries"):
     answer = entry["answer"]
     reason = entry["reason"]
 
-    prompt_support = f"""
+    if prompt == "prompt_support":
+        prompt = f"""
     Your task is to determine why a claim is supported by a provided evidence.
 
     Present your reason in **one sentence**.
@@ -76,8 +80,8 @@ for entry in tqdm(dataset_path, desc="Processing entries"):
     ### **Expected Output:**
     Clearly state in one sentence why the evidence supports the claim.
     """
-
-    prompt_not_support = f"""
+    else:
+        prompt = f"""
     Your task is to determine why a claim is **not supported** by a provided evidence.
 
     Present your reason in **one sentence**.
@@ -113,3 +117,5 @@ for entry in tqdm(dataset_path, desc="Processing entries"):
 
     with open(save_file, 'a') as task_file:
         task_file.write(json.dumps(result_entry) + "\n")
+
+print(save_file)
