@@ -20,28 +20,26 @@ from transformers import AutoTokenizer, LlamaForCausalLM
 from sklearn.decomposition import PCA
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 from sklearn.linear_model import LogisticRegression
+from evaluate import load as load_metric
 
 
-def apply_llama_prompt(hallucination_type, question, gt_answer, model_answer):
-    template = f'''You are an evaluator tasked with determining whether LLava’s answer is hallucinating. You do not have access to the image, only the following textual information. Your goal is to check if the **direct answer** to the question contradicts the ground truth. Additional details, even if extraneous, should be ignored as long as the direct answer is correct.
+def apply_llama_prompt(question, gt_answer, model_answer):
+    template = f'''You are an evaluator tasked with determining whether LLava’s answer is hallucinating. You do not have access to the image, only the following textual information. Your goal is to check if the **direct answer** to the question contradicts the ground truth. Extraneous details should be ignored as long as the core meaning aligns.
 
-    ### Instructions:
+    ### **Updated Instructions**
     1. **Direct Answer Focus:** Identify the specific part of LLava’s response that directly answers the question.
-    2. **Ground Truth Comparison:** Compare the direct answer with the provided ground truth.
-    3. **Contradiction Check:** 
-    - If the direct answer contradicts the ground truth, mark it as a hallucination.
-    - If the direct answer is in agreement with the ground truth—even if extra details are present—mark it as not hallucinating.
-    4. **Extra Details:** Do not consider additional information or context that does not alter the core answer.
+    2. **Semantic Similarity Check:** Compare the direct answer with the ground truth. If they express the same idea (even with different wording), consider them **equivalent**.
+    3. **Contradiction vs. Uncertainty:** 
+       - If the direct answer *clearly contradicts* the ground truth, mark it as hallucination.
+       - If the response is vague or uncertain but does not introduce false information, **do not** classify it as hallucination.
+    4. **Missing Information:** If LLava's response states that it is **uncertain** or **cannot determine** an answer from the image, check if this is **reasonable** rather than automatically marking it as hallucination.
 
     ---
     ### **Input Details**
-    #### **Possible hallucination type:**
-    {hallucination_type}
-
     #### **User Question:**
     {question}
 
-    #### **Standard Human-Generated Answer:**
+    #### **Standard Human-Generated Answer (Ground Truth):**
     {gt_answer}
 
     #### **Llava Response to Evaluate:**
@@ -50,27 +48,26 @@ def apply_llama_prompt(hallucination_type, question, gt_answer, model_answer):
     ---
     ### **Evaluation Criteria**
     1. **Does the response contain hallucination?** (Yes or No)
-    - If **Yes**, identify the incorrect information and explain why it is not supported by the provided details.
-    - If **No**, confirm that the response aligns with the given information.
-    
+       - If **Yes**, explain which part contradicts the ground truth.
+       - If **No**, confirm that the response aligns even if phrased differently.
+
     2. **Provide a confidence score** on a scale of **0 to 1**, where:
-    - **0.0** = No confidence (high uncertainty)
-    - **0.5** = Somewhat confident
-    - **1.0** = Fully confident (high certainty in the evaluation)
+       - **0.0** = No confidence (high uncertainty)
+       - **0.5** = Somewhat confident
+       - **1.0** = Fully confident (high certainty in the evaluation)
 
     3. **Rate the response using the following scale:**
-    - **0** → Very informative, no hallucination
-    - **1** → Informative, no hallucination
-    - **2** → Somewhat informative, no hallucination
-    - **3** → Not informative, no hallucination
-    - **4** → Very informative, with hallucination
-    - **5** → Somewhat informative, with hallucination
-    - **6** → Not informative, with hallucination
+       - **0** → Very informative, no hallucination
+       - **1** → Informative, no hallucination
+       - **2** → Somewhat informative, no hallucination
+       - **3** → Not informative, no hallucination
+       - **4** → Very informative, with hallucination
+       - **5** → Somewhat informative, with hallucination
+       - **6** → Not informative, with hallucination
 
     ---
     ### **Expected Output Format (JSON)**
-    **IMPORTANT:** Your entire response must be a single, valid JSON object with **no additional text or formatting whatsoever**. Do not include markdown, code fences, or any other commentary. 
-    All double quotes inside string values must be properly escaped with a backslash (\\) (for example, use `\\\"` for quotes inside strings). This is especially important in the "explanation" field. The JSON object must exactly adhere to the following format:
+    **IMPORTANT:** Your entire response must be a single, valid JSON object with **no additional text or formatting whatsoever**. The JSON object must exactly adhere to the following format:
 
     ```json
     {{
@@ -97,9 +94,9 @@ def format_prompt(image, question, answer, processor):
 
 
 def get_prompt_pairs(dataset, processor):
-    all_prompt_pairs = [None] * len(dataset["train"])
+    all_prompt_pairs = [None] * len(dataset)
 
-    for i, entry in tqdm(enumerate(dataset["train"]), total=len(dataset["train"]), desc="Tokenizing prompts"):
+    for i, entry in tqdm(enumerate(dataset), total=len(dataset), desc="Tokenizing prompts"):
         question = entry["question"]
         gt_answer = entry["gt_answer"]
         hallucinated_answer = entry["llava_model_answer"]
@@ -153,11 +150,11 @@ def save_activations(gt_activations, hallucinated_activations, layer_type, chunk
     print(f"Saving ground truth {layer_type} wise activations in chunks")
     for i in range(0, len(gt_activations), chunk_size):
         chunk = gt_activations[i: i+chunk_size]
-        np.save(f"/net/scratch2/steeringwheel/weiyitian/activations/HaloQuest/HaloQuest_gt_{layer_type}_wise_{i // chunk_size}.npy", chunk)
+        np.save(f"/net/scratch2/steeringwheel/weiyitian/activations/VC_HaloQuest/HaloQuest_gt_{layer_type}_wise_{i // chunk_size}.npy", chunk)
     print(f"Saving hallucinated {layer_type} wise activations in chunks")
     for i in range(0, len(hallucinated_activations), chunk_size):
         chunk = hallucinated_activations[i:i+chunk_size]
-        np.save(f"/net/scratch2/steeringwheel/weiyitian/activations/HaloQuest/HaloQuest_hallucinated_{layer_type}_wise_{i // chunk_size}.npy", chunk)
+        np.save(f"/net/scratch2/steeringwheel/weiyitian/activations/VC_HaloQuest/HaloQuest_hallucinated_{layer_type}_wise_{i // chunk_size}.npy", chunk)
 
 
 def plot_layer_pca_comparison(gt_activations, hallucinated_activations, name, layer_num=32):
@@ -181,17 +178,17 @@ def plot_layer_pca_comparison(gt_activations, hallucinated_activations, name, la
         pca_gt = pca_features[:gt_features.shape[0]]
         pca_hallu = pca_features[gt_features.shape[0]:]
 
-        concat_x_values = np.concatenate([pca_gt[:, 0], pca_hallu[:, 0]])
-        lower_bound = np.percentile(concat_x_values, 15)
-        upper_bound = np.percentile(concat_x_values, 85)
-
         ax = axes[layer_id]
         ax.scatter(pca_gt[:, 0], pca_gt[:, 1], label='Ground Truth', color='#f9bebb', s=10)
         ax.scatter(pca_hallu[:, 0], pca_hallu[:, 1], label='Hallucinated', 
                    color='#84c3b7', alpha=0.3, s=10)
 
+        # concat_x_values = np.concatenate([pca_gt[:, 0], pca_hallu[:, 0]])
+        # lower_bound = np.percentile(concat_x_values, 15)
+        # upper_bound = np.percentile(concat_x_values, 85)
+        # ax.set_xlim(lower_bound, upper_bound)
+
         ax.set_title(f'Layer {layer_id}')
-        ax.set_xlim(lower_bound, upper_bound)
         ax.set_xlabel('PC1')
         ax.set_ylabel('PC2')
         ax.legend()
@@ -249,7 +246,7 @@ def train_probes(seed, train_set_idxs, val_set_idxs, gt_head_wise_activations, h
 
 
 def flattened_idx_to_layer_head(flattened_idx, num_heads):
-    return flattened_idx // num_heads, flattened_idx % num_heads
+    return int(flattened_idx // num_heads), int(flattened_idx % num_heads)
 
 
 def get_top_heads(train_idxs, val_idxs, gt_head_wise_activations, hallucinated_head_wise_activations, num_layers, num_heads, seed, num_to_intervene, use_random_dir=False):
@@ -272,7 +269,7 @@ def layer_head_to_flattened_idx(layer, head, num_heads):
 
 def apply_interventions(dataset, test_idx, intervened_model, processor, file_name):
     results = []
-    test_set = dataset["train"].select(test_idx)
+    test_set = dataset.select(test_idx)
 
     with torch.no_grad():
         for entry in tqdm(test_set, desc="Intervening prompts"):
@@ -281,6 +278,8 @@ def apply_interventions(dataset, test_idx, intervened_model, processor, file_nam
             image_url = entry["image_url"]
             init_answer = entry["llava_model_answer"]
             hallucination_type = entry["hallucination_type"]
+            llama_eval = entry["llama_hallucination_evaluation"]
+            llama_rating = entry["llama_hallucination_rating"]
 
             conversation = [{
             "role": "user",
@@ -296,7 +295,6 @@ def apply_interventions(dataset, test_idx, intervened_model, processor, file_nam
 
             prompt = processor.apply_chat_template(conversation=conversation, add_generation_prompt=True)
             inputs = processor(images=image, text=prompt, return_tensors="pt").to("cuda:0")
-            #_, output = intervened_model.generate({'input_ids': inputs["input_ids"]})
             _, output = intervened_model.generate({"input_ids": inputs["input_ids"],
                                                 "attention_mask": inputs["attention_mask"],
                                                "pixel_values": inputs["pixel_values"], 
@@ -312,7 +310,9 @@ def apply_interventions(dataset, test_idx, intervened_model, processor, file_nam
                 "question": question,
                 "gt_answer": gt_answer,
                 "image_url": image_url,
-                "hallucination_type": hallucination_type
+                "hallucination_type": hallucination_type,
+                "previous_llama_eval": llama_eval,
+                "previous_llama_rating": llama_rating
             }
             results.append(result_entry)
 
@@ -346,8 +346,10 @@ def llama_evaluate(df, file_name):
         init_answer = entry["before_steering"]
         model_answer = entry["after_steering"]
         hallucination_type = entry["hallucination_type"]
+        init_llama_eval = entry["previous_llama_eval"]
+        init_llama_rating = entry["previous_llama_rating"]
 
-        filled_prompt = apply_llama_prompt(hallucination_type, question, gt_answer, model_answer)
+        filled_prompt = apply_llama_prompt(question, gt_answer, model_answer)
         conversation = [
         {
             "role": "user",
@@ -355,7 +357,7 @@ def llama_evaluate(df, file_name):
         }]
 
         tokenized = tokenizer.apply_chat_template(conversation, tokenize=True, add_generation_prompt=True, return_tensors="pt")
-        outputs = model.generate(tokenized.to("cuda:0"), max_new_tokens=256)
+        outputs = model.generate(tokenized.to("cuda:0"), max_new_tokens=256, pad_token_id=tokenizer.pad_token_id)
 
         input_len = tokenized.shape[-1]
         decoded_model_output = tokenizer.decode(outputs[0, input_len:], skip_special_tokens=True)
@@ -376,23 +378,25 @@ def llama_evaluate(df, file_name):
         result_entry = {
                 "before_steering": init_answer,
                 "after_steering": model_answer,
-                "llama_hallucination_evaluation": hallucination,
-                "llama_hallucination_analysis": explanation,
+                "steered_llama_eval": hallucination,
+                "steered_llama_analysis": explanation,
+                "steered_llama_rating": rating,
                 "question": question,
                 "gt_answer": gt_answer,
                 "image_url": image_url,
-                "hallucination_type": hallucination_type,
-                "llama_hallucination_rating": rating
+                "previous_llama_rating": init_llama_rating,
+                "previous_llama_eval": init_llama_eval,
+                "hallucination_type": hallucination_type
             }
         results.append(result_entry)
 
-        print(f"Before steering answer: {init_answer}")
-        print(f"After steering answer: {model_answer}")
-        print(f"Llama evaluation: {hallucination}")
+        print(f"Before steering answer ({init_llama_eval}): {init_answer}")
+        print(f"After steering answer ({hallucination}): {model_answer}")
         print(f"Llama explanation: {explanation}")
         print(f"Image url: {image_url}")
         print(f"Processed question: {question}")
         print(f"Ground truth: {gt_answer}")
+        print(f"hallucination type: {hallucination_type}")
         print("=" * 50)
     
     results_df = pd.DataFrame(results)
@@ -404,14 +408,14 @@ def get_ce_loss_owt(orig_model, intervened_model, processor, device='cuda', num_
     dataset = load_dataset("stas/openwebtext-10k")['train']
     dataset = dataset.shuffle()
     dataset = dataset.select(range(num_samples))
+    dataset = dataset.filter(lambda x: x['text'].startswith("http") is False)
 
-    owt = dataset.map(lambda x: {'input_ids': torch.tensor(processor(x['text'], return_tensors='pt')['input_ids'][:,:128])})
+    owt = dataset.map(lambda x: {'input_ids': torch.tensor(processor(x['text'], return_tensors='pt')['input_ids'][:,:128].clone().detach())})
     owt.set_format(type='torch', columns=['input_ids'])
     
-    rand_idxs = np.random.choice(len(owt), num_samples, replace=False).tolist()
-    orig_losses, intervened_losses = [None] * len(rand_idxs), [None] * len(rand_idxs)
+    orig_losses, intervened_losses = [None] * len(owt), [None] * len(owt)
     with torch.no_grad(): 
-        for i in tqdm(rand_idxs, desc="Computing CE loss on OWT"):
+        for i in tqdm(range(len(owt)), desc="Computing CE loss on OWT"):
             input_ids = owt[i]['input_ids'][:, :128].to(device)
 
             orig_output = orig_model(input_ids=input_ids, labels=input_ids)
@@ -437,17 +441,16 @@ def get_kl_divergence_owt(orig_model, intervened_model, processor, device='cuda'
     dataset = load_dataset("stas/openwebtext-10k")['train']
     dataset = dataset.shuffle()
     dataset = dataset.select(range(num_samples))
+    dataset = dataset.filter(lambda x: x['text'].startswith("http") is False)
 
-    # len(owt) = num_samples
-    owt = dataset.map(lambda x: {'input_ids': torch.tensor(processor(x['text'], return_tensors='pt')['input_ids'][:,:128])})
+    owt = dataset.map(lambda x: {'input_ids': torch.tensor(processor(x['text'], return_tensors='pt')['input_ids'][:,:128].clone().detach())})
     owt.set_format(type='torch', columns=['input_ids'])
-    
-    rand_idxs = np.random.choice(len(owt), num_samples, replace=False).tolist()
-    kl_divgs = [None] * len(rand_idxs)
+
+    kl_divgs = [None] * len(owt)
     epsilon = 1e-10
 
     with torch.no_grad(): 
-        for i in tqdm(rand_idxs, desc="Computing KL divergence on OWT"):
+        for i in tqdm(range(len(owt)), desc="Computing KL divergence on OWT"):
             input_ids = owt[i]['input_ids'][:, :128].to(device)
 
             orig_output = orig_model(input_ids=input_ids)
@@ -468,33 +471,42 @@ def get_kl_divergence_owt(orig_model, intervened_model, processor, device='cuda'
     return kl
 
 
-def get_hallucination_num_after_steering(llama_result_file):
-    dataset = load_dataset("csv", data_files=llama_result_file)["train"]
-
+def get_hallucination_num(dataset):
     total_entries = len(dataset)
-    hallucination_count = sum(1 for entry in dataset if entry["llama_hallucination_evaluation"] == "yes")
-    hallucination_proportion = hallucination_count / total_entries
+    previous_hallucination_count = sum(1 for entry in dataset if entry["previous_llama_eval"] == "yes")
+    previous_hallucination_proportion = previous_hallucination_count / total_entries
+
+    steered_hallucination_count = sum(1 for entry in dataset if entry["steered_llama_eval"] == "yes")
+    steered_hallucination_proportion = steered_hallucination_count / total_entries
     
     print(f"Total entries: {total_entries}")
-    print(f"Hallucination count: {hallucination_count}")
-    print(f"Proportion: {hallucination_proportion:.2%}")
+    print(f"Previous hallucination count: {previous_hallucination_count}")
+    print(f"Previous proportion: {steered_hallucination_proportion:.2%}")
+    print(f"Steered hallucination count: {steered_hallucination_count}")
+    print(f"Steered proportion: {steered_hallucination_proportion:.2%}")
 
-    return total_entries, hallucination_count, hallucination_proportion
+    return total_entries, previous_hallucination_count, previous_hallucination_proportion, steered_hallucination_count, steered_hallucination_proportion
 
 
-def eval_ce_kl_owt(orig_model, intervened_model, processor, top_heads_by_layer, llama_result, file_name, device='cuda', num_samples=100):
+def eval_ce_kl_owt(orig_model, intervened_model, processor, top_head_idxs, llama_result_file, file_name, device='cuda', num_samples=100):
     orig_ce, intervened_ce = get_ce_loss_owt(orig_model, intervened_model, processor, device, num_samples)
     kl = get_kl_divergence_owt(orig_model, intervened_model, processor, device, num_samples)
-    total_entries, hallucination_count, hallucination_proportion = get_hallucination_num_after_steering(llama_result)
+
+    steered_dataset = load_dataset("csv", data_files=llama_result_file)["train"]
+    total_entries, previous_hallucination_count, previous_hallucination_proportion, \
+        steered_hallucination_count, steered_hallucination_proportion = get_hallucination_num(steered_dataset)
+
 
     results = {
         "original_ce_loss": orig_ce,
         "intervened_ce_loss": intervened_ce,
         "kl_divergence": kl,
         "total_entries": total_entries,
-        "hallucination_entries_after_steering": hallucination_count,
-        "hallucination_proportion_after_steering": hallucination_proportion,
-        "top_heads_by_layer": top_heads_by_layer
+        "hallucination_entries_before_steering": previous_hallucination_count,
+        "hallucination_entries_after_steering": steered_hallucination_count,
+        "hallucination_proportion_before_steering": previous_hallucination_proportion,
+        "hallucination_proportion_after_steering": steered_hallucination_proportion,
+        "top_head_idxs": top_head_idxs
     }
 
 
@@ -503,7 +515,7 @@ def eval_ce_kl_owt(orig_model, intervened_model, processor, top_heads_by_layer, 
     print(f"Results saved to {file_name}")
 
 
-def plot_layer_head_PCA(gt_head_wise_activations, hallucinated_head_wise_activations, top_heads_by_layer, top_num_heads, file_name):
+def plot_layer_head_PCA(gt_head_wise_activations, hallucinated_head_wise_activations, top_head_idxs, top_num_heads, file_name):
     cols = 4
     rows = math.ceil(top_num_heads / cols)
 
@@ -514,34 +526,33 @@ def plot_layer_head_PCA(gt_head_wise_activations, hallucinated_head_wise_activat
     hallucinated_head_wise_activations = np.asarray(hallucinated_head_wise_activations)
     
     ax_ind = 0
-    for layer, heads in top_heads_by_layer.items():
-        for head in heads:
-            gt_features = gt_head_wise_activations[:, layer, head, :] #(prompt_num x hidden_dim / head_num)
-            hallucinated_features = hallucinated_head_wise_activations[:, layer, head, :] #(prompt_num x hidden_dim / head_num)
+    for layer, head in top_head_idxs:
+        gt_features = gt_head_wise_activations[:, layer, head, :] #(prompt_num x hidden_dim / head_num)
+        hallucinated_features = hallucinated_head_wise_activations[:, layer, head, :] #(prompt_num x hidden_dim / head_num)
 
-            combined_features = np.concatenate((gt_features, hallucinated_features), axis=0) # (2 * prompt_num x hidden_dim / head_num)
-            pca = PCA(n_components=2)
-            pca_features = pca.fit_transform(combined_features)
+        combined_features = np.concatenate((gt_features, hallucinated_features), axis=0) # (2 * prompt_num x hidden_dim / head_num)
+        pca = PCA(n_components=2)
+        pca_features = pca.fit_transform(combined_features)
 
-            pca_gt = pca_features[:gt_features.shape[0]]
-            pca_hallu = pca_features[gt_features.shape[0]:]
+        pca_gt = pca_features[:gt_features.shape[0]]
+        pca_hallu = pca_features[gt_features.shape[0]:]
 
-            ax = axes[ax_ind]
-            ax.scatter(pca_gt[:, 0], pca_gt[:, 1], label='Ground Truth', color='#f9bebb', s=10)
-            ax.scatter(pca_hallu[:, 0], pca_hallu[:, 1], label='Hallucinated', 
-                    color='#84c3b7', alpha=0.3, s=10)
+        ax = axes[ax_ind]
+        ax.scatter(pca_gt[:, 0], pca_gt[:, 1], label='Ground Truth', color='#f9bebb', alpha=0.6, s=10)
+        ax.scatter(pca_hallu[:, 0], pca_hallu[:, 1], label='Hallucinated', 
+                color='#84c3b7', alpha=0.3, s=10)
 
-            # concat_x_values = np.concatenate([pca_gt[:, 0], pca_hallu[:, 0]])
-            # lower_bound = np.percentile(concat_x_values, 15)
-            # upper_bound = np.percentile(concat_x_values, 85)
-            # ax.set_xlim(lower_bound, upper_bound)
+        # concat_x_values = np.concatenate([pca_gt[:, 0], pca_hallu[:, 0]])
+        # lower_bound = np.percentile(concat_x_values, 15)
+        # upper_bound = np.percentile(concat_x_values, 85)
+        # ax.set_xlim(lower_bound, upper_bound)
 
-            ax.set_title(f'Layer {layer} Head {head}')
-            ax.set_xlabel('PC1')
-            ax.set_ylabel('PC2')
-            ax.legend()
+        ax.set_title(f'Layer {layer} Head {head}')
+        ax.set_xlabel('PC1')
+        ax.set_ylabel('PC2')
+        ax.legend()
 
-            ax_ind += 1
+        ax_ind += 1
     
     for ax in axes[top_num_heads:]:
         fig.delaxes(ax)
@@ -556,3 +567,38 @@ def ignore_warnings():
         message=".*The use of `x.T` on tensors of dimension other than 2.*",
         category=UserWarning
     )
+
+
+def run_bleurt(frame):
+    bleurt = load_metric("bleurt", cache_dir=None)
+    for calc in ['max', 'diff', 'acc']:
+        col_name = '{0} BLEURT {1}'.format('llava', calc)
+        if col_name not in frame.columns:
+            frame[col_name] = np.nan
+    results = {} 
+
+    for idx in tqdm(frame.index,desc='run bleurt'):
+        scores_true = bleurt.compute(
+                predictions=[frame.loc[idx, 'reason_after_steering']], 
+                references=[frame.loc[idx, 'gt_answer']]
+            )['scores']
+        scores_false = bleurt.compute(
+                predictions=[frame.loc[idx, 'reason_after_steering']], 
+                references=[frame.loc[idx, 'hall_answer']]
+            )['scores']       
+        for calc in ['max', 'diff', 'acc']:
+            col_name = '{0} BLEURT {1}'.format('llava', calc)
+            if calc == 'max':
+                frame.loc[idx, col_name] = max(scores_true)
+            elif calc == 'diff':
+                frame.loc[idx, col_name] = max(scores_true) - max(scores_false)
+            elif calc == 'acc':
+                frame.loc[idx, col_name] = int(max(scores_true) > max(scores_false))
+            print(frame.loc[idx, col_name])
+
+    for calc in ['max', 'diff', 'acc']:
+        col_name = '{0} BLEURT {1}'.format('llava', calc)
+        results[col_name] = sum(frame[col_name])/len(frame[col_name])
+        print(f'Average {col_name} {results[col_name]}')
+            
+    return frame, results
