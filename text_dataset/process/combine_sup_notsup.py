@@ -1,9 +1,9 @@
 import json
 import pandas as pd
 
-file_output_path1 = "./output/eval/hallsup_eval.jsonl"
-file_output_path2 = "./output/eval/hallnotsup_eval.jsonl"
-save_out_path = "./output/eval/hall_eval.jsonl"
+file_output_path1 = "./text_dataset/output/eval/hallsup_eval.jsonl"
+file_output_path2 = "./text_dataset/output/eval/hallnotsup_eval.jsonl"
+save_out_path = "./text_dataset/output/eval/hall_eval.jsonl"
 
 outline1 = []
 outline2 = []

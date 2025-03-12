@@ -9,7 +9,7 @@ import os
 from tqdm import tqdm
 import re
 
-from bot.llava import LLaVABot  # ✅ Import LLaVABot directly
+from ..bot.llava import LLaVABot  # ✅ Import LLaVABot directly
 
 
 ap = ArgumentParser()
@@ -27,7 +27,7 @@ ap.add_argument(
 )
 ap.add_argument(
     "--test_description_dir",
-    default="./output/answers",
+    default="./text_dataset/output/answers",
     help="Place to store descriptions",
 )
 ap.add_argument(

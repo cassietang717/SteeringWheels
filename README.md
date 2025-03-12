@@ -4,20 +4,31 @@
 - **Dongwei Lyu** (`dwlyu`) - [dwlyu@uchicago.edu](mailto:dwlyu@uchicago.edu)
 - **Yushan Tang** (`cassietang`) - [cassietang@uchicago.edu](mailto:cassietang@uchicago.edu)
 - **Weiyi Tian** (`weiyitian`) - [weiyitian@uchicago.edu](mailto:weiyitian@uchicago.edu)
-
+<!-- 
 ## MMHal with Llava-7b
 
 * [`llava_example.py`](./MMHal/llava_example.py): example of hallucination with llava-7b on a single image data
 * [`MMHal.py`](./MMHal/MMHal.py): use llava-7b to process data from MMHal-bench and generate outputs and save it to [`MMHal_output.json`](./MMHal/output/MMHal_output.json)
 * [`MMHal_st_eval.py`](./MMHal/MMHal_st_eval.py): use sentence transformer to evaluate the similarity between the ground truth answer and the model answer and save it to [`MMHal_st.json`](./MMHal/output/MMHal_st.json)
-* [`MMHal_llama_eval.py`](./MMHal/MMHal_llama_eval.py): use llama-3.1-8b to evaluate the hallucination between the ground truth answer and the model answer and save it to [`MMHal_llava.json`](./MMHal/output/MMHal_llava.json)
-
+* [`MMHal_llama_eval.py`](./MMHal/MMHal_llama_eval.py): use llama-3.1-8b to evaluate the hallucination between the ground truth answer and the model answer and save it to [`MMHal_llava.json`](./MMHal/output/MMHal_llava.json) -->
 ## Collect Activation Package
 ### text dataset
 - [Truthful_QA](https://huggingface.co/datasets/truthfulqa/truthful_qa)
 - [HaluEval](https://github.com/RUCAIBox/HaluEval/tree/main/data)
     - Summary
     - Question & Answer
+- [WiCE](https://github.com/ryokamoi/wice)
+### Text Dataset Creation
+```
+# generate hallucination answers
+python -m text_dataset.pipeline.0_generate_hall
+python -m text_dataset.process.split_sup_notsup
+# generate ground truth
+python -m text_dataset.pipeline.1_generate_ground_truth --dataset_path dataset_path1 --prompt prompt_support --save_file save_file1
+# use llama to evaluate ground truth label
+python -m text_dataset.pipeline.2_eval_ground_truth --dataset_path dataset_path1 --prompt prompt_support --save_file save_file1
+python -m text_dataset.process.combine_sup_notsup
+```
 ### Baseline model
 ```
 cd get_activations

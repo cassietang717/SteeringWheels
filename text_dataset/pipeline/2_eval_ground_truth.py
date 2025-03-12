@@ -1,4 +1,4 @@
-from bot.llamma import LLaMABot
+from ..bot.llamma import LLaMABot
 import json
 import os
 from tqdm import tqdm
@@ -32,23 +32,22 @@ prompt = args.prompt
 bot = LLaMABot()
 print("✅ Model and tokenizer loaded successfully!")
 
-save_filepath = "./output/eval"
+save_filepath = "./text_dataset/output/eval"
 os.makedirs(save_filepath, exist_ok=True)
-save_file1 = os.path.join(save_filepath, "hallsup_eval.jsonl")
-print(save_file1)
-save_file2 = os.path.join(save_filepath, "hallnotsup_eval.jsonl")
-print(save_file2)
+if save_file == "save_file1":
+    save_file = os.path.join(save_filepath, "hallsup_eval.jsonl")
+else:
+    save_file = os.path.join(save_filepath, "hallnotsup_eval.jsonl")
 
-dataset_path1 = "./output/ground_truth/hallsup_output.jsonl"
-dataset_path2 = "./output/ground_truth/hallnotsup_output.jsonl"
-with open(dataset_path1, 'r') as file:
-    dataset1 = [json.loads(line) for line in file]
-
-with open(dataset_path2, 'r') as file:
-    dataset2 = [json.loads(line) for line in file]
+if dataset_path == "dataset_path1":
+    dataset_path = "./text_dataset/output/ground_truth/hallsup_output.jsonl"
+else:
+    dataset_path = "./text_dataset/output/ground_truth/hallnotsup_output.jsonl"
+with open(dataset_path, 'r') as file:
+    dataset = [json.loads(line) for line in file]
 
 results = []
-for entry in tqdm(dataset_path, desc="Processing entries"):
+for entry in tqdm(dataset, desc="Processing entries"):
     claim = entry["claim"]
     support_sentence = entry["support_sentence"]
     evidence = entry["evidence"]
@@ -57,7 +56,8 @@ for entry in tqdm(dataset_path, desc="Processing entries"):
     answer = entry["answer"]
     reason = entry["reason"]
 
-    prompt_support = f"""
+    if prompt == "prompt_support":
+        prompt = f"""
     Your task is to determine if the ground truth can indicate that the evidence **supports** the claim.
     
     Answer strictly with either "Yes" or "No" without additional explanations.
@@ -79,8 +79,8 @@ for entry in tqdm(dataset_path, desc="Processing entries"):
     ### **Expected Output:**
     Just respond with "Yes" or "No".
     """
-
-    prompt_not_support = f"""
+    else:
+        prompt= f"""
     Your task is to determine if the ground truth correctly indicates that the evidence does **not** support the claim.
 
     Respond **only** with "Yes" or "No". Do **not** provide any explanations.
@@ -121,3 +121,4 @@ for entry in tqdm(dataset_path, desc="Processing entries"):
     with open(save_file, 'a') as task_file:
         task_file.write(json.dumps(result_entry) + "\n")
     
+print(save_file)
