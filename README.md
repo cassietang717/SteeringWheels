@@ -12,12 +12,14 @@
 * [`MMHal_st_eval.py`](./MMHal/MMHal_st_eval.py): use sentence transformer to evaluate the similarity between the ground truth answer and the model answer and save it to [`MMHal_st.json`](./MMHal/output/MMHal_st.json)
 * [`MMHal_llama_eval.py`](./MMHal/MMHal_llama_eval.py): use llama-3.1-8b to evaluate the hallucination between the ground truth answer and the model answer and save it to [`MMHal_llava.json`](./MMHal/output/MMHal_llava.json) -->
 ## Collect Activation Package
+
 ### text dataset
 - [Truthful_QA](https://huggingface.co/datasets/truthfulqa/truthful_qa)
 - [HaluEval](https://github.com/RUCAIBox/HaluEval/tree/main/data)
     - Summary
     - Question & Answer
 - [WiCE](https://github.com/ryokamoi/wice)
+
 ### Text Dataset Creation
 ```
 # generate hallucination answers
@@ -29,6 +31,7 @@ python -m text_dataset.pipeline.1_generate_ground_truth --dataset_path dataset_p
 python -m text_dataset.pipeline.2_eval_ground_truth --dataset_path dataset_path1 --prompt prompt_support --save_file save_file1
 python -m text_dataset.process.combine_sup_notsup
 ```
+
 ### Baseline model
 ```
 cd get_activations
@@ -36,6 +39,11 @@ cd get_activations
 python get_activations.py --dataset_name halu_qa --save 0 --dataset_length 300
 ```
 
+### Image Steering
+```
+vision_activation
+vc_on_nvc
+```
 
 ## Dependencies
 The project is dependent on packages specified in [`requirements.txt`](./requirements.txt).

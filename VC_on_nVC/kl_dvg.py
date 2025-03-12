@@ -12,13 +12,13 @@ from einops import rearrange
 
 import pyvene as pv
 import torch
-from datasets import load_dataset, concatenate_datasets
+from datasets import load_dataset
 from transformers import LlavaNextProcessor, LlavaNextForConditionalGeneration
 
 from vision_activation.interveners import wrapper, ITI_Intervener
 from vision_activation.utils import ignore_warnings, load_chunks, get_com_directions, get_top_heads, layer_head_to_flattened_idx
 from vision_activation.utils import apply_interventions, llama_evaluate, eval_ce_kl_owt, plot_layer_head_PCA
-from vision_activation.utils import get_kl_divergence_owt
+from vision_activation.utils import get_kl_divergence_owt, plot_kl_divgergence
 
 def main():
     parser = argparse.ArgumentParser()
@@ -42,7 +42,6 @@ def main():
 
     # load dataset
     if args.dataset_name == "HaloQuest": 
-        dataset_non_vc = load_dataset("csv", data_files="../HaloQuest/output/HaloQuest_llama.csv")
         dataset_vc = load_dataset("csv", data_files="../HaloQuest/output/HaloQuest_llama_vc.csv")
         train_dataset = dataset_vc.filter(lambda entry: entry["llama_hallucination_evaluation"] == "yes")["train"]
 
@@ -86,15 +85,12 @@ def main():
 
     print("Successfully loaded all activation chunks")
 
+    alpha_list = np.arange(0, 20)
+    kl_list = [None] * len(alpha_list)
 
-    # k-fold validation
-    for i in range(args.num_fold):
-        print(f"Running fold {i}")
-        train_test_size = int(args.test_ratio * len(train_dataset))
-        total_indices = np.arange(len(train_dataset))
-        np.random.shuffle(total_indices)
-        train_test_idx = total_indices[:train_test_size]
-        total_train_idxs = total_indices[train_test_size:]
+    for alpha in alpha_list:
+        total_train_idxs = np.arange(len(train_dataset))
+        np.random.shuffle(total_train_idxs)
 
         # separate into train and val sets
         shuffled_train_idx = np.random.permutation(total_train_idxs)
@@ -107,13 +103,12 @@ def main():
         # get top k impactful heads
         top_head_idxs = get_top_heads(train_set_idxs, val_set_idxs, gt_head_wise_activations, hallucinated_head_wise_activations, num_layers, num_heads, args.seed, args.top_num_heads, args.use_random_dir)
         print("Heads to be intervened: ", top_head_idxs)
-        print(f'Intervener Strength is {args.alpha}')
+        print(f'Intervener Strength is {alpha}')
 
         interveners = []
         pv_configs = []
         for layer, head in top_head_idxs:
             direction = torch.zeros(head_dim * num_heads).to("cpu")
-            #for head in heads:
             dir = torch.tensor(com_directions[layer_head_to_flattened_idx(layer, head, num_heads)], dtype=torch.float32).to("cpu")
             dir = dir / torch.norm(dir)
 
@@ -123,7 +118,7 @@ def main():
 
             direction[head * head_dim: (head + 1) * head_dim] = dir * proj_val_std
             
-            intervener = ITI_Intervener(direction, args.alpha)
+            intervener = ITI_Intervener(direction, alpha)
             interveners.append(intervener)
             pv_configs.append({
                 "component": f"language_model.model.layers[{layer}].self_attn.o_proj.input",
@@ -131,30 +126,12 @@ def main():
             })
         
         intervened_model = pv.IntervenableModel(pv_configs, model)
+        kl = get_kl_divergence_owt(model, intervened_model, processor)
+        kl_list[alpha] = kl
 
-        file_name = f'{args.model_name}_seed_{args.seed}_top_{args.top_num_heads}_heads_alpha_{int(args.alpha)}_fold_{i}'
-        if args.use_center_of_mass:
-            file_name += '_com'
-        if args.use_random_dir:
-            file_name += '_random'
+        print(f"on alpha ={alpha}, kl-divergence = {kl}")
 
-        other_dataset_test_size = int(args.test_ratio * len(test_dataset))
-        other_dataset_indices = np.arange(len(test_dataset))
-        np.random.shuffle(other_dataset_indices)
-        other_test_idx = other_dataset_indices[:other_dataset_test_size]
-
-        # orig_hallucinated_test_idx = orig_hallucinated_test_idx[:5]
-        # test_idx = np.concat([train_test_idx, other_test_idx + len(train_dataset)])
-        test_idx = other_test_idx
-        np.random.shuffle(test_idx)
-        #test_idx = np.random.choice(test_idx, size=int(len(test_idx) * 0.01), replace=False)
-
-        cur_fold_result_df = apply_interventions(test_dataset, test_idx, intervened_model, processor, "output/" + file_name)
-        cur_fold_llama_evaluation = llama_evaluate(cur_fold_result_df,  "output/eval_" + file_name)
-        
-        eval_ce_kl_owt(model, intervened_model, processor, top_head_idxs, "output/eval_" + file_name, "output/stats_" + file_name, device='cuda', num_samples=100)
-    
-        plot_layer_head_PCA(gt_head_wise_activations, hallucinated_head_wise_activations, top_head_idxs, args.top_num_heads, "figures/" + file_name)
+    plot_kl_divgergence(alpha_list, kl_list, "figures/KL_divgence.png")
 
 
 if __name__ == "__main__":

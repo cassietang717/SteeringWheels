@@ -158,7 +158,7 @@ def main():
         # test_idx = np.concat([train_test_idx, other_test_idx + len(train_dataset)])
         test_idx = other_test_idx
         np.random.shuffle(test_idx)
-        #test_idx = np.random.choice(test_idx, size=int(len(test_idx) * 0.01), replace=False)
+        test_idx = np.random.choice(test_idx, size=int(len(test_idx) * 0.2), replace=False)
 
         cur_fold_result_df = apply_interventions(test_dataset, test_idx, intervened_model, processor, "output/" + file_name)
         cur_fold_llama_evaluation = llama_evaluate(cur_fold_result_df,  "output/eval_" + file_name)

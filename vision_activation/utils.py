@@ -620,3 +620,13 @@ def run_bert(file_name):
     print(f"Total proportion of improved BERT F1 score: {results['improved_proportion']}")
 
     return results
+
+
+def plot_kl_divgergence(alpha_list, div_list, file_name, font_size=16):
+    plt.figure(figsize=(8, 6))
+    plt.plot(alpha_list, div_list, marker='o', linestyle='-', color='#e0a2ae', label='KL Divergence')
+    plt.xlabel("Intervention Strength ($\\alpha$)", fontsize=font_size)
+    plt.ylabel("KL Divergence", fontsize=font_size)
+    plt.title("KL Divergence vs. Intervention Strength ($\\alpha$)", fontsize=font_size + 2)
+    plt.legend(fontsize=font_size)
+    plt.savefig(file_name)
