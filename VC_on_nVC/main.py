@@ -2,6 +2,11 @@ from tqdm import tqdm
 import numpy as np
 from collections import defaultdict
 
+import sys
+import os
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(project_root)
+
 import argparse
 from einops import rearrange
 
@@ -10,9 +15,9 @@ import torch
 from datasets import load_dataset, concatenate_datasets
 from transformers import LlavaNextProcessor, LlavaNextForConditionalGeneration
 
-from interveners import wrapper, ITI_Intervener
-from utils import ignore_warnings, load_chunks, get_com_directions, get_top_heads, layer_head_to_flattened_idx
-from utils import apply_interventions, llama_evaluate, eval_ce_kl_owt, plot_layer_head_PCA
+from vision_activation.interveners import wrapper, ITI_Intervener
+from vision_activation.utils import ignore_warnings, load_chunks, get_com_directions, get_top_heads, layer_head_to_flattened_idx
+from vision_activation.utils import apply_interventions, llama_evaluate, eval_ce_kl_owt, plot_layer_head_PCA
 
 
 def main():
@@ -20,14 +25,14 @@ def main():
     parser.add_argument('--model_name', type=str, default='llava_7B')
     parser.add_argument('--dataset_name', type=str, default='HaloQuest')
     parser.add_argument('--device', type=int, default=0)
-    parser.add_argument('--top_num_heads', type=int, default=32, help='K, number of top heads to intervene on')
-    parser.add_argument('--alpha', type=float, default=10, help='alpha, intervention strength')
+    parser.add_argument('--top_num_heads', type=int, default=48, help='K, number of top heads to intervene on')
+    parser.add_argument('--alpha', type=float, default=12, help='alpha, intervention strength')
     parser.add_argument('--use_center_of_mass', action='store_true', help='use center of mass direction', default=True)
     parser.add_argument("--num_fold", type=int, default=1, help="number of folds")
     parser.add_argument('--val_ratio', type=float, help='ratio of validation set size to development set size', default=0.1)
     parser.add_argument('--test_ratio', type=float, help='ratio of test set size to the total dataset size', default=0.1)
     parser.add_argument('--use_random_dir', action='store_true', help='use random direction', default=False)
-    parser.add_argument('--seed', type=int, default=42, help='seed')
+    parser.add_argument('--seed', type=int, default=3407, help='seed')
     args = parser.parse_args()
     
     # set seeds
@@ -46,7 +51,8 @@ def main():
         # dataset = concatenate_datasets([orig_hallucinated_dataset, orig_correct_dataset])
 
         train_dataset = dataset_vc.filter(lambda entry: entry["llama_hallucination_evaluation"] == "yes")["train"]
-        test_dataset = concatenate_datasets([dataset_vc.filter(lambda entry: entry["llama_hallucination_evaluation"] == "no")["train"], dataset_non_vc["train"]])
+        #test_dataset = concatenate_datasets([dataset_vc.filter(lambda entry: entry["llama_hallucination_evaluation"] == "no")["train"], dataset_non_vc["train"]])
+        test_dataset = dataset_non_vc["train"]
         dataset = concatenate_datasets([train_dataset, test_dataset])
         
         #orig_hallucinated_dataset = orig_hallucinated_dataset.select(range(50))
@@ -149,16 +155,17 @@ def main():
         other_test_idx = other_dataset_indices[:other_dataset_test_size]
 
         # orig_hallucinated_test_idx = orig_hallucinated_test_idx[:5]
-        test_idx = np.concat([train_test_idx, other_test_idx + len(train_dataset)])
+        # test_idx = np.concat([train_test_idx, other_test_idx + len(train_dataset)])
+        test_idx = other_test_idx
         np.random.shuffle(test_idx)
-        test_idx = np.random.choice(test_idx, size=int(len(test_idx) * 0.1), replace=False)
+        #test_idx = np.random.choice(test_idx, size=int(len(test_idx) * 0.01), replace=False)
 
-        cur_fold_result_df = apply_interventions(dataset, test_idx, intervened_model, processor, "output/" + file_name)
+        cur_fold_result_df = apply_interventions(test_dataset, test_idx, intervened_model, processor, "output/" + file_name)
         cur_fold_llama_evaluation = llama_evaluate(cur_fold_result_df,  "output/eval_" + file_name)
         
         eval_ce_kl_owt(model, intervened_model, processor, top_head_idxs, "output/eval_" + file_name, "output/stats_" + file_name, device='cuda', num_samples=100)
     
-    plot_layer_head_PCA(gt_head_wise_activations, hallucinated_head_wise_activations, top_head_idxs, args.top_num_heads, "figures/" + file_name)
+        plot_layer_head_PCA(gt_head_wise_activations, hallucinated_head_wise_activations, top_head_idxs, args.top_num_heads, "figures/" + file_name)
 
 
 if __name__ == "__main__":

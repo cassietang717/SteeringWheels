@@ -16,6 +16,7 @@ import warnings
 import torch
 import torch.nn.functional as F
 from transformers import AutoTokenizer, LlamaForCausalLM
+from evaluate import load
 
 from sklearn.decomposition import PCA
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
@@ -481,7 +482,7 @@ def get_hallucination_num(dataset):
     
     print(f"Total entries: {total_entries}")
     print(f"Previous hallucination count: {previous_hallucination_count}")
-    print(f"Previous proportion: {steered_hallucination_proportion:.2%}")
+    print(f"Previous proportion: {previous_hallucination_proportion:.2%}")
     print(f"Steered hallucination count: {steered_hallucination_count}")
     print(f"Steered proportion: {steered_hallucination_proportion:.2%}")
 
@@ -496,6 +497,7 @@ def eval_ce_kl_owt(orig_model, intervened_model, processor, top_head_idxs, llama
     total_entries, previous_hallucination_count, previous_hallucination_proportion, \
         steered_hallucination_count, steered_hallucination_proportion = get_hallucination_num(steered_dataset)
 
+    bert_f1 = run_bert(llama_result_file)
 
     results = {
         "original_ce_loss": orig_ce,
@@ -506,7 +508,8 @@ def eval_ce_kl_owt(orig_model, intervened_model, processor, top_head_idxs, llama
         "hallucination_entries_after_steering": steered_hallucination_count,
         "hallucination_proportion_before_steering": previous_hallucination_proportion,
         "hallucination_proportion_after_steering": steered_hallucination_proportion,
-        "top_head_idxs": top_head_idxs
+        "bert_f1": bert_f1,
+        "top_head_idxs": top_head_idxs,
     }
 
 
@@ -515,7 +518,7 @@ def eval_ce_kl_owt(orig_model, intervened_model, processor, top_head_idxs, llama
     print(f"Results saved to {file_name}")
 
 
-def plot_layer_head_PCA(gt_head_wise_activations, hallucinated_head_wise_activations, top_head_idxs, top_num_heads, file_name):
+def plot_layer_head_PCA(gt_head_wise_activations, hallucinated_head_wise_activations, top_head_idxs, top_num_heads, file_name, font_size=14):
     cols = 4
     rows = math.ceil(top_num_heads / cols)
 
@@ -547,9 +550,9 @@ def plot_layer_head_PCA(gt_head_wise_activations, hallucinated_head_wise_activat
         # upper_bound = np.percentile(concat_x_values, 85)
         # ax.set_xlim(lower_bound, upper_bound)
 
-        ax.set_title(f'Layer {layer} Head {head}')
-        ax.set_xlabel('PC1')
-        ax.set_ylabel('PC2')
+        ax.set_title(f'Layer {layer} Head {head}', fontsize=font_size+2)
+        ax.set_xlabel('PC1', fontsize=font_size)
+        ax.set_ylabel('PC2', fontsize=font_size)
         ax.legend()
 
         ax_ind += 1
@@ -569,36 +572,51 @@ def ignore_warnings():
     )
 
 
-def run_bleurt(frame):
-    bleurt = load_metric("bleurt", cache_dir=None)
-    for calc in ['max', 'diff', 'acc']:
-        col_name = '{0} BLEURT {1}'.format('llava', calc)
-        if col_name not in frame.columns:
-            frame[col_name] = np.nan
+def run_bert(file_name):
+    bertscore = load("bertscore")
+    eval_df = pd.read_csv(file_name)
+
+    for calc in ['f1', 'diff', 'improved']:
+        col_name = '{0} BERT {1}'.format('llava', calc)
+        if col_name not in eval_df.columns:
+            eval_df[col_name] = np.nan
     results = {} 
 
-    for idx in tqdm(frame.index,desc='run bleurt'):
-        scores_true = bleurt.compute(
-                predictions=[frame.loc[idx, 'reason_after_steering']], 
-                references=[frame.loc[idx, 'gt_answer']]
-            )['scores']
-        scores_false = bleurt.compute(
-                predictions=[frame.loc[idx, 'reason_after_steering']], 
-                references=[frame.loc[idx, 'hall_answer']]
-            )['scores']       
-        for calc in ['max', 'diff', 'acc']:
-            col_name = '{0} BLEURT {1}'.format('llava', calc)
-            if calc == 'max':
-                frame.loc[idx, col_name] = max(scores_true)
+    for idx in tqdm(eval_df.index, desc='run bert'):
+        previous_scores = bertscore.compute(
+                predictions=[eval_df.loc[idx, 'before_steering']], 
+                references=[eval_df.loc[idx, 'gt_answer']],
+                lang="en"
+            )['f1']
+        steered_scores = bertscore.compute(
+                predictions=[eval_df.loc[idx, 'after_steering']], 
+                references=[eval_df.loc[idx, 'gt_answer']],
+                lang="en"
+            )['f1']       
+        for calc in ['f1', 'diff', 'improved']:
+            col_name = '{0} BERT {1}'.format('llava', calc)
+            if calc == 'f1':
+                eval_df.loc[idx, col_name] = max(steered_scores)
             elif calc == 'diff':
-                frame.loc[idx, col_name] = max(scores_true) - max(scores_false)
-            elif calc == 'acc':
-                frame.loc[idx, col_name] = int(max(scores_true) > max(scores_false))
-            print(frame.loc[idx, col_name])
+                eval_df.loc[idx, col_name] = max(steered_scores) - max(previous_scores)
+            elif calc == 'improved':
+                eval_df.loc[idx, col_name] = int(max(steered_scores) > max(previous_scores))
 
-    for calc in ['max', 'diff', 'acc']:
-        col_name = '{0} BLEURT {1}'.format('llava', calc)
-        results[col_name] = sum(frame[col_name])/len(frame[col_name])
-        print(f'Average {col_name} {results[col_name]}')
-            
-    return frame, results
+    eval_df.to_csv(file_name, index=False)
+
+    col_name = '{0} BERT {1}'.format('llava', 'f1')
+    results["mean"] = float(eval_df[col_name].mean(skipna=True))
+    print(f'Average {col_name}: {results["mean"]}')
+
+    col_name = '{0} BERT {1}'.format('llava', 'diff')
+    results["mean improvement"] = float(eval_df[col_name].mean(skipna=True))
+    print(f'Average {col_name}: {results["mean improvement"] }')
+
+    col_name = '{0} BERT {1}'.format('llava', 'improved')
+    results['improved_num'] = int(eval_df[col_name].sum(skipna=True))
+    print(f"Total entries with improved BERT F1 score: {results['improved_num']}")
+
+    results["improved_proportion"] = float(eval_df[col_name].mean(skipna=True))
+    print(f"Total proportion of improved BERT F1 score: {results['improved_proportion']}")
+
+    return results
