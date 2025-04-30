@@ -1,0 +1,754 @@
+[
+    {
+        "question_type": "attribute",
+        "image_url": "https://c4.staticflickr.com/8/7211/7206072054_c53d53b97d_o.jpg",
+        "question": "What color is the fire hydrant cap in the picture? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The color of the fire hydrant cap in the image is yellow.",
+        "model_answer_before_vti": "The fire hydrant cap in the picture is yellow.",
+        "model_answer_after_vti": "The fire hydrant cap in the picture is yellow."
+    },
+    {
+        "question_type": "adversarial",
+        "image_url": "https://farm2.staticflickr.com/5443/7413067568_06a8d1eb64_o.jpg",
+        "question": "Who is sitting on the bench? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No one is sitting on the bench.",
+        "model_answer_before_vti": "No one is sitting on the bench.",
+        "model_answer_after_vti": "No one is sitting on the bench."
+    },
+    {
+        "question_type": "comparison",
+        "image_url": "https://farm8.staticflickr.com/137/383965780_db4815011c_o.jpg",
+        "question": "Which wooden stool has a vase with red flower on it? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The left wooden stool has a vase with a red flower on it.",
+        "model_answer_before_vti": "The wooden stool with a vase with a red flower on it is the one on the left.",
+        "model_answer_after_vti": "The wooden stool with a vase with red flower on it is the one on the left."
+    },
+    {
+        "question_type": "counting",
+        "image_url": "https://c6.staticflickr.com/8/7618/16875241476_3b79e5d79b_o.jpg",
+        "question": "How many traffic lights are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are four traffic lights in the image.",
+        "model_answer_before_vti": "There are three traffic lights in the image.",
+        "model_answer_after_vti": "There are four traffic lights in the image."
+    },
+    {
+        "question_type": "relation",
+        "image_url": "https://farm3.staticflickr.com/3640/3576366805_eea15333d5_o.jpg",
+        "question": "What colors are the traffic signs at the top, in the middle, and at the bottom? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The traffic signs at the top and bottom are white, while the one in the center is blue.",
+        "model_answer_before_vti": "The traffic signs at the top are white with black text. The middle sign is blue with white text. The bottom sign is yellow with black text.",
+        "model_answer_after_vti": "The traffic signs at the top are white with black text. The middle signs are blue with white text. The bottom signs are yellow with black text."
+    },
+    {
+        "question_type": "environment",
+        "image_url": "https://c2.staticflickr.com/4/3452/3788392512_2a3f537219_o.jpg",
+        "question": "How would you describe the weather in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The photo was captured during nighttime, with a dark sky overhead. It depicts a Ferris wheel surrounded by people and illuminated by the lights.",
+        "model_answer_before_vti": "The weather in the image appears to be clear and dark, with no visible clouds or precipitation. The nighttime setting and the illuminated Ferris wheel suggest that it is a calm and still evening.",
+        "model_answer_after_vti": "The weather in the image appears to be clear and dark, with the night sky visible above the carnival."
+    },
+    {
+        "question_type": "holistic",
+        "image_url": "https://c3.staticflickr.com/6/5558/14388226720_c54b67588a_o.jpg",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The picture depicts a city street, recently dampened by rain, with a sidewalk lined by trees. There are several cars parked on the right, while others move along the road. A few pedestrians can be seen at a distance on the sidewalk, some of them holding umbrellas to protect themselves from the rain. The trees offer shade and lend a touch of nature to the urban setting. The scene exudes a sense of calm and serenity, emphasized by the glistening wet street and the nearly vacant walkway.",
+        "model_answer_before_vti": "The image captures a serene city street on a rainy day. The street, slick with rain, is lined with tall, slender trees that stand like sentinels on either side. The trees, their leaves a vibrant green, add a touch of nature to the urban landscape.\n\nThe street itself is a typical city scene. A sidewalk runs parallel to the street, providing a path for pedestrians. A few cars are parked along the",
+        "model_answer_after_vti": "The image captures a serene scene of a city street on a rainy day. The street, lined with trees on both sides, is slick with rain, reflecting the overcast sky above. The sidewalk, made of cobblestones, is wet and shiny, adding to the overall tranquility of the scene.\n\nOn the right side of the street, there are buildings that add an urban touch to the otherwise natural setting. The buildings are tall"
+    },
+    {
+        "question_type": "other",
+        "image_url": "https://c7.staticflickr.com/6/5506/11715451803_24861529ab_o.jpg",
+        "question": "How much is it per hour to park at the parking meter? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "It is $4 per hour to park at the parking meter.",
+        "model_answer_before_vti": "The parking meter charges $4.00 per hour for parking.",
+        "model_answer_after_vti": "The parking meter in the image displays a two-hour parking rate of $4.40 per hour."
+    },
+    {
+        "question_type": "attribute",
+        "image_url": "https://c1.staticflickr.com/1/463/20076975362_949c5a1cdb_o.jpg",
+        "question": "What color are the two cars from right to left in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The two cars from right to left in the image are black and blue.",
+        "model_answer_before_vti": "The two cars in the image are blue and black.",
+        "model_answer_after_vti": "The two cars from right to left in the image are blue and black."
+    },
+    {
+        "question_type": "adversarial",
+        "image_url": "https://farm4.staticflickr.com/2503/3828840628_e625c9beb0_o.jpg",
+        "question": "What is the gender of the person riding the motorcycle in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No one is riding the motorcycle by the roadside in the image.",
+        "model_answer_before_vti": "The image does not provide enough information to confidently determine the gender of the person riding the motorcycle.",
+        "model_answer_after_vti": "The person riding the motorcycle in the image is a woman."
+    },
+    {
+        "question_type": "comparison",
+        "image_url": "https://c4.staticflickr.com/2/1196/1424845359_c4945d38f1_o.jpg",
+        "question": "In the image, which truck (left or right) has its door open? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The fire truck, which is on the left side of the image, has its door open.",
+        "model_answer_before_vti": "The truck on the left has its door open.",
+        "model_answer_after_vti": "The truck on the left has its door open."
+    },
+    {
+        "question_type": "counting",
+        "image_url": "https://c7.staticflickr.com/1/100/315943393_e2c5dc5bd7_o.jpg",
+        "question": "How many bicycles are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In the image, there are four bicycles: two at the front, one in the middle, and one in the distance.",
+        "model_answer_before_vti": "There are four bicycles in the image.",
+        "model_answer_after_vti": "There are several bicycles in the image, with a group of people riding them."
+    },
+    {
+        "question_type": "relation",
+        "image_url": "https://c4.staticflickr.com/5/4086/5014730631_9c2701e063_o.jpg",
+        "question": "How is the yellow boat positioned in relation to the white yacht in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The yellow boat is positioned in front of the white yacht in the image.",
+        "model_answer_before_vti": "The yellow boat is positioned in front of the white yacht, with the man standing on the yellow boat.",
+        "model_answer_after_vti": "The yellow boat is positioned in front of the white yacht, with the white yacht being behind the yellow boat."
+    },
+    {
+        "question_type": "environment",
+        "image_url": "https://c1.staticflickr.com/4/3386/3430256574_ab887d1df5_o.jpg",
+        "question": "What is the weather like in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In the image, the weather appears to be either sunny or cloudy.",
+        "model_answer_before_vti": "The weather in the image appears to be overcast, with a cloudy sky.",
+        "model_answer_after_vti": "The weather in the image appears to be cloudy, with a mix of sunlight and overcast skies."
+    },
+    {
+        "question_type": "holistic",
+        "image_url": "https://c8.staticflickr.com/5/4033/4523458956_0b78c6b298_o.jpg",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The picture presents a yellow school bus stationed on an urban roadway, alongside a bicyclist. Positioned outside a tattoo establishment, the bus offers a unique urban backdrop. The road is notably calm, with the absence of other vehicles and passersby. The cyclist, equipped with a backpack and helmet, seems to be a student or a regular commuter. Given the tattoo parlor and the school bus, it's plausible that this area is a vibrant commercial or recreational hub frequented by shoppers, students, or those seeking leisure.",
+        "model_answer_before_vti": "The image captures a vibrant city scene. Dominating the frame is a yellow school bus, parked on the side of a street. The bus is adorned with a red stop sign, a universal symbol of caution. A blue and white striped awning extends from the bus, adding a touch of color to the scene.\n\nIn front of the bus, a man is seen riding a bicycle. He is dressed in a blue shirt and a",
+        "model_answer_after_vti": "The image captures a vibrant city scene. Dominating the frame is a yellow school bus, parked on the side of a street. The bus is adorned with a sign that reads \"ABACO CARRIERS\", indicating its purpose. \n\nIn front of the bus, a man is seen riding a bicycle. He is wearing a backpack, suggesting he might be a student or a commuter. The bicycle is parked"
+    },
+    {
+        "question_type": "other",
+        "image_url": "https://c2.staticflickr.com/8/7167/6555470659_4c69a30b73_o.jpg",
+        "question": "Which company owns the airplane displayed in the back of the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The airplane in the background of the image is owned by Virgin Airlines.",
+        "model_answer_before_vti": "The airplane in the back of the image belongs to United Airlines.",
+        "model_answer_after_vti": "The airplane in the back of the image belongs to United Airlines."
+    },
+    {
+        "question_type": "attribute",
+        "image_url": "https://farm4.staticflickr.com/3839/14901778703_09a206232c_o.jpg",
+        "question": "What are the colors of the shirts worn by the three men from left to right in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The three men from left to right in the image are wearing green, blue, and red shirts.",
+        "model_answer_before_vti": "The colors of the shirts worn by the three men from left to right in the image are green, blue, and red.",
+        "model_answer_after_vti": "The colors of the shirts worn by the three men from left to right in the image are green, blue, and red."
+    },
+    {
+        "question_type": "adversarial",
+        "image_url": "https://farm4.staticflickr.com/41/83372724_a17cceb078_o.jpg",
+        "question": "Which color are the glasses that the man in the image is wearing? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The man is not wearing glasses.",
+        "model_answer_before_vti": "Black",
+        "model_answer_after_vti": "Black"
+    },
+    {
+        "question_type": "comparison",
+        "image_url": "https://farm1.staticflickr.com/3815/9340455006_25a885f7ef_o.jpg",
+        "question": "Who in the picture is wearing trousers? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The woman in the image wears the pants.",
+        "model_answer_before_vti": "Woman",
+        "model_answer_after_vti": "Woman"
+    },
+    {
+        "question_type": "counting",
+        "image_url": "https://farm6.staticflickr.com/7307/16189396430_4dce91a9d7_o.jpg",
+        "question": "How many people are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are four people in the image.",
+        "model_answer_before_vti": "There are four people in the image.",
+        "model_answer_after_vti": "There are seven people in the image."
+    },
+    {
+        "question_type": "relation",
+        "image_url": "https://farm8.staticflickr.com/3063/2500640631_a4c9abd52c_o.jpg",
+        "question": "Where is the girl positioned among the three people in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The girl stands on the right among the three individuals in the image.",
+        "model_answer_before_vti": "The girl is positioned between the two older people in the image.",
+        "model_answer_after_vti": "The girl is positioned between the two people on the left and the person on the right in the image."
+    },
+    {
+        "question_type": "environment",
+        "image_url": "https://c1.staticflickr.com/3/2766/4264709756_1eb0e9ab45_o.jpg",
+        "question": "Is the man in the picture indoors or outdoors? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The man in the photo is outside, sitting on a boat with several oxygen tanks around him.",
+        "model_answer_before_vti": "The man in the picture is outdoors.",
+        "model_answer_after_vti": "Outdoors"
+    },
+    {
+        "question_type": "holistic",
+        "image_url": "https://c2.staticflickr.com/4/3501/4068897399_a729022693_o.jpg",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The image captures a bustling street lined with various shops and an adjoining sidewalk. Several pedestrians are present, with two individuals notably passing a store with a green sign saying \"Hawkin's Bazaar\". At this store's entrance, a man stands, overseeing a spacious window display that houses diverse items, highlighted by a red and white sign. Interestingly, no trees or parked cars are present in the street. The mood is energetic, showcasing individuals engaged in their daily routines and shopping pursuits.",
+        "model_answer_before_vti": "The image captures a lively scene on a city street. Dominating the frame is a charming store named \"Hawkin's Bazaar\", as indicated by the green sign with white lettering. The store's facade is adorned with a festive display of Christmas decorations, adding a touch of holiday cheer to the urban setting.\n\nIn front of the store, a sidewalk is bustling with activity. Several people are seen walking by",
+        "model_answer_after_vti": "The image captures a vibrant street scene in a European city. Dominating the frame is a charming store named \"Hawkin's Bazaar\", its green facade adorned with white lettering. The store's sign is clearly visible, inviting passersby to explore its wares.\n\nThe store is nestled on a street lined with other shops, their signs adding to the colorful array of the scene. The street itself is"
+    },
+    {
+        "question_type": "other",
+        "image_url": "https://farm8.staticflickr.com/7445/8716117944_a272643aef_o.jpg",
+        "question": "What number is the fastest girl wearing in the picture? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The fastest girl in the picture is wearing number 1097.",
+        "model_answer_before_vti": "The fastest girl in the picture is wearing the number 1097.",
+        "model_answer_after_vti": "The fastest girl in the picture is wearing the number 1097."
+    },
+    {
+        "question_type": "attribute",
+        "image_url": "https://farm4.staticflickr.com/8268/10172500456_1f40b6bd38_o.jpg",
+        "question": "What are the colors of the dogs from right to left? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The colors of the two dogs from right to left are brown and black.",
+        "model_answer_before_vti": "The colors of the dogs from right to left are brown, black, and brown.",
+        "model_answer_after_vti": "The colors of the dogs from right to left are brown, black, and tan."
+    },
+    {
+        "question_type": "adversarial",
+        "image_url": "https://c1.staticflickr.com/3/2935/13789278495_8545acd44c_o.jpg",
+        "question": "What is a vicuna standing in the sand looking at? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no vicuna in the image.",
+        "model_answer_before_vti": "A vicuna standing in the sand is looking at a painting of a toucan.",
+        "model_answer_after_vti": "A vicuna standing in the sand is looking at a colorful painting of a toucan."
+    },
+    {
+        "question_type": "comparison",
+        "image_url": "https://farm8.staticflickr.com/195/502006488_2d907443d8_o.jpg",
+        "question": "Which cat (left, right or middle) in the image opens its mouth? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The cat on the right side of the image opens its mouth.",
+        "model_answer_before_vti": "The cat on the right in the image opens its mouth.",
+        "model_answer_after_vti": "The cat on the right in the image opens its mouth."
+    },
+    {
+        "question_type": "counting",
+        "image_url": "https://c3.staticflickr.com/6/5223/5775946611_ef789718ed_o.jpg",
+        "question": "How many zebras are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are six zebras in the image.",
+        "model_answer_before_vti": "There are six zebras in the image.",
+        "model_answer_after_vti": "There are a dozen zebras in the image."
+    },
+    {
+        "question_type": "relation",
+        "image_url": "https://c6.staticflickr.com/2/1333/965561501_0b7e9aed90_o.jpg",
+        "question": "Which sheep is in front of the other sheep? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The sheep in front of the other sheep is a white sheep.",
+        "model_answer_before_vti": "The sheep in the foreground is standing in front of the other sheep.",
+        "model_answer_after_vti": "The sheep in the foreground is standing in front of the other sheep."
+    },
+    {
+        "question_type": "environment",
+        "image_url": "https://c7.staticflickr.com/4/3210/2938079244_9e814f0e7a_o.jpg",
+        "question": "How was the weather when this picture was captured? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "When this photo was taken, it was dark at night. This photo shows a horse race at night.",
+        "model_answer_before_vti": "The weather in the picture appears to be dark and possibly rainy, as the jockeys are wearing helmets with visors and the horses are running on a track with artificial lighting. The darkness suggests that it is nighttime, and the artificial lighting is necessary to ensure the safety of the jockeys and horses. The presence of rain would make the track wet and potentially more challenging for the horses and jockeys to navigate.",
+        "model_answer_after_vti": "The weather in the picture appears to be nighttime, with artificial lighting illuminating the scene. The lighting suggests that it might be a cooler evening, as the riders are wearing jackets and the horses are not showing signs of overheating. The darkness of the night indicates that it is not raining or snowing, and the visibility is good for the jockeys and horses to compete in the race."
+    },
+    {
+        "question_type": "other",
+        "image_url": "https://c6.staticflickr.com/5/4079/4883309412_53b0b853d5_o.jpg",
+        "question": "Out of the four animals, how many giraffes are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In the image, there are two rhinos, a giraffe, and a wild horse.",
+        "model_answer_before_vti": "There are two giraffes in the image.",
+        "model_answer_after_vti": "There are no giraffes in the image. The animals present are a zebra, a rhino, a hippo, and a wildebeest."
+    },
+    {
+        "question_type": "attribute",
+        "image_url": "https://farm1.staticflickr.com/3758/12521323285_97a94c8cbc_o.jpg",
+        "question": "Is the kiwi in the front fresh or dried? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The kiwi in the front is dried. There are four dried pieces of kiwi in the front, and three fresh ones in the back.",
+        "model_answer_before_vti": "The kiwi in the front is dried.",
+        "model_answer_after_vti": "The kiwi in the front is dried."
+    },
+    {
+        "question_type": "adversarial",
+        "image_url": "https://c6.staticflickr.com/9/8834/18414801440_47f21894da_o.jpg",
+        "question": "Is the jam on the bread made of strawberry? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In fact, this photo only shows a cut and toasted bread slice. There is no jam on it.",
+        "model_answer_before_vti": "Yes, the jam on the bread is made of strawberry.",
+        "model_answer_after_vti": "Yes, the jam on the bread is made of strawberry."
+    },
+    {
+        "question_type": "comparison",
+        "image_url": "https://farm6.staticflickr.com/5209/5322693484_868ba39c68_o.jpg",
+        "question": "Compare the tomatoes in the photo. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are three tomatoes from the same vine in the photo. The tomato on the left side is red and ripe, while the two tomatoes in the middle and on the right side are yellow and unripe.",
+        "model_answer_before_vti": "In the photo, there are three tomatoes hanging from a vine. The tomato on the left is a bright red color, indicating that it is ripe and ready for consumption. The tomato in the middle is a yellowish-orange color, which suggests that it is still in the process of ripening and may not be as sweet or flavorful as the red tomato. The tomato on the right is also a bright red color, similar to the first tom",
+        "model_answer_after_vti": "In the photo, there are several tomatoes hanging from a vine. The tomatoes are at different stages of ripeness, as indicated by their colors. Some tomatoes are fully ripe, with a vibrant red color, while others are still green, indicating that they are not yet ripe. The green tomatoes are smaller in size compared to the red ones, which are larger and have a more intense red color. This variation in color and size suggests that the tom"
+    },
+    {
+        "question_type": "counting",
+        "image_url": "https://c2.staticflickr.com/3/2374/2519330533_597840098a_o.jpg",
+        "question": "How many oysters can you see in the photo? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are five oysters visible in the photo.",
+        "model_answer_before_vti": "There are six oysters visible in the photo.",
+        "model_answer_after_vti": "There are several oysters visible in the photo, but without an exact count, I can only say that there are multiple oysters present."
+    },
+    {
+        "question_type": "relation",
+        "image_url": "https://farm7.staticflickr.com/5186/5757505875_8578d2fc37_o.jpg",
+        "question": "Is the bowl with broccoli on top of the bowl with meatballs? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No, the bowl with broccoli is next to the bowl of meatballs.",
+        "model_answer_before_vti": "Yes, the bowl with broccoli is on top of the bowl with meatballs.",
+        "model_answer_after_vti": "Yes, the bowl with broccoli is on top of the bowl with meatballs."
+    },
+    {
+        "question_type": "environment",
+        "image_url": "https://c2.staticflickr.com/9/8726/16685252757_e1c32c0e1f_o.jpg",
+        "question": "Is this photo taken in a restaurant, a kitchen, or anywhere else? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "This photo is taken outdoors, likely on a beach, where a man is cooking on a grill.",
+        "model_answer_before_vti": "The photo appears to be taken at an outdoor event or gathering, possibly a street food stall or a similar setting. The presence of a grill with food being cooked and a crowd of people suggests that this is not a typical indoor restaurant or kitchen environment. The exact location cannot be determined with certainty, but it is not a typical indoor dining space.",
+        "model_answer_after_vti": "The photo appears to be taken at an outdoor event, possibly a street food festival or a similar gathering. The presence of a grill with food being cooked and people standing around it suggests a casual, communal atmosphere, which is typical of such events. The location is not a restaurant or a kitchen, as there is no indoor setting visible in the image."
+    },
+    {
+        "question_type": "holistic",
+        "image_url": "https://farm7.staticflickr.com/1420/4722330374_2425fd36eb_o.jpg",
+        "question": "Describe the activities in this image. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In this image we can see a man and two young girls preparing food. The man seems to be a chef with a suit but no hat. The two girls seem to be interns, wearing aprons with a \"BRITANNIA HOTEL\" logo. The man seems to be guiding the girls to prepare the food. In front of them, there is a table with food on it. From left to right, there is a metal bowl of vegetables on a red cutting board, and two plates of meat, possibly saussages.",
+        "model_answer_before_vti": "In the image, there are three individuals engaged in a cooking activity. Two of them are wearing aprons with the text \"BRITANNI HOTEL\" on them, suggesting they might be chefs or staff at the Britanni Hotel. The third person is not wearing an apron and appears to be observing or assisting in the cooking process. They are standing around a table that has a plate of food on it, which includes what looks like sliced",
+        "model_answer_after_vti": "In the image, a group of chefs, including both men and women, are gathered around a kitchen counter. They are wearing aprons and chef hats, indicating their professional roles. The chefs are engaged in various activities related to food preparation. Some are holding bowls and are in the process of cooking, while others are observing and possibly learning from the ongoing activities. The kitchen counter is adorned with a variety of ingredients and cooking utens"
+    },
+    {
+        "question_type": "other",
+        "image_url": "https://c5.staticflickr.com/7/6064/6097499605_d06c51eed9_o.jpg",
+        "question": "From this photo, how much does each jerk chicken dumpling cost? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Each jerk chicken dumpling costs 5 pounds.",
+        "model_answer_before_vti": "The photo shows a menu with the price of jerk chicken dumplings listed as \u00a35.00.",
+        "model_answer_after_vti": "In the photo, there are two signs for jerk chicken dumplings. The first sign indicates that they cost \u00a32.00, and the second sign shows that they cost \u00a33.00."
+    },
+    {
+        "question_type": "attribute",
+        "image_url": "https://c5.staticflickr.com/8/7141/6705513453_b025140503_o.jpg",
+        "question": "What are the colors of the parachutes in the sky? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are three parachutes in the sky. The one on the left is light green. The one on the top right is orange. The one on the bottom right is blue.",
+        "model_answer_before_vti": "The parachutes in the sky are green, blue, and orange.",
+        "model_answer_after_vti": "The parachutes in the sky are blue, green, and orange."
+    },
+    {
+        "question_type": "adversarial",
+        "image_url": "https://c7.staticflickr.com/9/8387/8506072922_e7f6c6ca49_o.jpg",
+        "question": "Describe the person playing tennis in this photo. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No, there is only a tennis racket and a ball on the ground. No one is playing tennis in this photo.",
+        "model_answer_before_vti": "In the photo, there is a tennis racket with a blue and white design, resting on a green tennis court. The racket is positioned on the right side of the image, with the handle pointing towards the top right corner. A yellow tennis ball is placed on the left side of the racket, near the bottom of the image. The court itself appears to be well-maintained, with a clear boundary marked by a white line. There is no person visible in the",
+        "model_answer_after_vti": "In the photo, a tennis racket and a tennis ball are prominently displayed on a tennis court. The racket is leaning against the net, suggesting that the person playing tennis has taken a break or finished their game. The tennis ball is placed near the racket, indicating that it was recently in use. The court itself appears to be well-maintained, with clear boundary lines and a vibrant green surface. The overall scene conveys a sense of active play"
+    },
+    {
+        "question_type": "comparison",
+        "image_url": "https://c2.staticflickr.com/5/4126/4958794254_c3f9677682_o.jpg",
+        "question": "Compare the two surfboards in the photo. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The two surfboards have different looks. The surfboard on the top has a white and wood color with a simple design. The other one on the bottom is red, with a more complex white and black pattern in the front.",
+        "model_answer_before_vti": "The two surfboards in the photo are quite different in design and purpose. The surfboard on the left appears to be a longboard, which is typically used for cruising, carving, and long-distance paddling. Longboards are known for their stability and ease of use, making them popular among beginners and those who prefer a more relaxed surfing style.\n\nThe surfboard on the right is a shortboard, which is designed for high-",
+        "model_answer_after_vti": "The two surfboards in the photo are quite distinct in terms of design and color scheme. The surfboard on the left is predominantly red with a black and white pattern, featuring a symmetrical design with a central black circle and a black and white swirl pattern. The surfboard on the right is predominantly red with a black and white pattern as well, but it has a more intricate and complex design with a grid-like pattern and a central black circle."
+    },
+    {
+        "question_type": "counting",
+        "image_url": "https://c4.staticflickr.com/4/3048/2603285498_e8e6c82214_o.jpg",
+        "question": "How many horses are there in the photo? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are three horses in the photo.",
+        "model_answer_before_vti": "There are three horses in the photo.",
+        "model_answer_after_vti": "There are four horses in the photo."
+    },
+    {
+        "question_type": "relation",
+        "image_url": "https://c4.staticflickr.com/5/4010/4459982881_b378f81b6f_o.jpg",
+        "question": "What is the color of the ball on the left? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The color of the ball on the left is red or orange.",
+        "model_answer_before_vti": "The color of the ball on the left is orange.",
+        "model_answer_after_vti": "The color of the ball on the left is orange."
+    },
+    {
+        "question_type": "environment",
+        "image_url": "https://c4.staticflickr.com/6/5099/5483033051_fa3ecf0e0d_o.jpg",
+        "question": "Is this photo taken indoors or outdoors? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The photo is taken indoors, since there is a group of hockey players playing in an ice stadium.",
+        "model_answer_before_vti": "Indoors",
+        "model_answer_after_vti": "Indoors"
+    },
+    {
+        "question_type": "holistic",
+        "image_url": "https://c5.staticflickr.com/3/2929/13926846360_2449b5b12f_o.jpg",
+        "question": "Describe the activity in this photo. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In this photo, three players are playing soccer. The first player on the left wears a white and red uniform, and is controlling the ball. The other two players on the right side are from the other team. They wear blue and yellow uniforms. The player closer to the camera is competing with the first player to gain control of the ball, while the other player is at distance.",
+        "model_answer_before_vti": "In the photo, a soccer match is in progress on a grassy field. There are three players visible: one in a white and red striped jersey, another in a blue jersey, and a third player in a yellow jersey. The player in the white and red striped jersey is in the process of kicking the soccer ball, which is located on the ground in front of him. The other two players are positioned nearby, likely prepar",
+        "model_answer_after_vti": "In the photo, a soccer match is in progress on a grassy field. There are two teams, each with their own color scheme. One team is wearing blue and white, while the other team is in blue and red. The players are actively engaged in the game, with one player in blue and white attempting to kick the soccer ball, which is located in the lower left corner of the image. The other players are positioned strategically around the field, ready to react"
+    },
+    {
+        "question_type": "other",
+        "image_url": "https://farm5.staticflickr.com/3802/13407081714_0375f7b3e0_o.jpg",
+        "question": "Which tournament is this tennis competition? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "From the text on the ground, this is the Indian Wells tournament.",
+        "model_answer_before_vti": "This tennis competition is the Indian Wells Masters, which is one of the four Grand Slam tournaments.",
+        "model_answer_after_vti": "This tennis competition is the Indian Wells Masters, which is one of the four Grand Slam tournaments."
+    },
+    {
+        "question_type": "attribute",
+        "image_url": "https://c3.staticflickr.com/4/3827/12255073776_5f17d88d21_o.jpg",
+        "question": "What color is the microwave? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The microwave is mainly silver, with a black panel.",
+        "model_answer_before_vti": "Silver",
+        "model_answer_after_vti": "Silver"
+    },
+    {
+        "question_type": "adversarial",
+        "image_url": "https://farm2.staticflickr.com/1116/1411998044_37c3c4a234_o.jpg",
+        "question": "How many people are eating in this kitchen? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No one is eating in the kitchen. I can see a dining table and four chairs, but there are no people in the sitting there right now.",
+        "model_answer_before_vti": "There are four people eating in this kitchen.",
+        "model_answer_after_vti": "The image shows a kitchen with a dining table set for a meal, but it is not possible to determine the exact number of people who are eating in the kitchen. The table is set with place settings, which suggests that it is intended for a meal for multiple people, but the actual number of people cannot be determined from the image alone."
+    },
+    {
+        "question_type": "comparison",
+        "image_url": "https://c3.staticflickr.com/4/3039/3018306107_51f8da54b3_o.jpg",
+        "question": "Compare the utensils in the picture. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The picture shows a set of three utensils in different views with a white background: A knive with a blue handle, a spoon with a yellow handle, and a red fork with a red handle. They are all made of metal and plastic handle.",
+        "model_answer_before_vti": "The image shows a creative and playful arrangement of utensils. On the left side, there are three forks, each with a different color and pattern. The middle forks are yellow and red, while the forks on the right are silver and blue. The utensils are stacked in a way that resembles a colorful tower, with the forks on the left being the base and the forks on the right being the top.\n\nIn the center",
+        "model_answer_after_vti": "The image presents a creative and colorful arrangement of utensils, primarily forks and spoons, which are designed to resemble a train. The utensils are arranged in a way that mimics the appearance of a train on tracks, with the forks and spoons positioned to look like the wheels and carriages of a locomotive.\n\nThe forks are used in various ways to create the illusion of train wheels. Some are placed vertically"
+    },
+    {
+        "question_type": "counting",
+        "image_url": "https://c3.staticflickr.com/7/6153/6266717889_714dc304bd_o.jpg",
+        "question": "How many forks can you see? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are two forks.",
+        "model_answer_before_vti": "There are four forks visible in the image.",
+        "model_answer_after_vti": "There are four forks visible in the image."
+    },
+    {
+        "question_type": "relation",
+        "image_url": "https://farm7.staticflickr.com/4128/4967650364_6b23e0e7de_o.jpg",
+        "question": "What are the objects from right to left? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The objects from right to left are a lid, a spoon, and a coffee cup.",
+        "model_answer_before_vti": "Spoon, coffee cup, coffee cup lid",
+        "model_answer_after_vti": "Spoon, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee cup, coffee"
+    },
+    {
+        "question_type": "environment",
+        "image_url": "https://c3.staticflickr.com/4/3213/3020281858_2d84b7bab7_o.jpg",
+        "question": "At what time is this photo taken? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The photo is taken during the day.",
+        "model_answer_before_vti": "The photo appears to be taken during the day, as indicated by the natural light coming through the windows. The time of day is not explicitly visible in the image, but it is not nighttime.",
+        "model_answer_after_vti": "The photo appears to be taken during the day, as indicated by the natural light coming through the windows and the visibility of the outdoor environment. The time of day is not explicitly stated in the image, but it is not nighttime."
+    },
+    {
+        "question_type": "holistic",
+        "image_url": "https://farm6.staticflickr.com/4041/4234666745_63e51cc909_o.jpg",
+        "question": "Describe this photo in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "This photo features a wooden dining table with four wooden or metal chairs around it. On the table there are two coasters and two glass cups. The table is set on a wooden floor. Behind the table are the wall and two windows.",
+        "model_answer_before_vti": "The photo captures a cozy dining scene. At the center of the image is a wooden dining table, its surface gleaming under the light. The table is surrounded by four chairs, two on each side, inviting one to sit and enjoy a meal. \n\nOn the table, there are two glasses, their contents unknown but adding to the ambiance. A plate is also present on the table, its contents hidden from view. \n\nThe room",
+        "model_answer_after_vti": "The photo captures a cozy dining room bathed in natural light. Dominating the scene is a wooden dining table, its rich tones contrasting with the room's lighter hues. The table is surrounded by six chairs, their darker tones providing a pleasing contrast to the table. \n\nOn the table, there are four glasses, their contents hidden from view. A plate of food is also present, adding a touch of warmth to"
+    },
+    {
+        "question_type": "other",
+        "image_url": "https://farm5.staticflickr.com/6005/5997807974_708c7602a0_o.jpg",
+        "question": "In the picture, which buttons should I use to control the stove above? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are 8 buttons in front of the stainless steel stove, two on the left and six on the right. Since there are also six stoves above, the buttons on the right should be associated with the stoves and used to control them. There is also a digital display to the left of the buttons that shows \"5:27\", which is possibly the current time.",
+        "model_answer_before_vti": "In the image, you can see a modern gas stove with a control panel on the front. The control panel typically has knobs and buttons for controlling the stove's functions. To control the stove, you should use the knobs and buttons that correspond to the specific functions you want to control. For example, if you want to turn the burners on or off, you would use the knobs for the individual burners. If you want to control the heat of the",
+        "model_answer_after_vti": "In the image, you should use the knobs on the front of the stove to control the burners. These knobs are typically used to adjust the heat of the burners. If the stove has a digital display or control panel, you may also use that to adjust the heat settings or other functions. However, without more context or a clearer view of the stove's controls, it's best to refer to the user manual or consult the manufacturer's instructions for"
+    },
+    {
+        "question_type": "attribute",
+        "image_url": "https://farm8.staticflickr.com/8170/7962741614_51a3a8b874_o.jpg",
+        "question": "What color is the umbrella? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The umbrella is colorful, containing purple, yellow, teal, and orange.",
+        "model_answer_before_vti": "The umbrella is colorful, featuring a combination of purple, yellow, orange, green, and blue.",
+        "model_answer_after_vti": "The umbrella is colorful, featuring a variety of colors such as purple, yellow, orange, green, and blue."
+    },
+    {
+        "question_type": "adversarial",
+        "image_url": "https://farm1.staticflickr.com/2572/4093922675_0e2f451fe0_o.jpg",
+        "question": "Describe the hands wearing the gloves. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Only a pair of black gloves can be observed in the image. There are no hands shown in the image.",
+        "model_answer_before_vti": "The hands wearing the gloves are positioned in a way that they are facing upwards, with the palms of the hands facing the camera. The gloves are black and appear to be made of a material that provides insulation, possibly for cold weather or outdoor activities. The hands are not visible, as the gloves cover them completely. The gloves have a design that includes a logo or emblem on the back of the hand, but the specific details of the logo are",
+        "model_answer_after_vti": "The hands wearing the gloves are positioned in a way that they are facing upwards, with the fingers and palms visible. The gloves are black and appear to be made of a material that provides a snug fit around the hands. The gloves have a design that includes a logo or emblem on the back of each hand, which is a common feature in many types of gloves for branding or decorative purposes. The hands are not wearing any other visible cl"
+    },
+    {
+        "question_type": "comparison",
+        "image_url": "https://farm4.staticflickr.com/7444/12392564684_ffd19b5b55_o.jpg",
+        "question": "Compare the two different views of the backpack. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The image shows two different views of the same black backpack. On the left side, it shows the inside of the bag, containing a camera, two lenses an other accessories. On the right side, it shows the outside of the bag, and there is a \"Lowepro\" logo on it.",
+        "model_answer_before_vti": "The image shows two different views of the same backpack. The top view is an interior perspective, revealing the various compartments and the items stored inside. This view allows us to see the organization of the backpack, including the camera equipment and other personal items. The bottom view is an exterior perspective, showing the backpack's design and how it looks when worn. This view allows us to see the overall shape and size of the backpack, as well as any visible branding or",
+        "model_answer_after_vti": "The image shows two different views of a backpack, one from the front and one from the side. The front view provides a clear view of the backpack's main compartment, which is open to reveal various items such as a camera, lenses, and other photography equipment. This view allows us to see the organization of the items inside the backpack and the accessibility of the compartments.\n\nThe side view, on the other hand, shows the backpack'"
+    },
+    {
+        "question_type": "counting",
+        "image_url": "https://farm7.staticflickr.com/6081/6150182374_f0923ac4b0_o.jpg",
+        "question": "How many black hats are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are five black hats in the image.",
+        "model_answer_before_vti": "There are four black hats in the image.",
+        "model_answer_after_vti": "There are twelve black hats in the image."
+    },
+    {
+        "question_type": "relation",
+        "image_url": "https://c3.staticflickr.com/6/5554/14424649263_69118d3a3b_o.jpg",
+        "question": "Describe how the two watches are placed. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are two watches side by side in the photo. The black one is placed on top of and to the left of the red one.",
+        "model_answer_before_vti": "The two watches are placed side by side, with the larger watch on the left and the smaller watch on the right. The larger watch is positioned with its face facing the viewer, while the smaller watch is shown from the back, with its face facing away from the viewer. Both watches are displayed against a plain, light-colored background, which helps to highlight their features and design.",
+        "model_answer_after_vti": "The two watches are placed in a way that they are positioned side by side, with the watch on the left being slightly in front of the one on the right. Both watches are oriented with their faces facing the viewer, showcasing their design and features. The watch on the left has a black strap, while the one on the right has a red strap. The watches are displayed against a white background, which contrasts with their colors and makes their details"
+    },
+    {
+        "question_type": "environment",
+        "image_url": "https://farm7.staticflickr.com/8308/7750080584_124d32aab3_o.jpg",
+        "question": "Is this photo taken indoors or outdoors? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "This photo shows a pair of green training shoes on a carpet, so this photo is taken indoors.",
+        "model_answer_before_vti": "Indoors",
+        "model_answer_after_vti": "Indoors"
+    },
+    {
+        "question_type": "holistic",
+        "image_url": "https://c6.staticflickr.com/7/6032/6333054847_854b033191_o.jpg",
+        "question": "Describe the details in this photo. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In the photo, a woman's hand is holding a man's hand. The woman's hand is wearing a diamond wedding ring, while the man's hand is wearing a simple wedding band. It seems that the woman is in a white dress and the man is in a black suit, but only a part can be seen in this photo. The image is black and white, except the wedding ring and band. This photo is likely taken in a wedding.",
+        "model_answer_before_vti": "The photo captures a tender moment between two individuals, likely a couple, as they share a close embrace. The person on the left is wearing a white dress, which is adorned with a lace pattern, adding a touch of elegance to the attire. Their right hand is gently placed on the left hand of the other person, suggesting a sense of trust and intimacy.\n\nThe person on the right is dressed in a black suit, which contrasts",
+        "model_answer_after_vti": "The photo captures a moment of celebration and unity. A group of people, dressed in formal attire, are gathered around a person lying on a bed. The person lying on the bed is the focal point of the image, with their hands raised in the air, surrounded by the hands of the people standing around them. \n\nThe people standing are wearing rings on their fingers, suggesting a significant event or occasion. The bed they are standing on is covered with a white la"
+    },
+    {
+        "question_type": "other",
+        "image_url": "https://c6.staticflickr.com/7/6231/6209347220_846cc7f471_o.jpg",
+        "question": "What can you see in the reflection from the sunglasses? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "A man wearing a top hat and a suit is wearing this pair of sunglasses. From the reflection in his sunglasses, I can vaguely see some people, but not the man himself.",
+        "model_answer_before_vti": "In the reflection from the sunglasses, I can see the man wearing a top hat and a white shirt. The sunglasses are likely reflecting the light from the environment, which is why the man's face is visible in the reflection.",
+        "model_answer_after_vti": "In the reflection from the sunglasses, I can see the man wearing a top hat and a black coat with a white shirt underneath. The sunglasses have a dark frame and are tinted, which adds a dramatic effect to the image. The man is also wearing a beard and mustache, and he has a serious expression on his face."
+    },
+    {
+        "question_type": "attribute",
+        "image_url": "https://farm7.staticflickr.com/4069/4654958099_df8364a87f_o.jpg",
+        "question": "What is the color of the laptop? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The color of the laptop is silver (or white). A black color sticker is on the laptop.",
+        "model_answer_before_vti": "The laptop is silver.",
+        "model_answer_after_vti": "Silver"
+    },
+    {
+        "question_type": "adversarial",
+        "image_url": "https://c6.staticflickr.com/8/7012/6406526537_1c876dded4_o.jpg",
+        "question": "What is playing on the monitor? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no monitor in the image.",
+        "model_answer_before_vti": "There is no image or video playing on the monitor in the image. The Apple mouse is sitting on a white surface, and the monitor is turned off.",
+        "model_answer_after_vti": "The monitor is displaying a reflection of the room, which suggests that there is no content being played on the screen."
+    },
+    {
+        "question_type": "comparison",
+        "image_url": "https://farm6.staticflickr.com/4013/4548634745_977535091a_o.jpg",
+        "question": "Which electronic device is larger? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The iPod touch on the left is larger than the iPod nano on the right.",
+        "model_answer_before_vti": "The electronic device on the left is larger than the one on the right.",
+        "model_answer_after_vti": "The electronic device on the left is larger than the one on the right."
+    },
+    {
+        "question_type": "counting",
+        "image_url": "https://c1.staticflickr.com/2/1029/3352759027_94cb468a1f_o.jpg",
+        "question": "How many mobile phones are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is one mobile phone in the image.",
+        "model_answer_before_vti": "There are two mobile phones in the image.",
+        "model_answer_after_vti": "There are two mobile phones in the image."
+    },
+    {
+        "question_type": "environment",
+        "image_url": "https://c1.staticflickr.com/6/5174/5393711070_4509c31205_o.jpg",
+        "question": "Where was the photo taken? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The photo was taken outside with plants and mountains as surroundings.",
+        "model_answer_before_vti": "The photo was taken in a field.",
+        "model_answer_after_vti": "The photo was taken in a desert setting, with a mountainous landscape in the background."
+    },
+    {
+        "question_type": "holistic",
+        "image_url": "https://farm4.staticflickr.com/7415/12673135324_0973fca7b2_o.jpg",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In this image, I see a book, a pen, and a television on a table. The TV screen shows a man wearing a tie and a suit speaking in a park.",
+        "model_answer_before_vti": "The image captures a moment of quiet reflection, featuring a television screen displaying a news program. The screen is turned on, and the news program is in progress. The news anchor, a man with glasses, is seen in the middle of the screen, his face focused on the camera. He is dressed in a suit and tie, suggesting a formal or professional setting.\n\nThe television is mounted on a wall, and a notebook is placed on a table in front of it, perhaps",
+        "model_answer_after_vti": "The image captures a moment in a room where a large television is prominently displayed. The TV screen is turned on, showing a man in a suit and tie, who appears to be in the middle of a conversation. The television is mounted on a silver stand, which is positioned against a white wall.\n\nIn front of the TV, there's a wooden table holding a few items. A notebook and a pen are placed on the table, suggesting someone might be taking"
+    },
+    {
+        "question_type": "other",
+        "image_url": "https://farm5.staticflickr.com/1430/1172644431_3dabdd34b5_o.jpg",
+        "question": "Is this a Macbook or Windows laptop? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "This is a Macbook, as indicated by the presence of the Apple logo on the keyboard.",
+        "model_answer_before_vti": "This is a MacBook laptop.",
+        "model_answer_after_vti": "This is a MacBook Pro, which is a laptop computer designed by Apple Inc."
+    },
+    {
+        "question_type": "attribute",
+        "image_url": "https://farm4.staticflickr.com/8297/7818684444_d3de1dd27a_o.jpg",
+        "question": "What are the colors of the pillows from left to right? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The colors of the pillows from left to right are white (or grey), yellow, and white (or grey).",
+        "model_answer_before_vti": "The colors of the pillows from left to right are light blue, light blue, and light blue.",
+        "model_answer_after_vti": "The colors of the pillows from left to right are gray, blue, yellow, and green."
+    },
+    {
+        "question_type": "adversarial",
+        "image_url": "https://c3.staticflickr.com/4/3169/2653797190_f42908d6e5_o.jpg",
+        "question": "What is the color of the chair in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no chair in the image.",
+        "model_answer_before_vti": "The color of the chair in the image is yellow.",
+        "model_answer_after_vti": "The color of the chair in the image is gold."
+    },
+    {
+        "question_type": "comparison",
+        "image_url": "https://farm7.staticflickr.com/2026/2236797328_6c02e4d416_o.jpg",
+        "question": "Which pillow is closer to the camera? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The pillow on the right side of the bed is closer to the camera.",
+        "model_answer_before_vti": "The pillow on the right is closer to the camera.",
+        "model_answer_after_vti": "The pillow on the bottom bunk is closer to the camera."
+    },
+    {
+        "question_type": "counting",
+        "image_url": "https://farm1.staticflickr.com/7426/9421545611_004f98acc2_o.jpg",
+        "question": "How many chairs are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are two chairs in the image.",
+        "model_answer_before_vti": "There are three chairs in the image.",
+        "model_answer_after_vti": "There are several chairs in the image, but without a specific number, I can only say that there is a group of chairs."
+    },
+    {
+        "question_type": "relation",
+        "image_url": "https://farm5.staticflickr.com/8035/8063845568_6b183760bc_o.jpg",
+        "question": "Which pillow is in front of the other pillows? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are three pillows. The gray pillow in the middle with the red \"paper\" handprint pattern is in front of the other pillows. The other two pillows are white and have a red \"scissors\" handprint pattern and a \"stone\" handprint pattern, respectively.",
+        "model_answer_before_vti": "The pillow in the front is the one with the red hand on it.",
+        "model_answer_after_vti": "The pillow in the front is the one with the red hand design."
+    },
+    {
+        "question_type": "environment",
+        "image_url": "https://c2.staticflickr.com/4/3700/9536149248_661b279f89_o.jpg",
+        "question": "What was the weather like when this photo was taken? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "When this photo was taken, it was already night and the sky was dark.",
+        "model_answer_before_vti": "The weather in the photo appears to be cold, as indicated by the presence of a fireplace and the use of a fireplace in the living room. The fireplace is lit, suggesting that it is being used to provide warmth in the space. The presence of a fireplace in a living room is typically associated with colder weather, as it is a common way to heat a home during the winter months.",
+        "model_answer_after_vti": "The weather in the photo appears to be cool and possibly overcast, as the room is well-lit and the lighting suggests a cloudy day. The presence of a fireplace in the living room also indicates that it might be a cooler season or the room is being heated for comfort."
+    },
+    {
+        "question_type": "holistic",
+        "image_url": "https://farm6.staticflickr.com/2446/3859505368_6e432fbae2_o.jpg",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In this image we can see two deck beds with pillows on them and carpet on the floor. The Beds are mainly in the blue color and the pillows are yellow with blue strips.",
+        "model_answer_before_vti": "The image captures a cozy bedroom scene. Dominating the space are two bunk beds, each adorned with a blue mattress. The mattresses are neatly made, with a single yellow pillow resting on each. The beds are positioned against a pristine white wall, creating a stark contrast.\n\nThe floor beneath is a warm beige, providing a soft contrast to the cool blue of the beds. A woven rug",
+        "model_answer_after_vti": "The image captures a cozy room, bathed in soft light. Dominating the scene are three bunk beds, each adorned with a vibrant blue and yellow floral patterned comforter. The beds are neatly arranged in a row, their white frames standing out against the colorful comforters.\n\nThe room itself is simple and uncluttered, with a white wall serving as the backdrop. A brick floor adds a touch of"
+    },
+    {
+        "question_type": "other",
+        "image_url": "https://farm3.staticflickr.com/1040/990306359_60994704df_o.jpg",
+        "question": "Is the toilet paper used? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The toilet paper has not been used because it was folded into a decorative shape.",
+        "model_answer_before_vti": "No, the toilet paper is not used.",
+        "model_answer_after_vti": "Yes, the toilet paper is used."
+    },
+    {
+        "question_type": "attribute",
+        "image_url": "https://farm4.staticflickr.com/3048/2971924328_aeaf1258e0_o.jpg",
+        "question": "What color are these books? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "These books are red and white.",
+        "model_answer_before_vti": "The books in the image are predominantly red and yellow.",
+        "model_answer_after_vti": "The books in the image are predominantly red and white, with some yellow and black accents."
+    },
+    {
+        "question_type": "adversarial",
+        "image_url": "https://c1.staticflickr.com/3/2631/4208064606_58b6907c83_o.jpg",
+        "question": "What is in the vase? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Nothing is in the vase.",
+        "model_answer_before_vti": "The vase is empty.",
+        "model_answer_after_vti": "The vase is empty."
+    },
+    {
+        "question_type": "comparison",
+        "image_url": "https://farm2.staticflickr.com/3779/9040237050_b0af7bbf73_o.jpg",
+        "question": "Which vase looks larger? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The vase on the right appears larger. Both vases are white with blue and red flowers delicately painted on them.",
+        "model_answer_before_vti": "The vase on the right appears to be larger than the one on the left. This is evident from the perspective of the image, where the right vase occupies a larger portion of the frame.",
+        "model_answer_after_vti": "The vase on the right appears to be larger than the one on the left."
+    },
+    {
+        "question_type": "counting",
+        "image_url": "https://c7.staticflickr.com/3/2629/4219489460_4447e9da03_o.jpg",
+        "question": "How many teddy bears are on the stairs? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are six teddy bears on the stairs.",
+        "model_answer_before_vti": "There are six teddy bears on the stairs.",
+        "model_answer_after_vti": "There are several teddy bears on the stairs, but without a specific number provided, I cannot give an exact count."
+    },
+    {
+        "question_type": "relation",
+        "image_url": "https://c2.staticflickr.com/4/3810/9899405365_e2df3063b2_o.jpg",
+        "question": "Which color flowers are on top, and which color flowers are on the bottom? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The blue flowers are on top, and the white flowers are on the bottom.",
+        "model_answer_before_vti": "The blue flowers are on top, and the white flowers are on the bottom.",
+        "model_answer_after_vti": "The top of the vase is filled with blue flowers, while the bottom of the vase is filled with white flowers."
+    },
+    {
+        "question_type": "environment",
+        "image_url": "https://c7.staticflickr.com/8/7234/7014520149_78feda0bef_o.jpg",
+        "question": "What was the weather like when this photo was taken? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "When this photo was taken, it was already night and the sky was dark.",
+        "model_answer_before_vti": "The weather in the photo appears to be indoors, as the room is decorated for a party with streamers and balloons, and there are no visible signs of outdoor conditions. The presence of a dining table and chairs suggests that the event is taking place in a home setting, which is typically not exposed to outdoor elements.",
+        "model_answer_after_vti": "The weather in the photo appears to be indoors, as the room is decorated for a party and the decorations are hanging from the ceiling. There are no visible signs of outdoor conditions, such as rain, snow, or sunlight. The room is well-lit, suggesting that the lighting is artificial or natural light is not visible in the image."
+    },
+    {
+        "question_type": "holistic",
+        "image_url": "https://farm6.staticflickr.com/225/489474293_a1e7bea6bc_o.jpg",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The image features a baby lying in a crib, which is placed in a room with a white background. The baby is wearing a diaper and is sleeping soundly. There are three stuffed animals hanging above the crib, providing a cozy and comforting atmosphere for the baby.",
+        "model_answer_before_vti": "The image captures a serene moment of a baby's sleep. The baby, dressed in a white onesie, is peacefully resting on a white crib mattress. The crib, with its white walls and a white canopy, provides a calm and soothing environment for the baby's slumber.\n\nAdding a touch of whimsy to the scene are two stuffed animals, a brown dog and a white rabbit, hanging from the",
+        "model_answer_after_vti": "The image captures a serene moment in a nursery. Two babies, dressed in white onesies, are peacefully sleeping on a white bed. The bed is adorned with a white canopy, adding to the tranquil ambiance. \n\nHanging from the canopy are three stuffed animals, each unique in its design. One is a brown and white dog, another is a brown and white cat, and the third is a brown and"
+    },
+    {
+        "question_type": "other",
+        "image_url": "https://c8.staticflickr.com/8/7295/9019477149_f7d04cdb65_o.jpg",
+        "question": "What is the name of the book? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The name of the book is \"Proverbial Philosophy.\"",
+        "model_answer_before_vti": "The book is titled \"PROVERBIAL PHILOSOPHY.\"",
+        "model_answer_after_vti": "The book is titled \"ROVERBIAL PHILOSOPHY.\""
+    },
+    {
+        "question_type": "attribute",
+        "image_url": "https://farm8.staticflickr.com/2730/4272595396_785d273725_o.jpg",
+        "question": "What is the color of the pot? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The color of the pot is silver, with red cherries inside.",
+        "model_answer_before_vti": "The color of the pot is silver.",
+        "model_answer_after_vti": "The color of the pot is silver."
+    },
+    {
+        "question_type": "adversarial",
+        "image_url": "https://c1.staticflickr.com/2/1425/689823158_b0bff45e0f_o.jpg",
+        "question": "What is being washed in the sink? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Nothing is being washed in the sink.",
+        "model_answer_before_vti": "The sink is being used to wash a toothbrush.",
+        "model_answer_after_vti": "The sink is being used to wash a toothbrush."
+    },
+    {
+        "question_type": "comparison",
+        "image_url": "https://farm6.staticflickr.com/8094/8431126135_cd1cf303e7_o.jpg",
+        "question": "Which washing machine is taller? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The right washing machine with the top load design is taller. Both are white in color.",
+        "model_answer_before_vti": "The washing machine on the right is taller than the one on the left.",
+        "model_answer_after_vti": "The washing machine on the right is taller than the one on the left."
+    },
+    {
+        "question_type": "counting",
+        "image_url": "https://c3.staticflickr.com/8/7145/6599551311_4afa756cf7_o.jpg",
+        "question": "How many chickens are cooked? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is one cooked chicken in the image.",
+        "model_answer_before_vti": "There is one chicken cooked in the image.",
+        "model_answer_after_vti": "There are two chickens cooked."
+    },
+    {
+        "question_type": "relation",
+        "image_url": "https://farm5.staticflickr.com/28/58465322_592ff01d31_o.jpg",
+        "question": "What is placed on the tissue paper roll? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "A screwdriver is placed on the tissue paper roll.",
+        "model_answer_before_vti": "A toothbrush is placed on the tissue paper roll.",
+        "model_answer_after_vti": "A toothbrush is placed on the tissue paper roll."
+    },
+    {
+        "question_type": "environment",
+        "image_url": "https://c2.staticflickr.com/8/7518/16269340471_154a27d9df_o.jpg",
+        "question": "What time was the photo taken? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The photo was taken at daytime.",
+        "model_answer_before_vti": "The photo was taken during the day, as indicated by the natural light coming through the window.",
+        "model_answer_after_vti": "The photo was taken during the day."
+    },
+    {
+        "question_type": "holistic",
+        "image_url": "https://c6.staticflickr.com/4/3247/3045172470_2e407f3602_o.jpg",
+        "question": "Describe the image in detail. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "In this image, I can see food items (likely Baozi or buns) on papers and a tong kept on a metal stand in an oven and I can see steam on the glass. There are nine of them, arranged into a 3 x 3 grid.",
+        "model_answer_before_vti": "The image captures a moment in a kitchen, where a tray of freshly made dumplings is being prepared. The tray, made of stainless steel, is filled with eight dumplings, each one a delicate white color. They are neatly arranged in two rows of four, with the top row slightly overlapping the bottom row.\n\nThe dumplings are not yet cooked, as evidenced by the steam rising from them",
+        "model_answer_after_vti": "The image captures a vibrant scene from a bakery. Dominating the frame is a large display case, filled with an assortment of freshly baked goods. The case is made of clear glass, allowing a full view of the items inside.\n\nOn the left side of the case, there are several white buns, their pristine color contrasting with the darker tones of the bakery. They are neatly arranged, their round shapes"
+    },
+    {
+        "question_type": "other",
+        "image_url": "https://farm7.staticflickr.com/1385/5164137805_a2499e3ca9_o.jpg",
+        "question": "What is shown in the mirror? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The mirrow shows the reflection of the washing machine.",
+        "model_answer_before_vti": "The mirror shows a washing machine.",
+        "model_answer_after_vti": "The mirror shows a washing machine and dryer in the background."
+    }
+]
