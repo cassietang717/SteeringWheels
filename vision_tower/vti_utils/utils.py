@@ -435,7 +435,7 @@ def obtain_visual_vti(model, image_tensor, rank=1):
     
     hidden_states_all = []
     for demonstration_id in range(num_demonstration):
-        h = hidden_states[demonstration_id][1].reshape(n_tokens,-1) - hidden_states[demonstration_id][0].reshape(n_tokens,-1)
+        h = hidden_states[demonstration_id][0].reshape(n_tokens,-1) - hidden_states[demonstration_id][1].reshape(n_tokens,-1)
         hidden_states_all.append(h)
 
     fit_data = torch.stack(hidden_states_all,dim=1)[:] # n_token (no CLS token) x n_demos x D
