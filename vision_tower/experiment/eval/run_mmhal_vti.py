@@ -8,7 +8,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import pandas as pd
-from transformers import LlavaNextProcessor, LlavaNextForConditionalGeneration
+from transformers import CLIPProcessor, LlavaNextProcessor, LlavaNextForConditionalGeneration
 from PIL import Image
 from transformers import set_seed
 import requests
@@ -17,7 +17,6 @@ from io import BytesIO
 from vti_utils.utils import get_demos_coco, get_demos_Halo, obtain_textual_vti, obtain_visual_vti
 from vti_utils.llm_layers import add_vti_layers, remove_vti_layers
 
-from datasets import load_dataset
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -25,7 +24,7 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 #     results = []
 #     HaloQuest_df = pd.read_csv("/home/cassietang/steeringwheel/HaloQuest/output/sample_HaloQuest_output.csv")
 #     # filtered_HaloQuest_df = HaloQuest_df[HaloQuest_df["hallucination_type"] == "visual challenge"].sample(n=300, random_state=42).reset_index(drop=True)
-#     filtered_HaloQuest_df = HaloQuest_df[HaloQuest_df["hallucination_type"] != "visual challenge"]
+#     filtered_HaloQuest_df = HaloQuest_df[HaloQuest_df["hallucination_type"] != "visual challenge"].sample(n=100, random_state=42).reset_index(drop=True)
 
 #     for _, entry in tqdm(filtered_HaloQuest_df.iterrows(), total=filtered_HaloQuest_df.shape[0], desc="Processing entries"):
 #         question = entry["question"]
@@ -72,15 +71,16 @@ device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
 def hall_ans(processor, model):
     results = []
-    with open("/home/cassietang/steeringwheel/MMHal/output/MMHal_output.json", "r") as json_file:
+    # with open("/home/cassietang/steeringwheel/MMHal/output/MMHal_output.json", "r") as json_file:
+    with open("/home/cassietang/steeringwheel/HaloQuest/output/Halo_baseline_hallucination_clip_ans_0_0_0.99.jsonl", "r") as json_file:
         data = json.load(json_file)
 
     for entry in tqdm(data, desc="Processing entries"):
         question = entry["question"]
-        image_url = entry["image_src"]
+        image_url = entry["image_url"]
         gt_answer = entry["gt_answer"]
-        question_type = entry["question_type"]
-        model_answer_before_vti = entry["model_answer"]
+        hallucination_type = entry["hallucination_type"]
+        model_answer_before_vti = entry["model_answer_before_vti"]
 
         try:
             response = requests.get(image_url)
@@ -108,7 +108,7 @@ def hall_ans(processor, model):
         model_answer = model_output.split("ASSISTANT:")[-1].strip()
 
         result_entry = {
-            "question_type": question_type,
+            "question_type": hallucination_type,
             "image_url": image_url,
             "question": question,
             "gt_answer": gt_answer,
@@ -120,11 +120,10 @@ def hall_ans(processor, model):
     return json.dumps(results, indent=4) 
 
 
-
-
-def eval_model(args, model, image_processor):
+def eval_model(args, model, image_processor, processor):
     # Step 1: Prepare input images and input ids
-    input_images, input_ids = get_demos_coco(args, image_processor)
+    input_images, input_ids = get_demos_coco(args, image_processor, processor)
+    # input_images, input_ids = get_demos_Halo(args, image_processor, processor)
 
     print('Obtaining direction\n')
 
@@ -171,8 +170,8 @@ if __name__ == "__main__":
     parser.add_argument("--data-file", type=str, default="/net/scratch2/steeringwheel/coco")
     # parser.add_argument("--conv-mode", type=str, default="llava_v1")
     parser.add_argument("--num_demos", type=int, default=70)
-    parser.add_argument("--alpha_image", type=float, default=0.9)
-    parser.add_argument("--alpha_text", type=float, default=0.9)
+    parser.add_argument("--alpha_image", type=float, default=0.2)
+    parser.add_argument("--alpha_text", type=float, default=0)
     parser.add_argument("--num_beams", type=int, default=5)
     parser.add_argument("--sample", action='store_true')
 
@@ -182,8 +181,10 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     set_seed(args.seed)
-    args.answers_file = f'/home/cassietang/steeringwheel/vision_tower/experiment/results/MMHal_inverse_hallucination_ans_{args.alpha_text}_{args.alpha_image}.jsonl'
+    args.answers_file = f'/home/cassietang/steeringwheel/vision_tower/experiment/results/Halo_baseline_hallucination_clip_ans_{args.alpha_text}_{args.alpha_image}_{args.mask_ratio}.jsonl'
     processor = LlavaNextProcessor.from_pretrained("/net/scratch2/steeringwheel/llava-v1.6-vicuna-7b-hf", use_fast=True)
+    # image_processor = CLIPProcessor.from_pretrained("openai/clip-vit-base-patch32")
+    image_processor = CLIPProcessor.from_pretrained("openai/clip-vit-large-patch14-336")
     model_llava = LlavaNextForConditionalGeneration.from_pretrained("/net/scratch2/steeringwheel/llava-v1.6-vicuna-7b-hf", torch_dtype=torch.float16, low_cpu_mem_usage=True)
     model = model_llava 
     model = model.to(device)
@@ -191,4 +192,4 @@ if __name__ == "__main__":
     # print(model.vision_tower.vision_model)
     # print("model.vision_tower:")
     # print(model.vision_tower)
-    eval_model(args, model, processor)
+    eval_model(args, model, image_processor, processor)

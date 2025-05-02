@@ -4,7 +4,6 @@ import torch
 import os
 import json
 from tqdm import tqdm
-import shortuuid
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -33,17 +32,8 @@ import requests
 from io import BytesIO
 import matplotlib.pyplot as plt
 import json
-import re
-from datasets import load_dataset
-import warnings
 
 import torch
-import torch.nn.functional as F
-from transformers import AutoTokenizer, LlamaForCausalLM
-from evaluate import load
-
-from sklearn.linear_model import LogisticRegression
-from evaluate import load as load_metric
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -52,7 +42,8 @@ def process_image(image, processor):
     #     image = image.convert("RGB")
     # elif isinstance(image, list) and isinstance(image[0], Image.Image):
     #     image = image[0].convert("RGB")
-
+    # processor.image_processor.crop_size={"height": 336, "width": 336}
+    # processor.image_processor.size= {"shortest_edge": 336}
     answer = processor.image_processor(image, return_tensors="pt")
 
     # Check if the result is a dictionary and contains 'pixel_values' key
@@ -86,8 +77,6 @@ def mask_patches(tensor, indices, patch_size=14):
     torch.Tensor: New tensor with modified patches
     """
     # Clone the original tensor to avoid modifying it
-    if tensor.dim() == 4:  # (B, C, H, W)
-        return torch.stack([mask_patches(t, indices, patch_size) for t in tensor], dim=0)
     
     new_tensor = tensor.clone()
 
@@ -206,7 +195,7 @@ def get_prompt_pairs_nourl(args, dataset, processor):
     
 #     return inputs_images, input_ids
 
-def get_demos_coco(args, processor, patch_size=14, file_path='/home/cassietang/steeringwheel/vision_tower/experiment/data/hallucination_vti_demos.jsonl'): 
+def get_demos_coco(args, image_processor, processor, patch_size=14, file_path='/home/cassietang/steeringwheel/vision_tower/experiment/data/hallucination_vti_demos.jsonl'): 
     # Step 1: Load CSV
     data = []
 
@@ -223,9 +212,9 @@ def get_demos_coco(args, processor, patch_size=14, file_path='/home/cassietang/s
         question = data_demos[i]['question']
         image_path = os.path.join(args.data_file, 'train2014', data_demos[i]['image'])
         image_raw = Image.open(image_path).convert("RGB")
+        image_tensor = process_image(image_raw,image_processor)
+        # image_tensor = image_tensor[0] # （5， 3, 336, 336）-> (3, 336, 336)
 
-        image_tensor = process_image(image_raw,processor)
-        image_tensor = image_tensor[0] # （5， 3, 336, 336）-> (3, 336, 336)
         image_tensor_cd_all_trials = []
         for t in range(args.num_trials):
             token_numbers = image_tensor.shape[-1] * image_tensor.shape[-2] / patch_size**2
@@ -241,7 +230,7 @@ def get_demos_coco(args, processor, patch_size=14, file_path='/home/cassietang/s
     
     return inputs_images, input_ids
 
-def get_demos_Halo(args, processor, patch_size=14, file_path='/home/cassietang/steeringwheel/HaloQuest/output/HaloQuest_llama.csv'): 
+def get_demos_Halo(args, image_processor, processor, patch_size=14, file_path='/home/cassietang/steeringwheel/HaloQuest/output/HaloQuest_llama.csv'): 
     # Step 1: Load CSV
     df = pd.read_csv(file_path)
     df = df[df["llama_hallucination_evaluation"] == "yes"]
@@ -265,8 +254,8 @@ def get_demos_Halo(args, processor, patch_size=14, file_path='/home/cassietang/s
             print(f"Error loading image from {image_url}: {e}")
             continue
 
-        image_tensor = process_image(image_raw,processor)
-        image_tensor = image_tensor[0] # （5， 3, 224, 224）-> (3, 224, 224)
+        image_tensor = process_image(image_raw,image_processor)
+        # image_tensor = image_tensor[0] # （5， 3, 224, 224）-> (3, 224, 224)
         image_tensor_cd_all_trials = []
 
         for t in range(args.num_trials):
@@ -440,6 +429,7 @@ def obtain_visual_vti(model, image_tensor, rank=1):
 
     fit_data = torch.stack(hidden_states_all,dim=1)[:] # n_token (no CLS token) x n_demos x D
     pca = PCA(n_components=rank).to(fit_data.device).fit(fit_data.float())
+    # direction = pca.components_.mean(dim=0).view(n_layers, n_tokens, -1)
     direction = (pca.components_.sum(dim=1,keepdim=True) + pca.mean_).mean(1).view(n_layers, n_tokens, -1)
     reading_direction = fit_data.mean(1).view(n_layers, n_tokens, -1)
     return direction, reading_direction

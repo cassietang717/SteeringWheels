@@ -19,10 +19,10 @@ def svd_flip(u, v):
 class PCA(nn.Module):
     def __init__(self, n_components):
         super().__init__()
-        self.n_components = n_components
+        self.n_components = n_components # [None, 1, d]
 
     @torch.no_grad()
-    def fit(self, X):
+    def fit(self, X): # X: [n_token, n_demos, d] 
         if X.ndim == 2:
             n, d = X.size()
             X = X.unsqueeze(0)
