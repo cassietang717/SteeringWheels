@@ -1,12 +1,12 @@
 {
     "original_ce_loss": 2.424033203125,
     "intervened_ce_loss": 2.424033203125,
-    "kl_divergence": 0.002417405694208412,
-    "total_entries": 38,
-    "hallucination_entries_before_steering": 28,
-    "hallucination_entries_after_steering": 22,
-    "hallucination_proportion_before_steering": 0.7368421052631579,
-    "hallucination_proportion_after_steering": 0.5789473684210527,
+    "kl_divergence": 0.004370537072137495,
+    "total_entries": 76,
+    "hallucination_entries_before_steering": 53,
+    "hallucination_entries_after_steering": 35,
+    "hallucination_proportion_before_steering": 0.6973684210526315,
+    "hallucination_proportion_after_steering": 0.4605263157894737,
     "top_head_idxs": [
         [
             11,

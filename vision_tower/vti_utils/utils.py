@@ -245,6 +245,7 @@ def get_demos_Halo(args, processor, patch_size=14, file_path='/home/cassietang/s
     # Step 1: Load CSV
     df = pd.read_csv(file_path)
     df = df[df["llama_hallucination_evaluation"] == "yes"]
+    
 
     # Step 2: Randomly sample demos
     data_demos = df.sample(n=args.num_demos, random_state=42).to_dict(orient="records")
