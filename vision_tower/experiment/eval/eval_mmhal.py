@@ -69,7 +69,7 @@ if __name__ == '__main__':
     parser.add_argument('--response_original', type=str, default='')
     parser.add_argument('--evaluation', type=str, default=None, help='GPT-4 evaluation results to be saved')
     parser.add_argument('--api-key', type=str, required=True)
-    parser.add_argument('--gpt-model', type=str, default='gpt-4o-mini')
+    # parser.add_argument('--gpt-model', type=str, default='gpt-4o-mini')
     args = parser.parse_args()
 
     # openai.api_key = args.api_key
@@ -222,4 +222,3 @@ if __name__ == '__main__':
         print('Hallucination rate: {:.5f}'.format(sum(hallucination) / len(hallucination)))
         print('Average score for each question type:', ','.join([str(round(sum(scores_each[i]) / len(scores_each[i]), 2)) for i in range(8)]), flush=True)
 
-        

@@ -1,0 +1,702 @@
+[
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/8c42ef9e-f8a6-4bda-9234-16e1ca61247c.png",
+        "question": "What color is the lizard's tongue? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The lizard's tongue is not showing in the image.",
+        "model_answer_before_vti": "The lizard's tongue is green.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://c7.staticflickr.com/8/7053/6873423063_f5bb350867_o.jpg",
+        "question": "What store is this gelato in? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The name of the store is not visible.; The image does not show the name of the store.; You cannot tell the name of the store by looking at the image.",
+        "model_answer_before_vti": "This gelato is in an ice cream shop, which is likely a specialty store or a part of a larger ice cream parlor. The variety of flavors and the presentation in a display case suggest that it is a place where customers can choose from a wide selection of ice cream and gelato.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/3d9c651e-088a-46aa-bafd-481eb6a62fae.png",
+        "question": "What color is her crown? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The woman in this image is not wearing a crown.",
+        "model_answer_before_vti": "The woman in the image is wearing a red crown.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/lq434968321_Wild_flowers_on_the_roadside_beautiful_light_and_sh_27e82900-6282-49be-971c-6e0628837f5d.png",
+        "question": "Is the butterfly blue? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "We cannot see a butterfly ; There is no butterfly in this image ; A butterfly is not visible to us",
+        "model_answer_before_vti": "No, the butterfly in the image is not blue. It is a purple butterfly.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://farm8.staticflickr.com/8456/8033696169_a5bdc1ca21_o.jpg",
+        "question": "How many exits are there? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The exits are not visible.; We can't see any exits in the image.; Impossible to tell from this photo",
+        "model_answer_before_vti": "There are two exits visible in the image.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://c7.staticflickr.com/5/4102/4875258114_4ef6c02f65_o.jpg",
+        "question": "Is the farmer wearing boots? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The picture doesn't show a farmer.; We don't see a farmer.; There is no farmer in the picture.",
+        "model_answer_before_vti": "Yes, the farmer is wearing boots while standing in the field.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/mimidody_Full_length_of_The_magic_of_Christmas_the_magic_of_Chr_06374887-2dc5-421f-8b0e-6bb4fce21716.png",
+        "question": "What color are santa's eyes in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no Santa in the image ; Santa is not visible in the image so there is no telling what color his eyes are; The image does not contain a santa claus so there is no way of confirming what color his eyes are",
+        "model_answer_before_vti": "Santa's eyes in the image are red.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/prikhodkop_photo_collage_small_girl_Christmas_celebration_print_97b14ef4-1ada-4aa4-8459-0573e781ce1b%20(1).png",
+        "question": "What color are the child's shoes? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "We cannot see her shoes; Her shoes are not visible; We are unable to tell from this picture",
+        "model_answer_before_vti": "The child in the image is wearing red shoes.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://farm7.staticflickr.com/8660/15700260299_72f596ffbc_o.jpg",
+        "question": "Are these letters written buy a single person? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "We cannot tell based upon this single image; Cannot tell as the image didn't mention how many people have written this letter; Cannot tell.",
+        "model_answer_before_vti": "Based on the image, it is not possible to definitively determine if the letters were written by a single person. The letters are neatly stacked and appear to be addressed to a single recipient, but without additional context, it is not possible to confirm the authorship.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://c2.staticflickr.com/6/5551/14956449467_c480e365e1_o.jpg",
+        "question": "Down what road is the man on the right cycling? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The man is not riding a bicycle; He is standing behind a cardboard display, not cycling; Nobody pictured is actively cycling",
+        "model_answer_before_vti": "The man on the right is cycling down a road that is lined with advertisements, which suggests that he is in a commercial or urban area. The presence of the advertisements indicates that he is likely on a main road or a road that is frequently used by pedestrians and cyclists. The exact location or direction of the road is not clear from the image, but it is evident that he is cycling in an area with some level of activity and infrastructure.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/chimychangas_muscle_car_pixel_art_tileset_clean_beautifull_retr_78d01121-8e00-4eea-ac19-089b8122bd1f.png",
+        "question": "Does the image show a pixelated image of a car? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Yes; it does show a pixelated image of a car; the image is indeed pixelated",
+        "model_answer_before_vti": "Yes, the image shows a pixelated image of a car.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://farm3.staticflickr.com/555/19369311629_bbf3911f82_o.jpg",
+        "question": "what is the colour of the watering can in front of the plant? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no watering can visible in front of the plant; Can't answer; Cannot see the watering can",
+        "model_answer_before_vti": "The watering can in front of the plant is yellow.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://c2.staticflickr.com/1/53/139624046_5a0f01d592_o.jpg",
+        "question": "What color is the canoe the woman is paddling? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no canoe in the picture.; No canoes are in this picture; only a woman is sitting on the shore.; The woman is sitting on the rocks at the edge of the water. She is not paddling in a canoe.",
+        "model_answer_before_vti": "The canoe the woman is paddling is blue.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/JuanManRedRum_Bogot_Colombia_hyper-realistic_picture_of_armagge_28ea881a-0f71-4192-85cd-527b6f83a5e3.png",
+        "question": "What color umbrella is the man holding? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The man is not holding an umbrella; He holds no umbrella; The man does not have an umbrella",
+        "model_answer_before_vti": "The man is holding a brown umbrella.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/Minotaure_a_miniature_diorama_resin_3D_render_54c74bef-284a-45a8-910e-f324813e9d9f.png",
+        "question": "How many cats in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are no cats in the image ; We can't see any cat in the image ; no cats are in the image",
+        "model_answer_before_vti": "There are no cats in the image. It features a miniature landscape scene.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/MurfiGials_brunette_girl_showing_off_her_big_toe_in_the_style_o_40570ae9-d88b-40fb-ac97-10dcec1ebd0a.png",
+        "question": "does the mirror show a reflection identical to the girl in the foreground? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Yes; the mirror does show a reflection identical to the girl in the foreground; the mirror shows the same reflection",
+        "model_answer_before_vti": "The mirror does show a reflection identical to the girl in the foreground. The reflection in the mirror is of the girl standing in front of it, holding a phone. The image captures the girl's pose and the phone she is holding, which are identical to her actual pose and the phone she is holding in the foreground.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://farm4.staticflickr.com/7282/8744937858_16933ab2a0_o.jpg",
+        "question": "Is the necklace the man is wearing black or gold? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The man in the picture isn't wearing a necklace.; There is no necklace in this photo.; There is no necklace around the man's neck.",
+        "model_answer_before_vti": "The necklace the man is wearing is black.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/staffoly_full_body_view_of_2023_surreal_terracotta_annual_FASHI_0d28ee50-8c16-4651-99c3-73fb163b7ece.png",
+        "question": "What is the color of the square within the photo? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are no squares within the image; No squares are in the photo; There doesn't appear to be any squares",
+        "model_answer_before_vti": "The color of the square within the photo is orange.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/Margaretha_photo_of_delicious_gummies_on_pastel_red_background_59cca202-ad1a-4b7d-844e-78b0bd2c2306.png",
+        "question": "How many chocolate bars are there? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are no chocolate bars in the picture; The picture does not contain any chocolate bars; No chocolate bars are visible in the picture",
+        "model_answer_before_vti": "There are no chocolate bars in the image. The image shows a pile of red candy or gummy candies.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/Tiina57_star_seeds_came_to_earth_8ed009b7-352e-44b6-8018-e0d33ccea4f0.png",
+        "question": "Does the image show a walnut floating in space? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Yes; Indeed, the image shows a walnut floating in space; the image does show a walnut in space.",
+        "model_answer_before_vti": "Yes, the image shows a walnut floating in space, with a view of the Earth in the background.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/YSD_photo_thumbnails_of_same_one_year_old_blonde_happy_girl_in__10ade019-1562-4be0-8206-516b7b45f512.png",
+        "question": "What is the facial expression of the girl in the 6th picture? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are only 5 pictures; There is not a 6th picture; Only 5 pictures are shown",
+        "model_answer_before_vti": "The girl in the 6th picture has a smiling facial expression.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://c6.staticflickr.com/4/3331/3667154830_ba1b09f428_o.jpg",
+        "question": "What kind of glasses are the owls wearing? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The owls are not wearing glasses.; There are no glasses in the image.; The owls do not have glasses on.",
+        "model_answer_before_vti": "The owls in the image are wearing sunglasses.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://c2.staticflickr.com/9/8471/8366949549_9d6a1fd5e1_o.jpg",
+        "question": "What is the brand of these colours? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Don't know the brand of these colours; We cannot tell based on the image; The image dosen't has the name of the brand of these colours.",
+        "model_answer_before_vti": "The brand of these colors is likely to be Crayola, as they are commonly associated with Crayola crayons. However, without a clearer view or additional context, it's not possible to confirm the exact brand.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/Mishel1_double_exposure_of_a_cyberpunk_city_within_a_womans_sil_a610e0eb-7805-4c42-bf41-7058152a641e.png",
+        "question": "How high is the airplane flying above the city? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no airplane in the photo; We cannot determine the height of the airplane because it is not present ; I do not see an airplane in the photo",
+        "model_answer_before_vti": "The airplane is flying at a considerable altitude above the city, as it is visible against the night sky. However, without more specific details, it's not possible to determine the exact altitude of the airplane.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://c3.staticflickr.com/8/7188/6981606880_6305d68ddd_o.jpg",
+        "question": "In which city does the car parked? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Do not know as we can't see the city name; We cannot describe in which city the car is in; We can't say whether the car is parked in the city or not.",
+        "model_answer_before_vti": "The car is parked in a city with a cloudy sky, but without more specific details, it's not possible to determine the exact city.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://c2.staticflickr.com/8/7277/7704003780_ee3c45d22b_o.jpg",
+        "question": "What is the colour of the watch the women is wearing? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "As her hand is hidden behind the paper we cannot tell; We cannot tell as her hand is not visible in the image; Cannot answer.",
+        "model_answer_before_vti": "The women is wearing a silver watch.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://c6.staticflickr.com/4/3661/3291298501_e958aea912_o.jpg",
+        "question": "What kind of treat is the dog looking at? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "I am not able to see what treat the dog is looking at.; No treat is present.; There is no treat in the picture.",
+        "model_answer_before_vti": "The dog is looking at a piece of food that appears to be a sausage or a similar type of meat treat.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/GCStiehl_interior_wall_smooth_empty_modern_early_american_clean_678a54e2-c30d-4014-824e-c42432c30f4c.png",
+        "question": "How much water is under the plant? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no water in the image; The image contains no water; No water is present in the image",
+        "model_answer_before_vti": "The plant is sitting on a small white pot, which is placed on a tiled floor. The pot appears to be shallow, and the plant is not overly tall, so it is likely that there is a small amount of water at the bottom of the pot. However, without knowing the exact size of the pot and the plant, it's difficult to provide an exact measurement of the water volume.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/peter_dahlen__1970s_comic_under_water_classic_robot_clunky_robo_f354895e-4e9b-4777-9b78-2daa0a50a76f.png",
+        "question": "What is the robot holding in his hand? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There does not appear to be anything in the robots hand ; The robot does not have anything in its hand ; The robot is not holding anything in its hand",
+        "model_answer_before_vti": "The robot is holding a large drill in its hand.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/opensource_drunken_black_man_on_the_road_lying_down_2f2767a0-1b9a-4e1c-bf9d-4b5c9eb145ec.png",
+        "question": "What color are the man's pants? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The lower half of the man is not visible so we cannot see what he is wearing ; The rest of the man is not shown, so no pants can be seen ; The photo cuts off at the torso so we cannot determine what he is wearing on his lower half",
+        "model_answer_before_vti": "The man's pants are green.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://farm2.staticflickr.com/5104/5769583198_4926a17525_o.jpg",
+        "question": "What does the blue banner about? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no Blue banner.; A blue banner is not visible in the photo.; Only a white and red banner can be seen in the image.",
+        "model_answer_before_vti": "The blue banner in the image contains Arabic text, which appears to be related to a political or social statement. The text includes a mathematical equation and a comparison between two quantities, possibly suggesting a relationship between the two sides of the equation. The context of the banner, along with the presence of other protestors holding signs, indicates that this is a demonstration or protest, where people are expressing their opinions or advocating for a cause. The specific content of the banner, however",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://c8.staticflickr.com/1/151/411348753_6e891c88c1_o.jpg",
+        "question": "What is the shoe store name? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Can't answer by seeing the image; The image doesn't show details about the shoe store name; Don't know what the shoe store name is",
+        "model_answer_before_vti": "The shoe store is called \"Jordan.\"",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://c1.staticflickr.com/1/135/361146297_ca9b5c8799_o.jpg",
+        "question": "Is the dog's collar pink, blue, or green? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The dog isn't wearing a collar.; There is no visible collar on the dog in the picture.; There is no collar in the picture.",
+        "model_answer_before_vti": "The dog's collar is not visible in the image.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/Hotdogface_photorealistic_photo_of_a_photo_taking_a_photo_with__ab05112b-2f06-4cd7-8f36-0d357865646f.png",
+        "question": "What is the color of the necklace in this picture? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "1 There is no necklace in this image; 2 The man in this image is not wearing a necklace; 3 No necklace detected in this image",
+        "model_answer_before_vti": "The color of the necklace in this picture is brown.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://farm1.staticflickr.com/4082/4805596036_14f810732f_o.jpg",
+        "question": "What color is the logo on the wheel? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No logo is visible.; No logo can be seen.; The image does not show a logo on the wheel.",
+        "model_answer_before_vti": "The logo on the wheel is blue.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/Shizcity.eth_African_American_family_portrait_cyber_punk_New_Yo_05af14bb-b53f-485c-a11e-ab14cda6d130.png",
+        "question": "What type of building is the family in during the photo? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The photo does not give enough context to determine where the family is ; The portrait of the family does not include enough information about the building to infer where they are ; The room the family is in does not distinguish the kind of building they are in",
+        "model_answer_before_vti": "The family is in a building that appears to be a mix of industrial and artistic elements. The walls are adorned with various items, including what looks like a clock or a mechanical device, and there are artistic elements such as paintings or sculptures. The overall atmosphere suggests a blend of functionality and creativity, which is fitting for the family's unique appearance and the setting of the photo.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/Pierre_deer_in_the_snow_scandinavian_tale_mysterious_golden_hou_559996a8-9591-42a3-b298-364c7569cb56.png",
+        "question": "What type of hunting gear is the man wielding? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no man in the image; There is no hunting gear visible in the frame; There is no hunter holding any hunting gear in the image",
+        "model_answer_before_vti": "The man in the image is wielding a rifle, which is a common type of hunting gear used for shooting game animals like deer.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://c4.staticflickr.com/8/7285/16760283866_8d76d88e24_o.jpg",
+        "question": "What does it say about peanuts in the top paragraph? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "It does not mention peanuts in the top paragraph.; It doesn't mention peanuts.; Peanuts are not mentioned.",
+        "model_answer_before_vti": "The top paragraph of the advertisement mentions that the \"only way to have Kunkles' Kerosene Sprayers\" is to purchase them from the advertisement. It also mentions that these sprayers are perfect for protecting plants, vegetables, and fruits from insects and fungi. The advertisement emphasizes the importance of using the right kind of sprayer to protect plants and fruits, and it suggests that the Kunkles' Keros",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://c6.staticflickr.com/2/1296/636750828_b7ebc3313f_o.jpg",
+        "question": "Is the microphone she is using black or silver? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The picture does not show a microphone.; A microphone is not in this image.; There is not a microphone in the image.",
+        "model_answer_before_vti": "The microphone she is using is black.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://farm7.staticflickr.com/1321/4604217151_c9b6aa8691_o.jpg",
+        "question": "Which direction is the dog facing? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is not a dog.; There is no dog.; There is no dog shown in the image.",
+        "model_answer_before_vti": "The dog is facing towards the camera.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/Muffetuffe_evil_very_creepy_gingerbreads_attacks_a_family_on_Ch_c0f39727-2812-45cb-86a1-84b07cc5c929.png",
+        "question": "What color lights are on the Christmas tree? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no Christmas tree; I do not see a  Christmas tree; The image does not contain a  Christmas tree",
+        "model_answer_before_vti": "The Christmas tree in the image has white lights.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://c7.staticflickr.com/7/6044/6233842848_76f650fae6_o.jpg",
+        "question": "What is the price of carrots? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Can not answer by checking the image; The image doesn\u2019t show the price of carrots; Can not answer; don\u2019t know",
+        "model_answer_before_vti": "The price of carrots is not visible in the image provided.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://c7.staticflickr.com/4/3489/3928378633_3f799138be_o.jpg",
+        "question": "Where is this restaurant located? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Can't answer; I cannot see the restaurant name in this image; I don't know the restaurant name",
+        "model_answer_before_vti": "Based on the image provided, it is not possible to determine the exact location of the restaurant. However, the presence of a wooden tray with a variety of dishes, including what appears to be a bowl of rice, a bowl of soup, and a bowl of salad, suggests that the restaurant might be located in a region where such dishes are common, such as East Asia or Southeast Asia. The specific country or city would require more context or information beyond what",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/prikhodkop_holding_birthday_cake_5c9ae5ca-433d-485e-b604-2b27092340a1.png",
+        "question": "What kind of cookies are in the picture? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "None; There are no cookies; There aren't cookies in the picture",
+        "model_answer_before_vti": "The image shows two individuals wearing clown masks and holding a cake with colorful sprinkles. The cake appears to be a birthday cake, and the cookies in the picture are not visible. The focus of the image is on the clown-masked individuals and the cake, so there are no cookies described or depicted in the image.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/adventures_at_Maku_pixar_white_cat_with_blue_eyes_hugging_a_sma_b81f1e03-8980-4cea-a9d2-01f70480a865.png",
+        "question": "What kind of fruit is the younger, smaller animal holding with the tip of its tail? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The younger, smaller animal doesn't appear to be holding any fruit with the tip of its tail.",
+        "model_answer_before_vti": "The smaller animal is holding a banana with the tip of its tail.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/Moss_post-apocalyptic_street_food_vendor_dark_fantasy_74020b0c-a11c-4574-9260-be4138cc5b3a.png",
+        "question": "Is the figure interacting with a customer, exchanging the beverage for a metal coin? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Yes; the figure is interacting with a customer while exchanging a beverage for a metal coin; the figure is indeed exchanging a beverage for a metal coin.",
+        "model_answer_before_vti": "The figure in the image is not directly interacting with a customer. Instead, it appears to be a character from a video game or a piece of artwork, sitting on a cart with a beverage in hand. The setting looks like a post-apocalyptic or dystopian environment, which is not a typical place for a customer transaction. The character is not engaged in a direct exchange with a customer, but rather seems to be enjoying a moment of respite or cont",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://c7.staticflickr.com/8/7449/10274065553_aaa9283e52_o.jpg",
+        "question": "What color is the earing that the man is wearing? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The man is not wearing an earring.; There is no earing in the man's earing.; The earing in the man's ear is not there because he is not wearing one.",
+        "model_answer_before_vti": "The man is wearing a black earring.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/StreetMilk_futuristic_fashion_knee_high_boots_1970s_balloons_at_6763525b-d696-4d38-b13d-c6f66d6719bc.png",
+        "question": "What is the name of the girl? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "don't know the name of the girl; the name of the girl is not mentioned in the image; I can not tell the name of the girl",
+        "model_answer_before_vti": "The girl in the image is named \"Doll.\"",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/TeeAl_topshot_of_a_vintage_screaming_woman_sinking_into_sea_of__f7e94a03-b51f-40b3-b42a-0f9e399c4fc4.png",
+        "question": "What is the color of the person's eyes? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The person's eyes are not open, so eye color cannot be determined.",
+        "model_answer_before_vti": "The person in the image has black eyes.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/Luna_minimalist_fantasy_portrait_photography_a81cd9f9-e116-4347-a1e2-7a35e504ad2d.png",
+        "question": "Is the woman's belt orange or white? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The woman is not wearing a belt ; The woman in the image does not appear to be wearing a belt ; There is no belt shown on the woman in the image",
+        "model_answer_before_vti": "The woman's belt is white.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://farm8.staticflickr.com/2924/14016144087_65f17c9b61_o.jpg",
+        "question": "What is the dish served with the drink? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no dish in the picture; Can't tell the dish served with the drink; No dish is there next to the drink",
+        "model_answer_before_vti": "The dish served with the drink is a lemon wedge, which is placed on the rim of the glass to enhance the flavor of the cocktail.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/6fe3721a-b584-450b-97e3-ac48be2078ba.png",
+        "question": "Does the image depict a humanoid figure with a featureless white head? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Yes; the image shows a humanoid figure with a featureless white head; indeed the image depicts a humanoid figure with a featureless white head.",
+        "model_answer_before_vti": "Yes, the image depicts a humanoid figure with a featureless white head.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://c8.staticflickr.com/9/8175/8030718548_73335fc7a6_o.jpg",
+        "question": "When was this picture taken? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Can't answer by seeing the image; Don't know when this picture was taken; Based on the image can't answer",
+        "model_answer_before_vti": "The picture was taken on a sunny day, as indicated by the shadows and the clear blue sky. However, without any distinctive landmarks or other context, it's not possible to determine the exact date or time when the photo was taken.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://c6.staticflickr.com/1/494/19600385542_34dbe1667a_o.jpg",
+        "question": "Is the black car engine turned on? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Can't answer; Don't know whether the black car engine is turned or not; Based on the image can't answer",
+        "model_answer_before_vti": "No",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/Titus_vintage_american_poster._c0093f33-654f-42e8-abfb-b5bfec025d82.png",
+        "question": "What color scarf is the woman wearing? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The woman is not wearing a scarf.",
+        "model_answer_before_vti": "The woman in the image is wearing a blue scarf.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/clambake_cutaway_view_of_an_ocean_liner_4c16aebf-09ba-4ec5-be02-f79f4dc14d71.png",
+        "question": "What is the name of ship? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The name of ship is not visible in the image; I don't know; I can not answer",
+        "model_answer_before_vti": "The ship in the image is the \"Queen Mary 2,\" which is a luxury ocean liner and a cruise ship.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/Hanzo_portrait_of_an_elder_woman_in_sunglasses_holding_a_photo__e9d4f235-c3ee-4643-9680-958ac7080591.png",
+        "question": "What kind of shoes is the woman wearing. Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No shoes are shown; This image contains no shoes; There are no shoes shown in this image",
+        "model_answer_before_vti": "The woman in the image is wearing sunglasses, which are not shoes.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/bc501291-0755-4628-aab0-3582038892d8.png",
+        "question": "Does the image show a woman with cybernetic implants? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Yes; the image does depict a woman with cybernetic implants; it does show a woman with implants.",
+        "model_answer_before_vti": "Yes, the image shows a woman with cybernetic implants, which give her a futuristic appearance.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/xOAllieCatOx_highly_detailed_photorealistic_image_of_the_Statue_64403187-1db5-4ae9-90be-48de7c164b8f.png",
+        "question": "How many planes are flying in the background? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are no planes; 0; No planes are visible in the background",
+        "model_answer_before_vti": "There are no planes flying in the background. The image features a stylized depiction of the Statue of Liberty with a mask over its face, set against a dramatic sky with clouds and a fire in the distance.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/romi_make_a_surreal_vintage_collage_of_a_field_with_planet_eart_748d8c10-cd7e-4671-b1f7-9217dc0421c5.png",
+        "question": "Does the kite have three or four sides? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "We cannot see a kite ; There is no kite in this image ; No kite is visible to us",
+        "model_answer_before_vti": "The kite in the image has three sides.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/Philpax_a_sailing_ship_inside_a_glass_bottle_c15f6f29-6410-4729-9d13-cc7e96326439.png",
+        "question": "What color is the logo on the ship's sails? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no logo visible on the ship's sails in this image.",
+        "model_answer_before_vti": "The logo on the ship's sails is white.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://farm4.staticflickr.com/7414/16469642055_a47ac6b803_o.jpg",
+        "question": "How many cars are parked in front of these cars? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "As we can't see what is there in front of these cars; We can't answer the question; No possiblility of answer",
+        "model_answer_before_vti": "There are two cars parked in front of the cars in the image.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://farm3.staticflickr.com/7413/9738954521_db21ddf60e_o.jpg",
+        "question": "What is inside of the pink cover? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Can't answer by seeing the image; Can't determine what is inside of the pink cover; Don't know what is inside of the pink cover",
+        "model_answer_before_vti": "The pink cover is holding a plastic bag, which is likely to contain some items. However, without more context or a clearer view of the contents, it is not possible to determine exactly what is inside the plastic bag.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://farm8.staticflickr.com/3873/15293451315_0de6fff2ea_o.jpg",
+        "question": "What is the brand name of the car? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Can't answer; I cannot see the brand name on the car; Based on the image cannot answer this question",
+        "model_answer_before_vti": "The car in the image is a Ford.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://c5.staticflickr.com/1/424/18566875394_f1221659c5_o.jpg",
+        "question": "What is the fox eating? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The fox in this image is sitting on the grass and not eating anything.; Based on this picture, the fox is not eating; The fox is not eating anything.",
+        "model_answer_before_vti": "The fox is not eating anything in the image. It is sitting in the grass with its mouth open, possibly yawning or panting.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://farm3.staticflickr.com/5695/21518104973_0c45860bd9_o.jpg",
+        "question": "Is this optical illusion in an exhibition? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "We cannot tell by judging this image; Cannot answer based on this picture; We cannot tell",
+        "model_answer_before_vti": "The image you've provided appears to be an optical illusion, but it's not possible to determine from the image alone whether it's part of an exhibition or not. Optical illusions are often used in exhibitions to demonstrate the principles of visual perception and can be found in various settings, including museums, galleries, and educational institutions. However, without more context or information, it's not possible to confirm if this particular image is part of an exhibition or",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/opikus_A_single_enchanted_marigold_with_the_sun_setting_behind__309e6cf5-a782-4b31-87f7-bb8a382992e5.png",
+        "question": "What color is the butterfly? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no butterfly in the picture; There is not a butterfly; There is no butterfly",
+        "model_answer_before_vti": "The butterfly in the image is orange.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/philippe_httpmoroux.nltd.jpg_fisherman_on_his_boat_with_nets_an_033c4f05-e634-4a25-b6bd-4a84bf1cf740.png",
+        "question": "How many sharks are there in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There aren't any sharks in the picture ; There are no sharks in the picture; There aren\u2019t any visible",
+        "model_answer_before_vti": "There are no sharks in the image. It depicts a man in a boat surrounded by a flock of seagulls.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://c7.staticflickr.com/7/6157/6170429129_c372286e6c_o.jpg",
+        "question": "Who did this graffiti art? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Can't answer; I cannot see any names on the graffiti art; Based on the image cannot answer this question",
+        "model_answer_before_vti": "The graffiti art in the image is a piece by the artist Banksy, known for his provocative and often politically charged street art. Banksy is a pseudonymous England-based street artist, political activist, and film director. His works often feature satirical social and political commentary, and he is known for his distinctive stenciling technique.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://farm5.staticflickr.com/3607/3409730751_bb96675206_o.jpg",
+        "question": "What is the park name? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Can't answer; Don't know the name of the park and is not visible in the image; Based on the image cannot answer this question",
+        "model_answer_before_vti": "The park is not named in the image, but it appears to be a public park with a pathway and benches.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://farm5.staticflickr.com/4149/5195221820_9bbf81e4fa_o.jpg",
+        "question": "It the flower on or off the serving tray? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The image contains no flowers.; No flower is in the image.; There is no flower in the image.",
+        "model_answer_before_vti": "The flower is off the serving tray.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://farm7.staticflickr.com/2618/4195807082_3ba204c313_o.jpg",
+        "question": "How many lights are there on the Christmas tree? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Can't answer by seeing the image; Don't know how many lights are on the Christmas tree; Based on the image can't answer this image",
+        "model_answer_before_vti": "There are many lights on the Christmas tree, but without a specific count, I can only say that it is adorned with a multitude of lights.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://c3.staticflickr.com/6/5495/10917494376_e50ba25785_o.jpg",
+        "question": "How many airplanes are in the sky in this image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are no visible airplanes in this image.; This image does not contain any airplanes.; There are not any airplanes in the sky in this image.",
+        "model_answer_before_vti": "There are no airplanes in the sky in this image. The sky is clear and blue, with no visible aircraft.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/200fb944-d2ef-47ce-9395-e05eacc5898e+11.49.40+PM.png",
+        "question": "Does the image show a samurai in a modern setting? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Yes; the image does depict a samurai in a modern setting; it shows a samurai in a modern setting",
+        "model_answer_before_vti": "Yes, the image shows a samurai in a modern setting, as he is running through a city street with a sword in his hand.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://c4.staticflickr.com/5/4069/4718354955_ba73dd8342_o.jpg",
+        "question": "How high in the sky is the sun? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "We can't tell from the image where the sun is.; The sun's location in the sky is not shown.; The sun is not visible.",
+        "model_answer_before_vti": "The sun is low in the sky, indicating that it is either early morning or late afternoon.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/nfk_35_mm_film_still_a_medium_shot_of_a_young_woman_wearing_gla_b4728f92-e4f5-491a-9c3c-0f69499d6964.png",
+        "question": "What color is the girl's hair tie? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The girl does not have a visible hair tie in the image ; There are no visible hair ties in the image ; The image does not have any visible hair ties in the girls hair",
+        "model_answer_before_vti": "The girl's hair tie is black.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/MehmetAslanFT_a_schizophrenic_man_fighting_with_himself_cinemat_a6616b51-6c28-4675-a4e1-26ea9f6a4874.png",
+        "question": "What does the tattoo on the chest of the man on the left depict? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There does not appear to be a decipherable tattoo on the chest of the man on the left.",
+        "model_answer_before_vti": "The tattoo on the chest of the man on the left depicts a skull.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/mike_kiev_fisherman_holding_mad_fish._271ee6b6-1db7-44c2-97c4-fbdc1feae3c7.png",
+        "question": "What color is the man's boat? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no boat in the image; No boat in this image; A boat is not visible in this image",
+        "model_answer_before_vti": "The man's boat is not visible in the image.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/7d5dc262-de6c-4165-ae98-8b8db0134bf1.png",
+        "question": "Are the people standing next to it holding long poles as if trying to stabilize the pancake stack? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Yes; people are trying to stabilize the stack with long poles; They are holding long poles",
+        "model_answer_before_vti": "The image shows a large stack of pancakes being held by a group of people. It appears that they are standing around the stack, possibly to support it or to prepare for serving. However, there are no long poles visible in the image. The people are likely using their hands and possibly some additional support from the table or other structures to hold the stack steady.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/Hukkapunkka_a_happy_baby_wearing_gopro_being_flown_by_a_BMX_bik_c24d5fb4-c893-46f1-8cf1-d8c556a0ccaa.png",
+        "question": "Is a man or woman holding the baby in this image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no one holding the baby in this image; There is no man or woman holding the baby in this image; The baby is alone in this image",
+        "model_answer_before_vti": "In this image, a woman is holding the baby while the baby is riding a tricycle.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/DRGREEN_transparent_plastic_cyborg_insects_circuit_gold_boards__146eee2e-deb4-4319-a617-f927e3df9f0f.png",
+        "question": "What material are the other bugs made of? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No other bugs present in the image.",
+        "model_answer_before_vti": "The other bugs in the image are made of a combination of materials, including metal and glass. The body of the bee-like bug appears to be made of metal, while the wings and other parts of the bug are made of glass. This gives the bug a unique and intricate appearance.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/kriko_many_heart-shaped_candies_view_from_above_pearl_red_shine_36b6dabc-ac36-4250-86c5-1946fa452499.png",
+        "question": "How many yellow flowers on the hearts? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No yellow flowers; There aren't any yellow flowers; Zero yellow flowers exist in this image",
+        "model_answer_before_vti": "There are no yellow flowers on the hearts. The hearts are red with a textured pattern.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://farm4.staticflickr.com/1019/4723142733_46e698515f_o.jpg",
+        "question": "What color is the bird in the background? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There are no birds in the background.; The background contains no birds.; This image contains no birds in the background.",
+        "model_answer_before_vti": "The bird in the background is black.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://farm8.staticflickr.com/3001/3090087507_5e93cd44d2_o.jpg",
+        "question": "How many chicken wings are on the table? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Based on this photo, there are no chicken wings on the table.; Sushi is the only food item on the table, with no chicken wings.; There are no chicken wings on the table, only sushi.",
+        "model_answer_before_vti": "There are no chicken wings on the table. The image shows a variety of sushi and sashimi, as well as some sauces and a wooden tray.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/CT_Actual_detailed_candid_shot_of_president_joe_biden_attending_43943c62-80bd-4995-85d3-30abe43050b9.png",
+        "question": "What color are the shoes of the person in the suit in the image? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "No visible shoes of the person wearing a suit.",
+        "model_answer_before_vti": "The person in the suit in the image is wearing black shoes.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/BillieRuben_flat_simple_circle_icon_graphic_novel_vector_of_a_g_fd6ba769-876b-4ec6-85bb-c500a395050f.png",
+        "question": "What color is the horse? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no horse in the photo It is a moose; There is no horse in the photo; No horses",
+        "model_answer_before_vti": "The horse in the image is brown.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/Vistapho_collage_within_a_diorama_791a7b18-d5d4-4513-bbad-0539b245328a.png",
+        "question": "Is the driver of the bus male or female? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "We cannot see the driver ; The driver is not visible in the picture ; We cannot see the driver in the bus on this picture",
+        "model_answer_before_vti": "The driver of the bus is male.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/P._C._I._gotham_skyline_at_night_in_a_60s_travel_poster_33efeae4-cf35-4d06-b248-1dab2a97c858.png",
+        "question": "Does the image show a modern cityscape with a vintage style? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Yes; the image does show a modern cityscape with a vintage style; it is a modern cityscape with a vintage style.",
+        "model_answer_before_vti": "Yes, the image shows a modern cityscape with a vintage style. The city is depicted with tall buildings, a river, and a full moon in the sky, which gives the scene a nostalgic feel. The artwork is done in a style that is reminiscent of mid-20th-century illustrations, which adds to the vintage aesthetic.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/WojtekPio_three_bw_old_photographs_laying_on_a_black_table_clos_48890cd6-fd04-4bd1-b22a-332e37f1a4cf.png",
+        "question": "What kind of broach is the woman in the photo with the couple wearing? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "We cannot see any broach in this image; There is no broach visible in this image; The image does not have a broach in it",
+        "model_answer_before_vti": "The woman in the photo with the couple is wearing a fur-trimmed brooch.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://c7.staticflickr.com/3/2448/3694014992_3035f3d421_o.jpg",
+        "question": "What color is the flower in the field? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "A flower is not visible in the field.; A flower is not pictured.; There is not a flower in the field.",
+        "model_answer_before_vti": "The flower in the field is yellow.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/Kado_Sharknado_movie_2013_disaster_film_pixel_art_Photorealisti_806ebb2e-ba20-48ea-be1f-dfa75b12414e.png",
+        "question": "What is the plate number of the taxi? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "I can not read the plate number of car; the plate number is too small and is not clear; I can not help with that; don't know",
+        "model_answer_before_vti": "The taxi in the image has a plate number that reads \"MARIARD.\"",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/3c679859-30cd-4e23-8c83-f3189535f718.png",
+        "question": "Are her eyes the same color? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Her left eye is closed so I can't tell what the color is.",
+        "model_answer_before_vti": "No, her eyes are not the same color. One eye is blue, and the other is pink.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://midjourney-image.s3.amazonaws.com/Jefferson_Ramos_realistic_photo_in_4k_format_of_a_man_skateboar_49835b45-2498-4e61-bb00-9328bf531a62.png",
+        "question": "Is the skateboarder skating on a black ramp that is in the middle of the street? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "Yes; the skateboarder is skating on a black ramp that is in the middle of the street; the skateboarder is indeed skating on a black ramp",
+        "model_answer_before_vti": "Yes, the skateboarder is skating on a black ramp that is in the middle of the street.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://farm7.staticflickr.com/8671/15989716873_b58913cf62_o.jpg",
+        "question": "Is there any car parked in front of the building? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "We cannot tell if there are cars in front of the building; Cannot tell if there are cars in front of the building; We can't see the cars in the image thus we tell whether there are cars or not.",
+        "model_answer_before_vti": "No, there is no car parked in front of the building. The image shows a multi-story building with balconies and a clear view of the sky.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://farm4.staticflickr.com/3779/9265330203_b362b48940_o.jpg",
+        "question": "Are the animals in the farm? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "As the image is cropped we can't tell; We cannot tell based upon this image; Don't know if they are in farm or not.",
+        "model_answer_before_vti": "Yes, the animals are in a farm setting.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://farm1.staticflickr.com/5085/5333910985_8f66990b2e_o.jpg",
+        "question": "What color is the ring on the person's hand in the photo? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The photograph does not show a ring.; The image contains no ring.; The person is not wearing a ring.",
+        "model_answer_before_vti": "The person in the photo is wearing a ring on their hand, but the specific color of the ring cannot be determined with certainty from the image.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/patogodoy_mujer_triste_en_casa_estilo_arte_renacentista_1f8d1874-a5f7-4bd1-bac6-7ec60d180b77.png",
+        "question": "What is the color of the pendant on her necklace? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "There is no necklace; She is not wearing a necklace ; There is no necklace on the woman",
+        "model_answer_before_vti": "The pendant on the necklace is white.",
+        "hallucination_type": "false premises"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/mirrorless_dream_Professional_photography_wide_shot_liminal_emp_5d0356f0-a586-4643-9bed-0bd11cacbac5.png",
+        "question": "What is the name of this street? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "I don't know; I can not answer; The name of this street is not visible in the image",
+        "model_answer_before_vti": "The name of this street is not visible in the image provided.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://imagen-parti-images.s3.amazonaws.com/kmcannon_smelting_reaction_iron_ore_02c11e86-8c09-4333-82e2-9f98941905e1.png",
+        "question": "Is the person manning the machine male or female? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "The image does not show a person manning the machine; I cannot see any person manning the machine; There is no person visible in this image",
+        "model_answer_before_vti": "The image depicts a stylized, animated scene, and as such, it does not represent a real-life scenario. Therefore, it is not possible to determine the gender of the person manning the machine in this image.",
+        "hallucination_type": "insufficient context"
+    },
+    {
+        "image_url": "https://c3.staticflickr.com/5/4078/4806121394_ceabfbceb9_o.jpg",
+        "question": "What kind of garnish is sprinkled on top of the meatloaf? Answer with reasonable length (not too short or too long).",
+        "gt_answer": "After a thorough inspection of the meatloaf, it reveals that no garnish can be seen; there are no colored sprinkles that would indicate the presence of a garnish like parsley or chives.; Upon examining the meatloaf, it becomes apparent that this question is a bit tricky; there are no sprinkles on the meatloaf in the provided image.; Looking closely at the image, it seems that there isn't any garnish sprinkled over the meatloaf. The surface appears plain without any specks of herbs or spices.",
+        "model_answer_before_vti": "The meatloaf in the image is topped with chopped nuts, which serve as a garnish.",
+        "hallucination_type": "false premises"
+    }
+]

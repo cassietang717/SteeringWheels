@@ -213,7 +213,7 @@ def get_demos_coco(args, image_processor, processor, patch_size=14, file_path='/
         image_path = os.path.join(args.data_file, 'train2014', data_demos[i]['image'])
         image_raw = Image.open(image_path).convert("RGB")
         image_tensor = process_image(image_raw,image_processor)
-        # image_tensor = image_tensor[0] # （5， 3, 336, 336）-> (3, 336, 336)
+        image_tensor = image_tensor[0] # （5， 3, 336, 336）-> (3, 336, 336)
 
         image_tensor_cd_all_trials = []
         for t in range(args.num_trials):
