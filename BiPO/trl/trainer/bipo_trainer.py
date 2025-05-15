@@ -1079,9 +1079,9 @@ class BiPOTrainer(Trainer):
             concatenated_batch["pixel_values"] = torch.cat(
                 [batch["prompt_pixel_values"], batch["prompt_pixel_values"]], dim=0
             )
-            concatenated_batch["image_sizes"] = torch.cat(
-                [batch["prompt_image_sizes"], batch["prompt_image_sizes"]], dim=0
-            )
+            sizes_tensor = torch.tensor(batch["prompt_image_sizes"])
+            concatenated_batch["image_sizes"] = torch.cat([sizes_tensor, sizes_tensor], dim=0)
+
             if "prompt_pixel_attention_mask" in batch:
                 concatenated_batch["pixel_attention_mask"] = torch.cat(
                     [batch["prompt_pixel_attention_mask"], batch["prompt_pixel_attention_mask"]], dim=0
@@ -1243,6 +1243,7 @@ class BiPOTrainer(Trainer):
                 policy_chosen_logps.to(self.accelerator.device) - reference_chosen_logps.to(self.accelerator.device)
             ).detach()
         )
+
         rejected_rewards = (
             self.beta
             * (
@@ -1311,6 +1312,7 @@ class BiPOTrainer(Trainer):
 
         if self.is_vision_model:
             model_kwargs["pixel_values"] = concatenated_batch["pixel_values"]
+            model_kwargs["image_sizes"] = concatenated_batch["image_sizes"]
             if "pixel_attention_mask" in concatenated_batch:
                 model_kwargs["pixel_attention_mask"] = concatenated_batch["pixel_attention_mask"]
 
@@ -1377,12 +1379,12 @@ class BiPOTrainer(Trainer):
     ):
         """Compute the DPO loss and other metrics for the given batch of inputs for train or test."""
         if train_eval == "train":
-            multiplier_pool = [-1.0, 1.0]
-            multiplier = random.choice(multiplier_pool)
+            # multiplier_pool = [-1.0, 1.0]
+            multiplier = 1
             self.multiplier_counts[multiplier] += 1
-            model.model.layers[self.layer].set_multiplier(multiplier)
+            model.language_model.model.layers[self.layer].set_multiplier(multiplier)
         else:
-            multiplier = model.model.layers[self.layer].multiplier
+            multiplier = model.language_model.model.layers[self.layer].multiplier
 
         metrics = {}
 
@@ -1446,7 +1448,7 @@ class BiPOTrainer(Trainer):
         metrics[f"{prefix}logps/chosen"] = policy_chosen_logps.detach().mean().cpu()
         metrics[f"{prefix}logits/rejected"] = policy_rejected_logits.detach().mean().cpu()
         metrics[f"{prefix}logits/chosen"] = policy_chosen_logits.detach().mean().cpu()
-        metrics[f"{prefix}multiplier"] = model.model.layers[self.layer].multiplier
+        metrics[f"{prefix}multiplier"] = model.language_model.model.layers[self.layer].multiplier
         if self.args.rpo_alpha is not None:
             metrics[f"{prefix}nll_loss"] = policy_nll_loss.detach().mean().cpu()
 
@@ -1481,40 +1483,35 @@ class BiPOTrainer(Trainer):
             return (loss, metrics)
         return loss
 
-    def get_batch_samples(self, epoch_iterator, num_batches, device):
-        """Expected by HuggingFace's Trainer: gather batch samples for evaluation."""
+    def get_batch_samples(self, model, batch: Dict[str, torch.LongTensor]) -> Tuple[str, str]:
+        """Generate samples from the model and reference model for the given batch of inputs."""
 
-        all_policy_outputs = []
-        all_reference_outputs = []
-        total_samples = 0
+        # If one uses `generate_during_eval` with peft + bf16, we need to explicitly call generate with
+        # the torch cuda amp context manager as some hidden states are silently casted to full precision.
+        generate_context_manager = nullcontext if not self._peft_has_been_casted_to_bf16 else torch.cuda.amp.autocast
+        with generate_context_manager():
+            policy_output = model.generate(
+                input_ids=batch["prompt_input_ids"],
+                attention_mask=batch["prompt_attention_mask"],
+                pixel_values = batch["prompt_pixel_values"],
+                image_sizes = batch["prompt_image_sizes"],
+                max_new_tokens=self.max_length,
+                do_sample=True,
+                pad_token_id=self.tokenizer.image_token_id,
+            )
 
-        for _ in range(num_batches):
-            try:
-                batch = next(epoch_iterator)
-            except StopIteration:
-                break
-            breakpoint()
-            with (torch.cuda.amp.autocast() if self._peft_has_been_casted_to_bf16 else nullcontext()):
-                policy_output = self.model.generate(
-                    input_ids=batch["prompt_input_ids"],
-                    attention_mask=batch["prompt_attention_mask"],
-                    pixel_values = batch["prompt_pixel_values"],                    
-                    image_sizes = batch["prompt_image_sizes"],
-                    max_new_tokens=self.max_length,
-                    do_sample=True,
-                    pad_token_id=self.tokenizer.image_token_id,
-                )
-
-                if "reference_output" in batch:
-                    reference_output = batch["reference_output"]
-                elif self.ref_model is None:
+            # if reference_output in batch use that otherwise use the reference model
+            if "reference_output" in batch:
+                reference_output = batch["reference_output"]
+            else:
+                if self.ref_model is None:
                     with self.null_ref_context():
                         reference_output = self.model.generate(
                             input_ids=batch["prompt_input_ids"],
                             attention_mask=batch["prompt_attention_mask"],
                             pixel_values = batch["prompt_pixel_values"],
-                            image_sizes = batch['prompt_image_sizes'],
-                            max_length=self.max_length,
+                            image_sizes = batch["prompt_image_sizes"],
+                            max_new_tokens=self.max_length,
                             do_sample=True,
                             pad_token_id=self.tokenizer.image_token_id,
                         )
@@ -1523,21 +1520,18 @@ class BiPOTrainer(Trainer):
                         input_ids=batch["prompt_input_ids"],
                         attention_mask=batch["prompt_attention_mask"],
                         pixel_values = batch["prompt_pixel_values"],
-                        image_sizes = batch['prompt_image_sizes'],
+                        image_sizes = batch["prompt_image_sizes"],
                         max_new_tokens=self.max_length,
                         do_sample=True,
                         pad_token_id=self.tokenizer.image_token_id,
                     )
 
-            policy_output = pad_to_length(policy_output, self.max_length, self.tokenizer.image_token_id)
-            reference_output = pad_to_length(reference_output, self.max_length, self.tokenizer.image_token_id)
+        policy_output = pad_to_length(policy_output, self.max_length, self.tokenizer.pad_token_id)
+        policy_output_decoded = self.tokenizer.batch_decode(policy_output, skip_special_tokens=True)
 
-            all_policy_outputs.extend(self.tokenizer.batch_decode(policy_output, skip_special_tokens=True))
-            all_reference_outputs.extend(self.tokenizer.batch_decode(reference_output, skip_special_tokens=True))
-
-            total_samples += policy_output.shape[0]
-
-        return (all_policy_outputs, all_reference_outputs), total_samples
+        reference_output = pad_to_length(reference_output, self.max_length, self.tokenizer.pad_token_id)
+        reference_output_decoded = self.tokenizer.batch_decode(reference_output, skip_special_tokens=True)
+        return policy_output_decoded, reference_output_decoded
 
     def prediction_step(
         self,
@@ -1598,15 +1592,15 @@ class BiPOTrainer(Trainer):
         Works both with or without labels.
         """
         print('Enter customized evaluation_loop...')
-        print('multiplier: ', self.model.model.layers[self.layer].multiplier)
+        print('multiplier: ', self.model.language_model.model.layers[self.layer].multiplier)
         print('multiplier_counts: ', self.multiplier_counts)
-        if self.model.model.layers[self.layer].multiplier > 0:
+        if self.model.language_model.model.layers[self.layer].multiplier > 0:
             self.epoch_for_saving_vec += 1
-            steer_vec = self.model.model.layers[self.layer].vec.detach().cpu()
+            steer_vec = self.model.language_model.model.layers[self.layer].vec.detach().cpu()
             print(f'Steer vec at epoch {self.epoch_for_saving_vec}: ', steer_vec[:10], steer_vec.dtype)
             torch.save(
                 steer_vec,
-                f"{self.vec_dir}/vec_ep{self.epoch_for_saving_vec}_layer{self.layer}.pt",
+                f"{self.vec_dir}/ipo_vec_ep{self.epoch_for_saving_vec}_layer{self.layer}.pt",
             )
 
         # Sample and save to game log if requested (for one batch to save time)
@@ -1696,10 +1690,10 @@ class BiPOTrainer(Trainer):
             for eval_dataset_name, _eval_dataset in eval_dataset.items():
                 print('Eval_dataset_name: ', eval_dataset_name)
                 if 'add' in eval_dataset_name:
-                    self.model.model.layers[self.layer].set_multiplier(1.0)
+                    self.model.language_model.model.layers[self.layer].set_multiplier(1.0)
                     print(f'set_multiplier at layer {self.layer} 1.0')
                 elif 'sub' in eval_dataset_name:
-                    self.model.model.layers[self.layer].set_multiplier(-1.0)
+                    self.model.language_model.model.layers[self.layer].set_multiplier(-1.0)
                     print(f'set_multiplier at layer {self.layer} -1.0')
                 dataset_metrics = self.evaluate(
                     eval_dataset=_eval_dataset if override else eval_dataset_name,

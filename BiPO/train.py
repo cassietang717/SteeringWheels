@@ -19,7 +19,7 @@ import json
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
-# SYSTEM_PROMPT = "You are a helpful, honest and concise assistant."
+SYSTEM_PROMPT = "You are a helpful, honest and concise assistant."
 
 def set_seed(seed=42):
     random.seed(seed)
@@ -97,11 +97,13 @@ class BlockWrapper(torch.nn.Module):
             self.vec = torch.nn.Parameter(vec.to(dtype=torch.float16))
         else:
             # Zero Init
-            self.vec = torch.nn.Parameter(torch.zeros(4096,dtype=torch.float16))
+            # self.vec = torch.nn.Parameter(torch.randn(4096, dtype=torch.float16) * 1e-3)
+            self.vec = torch.nn.Parameter(torch.randn(4096, dtype=torch.float32) * 1e-3)
 
     def forward(self, *args, **kwargs):
         output = self.block(*args, **kwargs)
-        output = (output[0]  +  (self.multiplier * self.vec),) + output[1:]
+        vec_fp16 = self.vec.clamp(-1, 1).to(output[0].dtype) 
+        output = (output[0]  +  (self.multiplier * vec_fp16),) + output[1:]
         return output
 
     def set_multiplier(self, multiplier):
@@ -123,13 +125,13 @@ class ScriptArguments:
         default="meta-llama/Llama-2-7b-chat-hf",
         metadata={"help": "we only support meta-llama/Llama-2-7b-chat-hf and mistralai/Mistral-7B-Instruct-v0.2"},
     )
-    learning_rate: Optional[float] = field(default=5e-4, metadata={"help": "optimizer learning rate"})
+    learning_rate: Optional[float] = field(default=1e-4, metadata={"help": "optimizer learning rate"})
     lr_scheduler_type: Optional[str] = field(default="cosine", metadata={"help": "the lr scheduler type"})
     warmup_steps: Optional[int] = field(default=100, metadata={"help": "the number of warmup steps"})
     weight_decay: Optional[float] = field(default=0.05, metadata={"help": "the weight decay"})
     optimizer_type: Optional[str] = field(default="adamw_torch", metadata={"help": "the optimizer type"})
 
-    per_device_train_batch_size: Optional[int] = field(default=4, metadata={"help": "train batch size per device"})
+    per_device_train_batch_size: Optional[int] = field(default=2, metadata={"help": "train batch size per device"})
     per_device_eval_batch_size: Optional[int] = field(default=1, metadata={"help": "eval batch size per device"})
     gradient_accumulation_steps: Optional[int] = field(
         default=1, metadata={"help": "the number of gradient accumulation steps"}
@@ -211,21 +213,12 @@ def get_data(dataset, num_proc=1, processor=None):
                 "images": None,
             }
 
-        # # Format conversation using LLaVA template
-        # conv = get_conv_template("llava-chatml")
-        # # conv.set_system_message(SYSTEM_PROMPT)
-        # conv.append_message(conv.roles[0], "<image>\n" + example["question"])
-        # conv.append_message(conv.roles[1], "")  # Placeholder for assistant's reply
-        # prompt = conv.get_prompt()
-        conversation = [{
-            "role": "user",
-            "content": [
-                {"type": "image"},
-                {"type": "text", "text": example["question"]},
-                ],
-            }]
-        
-        prompt = processor.apply_chat_template(conversation=conversation, add_generation_prompt=True)
+        # Format conversation using LLaVA template
+        conv = get_conv_template("llava-chatml")
+        conv.set_system_message(SYSTEM_PROMPT)
+        conv.append_message(conv.roles[0], "<image>\n" + example["question"])
+        conv.append_message(conv.roles[1], "")  # Placeholder for assistant's reply
+        prompt = conv.get_prompt()
 
         return {
             "prompt": prompt,
@@ -261,7 +254,7 @@ if __name__ == "__main__":
     elif script_args.model_name_or_path == 'mistralai/Mistral-7B-Instruct-v0.2':
         template_name = 'mistral'
     print('[Behavior:] ', 'Coco', '[Layer:] ', script_args.layer)
-    processor = LlavaNextProcessor.from_pretrained("/net/scratch2/steeringwheel/llava-v1.6-vicuna-7b-hf", use_fast=True)
+    processor = LlavaNextProcessor.from_pretrained("llava-hf/llava-v1.6-vicuna-7b-hf",revision="30f8c4f")
     model_llava = LlavaNextForConditionalGeneration.from_pretrained("/net/scratch2/steeringwheel/llava-v1.6-vicuna-7b-hf", torch_dtype=torch.float16, low_cpu_mem_usage=True)
     model_llava.language_model.model.layers[script_args.layer] = BlockWrapper(model_llava.language_model.model.layers[script_args.layer])
     model_llava.config.use_cache = False
@@ -290,9 +283,9 @@ if __name__ == "__main__":
     # 2. Load training dataset
     hall_dataset = get_demos_coco()[:80]
     hall_dataset_eval = get_demos_coco()[80:]
-    train_dataset = get_data(hall_dataset,processor=processor) 
+    train_dataset = get_data(hall_dataset) 
     # 3. Load val dataset
-    test_dataset = get_data(hall_dataset_eval,processor=processor) 
+    test_dataset = get_data(hall_dataset_eval) 
     # 4. initialize training arguments:
     training_args = DPOConfig(
         per_device_train_batch_size=script_args.per_device_train_batch_size,
