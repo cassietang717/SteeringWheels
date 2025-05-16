@@ -18,8 +18,8 @@ end_timing = torch.cuda.Event(enable_timing=True)
 results = []
 start_timing.record()
 
-HaloQuest_df = pd.read_csv("/home/cassietang/steeringwheel/HaloQuest/data/test_haloquest.csv")
-filtered_HaloQuest_df = HaloQuest_df[HaloQuest_df["hallucination type"] == "visual challenge"]
+HaloQuest_df = pd.read_csv("data/haloquest.csv")
+filtered_HaloQuest_df = HaloQuest_df[HaloQuest_df["hallucination type"] != "visual challenge"]
 
 for _, entry in tqdm(filtered_HaloQuest_df.iterrows(), total=filtered_HaloQuest_df.shape[0], desc="Processing entries"):
     question = entry["question"] + " Answer with reasonable length (not too short or too long)."
@@ -49,13 +49,13 @@ for _, entry in tqdm(filtered_HaloQuest_df.iterrows(), total=filtered_HaloQuest_
     output = model.generate(**inputs, use_cache=True, max_new_tokens=100)
 
     model_output = processor.decode(output[0], skip_special_tokens=True)
-    model_answer_before_vti = model_output.split("ASSISTANT:")[-1].strip()
+    model_answer = model_output.split("ASSISTANT:")[-1].strip()
 
     result_entry = {
         "image_url": image_url,
         "question": question,
         "gt_answer": gt_answer,
-        "model_answer_before_vti": model_answer_before_vti,
+        "model_answer": model_answer,
         "hallucination_type": hallucination_type
     }
     results.append(result_entry)
@@ -63,7 +63,7 @@ for _, entry in tqdm(filtered_HaloQuest_df.iterrows(), total=filtered_HaloQuest_
     print(f"Image url: {image_url}")
     print(f"Processed question: {question}")
     print(f"Ground truth: {gt_answer}")
-    print(f"model_answer_before_vti: {model_answer_before_vti}")
+    print(f"Model answer: {model_answer}")
     print(f"Hallucination type: {hallucination_type}")
     print("=" * 50)
 
@@ -72,4 +72,4 @@ end_timing.record()
 print(f"Runtime: {.001 * start_timing.elapsed_time(end_timing):.4f} seconds")
 
 results_df = pd.DataFrame(results)
-results_df.to_csv("output/HaloQuest_output_test_cv.csv", index=False)
+results_df.to_csv("output/HaloQuest_output.csv", index=False)

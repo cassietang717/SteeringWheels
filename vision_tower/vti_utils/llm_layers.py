@@ -6,30 +6,64 @@ from torch import Tensor
 import numpy as np
 
 
+# class VTILayer(nn.Module):
+
+#     def __init__(self, vti_direction, lam):
+#         super(VTILayer, self).__init__()
+#         self.vti_direction = vti_direction
+#         self.lam = lam
+
+#     def forward(self, x):
+#         if self.vti_direction is not None:
+#             norm = torch.norm(x.float(),dim=-1).unsqueeze(-1)            
+#             y = 0
+#             for i in range(len(self.vti_direction)):
+#                 if x.size(1) < 2:
+#                     lambda_sim = 1.0 #+ torch.max(torch.tensor([0.]).to(x.device), F.cosine_similarity(x.float(), -self.vti_direction[i][None,None,:], dim=-1)).unsqueeze(-1)
+#                     y += self.lam[i] * lambda_sim * F.normalize(self.vti_direction[i], dim=-1).repeat(1,x.shape[1],1)
+#                 else:
+#                     lambda_sim = 1.0
+#                     y += self.lam[i] * lambda_sim * F.normalize(self.vti_direction[i], dim=-1)
+#             y = y/len(self.vti_direction)
+#             x = F.normalize(F.normalize(x.float(),dim=-1) +  0.1 * y, dim=-1) * norm
+#             breakpoint()
+#             return x.half()
+#         else:
+#             return x
+        
+# class VTILayer(nn.Module):
+
+#     def __init__(self, vti_direction, lam):
+#         super(VTILayer, self).__init__()
+#         self.multiplier = lam
+#         self.vti_direction = vti_direction
+
+#     def forward(self, x):
+#         if self.vti_direction is not None:
+#             y = 0
+#             for i in range(len(self.vti_direction)):
+#                 y += self.lam[i] * self.vti_direction[i]
+#             x = (x[0]  +  (self.multiplier * self.vti_direction),) + x[1:]
+#         else:
+#             return x
+
 class VTILayer(nn.Module):
-
-    def __init__(self, vti_direction, lam):
-        super(VTILayer, self).__init__()
-        self.vti_direction = vti_direction
-        self.lam = lam
-
-    def forward(self, x):
-        if self.vti_direction is not None:
-            norm = torch.norm(x.float(),dim=-1).unsqueeze(-1)            
-            y = 0
-            for i in range(len(self.vti_direction)):
-                if x.size(1) < 2:
-                    lambda_sim = 1.0 #+ torch.max(torch.tensor([0.]).to(x.device), F.cosine_similarity(x.float(), -self.vti_direction[i][None,None,:], dim=-1)).unsqueeze(-1)
-                    y += self.lam[i] * lambda_sim * F.normalize(self.vti_direction[i], dim=-1).repeat(1,x.shape[1],1)
-                else:
-                    lambda_sim = 1.0
-                    y += self.lam[i] * lambda_sim * F.normalize(self.vti_direction[i], dim=-1)
-            y = y/len(self.vti_direction)
-            x = F.normalize(F.normalize(x.float(),dim=-1) +  0.1 * y, dim=-1) * norm
-                
-            return x.half()
+    def __init__(self, block, vec=None):
+        super().__init__()
+        self.multiplier = 15.0
+        self.block = block
+        if vec is not None:
+            self.vec = torch.nn.Parameter(vec.to(dtype=torch.float16))
         else:
-            return x
+            # Zero Init
+            self.vec = torch.nn.Parameter(torch.zeros(4096,dtype=torch.float16))
+
+    def forward(self, *args, **kwargs):
+        output = self.block(*args, **kwargs)
+        vec_device = self.vec.to(output[0].device) 
+        outputs = (output[0]  +  (self.multiplier *  vec_device),) + output[1:]
+        # breakpoint()
+        return outputs
 
 
 def get_nested_attr(obj, attr_path):
@@ -112,13 +146,38 @@ def get_mlp_layers(model: PreTrainedModel):
     mlp_layers = [find_module(layer, mlp_keywords) for layer in layers]
     return mlp_layers
 
-def add_vti_layers(model: PreTrainedModel, vti_drections: Tensor, alpha: list):
+def add_vti_layers(model: PreTrainedModel, vti_drections: Tensor, alpha: list, image: bool):
     layers = get_layers(model)
     mlp_keywords = ["mlp", "feedforward", "ffn"]
-    assert len(vti_drections) == len(layers)
-    for i, layer in enumerate(layers):
-        original_mlp = find_module(layer, mlp_keywords)
-        layer.mlp = nn.Sequential(original_mlp, VTILayer(vti_drections[i], alpha)) 
+    # breakpoint()
+    # assert len(vti_drections) == len(layers)
+    if not image:
+        # for i, layer in enumerate(layers):
+        #     original_mlp = find_module(layer, mlp_keywords)
+        #     layer.mlp = nn.Sequential(original_mlp, VTILayer(vti_drections[i], alpha)) 
+        # for i, layer in zip(range(14,19), layers[14:19]):
+        #     original_mlp = find_module(layer, mlp_keywords)
+        #     layer.mlp = nn.Sequential(original_mlp, VTILayer(vti_drections[i], alpha))
+        # layer_ids = [15]
+        # layer_certain = [layers[i] for i in layer_ids]
+        # for i, layer in enumerate(layer_certain):
+        #     original_mlp = find_module(layer, mlp_keywords)
+        #     layer.mlp = nn.Sequential(original_mlp, VTILayer(vti_drections[i], alpha))
+        # model_llava.language_model.model.layers[script_args.layer] = BlockWrapper(model_llava.language_model.model.layers[script_args.layer])
+        layers[15] = VTILayer(layers[15], vti_drections[0])
+        # breakpoint()
+    else:
+        # layer_ids = [15]
+        # layer_certain = [layers[i] for i in layer_ids]
+        # for i, layer in enumerate(layer_certain):
+        #     original_mlp = find_module(layer, mlp_keywords)
+        #     layer.mlp = nn.Sequential(original_mlp, VTILayer(vti_drections[i], alpha))
+        for i, layer in zip(range(14,19), layers[14:19]):
+            original_mlp = find_module(layer, mlp_keywords)
+            layer.mlp = nn.Sequential(original_mlp, VTILayer(vti_drections[i], alpha))
+        # for i, layer in enumerate(layers):
+        #     original_mlp = find_module(layer, mlp_keywords)
+        #     layer.mlp = nn.Sequential(original_mlp, VTILayer(vti_drections[i], alpha))
 
 def remove_vti_layers(model: PreTrainedModel):
     layers = get_layers(model)

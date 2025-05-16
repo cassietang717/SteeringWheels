@@ -13,6 +13,7 @@ from datasets import load_dataset
 from tqdm import tqdm
 import numpy as np
 import random
+from evaluate import load
 import pandas as pd
 import warnings
 from einops import rearrange
@@ -213,7 +214,7 @@ def tokenized_tqa_med(dataset, tokenizer):
     return all_prompts, all_labels
 
 def judgement_accuracy(frame):
-    improvement = frame["hall_label"] != frame["answer_after_steering"]
+    improvement = frame["gt_label"] == frame["answer_after_steering"]
     return sum(improvement)/len(improvement)
 
 def run_bleurt(frame):
@@ -224,27 +225,41 @@ def run_bleurt(frame):
             frame[col_name] = np.nan
     results = {} 
     for idx in tqdm(frame.index,desc='run bleurt'):
-        scores_true = bleurt.compute(
-                predictions=[frame.loc[idx, 'answer_after_steering'] + frame.loc[idx, 'reason_after_steering']], 
-                references=[frame.loc[idx, 'gt_label'] + frame.loc[idx, 'gt_answer']]
-            )['scores']
-        scores_false = bleurt.compute(
+        if pd.isna(frame.loc[idx, 'hall_label']):     
+            scores_false = None
+        else:
+            scores_false = bleurt.compute(
                 predictions=[frame.loc[idx, 'answer_after_steering'] + frame.loc[idx, 'reason_after_steering']], 
                 references=[frame.loc[idx, 'hall_label'] + frame.loc[idx, 'hall_answer']]
-            )['scores']       
+            )['scores']
+
+        # Ensure scores_true exists
+        scores_true = bleurt.compute(
+            predictions=[frame.loc[idx, 'answer_after_steering'] + frame.loc[idx, 'reason_after_steering']], 
+            references=[frame.loc[idx, 'gt_label'] + frame.loc[idx, 'gt_answer']]
+        )['scores']
+
+        max_true = max(scores_true) if scores_true else None
+        max_false = max(scores_false) if scores_false else None
+
         for calc in ['max', 'diff', 'acc']:
-            col_name = '{0} BLEURT {1}'.format('llava', calc)
+            col_name = f'llava BLEURT {calc}'
+            
             if calc == 'max':
-                frame.loc[idx, col_name] = max(scores_true)
+                frame.loc[idx, col_name] = None if max_false is None else max_true
             elif calc == 'diff':
-                frame.loc[idx, col_name] = max(scores_true) - max(scores_false)
+                frame.loc[idx, col_name] = None if max_false is None else max_true - max_false
             elif calc == 'acc':
-                frame.loc[idx, col_name] = int(max(scores_true) > max(scores_false))
+                frame.loc[idx, col_name] = None if max_false is None else int(max_true > max_false)
+
             print(frame.loc[idx, col_name])
+
+    # Compute averages
     for calc in ['max', 'diff', 'acc']:
-        col_name = '{0} BLEURT {1}'.format('llava', calc)
-        results[col_name] = sum(frame[col_name])/len(frame[col_name])
-        print(f'Average {col_name} {results[col_name]}')
+        col_name = f'llava BLEURT {calc}'
+        valid_scores = frame[col_name].dropna()
+        results[col_name] = valid_scores.mean() if not valid_scores.empty else None
+        print(f'Average {col_name}: {results[col_name]}')
             
     return frame, results
 
@@ -405,7 +420,7 @@ def tqa_run_answers(frames, engine, tag, preset, model=None, tokenizer=None, ver
                 do_sample=True,  # Control randomness
                 # num_beams=4,
                 # # temperature=override_temperature if override_temperature is not None else 1,
-                temperature=1e-5,
+                # temperature=1e-5,
                 # # top_p=0.9,
                 num_return_sequences=1,  # ✅ Return multiple responses
                 stopping_criteria=None,
@@ -437,7 +452,7 @@ def tqa_run_answers(frames, engine, tag, preset, model=None, tokenizer=None, ver
             }
 
             sequences.append(result_entry)
-            print(f"Answer before steering: {frame['answer']}, {frame['reason']}")
+            print(f"\n Answer before steering: {frame['answer']}, {frame['reason']}")
             print(f"Answer after steering: {answer}, {reason}")
 
             # --- intervention code --- #
@@ -559,6 +574,11 @@ def alt_tqa_evaluate(models, metric_names, input_path, output_path, summary_path
     # print("ASSUMES OPENAI_API_KEY ENVIRONMENT VARIABLE IS SET")
     # import os
     # openai.api_key = os.environ.get('OPENAI_API_KEY')
+    for model_key in models.keys(): 
+        llama_model = models[model_key]
+        llama_tokenizer = tokenizer
+        kl_wrt_orig = run_kl_wrt_orig(model_key, model=llama_model, tokenizer=llama_tokenizer, device=device, interventions=interventions, intervention_fn=intervention_fn, separate_kl_device=separate_kl_device, orig_model=orig_model)
+        return kl_wrt_orig
     
     for mdl in models.keys(): 
         # llama
@@ -666,7 +686,7 @@ def get_separated_activations(labels, head_wise_activations):
 
     # separate activations by question
     dataset = []
-    with open('/home/dwlyu/steeringwheel/hall_eval1.jsonl', 'r') as json_file:
+    with open('hall_eval1.jsonl', 'r') as json_file:
             for line in json_file:
                 data = json.loads(line) 
                 dataset.append(data)
@@ -676,7 +696,6 @@ def get_separated_activations(labels, head_wise_activations):
         actual_labels.append(2)
 
     idxs_to_split_at = np.cumsum([x for x in actual_labels]) 
-    print(idxs_to_split_at)       
 
     labels = list(labels)
     separated_labels = []

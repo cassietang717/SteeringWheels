@@ -11,6 +11,7 @@ import argparse
 from transformers import LlavaNextForConditionalGeneration, LlavaNextProcessor
 import glob
 import os
+import random
 import sys
 sys.path.append('../')
 import json
@@ -33,7 +34,7 @@ def main():
     parser.add_argument('--use_center_of_mass', action='store_true', help='use center of mass direction', default=True)
     parser.add_argument('--use_random_dir', action='store_true', help='use random direction', default=False)
     parser.add_argument('--device', type=int, default=0, help='device')
-    parser.add_argument('--seed', type=int, default=42, help='seed')
+    parser.add_argument('--seed', type=int, default=3407, help='seed')
     parser.add_argument('--judge_name', type=str, required=False)
     parser.add_argument('--info_name', type=str, required=False)
     parser.add_argument('--use_image', type=int, default=0)
@@ -46,12 +47,18 @@ def main():
     np.random.seed(args.seed)
     torch.cuda.manual_seed_all(args.seed)
     dataset = []
-    with open('/home/dwlyu/steeringwheel/hall_eval1.jsonl', 'r') as json_file:
+    with open('hall_eval1.jsonl', 'r') as json_file:
             for line in json_file:
                 data = json.loads(line) 
                 dataset.append(data)
     df = dataset
     # get two folds using numpy
+
+    # dataset_no_hall = []
+    # with open('hall_truth2.jsonl', 'r') as json_file:
+    #         for line in json_file:
+    #             data = json.loads(line) 
+    #             dataset_no_hall.append(data)
 
     ################### Llava model initialization
     # create model
@@ -75,10 +82,23 @@ def main():
     #################### Load Activation Packages
 
     def load_chunks(file_pattern):
+        print(file_pattern)
         chunk_files = sorted(glob.glob(file_pattern), key=os.path.getmtime)
-        print(chunk_files)
         chunks = [np.load(chunk_file) for chunk_file in chunk_files]
         return np.concatenate(chunks, axis=0)
+    
+    dataset_no_hall = []
+    with open('hall_truth2.jsonl', 'r') as json_file:
+            for line in json_file:
+                data = json.loads(line) 
+                dataset_no_hall.append(data)
+    selected_entries = random.sample(dataset_no_hall, 50)
+    no_hall_df = pd.DataFrame(selected_entries).drop(columns=['answer'])
+    new_column_names = {
+        "reason": "ground_truth",
+    }
+    no_hall_df.rename(columns=new_column_names, inplace=True)
+
     
     if args.use_image:
         args.dataset_name_img = "HaloQuest"
@@ -122,24 +142,26 @@ def main():
 
     # run k-fold cross validation
     results = []
-    for i in range(args.num_fold):
+    kl = []
+    for alpha in range(20):
         test_size = int(0.1 * len(dataset))
         indices = np.arange(len(dataset))
         np.random.shuffle(indices)
         test_idxs = indices[:test_size]
         train_idxs = indices[test_size:]
 
-        print(f"Running fold {i}")
-
         # pick a val set using numpy
         train_set_idxs = np.random.choice(train_idxs, size=int(len(train_idxs)*(1-args.val_ratio)), replace=False)
         val_set_idxs = np.array([x for x in train_idxs if x not in train_set_idxs])
 
-        # save train and test splits
-        pd.DataFrame([dataset[idx] for idx in train_set_idxs]).to_csv(f'wice_eval1_fold_{i}_train_seed_{args.seed}.csv', index=False)
-        pd.DataFrame([dataset[idx] for idx in val_set_idxs]).to_csv(f'wice_eval1_fold_{i}_val_seed_{args.seed}.csv', index=False)
-        pd.DataFrame([dataset[idx] for idx in test_idxs]).to_csv(f'wice_eval1_fold_{i}_test_seed_{args.seed}.csv', index=False)
+        test_df = pd.DataFrame([dataset[idx] for idx in test_idxs])
+        merged_df = test_df.merge(no_hall_df, how='outer')
 
+        # save train and test splits
+        # pd.DataFrame([dataset[idx] for idx in train_set_idxs]).to_csv(f'data/wice_eval_f_fold_{i}_train_seed_{args.seed}.csv', index=False)
+        # pd.DataFrame([dataset[idx] for idx in val_set_idxs]).to_csv(f'data/wice_eval_f_fold_{i}_val_seed_{args.seed}.csv', index=False)
+        # merged_df.to_csv(f'data/wice_eval_f_fold_{i}_test_seed_{args.seed}.csv', index=False)
+       
         # get directions
         ################## Get Steering Directions
         if args.use_image:
@@ -154,8 +176,8 @@ def main():
                 com_directions = np.random.rand(*com_directions.shape)
 
             top_heads, probes = get_top_heads(train_set_idxs, val_set_idxs, separated_head_wise_activations, separated_labels, num_layers, num_heads, args.seed, args.num_heads, args.use_random_dir) #Train logistic regression in trainset and return heads with top accuracy on Validation set
-            np.save("/home/dwlyu/honest_llama/honest_llama/get_activations/wice_eval1_heads.npy",top_heads)
-            np.save("/home/dwlyu/honest_llama/honest_llama/get_activations/wice_eval1_acc.npy",probes)
+            # np.save("/home/dwlyu/honest_llama/honest_llama/get_activations/wice_eval_f_heads.npy",top_heads)
+            # np.save("/home/dwlyu/honest_llama/honest_llama/get_activations/wice_eval_f_acc.npy",probes)
 
         print("Heads intervened: ", sorted(top_heads))
         ################# Add Steering Vector
@@ -178,8 +200,8 @@ def main():
                 proj_vals = activations @ dir.T
                 proj_val_std = torch.std(proj_vals)
                 direction[head * head_dim: (head + 1) * head_dim] = dir * proj_val_std
-            print(f'Intervener Strength is {args.alpha}')
-            intervener = ITI_Intervener(direction, args.alpha) #head=-1 to collect all head activations, multiplier doens't matter
+            print(f'Intervener Strength is {alpha}')
+            intervener = ITI_Intervener(direction, alpha) #head=-1 to collect all head activations, multiplier doens't matter
             interveners.append(intervener)
             pv_config.append({
                 "component": f"language_model.model.layers[{layer}].self_attn.o_proj.input",
@@ -200,9 +222,9 @@ def main():
         curr_fold_results = alt_tqa_evaluate(
             models={args.model_name: intervened_model},
             metric_names=['judge', 'info', 'mc','bleurt'],
-            input_path=f'wice_eval1_fold_{i}_test_seed_{args.seed}.csv',
-            output_path=f'results_dump/answer_dump/{filename}_image_rand.csv',
-            summary_path=f'results_dump/summary_dump/{filename}_image_rand.csv',
+            input_path=f'data/wice_eval_f_fold_{i}_test_seed_{args.seed}.csv',
+            output_path=f'results_dump/answer_dump/{filename}_alpha1.csv',
+            summary_path=f'results_dump/summary_dump/{filename}_alpha1.csv',
             device="cuda", 
             interventions=None, 
             intervention_fn=None, 
@@ -214,16 +236,18 @@ def main():
             tokenizer= tokenizer,
         )
 
-        print(f"FOLD {i}")
-        print(curr_fold_results)
+        # print(f"FOLD {i}")
+        # print(curr_fold_results)
 
-        curr_fold_results = curr_fold_results.to_numpy()[0].astype(float)
-        results.append(curr_fold_results)
+        # curr_fold_results = curr_fold_results.to_numpy()[0].astype(float)
+        # results.append(curr_fold_results)
+        kl.append(curr_fold_results)
     
-    results = np.array(results)
-    final = results.mean(axis=0)
-    print(results)
-    print(final)
+    # results = np.array(results)
+    # final = results.mean(axis=0)
+    # print(results)
+    # print(final)
+    np.save('kl_data',kl)
 
     # print(f'alpha: {args.alpha}, heads: {args.num_heads}, True*Info Score: {final[1]*final[0]}, True Score: {final[1]}, Info Score: {final[0]}, MC1 Score: {final[2]}, MC2 Score: {final[3]}, CE Loss: {final[4]}, KL wrt Original: {final[5]}')
 

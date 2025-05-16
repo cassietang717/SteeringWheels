@@ -1,140 +1,140 @@
 {
-    "original_ce_loss": 2.392744140625,
-    "intervened_ce_loss": 2.392744140625,
-    "kl_divergence": 0.001156694851180883,
-    "total_entries": 74,
-    "hallucination_entries_before_steering": 39,
-    "hallucination_entries_after_steering": 38,
-    "hallucination_proportion_before_steering": 0.527027027027027,
-    "hallucination_proportion_after_steering": 0.5135135135135135,
+    "original_ce_loss": 2.424033203125,
+    "intervened_ce_loss": 2.424033203125,
+    "kl_divergence": 0.002417405694208412,
+    "total_entries": 38,
+    "hallucination_entries_before_steering": 28,
+    "hallucination_entries_after_steering": 22,
+    "hallucination_proportion_before_steering": 0.7368421052631579,
+    "hallucination_proportion_after_steering": 0.5789473684210527,
     "top_head_idxs": [
+        [
+            11,
+            30
+        ],
+        [
+            14,
+            7
+        ],
+        [
+            11,
+            29
+        ],
+        [
+            14,
+            30
+        ],
+        [
+            13,
+            5
+        ],
+        [
+            13,
+            31
+        ],
+        [
+            13,
+            18
+        ],
+        [
+            19,
+            14
+        ],
+        [
+            16,
+            0
+        ],
         [
             12,
             22
         ],
         [
-            14,
-            31
+            12,
+            12
         ],
         [
             12,
+            0
+        ],
+        [
+            13,
+            26
+        ],
+        [
+            13,
+            28
+        ],
+        [
+            14,
+            15
+        ],
+        [
+            13,
             20
         ],
         [
             13,
+            23
+        ],
+        [
+            11,
+            7
+        ],
+        [
+            14,
+            20
+        ],
+        [
+            14,
+            0
+        ],
+        [
+            15,
+            20
+        ],
+        [
+            16,
+            2
+        ],
+        [
+            15,
+            4
+        ],
+        [
+            14,
+            27
+        ],
+        [
+            11,
+            28
+        ],
+        [
+            14,
             28
         ],
         [
             10,
-            2
-        ],
-        [
-            11,
-            29
-        ],
-        [
-            12,
-            29
-        ],
-        [
-            6,
-            21
-        ],
-        [
-            8,
-            11
-        ],
-        [
-            7,
-            9
+            26
         ],
         [
             13,
-            27
-        ],
-        [
-            8,
-            7
-        ],
-        [
-            9,
-            6
-        ],
-        [
-            10,
-            3
-        ],
-        [
-            14,
             13
         ],
         [
             11,
-            28
-        ],
-        [
-            13,
-            5
+            27
         ],
         [
             11,
-            6
-        ],
-        [
-            5,
-            5
-        ],
-        [
-            22,
-            10
-        ],
-        [
-            7,
-            0
+            16
         ],
         [
             12,
-            8
-        ],
-        [
-            12,
-            31
-        ],
-        [
-            11,
-            21
-        ],
-        [
-            31,
-            4
-        ],
-        [
-            13,
-            3
-        ],
-        [
-            5,
-            30
+            19
         ],
         [
             10,
-            25
-        ],
-        [
-            14,
-            0
-        ],
-        [
-            8,
-            29
-        ],
-        [
-            8,
-            21
-        ],
-        [
-            7,
-            25
+            16
         ]
     ]
 }

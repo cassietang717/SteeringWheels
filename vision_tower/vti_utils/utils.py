@@ -111,7 +111,7 @@ def format_prompt(image, question, answer, processor):
         ],
     }]
 
-    prompt = processor.apply_chat_template(conversation=conversation, add_generation_prompt=True)
+    prompt = processor.apply_chat_template(conversation=conversation, add_generation_prompt=False)
     input = processor(images=image, text=prompt, return_tensors="pt").to("cuda:0")
     return input
 
@@ -333,25 +333,38 @@ def get_hiddenstates(model, inputs, image_tensor):
     return h_all
 
 
-def obtain_textual_vti(model, inputs, image_tensor, rank=1):
-    hidden_states = get_hiddenstates(model, inputs, image_tensor)
-    hidden_states_all = []
-    num_demonstration = len(hidden_states)
-    neg_all = []
-    pos_all = []
-    for demonstration_id in range(num_demonstration):
-        h = hidden_states[demonstration_id][1].view(-1) - hidden_states[demonstration_id][0].view(-1)
-        hidden_states_all.append(h)
-        neg_all.append(hidden_states[demonstration_id][0].view(-1))
-        pos_all.append(hidden_states[demonstration_id][1].view(-1))
-    fit_data = torch.stack(hidden_states_all)
-    pca = PCA(n_components=rank).to(fit_data.device).fit(fit_data.float())
-    eval_data =  pca.transform(fit_data.float())
-    h_pca = pca.inverse_transform(eval_data) 
+# def obtain_textual_vti(model, inputs, image_tensor, rank=1):
+#     hidden_states = get_hiddenstates(model, inputs, image_tensor)
+#     hidden_states_all = []
+#     num_demonstration = len(hidden_states)
+#     neg_all = []
+#     pos_all = []
+#     for demonstration_id in range(num_demonstration):
+#         h = hidden_states[demonstration_id][1].view(-1) - hidden_states[demonstration_id][0].view(-1)
+#         hidden_states_all.append(h)
+#         neg_all.append(hidden_states[demonstration_id][0].view(-1))
+#         pos_all.append(hidden_states[demonstration_id][1].view(-1))
+#     fit_data = torch.stack(hidden_states_all)
+#     pca = PCA(n_components=rank).to(fit_data.device).fit(fit_data.float())
 
-    direction = (pca.components_.sum(dim=1,keepdim=True) + pca.mean_).mean(0).view(hidden_states[demonstration_id][0].size(0), hidden_states[demonstration_id][0].size(1))#h_pca.mean(0).view(hidden_states[demonstration_id][0].size(0), hidden_states[demonstration_id][0].size(1))
-    reading_direction = fit_data.mean(0).view(hidden_states[demonstration_id][0].size(0), hidden_states[demonstration_id][0].size(1))
-    return direction, reading_direction
+#     direction = (pca.components_.sum(dim=1,keepdim=True) + pca.mean_).mean(0).view(hidden_states[demonstration_id][0].size(0), hidden_states[demonstration_id][0].size(1))#h_pca.mean(0).view(hidden_states[demonstration_id][0].size(0), hidden_states[demonstration_id][0].size(1))
+#     reading_direction = fit_data.mean(0).view(hidden_states[demonstration_id][0].size(0), hidden_states[demonstration_id][0].size(1))
+#     # breakpoint()
+#     return direction, reading_direction
+
+def obtain_textual_vti(model, inputs, image_tensor, rank=1):
+
+    diff_vectors_by_index = torch.load("/home/cassietang/steeringwheel/BiPO/vector/power-seeking_llama-2/vec_ep100_layer15.pt", weights_only=True)
+    n_layers = 1
+    # Add token dimension → (1, 300, 2*feat_dim)
+    diff_vectors_by_index = diff_vectors_by_index.unsqueeze(0)
+    reading_direction = diff_vectors_by_index.mean(1).view(n_layers, -1)
+
+    # Center data and apply PCA
+    # pca = PCA(n_components=1).to(diff_vectors_by_index.device).fit(diff_vectors_by_index.float())
+    # direction = (pca.components_.sum(dim=1,keepdim=True) + pca.mean_).mean(0).view(n_layers, -1)
+    # breakpoint()
+    return diff_vectors_by_index, reading_direction
 
 def average_tuples(tuples: List[Tuple[torch.Tensor]]) -> Tuple[torch.Tensor]:
     # Check that the input list is not empty

@@ -51,9 +51,9 @@ def main():
     elif args.dataset_name == 'tqa_gen_end_q': 
         dataset = load_dataset("truthfulqa/truthful_qa", 'generation')['validation']
         formatter = tokenized_tqa_gen_end_q
-    elif args.dataset_name == 'wice_eval1':
+    elif args.dataset_name == 'wice_eval_f':
         dataset = []
-        with open("/home/dwlyu/steeringwheel/hall_eval1.jsonl", 'r') as json_file:
+        with open('hall_eval_f.jsonl', 'r') as json_file:
             for line in json_file:
                 data = json.loads(line) 
                 dataset.append(data)

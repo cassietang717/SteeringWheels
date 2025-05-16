@@ -1,0 +1,16 @@
+{
+    "original_ce_loss": 2.3592578125,
+    "intervened_ce_loss": 2.3592578125,
+    "kl_divergence": 0.001664013185893971,
+    "total_entries": 72,
+    "hallucination_entries_before_steering": 49,
+    "hallucination_entries_after_steering": 40,
+    "hallucination_proportion_before_steering": 0.6805555555555556,
+    "hallucination_proportion_after_steering": 0.5555555555555556,
+    "bert_f1": {
+        "mean": 0.8751467176609569,
+        "mean improvement": 0.0038766521546575758,
+        "improved_num": 33,
+        "improved_proportion": 0.4583333333333333
+    },
+    "top_head_idxs": 
