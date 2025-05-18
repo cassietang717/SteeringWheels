@@ -147,7 +147,7 @@ class ScriptArguments:
 
     log_freq: Optional[int] = field(default=1, metadata={"help": "the logging frequency"})
 
-    behavior: Optional[str] = field(default="power-seeking", metadata={"help": "the behavior"})
+    behavior: Optional[str] = field(default="clevr", metadata={"help": "the behavior"})
     layer: Optional[int] = field(default=15, metadata={"help": "the layer the steering vector extracted from"})
 
     # instrumentation
@@ -236,6 +236,63 @@ def get_data(dataset, num_proc=1, processor=None):
 
     return dataset
 
+
+def get_data_clevr(
+    filepath: str = "/net/scratch2/steeringwheel/clevr/shape_size.json",
+    image_root: str = "/net/scratch/llama/clevr_v1.0/CLEVR_v1.0/images/train",
+    num_proc: int = 1,
+    SYSTEM_PROMPT: str = "You are a helpful assistant that answers visual questions."
+):
+    # Load raw data from JSON
+    with open(filepath, "r") as f:
+        raw_data = json.load(f)
+
+    # Convert to HuggingFace Dataset
+    dataset = Dataset.from_list(raw_data)
+
+    def return_prompt_and_responses(entry: Dict) -> Dict[str, Optional[str]]:
+        image_path = os.path.join(image_root, entry["image"])
+        try:
+            image = Image.open(image_path).convert("RGB")
+        except Exception as e:
+            print(f"Error loading image {image_path}: {e}")
+            return {
+                "prompt": None,
+                "chosen": None,
+                "rejected": None,
+                "images": None,
+            }
+
+        conv = get_conv_template("llava-chatml")
+        conv.set_system_message(SYSTEM_PROMPT)
+
+        if entry["last_function"] in {"equal_size", "equal_shape"}:
+            instruction = "Answer the following question for the image with only 'yes' or 'no' in lowercase: "
+        elif entry["last_function"] == "query_shape":
+            instruction = "Answer the following question with only 'cube', 'sphere', or 'cylinder', and respond in lowercase: "
+        else:
+            instruction = "Answer the following question: "
+
+        conv.append_message(conv.roles[0], "<image>\n" + instruction + entry["question"])
+        conv.append_message(conv.roles[1], "")
+        prompt = conv.get_prompt()
+
+        return {
+            "prompt": prompt,
+            "chosen": ' ' + entry["gt_answer"],
+            "rejected": ' ' + entry["model_answer"],
+            "images": image,
+        }
+
+    dataset = dataset.map(
+        return_prompt_and_responses,
+        num_proc=num_proc,
+        remove_columns=dataset.column_names,
+    )
+
+    dataset = dataset.filter(lambda x: x["prompt"] is not None)
+
+    return dataset
     # return dataset.map(
     #     return_prompt_and_responses,
     #     batched=True,
@@ -249,11 +306,12 @@ if __name__ == "__main__":
     set_seed(seed=11)
     if script_args.model_name_or_path not in ['meta-llama/Llama-2-7b-chat-hf', 'mistralai/Mistral-7B-Instruct-v0.2']:
         print(f'{script_args.model_name_or_path} is not in supported model list. We support meta-llama/Llama-2-7b-chat-hf and mistralai/Mistral-7B-Instruct-v0.2')
-    if script_args.model_name_or_path == 'meta-llama/Llama-2-7b-chat-hf':
-        template_name = 'llama-2'
-    elif script_args.model_name_or_path == 'mistralai/Mistral-7B-Instruct-v0.2':
-        template_name = 'mistral'
-    print('[Behavior:] ', 'Coco', '[Layer:] ', script_args.layer)
+    # if script_args.model_name_or_path == 'meta-llama/Llama-2-7b-chat-hf':
+    #     template_name = 'llama-2'
+    # elif script_args.model_name_or_path == 'mistralai/Mistral-7B-Instruct-v0.2':
+    #     template_name = 'mistral'
+    template_name = 'llava'
+    print('[Behavior:] ', 'Clevr', '[Layer:] ', script_args.layer)
     processor = LlavaNextProcessor.from_pretrained("llava-hf/llava-v1.6-vicuna-7b-hf",revision="30f8c4f")
     model_llava = LlavaNextForConditionalGeneration.from_pretrained("/net/scratch2/steeringwheel/llava-v1.6-vicuna-7b-hf", torch_dtype=torch.float16, low_cpu_mem_usage=True)
     model_llava.language_model.model.layers[script_args.layer] = BlockWrapper(model_llava.language_model.model.layers[script_args.layer])
@@ -281,11 +339,11 @@ if __name__ == "__main__":
     print('Finish loading pre-trained models...')
 
     # 2. Load training dataset
-    hall_dataset = get_demos_coco()[:80]
-    hall_dataset_eval = get_demos_coco()[80:]
-    train_dataset = get_data(hall_dataset) 
+    # hall_dataset = get_demos_coco()[:80]
+    # hall_dataset_eval = get_demos_coco()[80:]
+    train_dataset = get_data_clevr(filepath = "/net/scratch2/steeringwheel/clevr/shape_size.json", image_root = "/net/scratch/llama/clevr_v1.0/CLEVR_v1.0/images/train") 
     # 3. Load val dataset
-    test_dataset = get_data(hall_dataset_eval) 
+    test_dataset = get_data_clevr(filepath = "/net/scratch2/steeringwheel/clevr/eval_shape_size.json", image_root = "/net/scratch/llama/clevr_v1.0/CLEVR_v1.0/images/val") 
     # 4. initialize training arguments:
     training_args = DPOConfig(
         per_device_train_batch_size=script_args.per_device_train_batch_size,
