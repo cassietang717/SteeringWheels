@@ -1,0 +1,2312 @@
+[
+    {
+        "image": "CLEVR_train_000000.png",
+        "question": "Is the color of the large sphere the same as the large matte cube?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000001.png",
+        "question": "The matte ball that is the same size as the gray rubber object is what color?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000001.png",
+        "question": "There is a small matte block that is on the left side of the large rubber thing that is left of the gray ball; what is its color?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000001.png",
+        "question": "There is a small metallic thing in front of the gray metallic thing; does it have the same color as the big rubber sphere?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000001.png",
+        "question": "Is the small gray object made of the same material as the big cube?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000002.png",
+        "question": "There is a small object; is it the same color as the object in front of the gray shiny thing?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000002.png",
+        "question": "There is a thing that is both to the right of the big rubber cube and left of the small gray ball; what color is it?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000003.png",
+        "question": "There is a small cube on the right side of the tiny blue thing that is behind the tiny cyan matte thing; what is its color?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000003.png",
+        "question": "There is a metallic block that is the same size as the cyan rubber cube; what color is it?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000004.png",
+        "question": "Is the thing behind the rubber thing made of the same material as the cube?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000005.png",
+        "question": "There is a rubber thing that is in front of the purple object; what color is it?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000006.png",
+        "question": "The tiny cube has what color?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000006.png",
+        "question": "There is a cylinder that is right of the cylinder that is behind the large metal cylinder; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000006.png",
+        "question": "What color is the large ball that is left of the large rubber thing that is in front of the sphere that is in front of the big yellow metallic sphere?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000007.png",
+        "question": "Is the material of the green object the same as the small block that is on the right side of the green metallic thing?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000007.png",
+        "question": "Are the small sphere and the green block made of the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000008.png",
+        "question": "There is another small green thing that is the same shape as the green matte thing; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000008.png",
+        "question": "There is a matte sphere that is behind the ball that is in front of the rubber thing right of the small green matte object; what color is it?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000008.png",
+        "question": "Is the material of the yellow thing the same as the small brown object?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000009.png",
+        "question": "There is another tiny matte object that is the same shape as the tiny gray object; what color is it?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000009.png",
+        "question": "Do the tiny cylinder that is in front of the gray matte block and the small cylinder to the left of the gray rubber cylinder have the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000010.png",
+        "question": "What is the color of the other small metal thing that is the same shape as the small red thing?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000012.png",
+        "question": "There is a small metal cylinder in front of the green shiny object; is it the same color as the thing to the right of the green matte cylinder?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000012.png",
+        "question": "The cylinder that is on the right side of the tiny shiny cylinder in front of the tiny green cylinder left of the small green rubber thing is what color?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000013.png",
+        "question": "What is the color of the large rubber cylinder?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000015.png",
+        "question": "Is the sphere behind the brown shiny ball made of the same material as the yellow sphere?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000015.png",
+        "question": "There is a object that is both right of the yellow sphere and on the left side of the large rubber block; what is its color?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000016.png",
+        "question": "The matte thing that is the same size as the gray cylinder is what color?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000017.png",
+        "question": "What is the color of the small ball behind the large metal cube that is on the left side of the object that is in front of the large cyan rubber ball?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000017.png",
+        "question": "There is a matte cube; is its color the same as the large block left of the brown metallic cube?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000018.png",
+        "question": "What is the color of the thing right of the big object to the left of the metallic thing in front of the green block?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000019.png",
+        "question": "There is a cube that is behind the big sphere; what is its color?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000019.png",
+        "question": "There is a large cube that is the same material as the large sphere; what color is it?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000019.png",
+        "question": "What color is the big cube that is in front of the tiny red thing that is behind the shiny ball to the right of the tiny yellow block?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000020.png",
+        "question": "What color is the metallic cylinder that is on the left side of the blue thing right of the tiny cylinder that is in front of the small gray object?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000020.png",
+        "question": "There is a rubber sphere; is it the same color as the shiny cylinder that is on the left side of the yellow thing?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000021.png",
+        "question": "What color is the object that is both in front of the tiny blue sphere and to the right of the green metallic thing?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000022.png",
+        "question": "What is the color of the tiny metal thing that is behind the cylinder that is in front of the big gray object on the left side of the tiny blue shiny thing?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000023.png",
+        "question": "What color is the tiny shiny cylinder?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000023.png",
+        "question": "There is a tiny cylinder that is on the left side of the small purple rubber cylinder; is it the same color as the tiny rubber cylinder?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000024.png",
+        "question": "Does the metallic cube behind the red metallic block have the same color as the rubber cylinder in front of the yellow rubber cylinder?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000025.png",
+        "question": "What is the green cylinder made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000025.png",
+        "question": "What is the color of the cylinder that is the same size as the cyan thing?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000026.png",
+        "question": "What is the material of the blue cylinder on the left side of the large yellow ball that is in front of the large object that is behind the big blue metal cylinder?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000028.png",
+        "question": "There is another large object that is the same shape as the large yellow matte thing; what color is it?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000029.png",
+        "question": "Do the big object and the object that is behind the tiny yellow block have the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000030.png",
+        "question": "What material is the big block that is to the left of the big gray rubber block in front of the cyan metallic object to the left of the yellow rubber cylinder?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000030.png",
+        "question": "The ball to the right of the gray cube that is behind the big yellow rubber sphere is what color?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000031.png",
+        "question": "There is a metallic object that is the same shape as the small purple rubber thing; what is its color?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000033.png",
+        "question": "There is another tiny thing that is the same material as the gray object; what is its color?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000033.png",
+        "question": "There is a large shiny block; is it the same color as the small rubber block that is in front of the large block?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000033.png",
+        "question": "There is a object in front of the large yellow shiny object; what is its color?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000035.png",
+        "question": "What color is the object that is both right of the small rubber ball and in front of the gray cylinder?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000036.png",
+        "question": "Is the big red thing made of the same material as the tiny cylinder?",
+        "gt_answer": "yes",
+        "model_answer": "no",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000036.png",
+        "question": "There is a large matte object to the left of the green metallic object that is behind the metal sphere in front of the big blue ball; what is its color?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000038.png",
+        "question": "There is a ball that is right of the large matte thing in front of the large cube; what color is it?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000039.png",
+        "question": "There is a ball that is both behind the shiny cylinder and in front of the green object; what color is it?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000040.png",
+        "question": "What is the color of the small metallic object that is the same shape as the large gray object?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000040.png",
+        "question": "There is a sphere that is made of the same material as the large red cylinder; what color is it?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000042.png",
+        "question": "The big thing that is to the left of the big object that is in front of the rubber object left of the big rubber thing is what color?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000042.png",
+        "question": "Are the large object that is behind the big blue shiny thing and the large thing that is in front of the small yellow sphere made of the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000044.png",
+        "question": "The object that is behind the cyan matte cube is what color?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000045.png",
+        "question": "There is a big rubber block; is it the same color as the tiny metal cylinder to the right of the tiny cube?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000046.png",
+        "question": "What is the color of the tiny metallic thing that is behind the cube to the right of the metallic cube that is to the right of the green metallic cylinder?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000046.png",
+        "question": "What color is the tiny sphere that is behind the blue ball on the left side of the small red shiny object?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000047.png",
+        "question": "The big cube that is to the right of the large rubber object that is behind the big yellow rubber ball is made of what material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000048.png",
+        "question": "There is another tiny thing that is the same material as the purple object; what color is it?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000048.png",
+        "question": "Do the large rubber cylinder and the big thing that is in front of the cylinder have the same color?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000049.png",
+        "question": "There is a object that is on the right side of the cylinder; what color is it?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000049.png",
+        "question": "There is a block that is in front of the tiny red rubber cube and behind the large yellow block; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000050.png",
+        "question": "The object that is right of the brown shiny object and in front of the purple block is what color?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000050.png",
+        "question": "What color is the big metallic thing that is in front of the shiny object that is to the right of the big purple rubber block?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000050.png",
+        "question": "There is a red thing that is the same shape as the purple matte object; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000051.png",
+        "question": "There is a rubber thing that is to the right of the green matte object that is to the left of the large green matte block; what is its color?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000051.png",
+        "question": "There is a object that is the same size as the green rubber cylinder; what material is it?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000052.png",
+        "question": "What material is the object that is to the left of the small rubber object that is to the left of the small blue matte cylinder?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000052.png",
+        "question": "The rubber cylinder that is behind the tiny blue object is what color?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000053.png",
+        "question": "Is the yellow object made of the same material as the tiny red object?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000053.png",
+        "question": "Is the big ball that is behind the large shiny sphere made of the same material as the green object?",
+        "gt_answer": "yes",
+        "model_answer": "no",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000053.png",
+        "question": "Do the cylinder and the big rubber sphere have the same color?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000053.png",
+        "question": "Are the tiny object in front of the yellow shiny block and the big purple thing that is to the right of the large purple matte thing made of the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000054.png",
+        "question": "There is a green thing that is in front of the small rubber object to the left of the rubber cylinder; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000054.png",
+        "question": "Is the material of the block that is left of the small red rubber cube the same as the green thing right of the tiny rubber cube?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000054.png",
+        "question": "What material is the big cylinder that is the same color as the shiny sphere?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000056.png",
+        "question": "What is the material of the object that is both to the right of the big red thing and behind the gray ball?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000057.png",
+        "question": "The shiny object that is both behind the tiny rubber thing and to the left of the large block is what color?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000057.png",
+        "question": "There is a cube that is the same size as the green metallic object; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000057.png",
+        "question": "The sphere in front of the red cube is what color?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000057.png",
+        "question": "Are the small red ball and the small object on the left side of the tiny red object made of the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000058.png",
+        "question": "What is the material of the large purple object that is the same shape as the small blue object?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000059.png",
+        "question": "Do the tiny blue cube and the cylinder have the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000061.png",
+        "question": "What color is the rubber cylinder that is behind the big green matte cylinder and on the left side of the small blue cylinder?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000062.png",
+        "question": "What color is the small shiny cylinder that is in front of the big cylinder that is to the right of the yellow metal cylinder?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000063.png",
+        "question": "Do the small object left of the small blue metallic object and the tiny ball that is in front of the large rubber cylinder have the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000063.png",
+        "question": "Is the big blue sphere made of the same material as the blue cube?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000064.png",
+        "question": "There is a metal thing that is the same size as the brown matte block; what is its color?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000064.png",
+        "question": "What is the material of the tiny green object?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000064.png",
+        "question": "Is the yellow cylinder made of the same material as the brown thing behind the red object?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000065.png",
+        "question": "There is a metallic sphere that is the same size as the yellow metal object; what is its color?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000065.png",
+        "question": "The other thing that is the same shape as the gray metal object is what color?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000066.png",
+        "question": "There is a small thing that is both right of the small gray metal thing and behind the yellow matte block; what material is it?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000066.png",
+        "question": "Do the big block on the right side of the big green thing and the gray object have the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000066.png",
+        "question": "There is a large rubber block that is right of the small yellow ball; is its color the same as the tiny rubber cube?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000067.png",
+        "question": "What is the color of the rubber cube?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000068.png",
+        "question": "What is the large yellow thing that is right of the rubber thing made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000068.png",
+        "question": "There is a small object in front of the cylinder that is on the left side of the tiny red shiny cube to the left of the small cyan metallic thing; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000069.png",
+        "question": "There is a cyan thing in front of the small cyan metallic cylinder that is on the left side of the small rubber cylinder; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000069.png",
+        "question": "What color is the small matte cylinder that is behind the red cube?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000070.png",
+        "question": "What is the cube that is both in front of the yellow matte thing and behind the tiny green cube made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000070.png",
+        "question": "What is the color of the cylinder that is to the left of the tiny thing that is in front of the small gray matte cylinder?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000071.png",
+        "question": "What color is the big cylinder to the right of the tiny object on the left side of the tiny brown object?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000073.png",
+        "question": "What material is the other small purple object that is the same shape as the purple matte object?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000074.png",
+        "question": "What material is the thing that is in front of the green rubber thing and on the left side of the tiny blue matte ball?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000074.png",
+        "question": "What is the color of the other rubber sphere that is the same size as the blue matte ball?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000075.png",
+        "question": "The other tiny object that is the same shape as the small purple object is what color?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000075.png",
+        "question": "The large metal object has what color?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000075.png",
+        "question": "There is a matte block that is the same size as the purple matte thing; what is its color?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000076.png",
+        "question": "There is a rubber cube that is in front of the ball that is behind the gray object in front of the purple thing; what color is it?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000077.png",
+        "question": "There is a big thing that is the same material as the small gray sphere; what color is it?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000078.png",
+        "question": "Does the yellow cylinder have the same material as the purple object behind the big rubber thing?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000078.png",
+        "question": "There is a tiny purple cylinder behind the big sphere that is in front of the rubber sphere that is behind the blue matte ball; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000080.png",
+        "question": "The big sphere that is to the left of the big matte sphere in front of the big matte cube is made of what material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000080.png",
+        "question": "The large block is what color?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000080.png",
+        "question": "There is a block that is the same material as the large green ball; what color is it?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000081.png",
+        "question": "There is a shiny ball in front of the metal thing that is on the right side of the metal thing in front of the gray ball; what color is it?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000081.png",
+        "question": "There is a big gray thing that is the same shape as the blue metal thing; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000081.png",
+        "question": "What color is the tiny ball?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000081.png",
+        "question": "Does the big ball have the same color as the large cylinder?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000082.png",
+        "question": "What color is the tiny matte thing that is both to the right of the gray cylinder and in front of the tiny cyan metallic thing?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000082.png",
+        "question": "What material is the ball that is on the right side of the tiny rubber object that is on the right side of the ball on the left side of the cyan object?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000083.png",
+        "question": "What color is the metallic block in front of the large green object that is on the left side of the yellow metallic sphere?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000083.png",
+        "question": "There is another tiny thing that is the same shape as the tiny cyan thing; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000084.png",
+        "question": "What color is the small thing that is made of the same material as the big purple block?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000085.png",
+        "question": "There is a blue thing that is the same shape as the gray matte thing; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000085.png",
+        "question": "What is the blue thing behind the purple rubber sphere made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000086.png",
+        "question": "The small ball that is in front of the small metallic object that is in front of the tiny purple metal thing is what color?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000087.png",
+        "question": "The tiny gray thing that is to the left of the purple rubber object that is right of the shiny thing on the left side of the brown shiny cylinder is made of what material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000088.png",
+        "question": "Does the rubber cylinder that is to the right of the large yellow shiny cylinder have the same color as the metallic cylinder that is in front of the big block?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000088.png",
+        "question": "What material is the tiny cylinder?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000089.png",
+        "question": "There is a blue thing that is the same shape as the big red thing; what material is it?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000090.png",
+        "question": "The cylinder that is both on the right side of the small yellow rubber cube and in front of the blue object is made of what material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000090.png",
+        "question": "There is a rubber cube that is the same size as the blue object; what is its color?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000092.png",
+        "question": "Is the purple block made of the same material as the large blue object?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000092.png",
+        "question": "What color is the cylinder that is behind the big purple shiny object?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000093.png",
+        "question": "Is the purple block in front of the red cylinder made of the same material as the big yellow object that is in front of the large cylinder?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000093.png",
+        "question": "What color is the large rubber thing that is the same shape as the small brown rubber thing?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000094.png",
+        "question": "What is the color of the thing that is on the right side of the tiny thing and behind the blue matte block?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000096.png",
+        "question": "Is the color of the tiny thing behind the blue cube the same as the large cube?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000096.png",
+        "question": "Do the big purple cube and the blue block that is to the right of the small green metal thing have the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000096.png",
+        "question": "There is a rubber thing; is it the same color as the block that is behind the big rubber thing?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000097.png",
+        "question": "The shiny cylinder that is the same size as the brown object is what color?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000097.png",
+        "question": "What color is the small thing that is in front of the yellow shiny cylinder?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000098.png",
+        "question": "Do the shiny block that is to the left of the small brown shiny block and the small matte block have the same color?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000098.png",
+        "question": "What color is the metallic cylinder?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000100.png",
+        "question": "What material is the object that is both on the right side of the large matte cylinder and in front of the gray matte thing?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000101.png",
+        "question": "Is the material of the sphere to the right of the small ball the same as the red thing left of the big blue matte object?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000101.png",
+        "question": "The block that is the same size as the blue thing is what color?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000101.png",
+        "question": "Does the rubber cylinder that is right of the yellow thing have the same color as the large metallic block?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000102.png",
+        "question": "What is the material of the other big object that is the same shape as the blue thing?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000103.png",
+        "question": "Is the material of the big ball behind the red shiny thing the same as the green object right of the large red metallic ball?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000103.png",
+        "question": "There is a large red thing that is the same shape as the large green shiny thing; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000103.png",
+        "question": "The big metallic object that is left of the red shiny thing is what color?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000103.png",
+        "question": "Do the cylinder and the green object on the left side of the green matte object have the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000103.png",
+        "question": "What is the big red thing made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000104.png",
+        "question": "Is the material of the tiny object the same as the brown cylinder in front of the small metallic thing?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000104.png",
+        "question": "There is a large shiny thing in front of the green metallic sphere; is its color the same as the matte cube?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000105.png",
+        "question": "There is a large object that is the same color as the small sphere; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000105.png",
+        "question": "Do the small brown cylinder and the gray ball that is right of the shiny cylinder have the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000105.png",
+        "question": "There is a big object right of the gray thing in front of the sphere that is behind the gray rubber ball; what is its color?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000107.png",
+        "question": "There is a cylinder that is made of the same material as the large brown ball; what is its color?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000107.png",
+        "question": "There is a shiny thing that is the same size as the blue cylinder; what is its color?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000108.png",
+        "question": "There is a big matte cylinder that is to the left of the big brown object in front of the tiny block on the left side of the blue object; what color is it?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000108.png",
+        "question": "There is a cylinder that is the same size as the yellow rubber object; what color is it?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000108.png",
+        "question": "There is a tiny cube that is made of the same material as the tiny gray ball; what is its color?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000109.png",
+        "question": "Is the material of the ball that is behind the blue rubber thing the same as the large ball right of the red object?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000109.png",
+        "question": "The shiny thing that is the same shape as the green rubber object is what color?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000110.png",
+        "question": "Does the tiny green object have the same material as the big cube?",
+        "gt_answer": "yes",
+        "model_answer": "no",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000110.png",
+        "question": "Does the tiny thing have the same color as the large shiny block?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000110.png",
+        "question": "The metal thing that is on the left side of the green object that is behind the large metallic object on the right side of the small cylinder is what color?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000110.png",
+        "question": "The other small thing that is the same material as the blue object is what color?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000111.png",
+        "question": "What color is the tiny object right of the big brown rubber sphere?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000112.png",
+        "question": "There is a sphere that is made of the same material as the large brown object; what color is it?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000112.png",
+        "question": "The other rubber object that is the same shape as the tiny blue thing is what color?",
+        "gt_answer": "green",
+        "model_answer": "the other rubber object that is the same shape as the tiny blue thing is brown.",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000113.png",
+        "question": "There is a green cylinder that is behind the large matte block on the right side of the tiny blue sphere; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000113.png",
+        "question": "The shiny cylinder that is behind the big blue block is what color?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000114.png",
+        "question": "What color is the thing that is the same size as the gray block?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000114.png",
+        "question": "Does the small metallic thing have the same color as the object in front of the big rubber thing?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000115.png",
+        "question": "What is the color of the big thing that is both behind the small red metal thing and on the right side of the big green cylinder?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000116.png",
+        "question": "What is the material of the big block to the right of the rubber object to the left of the small metallic cube that is to the left of the yellow metallic cube?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000116.png",
+        "question": "What is the cyan thing made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000117.png",
+        "question": "There is a small block that is behind the blue matte thing that is left of the big matte thing to the left of the brown metallic object; what color is it?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000117.png",
+        "question": "What color is the small rubber thing that is the same shape as the big rubber object?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000117.png",
+        "question": "What color is the small cylinder that is made of the same material as the small brown object?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000118.png",
+        "question": "There is a big brown thing that is the same shape as the large purple thing; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000118.png",
+        "question": "What is the material of the large red thing that is behind the large metallic cylinder?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000119.png",
+        "question": "What is the color of the small matte thing that is to the right of the tiny yellow thing?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000120.png",
+        "question": "There is a tiny thing right of the tiny cube right of the tiny blue rubber thing; what color is it?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000122.png",
+        "question": "Is the purple cube made of the same material as the large purple sphere?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000123.png",
+        "question": "There is a big thing that is the same color as the matte cube; what material is it?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000123.png",
+        "question": "What is the color of the sphere that is the same material as the tiny blue object?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000123.png",
+        "question": "The green object that is behind the tiny block that is right of the large metal cylinder to the left of the small yellow block is made of what material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000124.png",
+        "question": "Is the material of the large brown cylinder the same as the tiny red block?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000126.png",
+        "question": "Is the material of the small thing that is to the right of the red object the same as the small brown sphere?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000126.png",
+        "question": "What color is the large metallic cylinder that is in front of the green matte cylinder?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000127.png",
+        "question": "What material is the large block that is the same color as the matte cylinder?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000128.png",
+        "question": "What color is the big cube that is the same material as the purple sphere?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000128.png",
+        "question": "There is a tiny object that is the same color as the rubber cube; what material is it?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000128.png",
+        "question": "What is the material of the other cylinder that is the same size as the green shiny cylinder?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000129.png",
+        "question": "There is a gray thing that is left of the cube that is to the right of the tiny shiny thing left of the rubber sphere; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000129.png",
+        "question": "Is the matte object the same color as the large shiny cylinder?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000130.png",
+        "question": "The large rubber cube is what color?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000130.png",
+        "question": "There is a large metallic object that is both to the right of the cyan matte block and left of the yellow cylinder; what color is it?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000130.png",
+        "question": "There is a matte block that is on the left side of the big purple metal ball; is it the same color as the big matte cube?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000131.png",
+        "question": "There is a ball that is both to the left of the tiny yellow cylinder and to the right of the purple ball; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000132.png",
+        "question": "There is a large thing that is behind the small ball on the left side of the tiny brown thing; what is its color?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000133.png",
+        "question": "The tiny cylinder behind the tiny cylinder that is in front of the large green ball is made of what material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000133.png",
+        "question": "There is a matte ball that is the same size as the gray matte object; what color is it?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000134.png",
+        "question": "What color is the object that is made of the same material as the large ball?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000135.png",
+        "question": "There is a yellow thing that is the same shape as the small green matte object; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000135.png",
+        "question": "What is the color of the big thing?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000136.png",
+        "question": "What material is the tiny brown sphere on the left side of the blue rubber sphere?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000136.png",
+        "question": "What is the color of the sphere that is behind the cyan rubber sphere and in front of the small blue matte ball?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000136.png",
+        "question": "What is the color of the tiny matte thing that is behind the cyan thing?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000137.png",
+        "question": "What color is the other cylinder that is the same size as the rubber cylinder?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000137.png",
+        "question": "What is the material of the small cylinder to the left of the cyan thing left of the shiny cylinder in front of the cyan cube?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000137.png",
+        "question": "The matte block has what color?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000139.png",
+        "question": "Is the brown block made of the same material as the brown ball right of the yellow metallic sphere?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000139.png",
+        "question": "Do the matte object that is in front of the tiny cube and the rubber block have the same color?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000139.png",
+        "question": "There is a matte sphere behind the red rubber sphere; what is its color?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000140.png",
+        "question": "Do the large yellow block and the small block have the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000141.png",
+        "question": "There is a metal ball that is the same size as the gray metal block; what color is it?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000142.png",
+        "question": "What material is the cylinder that is the same color as the big object?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000142.png",
+        "question": "There is a cyan thing that is the same size as the yellow cylinder; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000143.png",
+        "question": "What color is the tiny shiny sphere?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000143.png",
+        "question": "There is a big thing on the right side of the brown metal ball; is its color the same as the small matte thing?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000143.png",
+        "question": "There is another thing that is the same shape as the tiny red shiny object; what is its color?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000143.png",
+        "question": "Does the small sphere have the same color as the small rubber cube?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000145.png",
+        "question": "What is the material of the big purple thing that is the same shape as the small rubber thing?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000146.png",
+        "question": "There is a block behind the metal object in front of the blue metal object; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000146.png",
+        "question": "Is the cyan object made of the same material as the block that is behind the gray ball?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000147.png",
+        "question": "What color is the rubber sphere in front of the yellow metallic cylinder?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000147.png",
+        "question": "What color is the large object that is the same material as the tiny cylinder?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000147.png",
+        "question": "There is a sphere that is both behind the purple matte ball and on the left side of the green shiny sphere; what is its color?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000148.png",
+        "question": "There is a small object that is behind the gray cube to the right of the green object; what color is it?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000149.png",
+        "question": "There is a shiny sphere that is the same size as the metallic block; what color is it?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000150.png",
+        "question": "The cylinder that is the same size as the blue metal ball is what color?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000151.png",
+        "question": "What material is the cube that is behind the cylinder that is right of the red metal object?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000151.png",
+        "question": "There is a object behind the big gray metal cylinder; is its color the same as the thing that is in front of the cyan sphere?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000151.png",
+        "question": "The object that is the same size as the green rubber block is what color?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000152.png",
+        "question": "There is a yellow cube on the right side of the green cylinder; what material is it?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000152.png",
+        "question": "There is a green thing that is the same shape as the large yellow thing; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000152.png",
+        "question": "What is the color of the large rubber object that is left of the large gray thing?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000153.png",
+        "question": "Is the material of the purple object the same as the blue block?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000153.png",
+        "question": "What material is the cube that is behind the rubber thing behind the rubber cylinder that is to the right of the tiny metallic cylinder made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000154.png",
+        "question": "What color is the block that is made of the same material as the red cylinder?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000154.png",
+        "question": "Is the color of the block that is to the left of the large sphere the same as the large block in front of the cyan matte object?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000155.png",
+        "question": "The big block that is both in front of the tiny green shiny thing and right of the small rubber cube is what color?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000155.png",
+        "question": "What color is the cylinder in front of the large blue thing that is left of the sphere left of the small brown rubber cylinder?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000155.png",
+        "question": "There is a cylinder that is the same size as the blue metallic object; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000155.png",
+        "question": "What is the color of the large shiny block that is behind the big cylinder?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000156.png",
+        "question": "The shiny cylinder has what color?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000156.png",
+        "question": "The metallic cube that is in front of the gray metal cube is what color?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000157.png",
+        "question": "What is the material of the thing that is the same color as the matte sphere?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000158.png",
+        "question": "What is the object behind the small metallic thing in front of the object on the left side of the big green metallic thing made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000159.png",
+        "question": "Is the small brown cylinder made of the same material as the small cube?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000159.png",
+        "question": "What material is the brown object?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000160.png",
+        "question": "There is a tiny thing that is in front of the tiny blue rubber cylinder; is it the same color as the big cylinder?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000160.png",
+        "question": "Do the big green cylinder and the tiny blue cylinder have the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000161.png",
+        "question": "The tiny block that is made of the same material as the tiny yellow thing is what color?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000161.png",
+        "question": "Are the cylinder and the green ball made of the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000161.png",
+        "question": "The small metal block is what color?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000162.png",
+        "question": "The block in front of the tiny sphere is what color?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000162.png",
+        "question": "What is the material of the object left of the small matte cylinder that is on the left side of the small block?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000163.png",
+        "question": "There is a ball that is the same size as the brown object; what color is it?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000164.png",
+        "question": "There is a matte thing that is to the right of the big matte object that is to the left of the large thing that is on the right side of the cyan thing; what color is it?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000165.png",
+        "question": "The small gray block that is behind the tiny shiny object that is in front of the big brown cube is made of what material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000165.png",
+        "question": "What is the material of the small gray thing that is the same shape as the brown thing?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000166.png",
+        "question": "Do the big metal object and the tiny cube have the same color?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000166.png",
+        "question": "What material is the purple sphere?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000166.png",
+        "question": "Is the big thing made of the same material as the cube?",
+        "gt_answer": "yes",
+        "model_answer": "no",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000167.png",
+        "question": "There is a small shiny sphere behind the large red thing; what is its color?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000167.png",
+        "question": "What material is the cyan object that is the same shape as the red object?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000167.png",
+        "question": "Is the color of the tiny metallic block the same as the rubber ball on the right side of the large metallic thing?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000168.png",
+        "question": "There is a thing that is both behind the matte cylinder and right of the tiny shiny block; what color is it?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000168.png",
+        "question": "Is the big ball made of the same material as the small thing?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000169.png",
+        "question": "Does the small purple object in front of the small purple matte cube have the same material as the tiny brown object?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000169.png",
+        "question": "What is the cylinder behind the big cylinder to the right of the purple metal ball made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000170.png",
+        "question": "What material is the large green thing that is on the left side of the shiny thing that is in front of the tiny object that is to the left of the green shiny thing?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000170.png",
+        "question": "The green object that is left of the gray metal cylinder on the left side of the big matte block is made of what material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000170.png",
+        "question": "Does the small shiny ball have the same color as the big cylinder?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000170.png",
+        "question": "What is the color of the big ball that is the same material as the purple cube?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000171.png",
+        "question": "What color is the sphere that is right of the cyan object that is to the left of the large cyan ball?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000172.png",
+        "question": "What color is the cylinder?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000173.png",
+        "question": "Does the red ball that is left of the small brown thing have the same material as the large brown object to the left of the big brown metallic cube?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000173.png",
+        "question": "The small block that is the same material as the small red thing is what color?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000173.png",
+        "question": "What is the color of the matte cylinder that is the same size as the blue shiny cylinder?",
+        "gt_answer": "brown",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000173.png",
+        "question": "There is a block that is in front of the rubber cylinder that is in front of the large cylinder behind the small red shiny ball; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000174.png",
+        "question": "There is a red thing that is the same size as the brown metal thing; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000174.png",
+        "question": "There is a brown object that is the same shape as the big red metal object; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000174.png",
+        "question": "What is the color of the object that is in front of the big brown thing and on the right side of the red sphere?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000174.png",
+        "question": "What is the material of the large brown thing?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000175.png",
+        "question": "What is the sphere that is to the left of the tiny cyan shiny object behind the metal thing that is to the right of the yellow thing made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000175.png",
+        "question": "There is a object that is on the left side of the big rubber cylinder; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000175.png",
+        "question": "Does the object that is behind the red rubber object have the same material as the brown block?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000177.png",
+        "question": "Does the large cube to the left of the big cyan thing have the same color as the tiny matte block?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000177.png",
+        "question": "The tiny shiny thing that is both in front of the brown metallic block and on the right side of the yellow cube is what color?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000178.png",
+        "question": "The block that is the same material as the blue thing is what color?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000179.png",
+        "question": "There is a cyan object that is behind the big cyan metal sphere that is to the right of the big cyan metallic cube that is on the left side of the tiny green matte ball; what is it made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000181.png",
+        "question": "What is the material of the gray object that is in front of the brown metal object?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000181.png",
+        "question": "Is the large rubber cylinder the same color as the big shiny thing?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000182.png",
+        "question": "There is a small metallic object that is the same shape as the big blue object; what is its color?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000182.png",
+        "question": "There is a metal thing behind the rubber sphere that is behind the cyan thing; what color is it?",
+        "gt_answer": "green",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000183.png",
+        "question": "What is the cyan thing made of?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000184.png",
+        "question": "There is a rubber block that is in front of the large metal cylinder that is on the left side of the large gray cylinder that is to the left of the cyan metallic ball; what is its color?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000185.png",
+        "question": "What material is the tiny block that is in front of the rubber object on the left side of the green ball?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000186.png",
+        "question": "There is another tiny object that is the same color as the tiny rubber thing; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000186.png",
+        "question": "Do the yellow sphere that is behind the brown thing and the small ball in front of the brown cube have the same material?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_material"
+    },
+    {
+        "image": "CLEVR_train_000187.png",
+        "question": "There is a thing that is left of the large rubber ball; what material is it?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000188.png",
+        "question": "There is another big thing that is the same shape as the large green thing; what color is it?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000190.png",
+        "question": "What color is the rubber object behind the green thing that is behind the block behind the tiny green rubber object?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000191.png",
+        "question": "There is a thing that is made of the same material as the gray ball; what is its color?",
+        "gt_answer": "red",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000192.png",
+        "question": "There is a small block in front of the tiny cyan thing; is it the same color as the metallic object that is in front of the purple matte cylinder?",
+        "gt_answer": "no",
+        "model_answer": "yes",
+        "last_function": "equal_color"
+    },
+    {
+        "image": "CLEVR_train_000193.png",
+        "question": "There is a big ball that is the same material as the small gray object; what color is it?",
+        "gt_answer": "yellow",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000193.png",
+        "question": "The cylinder that is in front of the gray shiny cylinder and left of the small brown object is made of what material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000193.png",
+        "question": "There is a sphere that is the same color as the tiny cube; what is its material?",
+        "gt_answer": "metal",
+        "model_answer": "rubber",
+        "last_function": "query_material"
+    },
+    {
+        "image": "CLEVR_train_000196.png",
+        "question": "There is a thing that is in front of the big blue block and behind the cyan shiny sphere; what is its color?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000197.png",
+        "question": "The big rubber cube has what color?",
+        "gt_answer": "cyan",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000197.png",
+        "question": "There is a large ball that is made of the same material as the brown object; what is its color?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000199.png",
+        "question": "What color is the metal thing that is to the right of the ball and on the left side of the big blue shiny thing?",
+        "gt_answer": "purple",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    },
+    {
+        "image": "CLEVR_train_000199.png",
+        "question": "What color is the cube that is the same size as the red sphere?",
+        "gt_answer": "blue",
+        "model_answer": "gray",
+        "last_function": "query_color"
+    }
+]

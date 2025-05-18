@@ -25,6 +25,7 @@ class VTILayer(nn.Module):
                     lambda_sim = 1.0
                     y += self.lam[i] * lambda_sim * F.normalize(self.vti_direction[i], dim=-1)
             y = y/len(self.vti_direction)
+            # 1024, 4096
             x = F.normalize(F.normalize(x.float(),dim=-1) +  0.1 * y, dim=-1) * norm
                 
             return x.half()
@@ -112,13 +113,18 @@ def get_mlp_layers(model: PreTrainedModel):
     mlp_layers = [find_module(layer, mlp_keywords) for layer in layers]
     return mlp_layers
 
-def add_vti_layers(model: PreTrainedModel, vti_drections: Tensor, alpha: list):
+def add_vti_layers(model: PreTrainedModel, vti_directions: Tensor, alpha: list, image: bool):
     layers = get_layers(model)
     mlp_keywords = ["mlp", "feedforward", "ffn"]
-    assert len(vti_drections) == len(layers)
-    for i, layer in enumerate(layers):
-        original_mlp = find_module(layer, mlp_keywords)
-        layer.mlp = nn.Sequential(original_mlp, VTILayer(vti_drections[i], alpha)) 
+    assert len(vti_directions) == len(layers)
+    if image:
+        for i, layer in zip(range(12, 19), layers[12: 19]):
+            original_mlp = find_module(layer, mlp_keywords)
+            layer.mlp = nn.Sequential(original_mlp, VTILayer(vti_directions[i], alpha))
+    else:
+        for i, layer in enumerate(layers):
+            original_mlp = find_module(layer, mlp_keywords)
+            layer.mlp = nn.Sequential(original_mlp, VTILayer(vti_directions[i], alpha))
 
 def remove_vti_layers(model: PreTrainedModel):
     layers = get_layers(model)

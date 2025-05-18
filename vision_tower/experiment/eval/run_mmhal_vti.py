@@ -21,66 +21,18 @@ from datasets import load_dataset
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-# def hall_ans(processor, model):
-#     results = []
-#     HaloQuest_df = pd.read_csv("/home/cassietang/steeringwheel/HaloQuest/output/sample_HaloQuest_output.csv")
-#     # filtered_HaloQuest_df = HaloQuest_df[HaloQuest_df["hallucination_type"] == "visual challenge"].sample(n=300, random_state=42).reset_index(drop=True)
-#     filtered_HaloQuest_df = HaloQuest_df[HaloQuest_df["hallucination_type"] != "visual challenge"]
-
-#     for _, entry in tqdm(filtered_HaloQuest_df.iterrows(), total=filtered_HaloQuest_df.shape[0], desc="Processing entries"):
-#         question = entry["question"]
-#         image_url = entry["image_url"]
-#         gt_answer = entry["gt_answer"]
-#         model_answer_before_vti = entry["model_answer"]
-#         hallucination_type = entry["hallucination_type"]
-
-#         try:
-#             response = requests.get(image_url)
-#             image_bytes = BytesIO(response.content)
-#             image = Image.open(image_bytes)
-#             image.load()
-#         except Exception as e:
-#             print(f"Error processing image URL {image_url}: {e}")
-#             continue
-
-#         conversation = [{
-#             "role": "user",
-#             "content": [
-#                 {"type": "image"},
-#                 {"type": "text", "text": question},
-#             ],
-#         }]
-
-#         prompt = processor.apply_chat_template(conversation=conversation, add_generation_prompt=True)
-#         inputs = processor(images=image, text=prompt, return_tensors="pt").to("cuda:0")
-#         output = model.generate(**inputs, use_cache=True, max_new_tokens=100)
-
-#         model_output = processor.decode(output[0], skip_special_tokens=True)
-#         model_answer = model_output.split("ASSISTANT:")[-1].strip()
-
-#         result_entry = {
-#             "image_url": image_url,
-#             "question": question,
-#             "gt_answer": gt_answer,
-#             "model_answer_before_vti": model_answer_before_vti,
-#             "model_answer_after_vti": model_answer,
-#             "hallucination_type": hallucination_type
-#         }
-#         results.append(result_entry)
-    
-#     return json.dumps(results, indent=4) 
-
 def hall_ans(processor, model):
     results = []
-    with open("/home/cassietang/steeringwheel/MMHal/output/MMHal_output.json", "r") as json_file:
-        data = json.load(json_file)
+    HaloQuest_df = pd.read_csv("/home/weiyitian/Winter 2025/steeringwheel/HaloQuest/output/sample_HaloQuest_output.csv")
+    # filtered_HaloQuest_df = HaloQuest_df[HaloQuest_df["hallucination_type"] == "visual challenge"].sample(n=300, random_state=42).reset_index(drop=True)
+    filtered_HaloQuest_df = HaloQuest_df[HaloQuest_df["hallucination_type"] != "visual challenge"]
 
-    for entry in tqdm(data, desc="Processing entries"):
+    for _, entry in tqdm(filtered_HaloQuest_df.iterrows(), total=filtered_HaloQuest_df.shape[0], desc="Processing entries"):
         question = entry["question"]
-        image_url = entry["image_src"]
+        image_url = entry["image_url"]
         gt_answer = entry["gt_answer"]
-        question_type = entry["question_type"]
         model_answer_before_vti = entry["model_answer"]
+        hallucination_type = entry["hallucination_type"]
 
         try:
             response = requests.get(image_url)
@@ -91,8 +43,7 @@ def hall_ans(processor, model):
             print(f"Error processing image URL {image_url}: {e}")
             continue
 
-        conversation = [
-        {
+        conversation = [{
             "role": "user",
             "content": [
                 {"type": "image"},
@@ -100,7 +51,7 @@ def hall_ans(processor, model):
             ],
         }]
 
-        prompt = processor.apply_chat_template(conversation, add_generation_prompt=True)
+        prompt = processor.apply_chat_template(conversation=conversation, add_generation_prompt=True)
         inputs = processor(images=image, text=prompt, return_tensors="pt").to("cuda:0")
         output = model.generate(**inputs, use_cache=True, max_new_tokens=100)
 
@@ -108,23 +59,72 @@ def hall_ans(processor, model):
         model_answer = model_output.split("ASSISTANT:")[-1].strip()
 
         result_entry = {
-            "question_type": question_type,
             "image_url": image_url,
             "question": question,
             "gt_answer": gt_answer,
             "model_answer_before_vti": model_answer_before_vti,
-            "model_answer_after_vti": model_answer
+            "model_answer_after_vti": model_answer,
+            "hallucination_type": hallucination_type
         }
         results.append(result_entry)
-    
+
     return json.dumps(results, indent=4) 
 
+# def hall_ans(processor, model):
+#     results = []
+#     with open("/home/weiyitian/Winter 2025/steeringwheel/MMHal/output/MMHal_output.json", "r") as json_file:
+#         data = json.load(json_file)
+
+#     for entry in tqdm(data, desc="Processing entries"):
+#         question = entry["question"]
+#         image_url = entry["image_src"]
+#         gt_answer = entry["gt_answer"]
+#         question_type = entry["question_type"]
+#         model_answer_before_vti = entry["model_answer"]
+
+#         try:
+#             response = requests.get(image_url)
+#             image_bytes = BytesIO(response.content)
+#             image = Image.open(image_bytes)
+#             image.load()
+#         except Exception as e:
+#             print(f"Error processing image URL {image_url}: {e}")
+#             continue
+
+#         conversation = [
+#         {
+#             "role": "user",
+#             "content": [
+#                 {"type": "image"},
+#                 {"type": "text", "text": question},
+#             ],
+#         }]
+
+#         prompt = processor.apply_chat_template(conversation, add_generation_prompt=True)
+#         inputs = processor(images=image, text=prompt, return_tensors="pt").to("cuda:0")
+#         output = model.generate(**inputs, use_cache=True, max_new_tokens=100)
+
+#         model_output = processor.decode(output[0], skip_special_tokens=True)
+#         model_answer = model_output.split("ASSISTANT:")[-1].strip()
+
+#         result_entry = {
+#             "question_type": question_type,
+#             "image_url": image_url,
+#             "question": question,
+#             "gt_answer": gt_answer,
+#             "model_answer_before_vti": model_answer_before_vti,
+#             "model_answer_after_vti": model_answer
+#         }
+#         results.append(result_entry)
+    
+#     return json.dumps(results, indent=4) 
 
 
 
-def eval_model(args, model, image_processor):
+
+def eval_model(args, model, processor):
     # Step 1: Prepare input images and input ids
-    input_images, input_ids = get_demos_coco(args, image_processor)
+    input_images, input_ids = get_demos_coco(args, processor)
 
     print('Obtaining direction\n')
 
@@ -136,7 +136,7 @@ def eval_model(args, model, image_processor):
         visual_direction = vti_vision[1:]
 
     if args.alpha_image != 0:
-        add_vti_layers(model.vision_tower.vision_model, torch.stack([visual_direction],dim=1).cuda(), alpha = [args.alpha_image])
+        add_vti_layers(model.vision_tower.vision_model, torch.stack([visual_direction],dim=1).cuda(), alpha = [args.alpha_image], image=True)
     
     if args.alpha_text != 0:
 
@@ -146,7 +146,7 @@ def eval_model(args, model, image_processor):
         textual_direction = vti_text[1:]
 
     if args.alpha_text != 0:
-        add_vti_layers(model, torch.stack([textual_direction],dim=1).cuda(), alpha = [args.alpha_text])
+        add_vti_layers(model, torch.stack([textual_direction],dim=1).cuda(), alpha = [args.alpha_text], image=False)
 
     torch.cuda.empty_cache()
 
@@ -167,7 +167,7 @@ if __name__ == "__main__":
     # parser.add_argument("--model-path", type=str, default="liuhaotian/llava-v1.5-7b")
     # parser.add_argument("--model-base", type=str, default=None)
     # parser.add_argument("--image-folder", type=str, default="/data/datasets/MSCOCO/val2014")
-    parser.add_argument("--answers-file", type=str, default="/home/cassietang/steeringwheel/vision_tower/experiment/results/hallucination_ans.jsonl")
+    parser.add_argument("--answers-file", type=str, default="/home/weiyitian/Winter 2025/steeringwheel/vision_tower/experiment/results/VE_vt_Halo.jsonl")
     parser.add_argument("--data-file", type=str, default="/net/scratch2/steeringwheel/coco")
     # parser.add_argument("--conv-mode", type=str, default="llava_v1")
     parser.add_argument("--num_demos", type=int, default=70)
@@ -182,11 +182,11 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     set_seed(args.seed)
-    args.answers_file = f'/home/cassietang/steeringwheel/vision_tower/experiment/results/MMHal_inverse_hallucination_ans_{args.alpha_text}_{args.alpha_image}.jsonl'
     processor = LlavaNextProcessor.from_pretrained("/net/scratch2/steeringwheel/llava-v1.6-vicuna-7b-hf", use_fast=True)
     model_llava = LlavaNextForConditionalGeneration.from_pretrained("/net/scratch2/steeringwheel/llava-v1.6-vicuna-7b-hf", torch_dtype=torch.float16, low_cpu_mem_usage=True)
     model = model_llava 
     model = model.to(device)
+    model = torch.compile(model)
     # print("model.vision_tower.vision_model:")
     # print(model.vision_tower.vision_model)
     # print("model.vision_tower:")

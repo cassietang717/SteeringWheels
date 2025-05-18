@@ -1,10 +1,8 @@
-
 import argparse
 import torch
 import os
 import json
 from tqdm import tqdm
-import shortuuid
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
@@ -86,9 +84,6 @@ def mask_patches(tensor, indices, patch_size=14):
     torch.Tensor: New tensor with modified patches
     """
     # Clone the original tensor to avoid modifying it
-    if tensor.dim() == 4:  # (B, C, H, W)
-        return torch.stack([mask_patches(t, indices, patch_size) for t in tensor], dim=0)
-    
     new_tensor = tensor.clone()
 
     # Calculate the mean across the spatial dimensions
@@ -97,7 +92,6 @@ def mask_patches(tensor, indices, patch_size=14):
     # Number of patches along the width
     patches_per_row = tensor.shape[2] // patch_size
     total_patches = (tensor.shape[1] // patch_size) * (tensor.shape[2] // patch_size)
-
 
     for index in indices:
         # Calculate row and column position of the patch
@@ -122,7 +116,7 @@ def format_prompt(image, question, answer, processor):
         ],
     }]
 
-    prompt = processor.apply_chat_template(conversation=conversation, add_generation_prompt=True)
+    prompt = processor.apply_chat_template(conversation=conversation, add_generation_prompt=False)
     input = processor(images=image, text=prompt, return_tensors="pt").to("cuda:0")
     return input
 
@@ -206,7 +200,7 @@ def get_prompt_pairs_nourl(args, dataset, processor):
     
 #     return inputs_images, input_ids
 
-def get_demos_coco(args, processor, patch_size=14, file_path='/home/cassietang/steeringwheel/vision_tower/experiment/data/hallucination_vti_demos.jsonl'): 
+def get_demos_coco(args, processor, patch_size=14, file_path='/home/weiyitian/Winter 2025/steeringwheel/vision_tower/experiment/data/hallucination_vti_demos.jsonl'): 
     # Step 1: Load CSV
     data = []
 
@@ -219,29 +213,31 @@ def get_demos_coco(args, processor, patch_size=14, file_path='/home/cassietang/s
     data_demos = random.sample(data, args.num_demos)
 
     inputs_images = []
-    for i in range(len(data_demos)):
+    for i in tqdm(range(len(data_demos)), desc="Getting data demos"):
         question = data_demos[i]['question']
         image_path = os.path.join(args.data_file, 'train2014', data_demos[i]['image'])
         image_raw = Image.open(image_path).convert("RGB")
 
-        image_tensor = process_image(image_raw,processor)
-        image_tensor = image_tensor[0] # （5， 3, 336, 336）-> (3, 336, 336)
+        image_tensor = process_image(image_raw, processor)
+        # Keep all 5 views (don't select only the first tile)
         image_tensor_cd_all_trials = []
         for t in range(args.num_trials):
-            token_numbers = image_tensor.shape[-1] * image_tensor.shape[-2] / patch_size**2
-            mask_index = torch.randperm(int(token_numbers))[:int(args.mask_ratio * token_numbers)]
-            image_tensor_cd = mask_patches(image_tensor, mask_index, patch_size=patch_size)
-                
-            image_tensor_cd_all_trials.append(image_tensor_cd)
+            masked_views = []
+            for view in image_tensor:
+                token_numbers = view.shape[-1] * view.shape[-2] / patch_size**2
+                mask_index = torch.randperm(int(token_numbers))[:int(args.mask_ratio * token_numbers)]
+                masked_view = mask_patches(view, mask_index, patch_size=patch_size)
+                masked_views.append(masked_view)
+            image_tensor_cd_all_trials.append(torch.stack(masked_views))
 
+        # Append both the masked trials and the reference image (all 5 views)
         inputs_images.append([image_tensor_cd_all_trials, image_tensor])
-
     # Step 3: Tokenize prompts
     input_ids = get_prompt_pairs_nourl(args, data_demos, processor)
-    
+
     return inputs_images, input_ids
 
-def get_demos_Halo(args, processor, patch_size=14, file_path='/home/cassietang/steeringwheel/HaloQuest/output/HaloQuest_llama.csv'): 
+def get_demos_Halo(args, processor, patch_size=14, file_path='/home/weiyitian/Winter 2025/steeringwheel/HaloQuest/output/HaloQuest_llama.csv'): 
     # Step 1: Load CSV
     df = pd.read_csv(file_path)
     df = df[df["llama_hallucination_evaluation"] == "yes"]
@@ -265,17 +261,19 @@ def get_demos_Halo(args, processor, patch_size=14, file_path='/home/cassietang/s
             print(f"Error loading image from {image_url}: {e}")
             continue
 
-        image_tensor = process_image(image_raw,processor)
-        image_tensor = image_tensor[0] # （5， 3, 224, 224）-> (3, 224, 224)
+        image_tensor = process_image(image_raw, processor)
+        # Keep all 5 views (don't select only the first tile)
         image_tensor_cd_all_trials = []
-
         for t in range(args.num_trials):
-            token_numbers = image_tensor.shape[-1] * image_tensor.shape[-2] / patch_size**2
-            mask_index = torch.randperm(int(token_numbers))[:int(args.mask_ratio * token_numbers)]
-            image_tensor_cd = mask_patches(image_tensor, mask_index, patch_size=patch_size)
-                
-            image_tensor_cd_all_trials.append(image_tensor_cd)
+            masked_views = []
+            for view in image_tensor:
+                token_numbers = view.shape[-1] * view.shape[-2] / patch_size**2
+                mask_index = torch.randperm(int(token_numbers))[:int(args.mask_ratio * token_numbers)]
+                masked_view = mask_patches(view, mask_index, patch_size=patch_size)
+                masked_views.append(masked_view)
+            image_tensor_cd_all_trials.append(torch.stack(masked_views))
 
+        # Append both the masked trials and the reference image (all 5 views)
         inputs_images.append([image_tensor_cd_all_trials, image_tensor])
 
     # Step 3: Tokenize prompts
@@ -345,24 +343,36 @@ def get_hiddenstates(model, inputs, image_tensor):
 
 
 def obtain_textual_vti(model, inputs, image_tensor, rank=1):
+    # list of (neg_embedding: [num_layer, hidden_dim], pos_embedding: [num_layer, hidden_dim])
     hidden_states = get_hiddenstates(model, inputs, image_tensor)
-    hidden_states_all = []
+    hidden_states_all = [] # [N, num_layer x hidden_dim]
+    # N
     num_demonstration = len(hidden_states)
-    neg_all = []
-    pos_all = []
+    neg_all = [] # [N, num_layer x hidden_dim]
+    pos_all = [] # [N, num_layer x hidden_dim]
+
     for demonstration_id in range(num_demonstration):
+        # [num_layer x hidden_dim]
         h = hidden_states[demonstration_id][1].view(-1) - hidden_states[demonstration_id][0].view(-1)
         hidden_states_all.append(h)
         neg_all.append(hidden_states[demonstration_id][0].view(-1))
         pos_all.append(hidden_states[demonstration_id][1].view(-1))
+
+    # [N, num_layer x hidden_dim]
     fit_data = torch.stack(hidden_states_all)
+    # [1, rank, num_layer x hidden_dim]
     pca = PCA(n_components=rank).to(fit_data.device).fit(fit_data.float())
+    # [N, rank]
     eval_data =  pca.transform(fit_data.float())
     h_pca = pca.inverse_transform(eval_data) 
 
-    direction = (pca.components_.sum(dim=1,keepdim=True) + pca.mean_).mean(0).view(hidden_states[demonstration_id][0].size(0), hidden_states[demonstration_id][0].size(1))#h_pca.mean(0).view(hidden_states[demonstration_id][0].size(0), hidden_states[demonstration_id][0].size(1))
+    # pca.mean_ == X.mean(dim=0)
+    # ([1, rank, num_layer x hidden_dim] + [num_layer x hidden_dim]) => num_layer x hidden_dim => [num_layer, hidden_dim]
+    direction = (pca.components_.sum(dim=1, keepdim=True) + pca.mean_).mean(0).view(hidden_states[demonstration_id][0].size(0), hidden_states[demonstration_id][0].size(1))#h_pca.mean(0).view(hidden_states[demonstration_id][0].size(0), hidden_states[demonstration_id][0].size(1))
+    # [N, num_layer x hidden_dim] => [num_layer, hidden_dim]
     reading_direction = fit_data.mean(0).view(hidden_states[demonstration_id][0].size(0), hidden_states[demonstration_id][0].size(1))
     return direction, reading_direction
+
 
 def average_tuples(tuples: List[Tuple[torch.Tensor]]) -> Tuple[torch.Tensor]:
     # Check that the input list is not empty
@@ -390,36 +400,56 @@ def average_tuples(tuples: List[Tuple[torch.Tensor]]) -> Tuple[torch.Tensor]:
     return averaged_tuple
 
 def get_visual_hiddenstates(model, image_tensor):
-    h_all = []
+    # num_tokens: (image_H * image_W) / (patch_H * patch_W)
+    # num_trials: perturbed versions
+    h_all = [] # N
     with torch.no_grad():
         try:
             vision_model = model.vision_tower.vision_model
         except:
             vision_model = model.vision_model
-            
+
+        # N  
         for example_id in range(len(image_tensor)):
             embeddings_for_all_styles= []
+            
+            # image_tensor[example_id] = [[img_trial_1, ..., img_trial_5], original image]
             for style_id in range(len(image_tensor[example_id])):
+                # style_id = 0: perturbed image
                 if isinstance(image_tensor[example_id][style_id], list):
                     h = []
+                    # each image_tensor: [3, H, W]
                     for image_tensor_ in image_tensor[example_id][style_id]:
+                        # list of layer_num × [1, num_tokens, hidden_dim]
                         h_ = vision_model(
-                            image_tensor_.unsqueeze(0).half().cuda(),
+                            # [5, 3, H, W]
+                            image_tensor_.half().cuda(),
                             output_hidden_states=True,
                             return_dict=True).hidden_states
+                        
+                        # convert each [5, 577, 1024] → [1, 577, 1024] # [1, num_tokens, hidden_dim]
+                        h_ = [layer.mean(dim=0, keepdim=True) for layer in h_]
                         h.append(h_)
+                    # averaged list of layer_num × [1, num_tokens, hidden_dim]
                     h = average_tuples(h)
+
+                # style_id = 1: original image
                 else:
+                    # layer_num × [1, num_tokens, hidden_dim]
                     h = vision_model(
-                        image_tensor[example_id][style_id].unsqueeze(0).cuda(),
+                        image_tensor[example_id][style_id].cuda(),
                         output_hidden_states=True,
                         return_dict=True).hidden_states
+                    h = [layer.mean(dim=0, keepdim=True) for layer in h]
                 
                 embedding_token = []
                 for layer in range(len(h)):
-                    embedding_token.append(h[layer][:,:].detach().cpu())
+                    # [1, num_tokens, hidden_dim]
+                    embedding_token.append(h[layer].detach().cpu())
+                # [layer_num, num_tokens, hidden_dim]
                 embedding_token = torch.cat(embedding_token, dim=0)
                 embeddings_for_all_styles.append(embedding_token)
+            # list of N (masked_avg_embedding, original_embedding), each of [layer_num, num_tokens, hidden_dim]
             h_all.append(tuple(embeddings_for_all_styles))
 
     del h, embedding_token
@@ -427,19 +457,27 @@ def get_visual_hiddenstates(model, image_tensor):
     return h_all
 
 def obtain_visual_vti(model, image_tensor, rank=1):
-
+    # list of N (masked_avg_embedding, original_embedding)
     hidden_states = get_visual_hiddenstates(model, image_tensor)
+    # [layer_num, num_tokens, hidden_dim]
     n_layers, n_tokens, feat_dim = hidden_states[0][0].shape
+    # N
     num_demonstration = len(hidden_states)
 
-    
-    hidden_states_all = []
+    hidden_states_all = [] # N
     for demonstration_id in range(num_demonstration):
+        # average masked - original
+        # [num_tokens, layer_num x hidden_dim]
         h = hidden_states[demonstration_id][0].reshape(n_tokens,-1) - hidden_states[demonstration_id][1].reshape(n_tokens,-1)
         hidden_states_all.append(h)
 
+    # [num_tokens, N, layer_num x hidden_dim]
     fit_data = torch.stack(hidden_states_all,dim=1)[:] # n_token (no CLS token) x n_demos x D
+    # PCA per token
+    print("Fitting PCA")
     pca = PCA(n_components=rank).to(fit_data.device).fit(fit_data.float())
+    # [num_tokens, rank, layer_num x hidden_dim] => [num_tokens, layer_num x hidden_dim] => [layer_num, num_tokens, hidden_dim]
     direction = (pca.components_.sum(dim=1,keepdim=True) + pca.mean_).mean(1).view(n_layers, n_tokens, -1)
+    # [num_tokens, layer_num x hidden_dim] => [layer_num, num_tokens, hidden_dim]
     reading_direction = fit_data.mean(1).view(n_layers, n_tokens, -1)
     return direction, reading_direction
