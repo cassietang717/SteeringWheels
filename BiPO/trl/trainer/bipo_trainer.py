@@ -1380,7 +1380,7 @@ class BiPOTrainer(Trainer):
         """Compute the DPO loss and other metrics for the given batch of inputs for train or test."""
         if train_eval == "train":
             # multiplier_pool = [-1.0, 1.0]
-            multiplier = 1
+            multiplier = 1.0
             self.multiplier_counts[multiplier] += 1
             model.language_model.model.layers[self.layer].set_multiplier(multiplier)
         else:
