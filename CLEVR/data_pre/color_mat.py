@@ -12,14 +12,14 @@ from tqdm import tqdm
 # Load processor and model
 print("Loading processor and model...")
 device = "cuda"
-processor = LlavaNextProcessor.from_pretrained("llava-hf/llava-v1.6-vicuna-7b-hf",revision="30f8c4f")
+processor = LlavaNextProcessor.from_pretrained("/net/scratch2/steeringwheel/llava-v1.6-vicuna-7b-hf", use_fast=True)
 model = LlavaNextForConditionalGeneration.from_pretrained("/net/scratch2/steeringwheel/llava-v1.6-vicuna-7b-hf", torch_dtype=torch.float16, low_cpu_mem_usage=True).to(device)
 
 
 # Load and preprocess image
-json_path = "/net/scratch/llama/clevr_v1.0/CLEVR_v1.0/questions/val_500.json"
-image_dir = "/net/scratch/llama/clevr_v1.0/CLEVR_v1.0/images/val"
-save_path = "data/color_mat_val.json"
+json_path = "/net/scratch/llama/clevr_v1.0/CLEVR_v1.0/questions/train_0_2000.json"
+image_dir = "/net/scratch/llama/clevr_v1.0/CLEVR_v1.0/images/train"
+save_path = "data/color_mat_lol.json"
 
 # Load data
 with open(json_path, "r") as f:
@@ -37,7 +37,7 @@ for i, q in tqdm(enumerate(data["questions"]), total=len(data["questions"]), des
     if function_type not in {"query_color", "query_material", "equal_color", "equal_material"}:
         continue
 
-    # Load image
+    # Load image ded
     image_path = os.path.join(image_dir, image_filename)
     try:
         image = Image.open(image_path).convert("RGB")

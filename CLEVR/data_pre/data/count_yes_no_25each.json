@@ -1,0 +1,377 @@
+[
+  {
+    "image": "CLEVR_train_000159.png",
+    "question": "Are there the same number of blue metal things in front of the green metallic cylinder and brown things?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_integer"
+  },
+  {
+    "image": "CLEVR_train_000065.png",
+    "question": "Are there more metallic objects than brown metallic cylinders?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "greater_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000175.png",
+    "question": "Are there fewer purple cylinders that are in front of the purple thing than big cylinders?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "less_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000168.png",
+    "question": "Are there more balls that are on the right side of the small thing than tiny cyan metal objects?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "greater_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000010.png",
+    "question": "Is the number of cylinders in front of the big cyan thing greater than the number of small red spheres?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "greater_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000181.png",
+    "question": "Is the number of small yellow matte things less than the number of cyan cubes?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "less_than"
+  },
+  {
+    "image": "CLEVR_train_000158.png",
+    "question": "Are there more green things that are in front of the gray cube than yellow cylinders?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "greater_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000050.png",
+    "question": "Are there fewer big rubber blocks in front of the purple cube than large rubber blocks that are left of the red shiny thing?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "less_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000124.png",
+    "question": "Are there fewer purple rubber balls than small green shiny things?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "less_than"
+  },
+  {
+    "image": "CLEVR_train_000002.png",
+    "question": "Are there the same number of blue rubber cubes on the left side of the large blue thing and tiny green matte cylinders?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_integer",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000093.png",
+    "question": "Are there fewer yellow metal blocks behind the red cylinder than big blue spheres?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "less_than"
+  },
+  {
+    "image": "CLEVR_train_000058.png",
+    "question": "Are there the same number of red cylinders that are right of the tiny blue object and big purple cubes?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_integer"
+  },
+  {
+    "image": "CLEVR_train_000178.png",
+    "question": "Is the number of big yellow things on the right side of the big blue metallic object less than the number of tiny yellow shiny spheres?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "less_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000114.png",
+    "question": "Is the number of things in front of the brown rubber cylinder less than the number of big blue cylinders?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "less_than"
+  },
+  {
+    "image": "CLEVR_train_000014.png",
+    "question": "Are there fewer tiny balls than big green shiny spheres?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "less_than"
+  },
+  {
+    "image": "CLEVR_train_000153.png",
+    "question": "Are there more matte objects in front of the green cylinder than green objects behind the small blue metal thing?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "greater_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000039.png",
+    "question": "Is the number of large yellow rubber objects on the left side of the small green rubber ball less than the number of purple shiny cylinders that are behind the cyan shiny block?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "less_than"
+  },
+  {
+    "image": "CLEVR_train_000095.png",
+    "question": "Is the number of big cubes less than the number of big rubber cylinders?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "less_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000131.png",
+    "question": "Are there more large rubber cylinders that are right of the tiny yellow shiny object than large green shiny cubes?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "greater_than"
+  },
+  {
+    "image": "CLEVR_train_000028.png",
+    "question": "Are there an equal number of shiny things left of the yellow metal thing and cyan balls in front of the large cyan metallic ball?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_integer"
+  },
+  {
+    "image": "CLEVR_train_000140.png",
+    "question": "Are there an equal number of small brown cubes on the right side of the big purple ball and yellow objects?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_integer"
+  },
+  {
+    "image": "CLEVR_train_000118.png",
+    "question": "Is the number of rubber blocks less than the number of gray shiny cylinders?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "less_than"
+  },
+  {
+    "image": "CLEVR_train_000092.png",
+    "question": "Are there more blue objects that are behind the large block than big brown rubber objects that are to the right of the small object?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "greater_than"
+  },
+  {
+    "image": "CLEVR_train_000044.png",
+    "question": "Is the number of cyan blocks behind the gray matte cylinder greater than the number of tiny rubber blocks behind the small purple matte thing?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "greater_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000069.png",
+    "question": "Is the number of large blue objects to the right of the ball the same as the number of small brown metallic objects?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_integer",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000013.png",
+    "question": "Are there fewer large red metallic cylinders on the left side of the small gray rubber thing than metallic cylinders behind the large blue cylinder?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "less_than"
+  },
+  {
+    "image": "CLEVR_train_000125.png",
+    "question": "Are there the same number of red matte objects that are in front of the gray sphere and metallic things that are in front of the cyan cube?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_integer",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000148.png",
+    "question": "Is the number of tiny brown metal balls to the right of the blue cylinder the same as the number of green matte cubes?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_integer",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000138.png",
+    "question": "Is the number of cubes that are to the left of the purple rubber object greater than the number of large cyan objects on the left side of the big metallic block?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "greater_than"
+  },
+  {
+    "image": "CLEVR_train_000115.png",
+    "question": "Are there more yellow shiny blocks than blue matte objects?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "greater_than"
+  },
+  {
+    "image": "CLEVR_train_000164.png",
+    "question": "Are there more big cyan matte cylinders than matte things?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "greater_than"
+  },
+  {
+    "image": "CLEVR_train_000036.png",
+    "question": "Are there an equal number of big green metal cylinders that are behind the green metallic cylinder and tiny things?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_integer"
+  },
+  {
+    "image": "CLEVR_train_000185.png",
+    "question": "Is the number of metal objects right of the small metallic ball greater than the number of rubber cylinders?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "greater_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000179.png",
+    "question": "Are there more rubber cubes than tiny red balls?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "greater_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000084.png",
+    "question": "Are there fewer small things to the left of the purple object than gray cylinders?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "less_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000158.png",
+    "question": "Are there fewer shiny cubes that are on the right side of the large object than metallic objects that are to the left of the tiny cylinder?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "less_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000027.png",
+    "question": "Are there the same number of big gray spheres to the left of the red cube and tiny cubes?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_integer",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000184.png",
+    "question": "Are there fewer cyan blocks than yellow shiny cylinders?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "less_than"
+  },
+  {
+    "image": "CLEVR_train_000127.png",
+    "question": "Are there the same number of small matte cubes in front of the big gray block and cyan blocks in front of the red rubber block?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_integer",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000054.png",
+    "question": "Are there the same number of tiny spheres that are right of the cyan block and big yellow cubes that are in front of the big yellow matte object?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_integer",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000011.png",
+    "question": "Are there an equal number of green things that are to the right of the small purple metal object and big brown things?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_integer"
+  },
+  {
+    "image": "CLEVR_train_000093.png",
+    "question": "Is the number of brown cylinders less than the number of large brown things?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "less_than"
+  },
+  {
+    "image": "CLEVR_train_000127.png",
+    "question": "Is the number of metallic cylinders that are behind the purple metallic cylinder the same as the number of small blue blocks?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_integer"
+  },
+  {
+    "image": "CLEVR_train_000011.png",
+    "question": "Is the number of large metal cylinders that are left of the tiny cyan block the same as the number of purple matte objects that are in front of the brown rubber cylinder?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_integer",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000056.png",
+    "question": "Is the number of large rubber objects that are on the left side of the large yellow rubber sphere greater than the number of large brown shiny things?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "greater_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000032.png",
+    "question": "Is the number of cubes behind the small cyan object less than the number of tiny metal objects that are left of the blue matte cube?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "less_than",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000173.png",
+    "question": "Is the number of yellow balls that are left of the small cyan metallic object the same as the number of small green metallic cylinders?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_integer",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000037.png",
+    "question": "Is the number of red matte things that are in front of the small cube greater than the number of big yellow matte cubes?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "greater_than"
+  },
+  {
+    "image": "CLEVR_train_000072.png",
+    "question": "Is the number of small cyan rubber cylinders that are in front of the tiny cyan cylinder less than the number of red cylinders?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "less_than"
+  },
+  {
+    "image": "CLEVR_train_000136.png",
+    "question": "Is the number of tiny cyan matte spheres that are right of the brown metal ball less than the number of tiny cyan matte balls right of the blue matte ball?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "less_than"
+  }
+]

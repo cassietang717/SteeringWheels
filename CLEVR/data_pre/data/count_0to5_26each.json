@@ -1,0 +1,1094 @@
+[
+  {
+    "image": "CLEVR_train_000265.png",
+    "question": "What number of objects are tiny rubber spheres or large matte objects right of the brown ball?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000083.png",
+    "question": "How many large brown metal things are there?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000200.png",
+    "question": "How many objects are big blue rubber cubes or shiny objects?",
+    "gt_answer": "2",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000297.png",
+    "question": "What number of things are big gray things or spheres?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000281.png",
+    "question": "What number of red rubber things are left of the tiny ball?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000346.png",
+    "question": "What number of other objects are there of the same shape as the purple object?",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000066.png",
+    "question": "How many cylinders are either green metal things or large blue things?",
+    "gt_answer": "0",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000288.png",
+    "question": "How many big rubber objects are there?",
+    "gt_answer": "1",
+    "model_answer": "0",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000395.png",
+    "question": "How many purple matte cylinders are there?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000392.png",
+    "question": "How many large green objects are behind the tiny sphere and in front of the small thing?",
+    "gt_answer": "0",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000364.png",
+    "question": "How many cylinders are tiny metal objects or matte objects?",
+    "gt_answer": "2",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000342.png",
+    "question": "How many cylinders are either small cyan rubber things or big green objects?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000170.png",
+    "question": "What number of other objects are the same shape as the purple object?",
+    "gt_answer": "3",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000272.png",
+    "question": "What number of other objects are the same color as the rubber sphere?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000184.png",
+    "question": "How many objects are in front of the tiny metal ball and to the left of the big yellow thing?",
+    "gt_answer": "2",
+    "model_answer": "4",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000315.png",
+    "question": "How many cylinders are brown things or tiny things?",
+    "gt_answer": "0",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000254.png",
+    "question": "How many other things are there of the same material as the small red sphere?",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000194.png",
+    "question": "How many things are either small blue objects or purple cubes?",
+    "gt_answer": "2",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000306.png",
+    "question": "What number of other things are the same size as the gray rubber block?",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000041.png",
+    "question": "How many matte things are right of the matte cube that is to the left of the small gray matte cube that is behind the large red shiny thing?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000363.png",
+    "question": "What number of other objects are there of the same size as the purple metal ball?",
+    "gt_answer": "4",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000361.png",
+    "question": "How many other objects are there of the same shape as the small brown metallic object?",
+    "gt_answer": "5",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000104.png",
+    "question": "How many brown objects are big things or metal balls?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000174.png",
+    "question": "How many things are either metallic objects on the left side of the big red shiny ball or tiny cyan cylinders in front of the large red shiny ball?",
+    "gt_answer": "2",
+    "model_answer": "4",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000312.png",
+    "question": "How many other objects are there of the same size as the gray sphere?",
+    "gt_answer": "2",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000211.png",
+    "question": "How many objects are either cubes that are left of the blue rubber block or large cylinders that are to the left of the large shiny sphere?",
+    "gt_answer": "5",
+    "model_answer": "6",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000048.png",
+    "question": "What number of other things are there of the same material as the purple cylinder",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000105.png",
+    "question": "How many other objects are the same color as the big metal object?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000257.png",
+    "question": "What number of things are either tiny balls to the right of the red shiny object or cyan blocks?",
+    "gt_answer": "2",
+    "model_answer": "4",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000291.png",
+    "question": "What number of other things are the same material as the large cube?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000156.png",
+    "question": "There is a big blue cube; how many large cubes are in front of it?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000107.png",
+    "question": "How many other objects are there of the same size as the metal sphere?",
+    "gt_answer": "2",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000193.png",
+    "question": "What number of metal objects are both in front of the tiny sphere and behind the large yellow sphere?",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000241.png",
+    "question": "How many objects are tiny rubber cylinders or small cyan metal things?",
+    "gt_answer": "2",
+    "model_answer": "4",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000272.png",
+    "question": "What number of large blocks are there?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000145.png",
+    "question": "How many other things are there of the same size as the green metal ball?",
+    "gt_answer": "5",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000338.png",
+    "question": "There is a big purple metallic ball; how many things are to the right of it?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000176.png",
+    "question": "How many other things are the same material as the red sphere?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000377.png",
+    "question": "What number of other things are the same color as the large matte ball?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000296.png",
+    "question": "How many other objects are there of the same material as the cyan block?",
+    "gt_answer": "5",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000332.png",
+    "question": "How many metallic things are there?",
+    "gt_answer": "5",
+    "model_answer": "6",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000249.png",
+    "question": "How many things are either spheres in front of the large metal object or tiny objects behind the small red metal cube?",
+    "gt_answer": "1",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000033.png",
+    "question": "What number of things are purple blocks or cubes left of the tiny gray rubber cube?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000038.png",
+    "question": "How many yellow matte balls are in front of the matte sphere that is in front of the big block?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000194.png",
+    "question": "How many tiny objects are either metal balls or brown cylinders?",
+    "gt_answer": "1",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000135.png",
+    "question": "How many things are tiny brown things on the right side of the small green block or metal things in front of the big green object?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000243.png",
+    "question": "What number of things are cubes that are to the left of the big sphere or big cyan metal objects that are in front of the large shiny ball?",
+    "gt_answer": "3",
+    "model_answer": "5",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000153.png",
+    "question": "How many other objects are the same size as the cyan cylinder?",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000329.png",
+    "question": "How many other things are the same size as the purple block?",
+    "gt_answer": "5",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000084.png",
+    "question": "What number of things are large cyan metallic things or small objects?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000073.png",
+    "question": "What number of big things are either cyan metal blocks or objects?",
+    "gt_answer": "2",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000259.png",
+    "question": "What number of other objects are the same material as the small cyan cylinder?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000074.png",
+    "question": "What number of other objects are the same shape as the small purple matte thing?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000230.png",
+    "question": "What number of objects are tiny spheres that are behind the yellow matte thing or tiny red spheres?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000217.png",
+    "question": "What number of other objects are there of the same shape as the cyan shiny object?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000122.png",
+    "question": "How many objects are small gray objects that are in front of the cyan object or metal objects?",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000092.png",
+    "question": "How many large purple cubes are made of the same material as the blue object?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000107.png",
+    "question": "What number of things are objects in front of the green rubber cube or green cylinders?",
+    "gt_answer": "5",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000043.png",
+    "question": "What number of other objects are the same size as the cyan metallic object?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000007.png",
+    "question": "How many blocks are tiny blue objects or big purple metallic objects?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000275.png",
+    "question": "What number of other things are the same material as the tiny cylinder?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000162.png",
+    "question": "What number of things are either cylinders to the right of the tiny green metallic cylinder or tiny cylinders in front of the tiny green object?",
+    "gt_answer": "2",
+    "model_answer": "4",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000334.png",
+    "question": "What number of other objects are the same size as the blue metallic ball?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000346.png",
+    "question": "How many large purple cylinders are there?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000134.png",
+    "question": "How many objects are big things to the left of the large green metallic cylinder or shiny objects in front of the purple thing?",
+    "gt_answer": "2",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000179.png",
+    "question": "What number of blocks are on the left side of the large cyan thing in front of the large matte object in front of the green metallic ball?",
+    "gt_answer": "2",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000318.png",
+    "question": "What number of large things are either yellow things or gray matte cylinders?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000154.png",
+    "question": "What number of other objects are there of the same material as the purple object?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000046.png",
+    "question": "What number of other things are there of the same material as the gray object",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000370.png",
+    "question": "What number of small things are yellow metallic things or things?",
+    "gt_answer": "2",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000298.png",
+    "question": "What number of other things are made of the same material as the tiny green sphere?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000312.png",
+    "question": "What number of things are either yellow blocks or large objects in front of the large sphere?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000144.png",
+    "question": "How many objects are big green things or spheres that are in front of the blue object?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000040.png",
+    "question": "What number of big rubber spheres have the same color as the metallic cylinder?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000133.png",
+    "question": "What number of brown shiny cylinders are behind the small shiny thing behind the large blue metal cube left of the green ball?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000324.png",
+    "question": "How many objects are either purple shiny cubes or large things that are to the left of the brown shiny sphere?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000062.png",
+    "question": "There is a big metallic object that is behind the blue cylinder that is behind the brown rubber object; how many yellow matte spheres are on the right side of it?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000077.png",
+    "question": "What number of big objects have the same material as the cylinder?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000197.png",
+    "question": "How many cubes are big red metallic objects or large rubber things?",
+    "gt_answer": "1",
+    "model_answer": "0",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000354.png",
+    "question": "What number of blue cubes are the same size as the red object?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000064.png",
+    "question": "What number of other things are the same shape as the tiny green shiny thing?",
+    "gt_answer": "4",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000098.png",
+    "question": "How many other things are there of the same material as the brown cube?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000101.png",
+    "question": "There is a small brown block; how many large red cubes are on the right side of it?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000332.png",
+    "question": "What number of other objects are the same material as the big sphere?",
+    "gt_answer": "4",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000024.png",
+    "question": "What number of other things are there of the same size as the yellow object?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000014.png",
+    "question": "What number of other red matte cubes have the same size as the cube?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000130.png",
+    "question": "What number of balls are either brown metal things or red shiny objects?",
+    "gt_answer": "2",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000251.png",
+    "question": "What number of things are either large rubber cylinders or big yellow spheres?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000012.png",
+    "question": "What number of things are either matte things that are right of the tiny blue shiny cylinder or big gray rubber spheres?",
+    "gt_answer": "4",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000118.png",
+    "question": "What number of big things are red rubber things or brown metallic things?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000328.png",
+    "question": "There is a big block to the left of the large brown object; what number of big brown blocks are to the left of it?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000108.png",
+    "question": "How many objects are either tiny gray rubber objects that are in front of the rubber cylinder or big things that are to the right of the yellow block?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000137.png",
+    "question": "What number of rubber objects are big yellow balls or small purple things?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000383.png",
+    "question": "What number of small objects are metallic things or yellow things?",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000195.png",
+    "question": "What number of objects are either small metal cylinders or metallic things?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000197.png",
+    "question": "How many other things are there of the same color as the tiny shiny sphere?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000379.png",
+    "question": "How many objects are either red things right of the large red object or tiny rubber things?",
+    "gt_answer": "3",
+    "model_answer": "4",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000220.png",
+    "question": "How many large rubber things are there?",
+    "gt_answer": "2",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000070.png",
+    "question": "What number of other things are made of the same material as the small purple cube?",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000323.png",
+    "question": "How many tiny matte blocks have the same color as the metal cylinder?",
+    "gt_answer": "0",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000243.png",
+    "question": "How many things are rubber cylinders to the left of the tiny gray rubber cylinder or shiny cubes?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000209.png",
+    "question": "What number of tiny objects are brown matte things or cyan metallic balls?",
+    "gt_answer": "0",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000200.png",
+    "question": "There is a green cylinder; what number of objects are to the right of it?",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000062.png",
+    "question": "How many other objects are there of the same material as the yellow cylinder?",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000006.png",
+    "question": "What number of rubber cubes are to the left of the metal ball?",
+    "gt_answer": "0",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000211.png",
+    "question": "What number of things are either tiny things left of the small green shiny cube or blue things?",
+    "gt_answer": "2",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000061.png",
+    "question": "How many objects are either large objects behind the large cyan rubber object or small metallic balls?",
+    "gt_answer": "2",
+    "model_answer": "4",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000133.png",
+    "question": "What number of things are either big spheres that are behind the gray metal cylinder or cylinders left of the tiny brown shiny cylinder?",
+    "gt_answer": "2",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000331.png",
+    "question": "How many other objects are the same size as the blue shiny thing?",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000253.png",
+    "question": "How many things are small brown metal cylinders or metallic objects?",
+    "gt_answer": "2",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000262.png",
+    "question": "What number of small rubber objects are left of the small gray rubber thing?",
+    "gt_answer": "3",
+    "model_answer": "4",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000217.png",
+    "question": "How many objects are big things that are on the right side of the large purple shiny ball or yellow metallic balls?",
+    "gt_answer": "5",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000122.png",
+    "question": "How many other objects are the same size as the brown metallic thing?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000317.png",
+    "question": "What number of other things are there of the same shape as the small purple object?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000124.png",
+    "question": "How many small rubber balls are there?",
+    "gt_answer": "2",
+    "model_answer": "4",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000353.png",
+    "question": "How many other objects are the same shape as the large brown matte thing?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000237.png",
+    "question": "There is a gray cube that is behind the brown object; what number of cubes are in front of it?",
+    "gt_answer": "2",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000231.png",
+    "question": "How many other things are the same size as the cyan object?",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000176.png",
+    "question": "What number of shiny things are either tiny yellow cylinders or blue cylinders?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000294.png",
+    "question": "How many other objects are there of the same material as the cyan cube?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000267.png",
+    "question": "How many things are either metal blocks that are in front of the matte object or small cubes in front of the tiny cylinder?",
+    "gt_answer": "1",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000305.png",
+    "question": "How many blue objects are in front of the metal cube and on the right side of the rubber ball?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000063.png",
+    "question": "What number of brown objects are big things or small balls?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000061.png",
+    "question": "How many other things are there of the same material as the gray cylinder?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000190.png",
+    "question": "How many objects are either large shiny things in front of the big metallic cylinder or small green objects?",
+    "gt_answer": "2",
+    "model_answer": "4",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000158.png",
+    "question": "There is a tiny thing in front of the tiny metal object behind the tiny red metallic object; how many small gray metal blocks are to the right of it?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000079.png",
+    "question": "What number of objects are cylinders behind the tiny cyan ball or things that are behind the tiny cyan sphere?",
+    "gt_answer": "1",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000320.png",
+    "question": "What number of objects are either large cylinders or things in front of the tiny green object?",
+    "gt_answer": "5",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000279.png",
+    "question": "What number of small shiny things are in front of the brown block that is behind the small green thing that is behind the small blue object?",
+    "gt_answer": "5",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000234.png",
+    "question": "How many other things are the same color as the big metallic thing?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000273.png",
+    "question": "What number of yellow matte objects have the same size as the gray matte object?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000027.png",
+    "question": "What number of other objects are the same material as the gray thing?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000388.png",
+    "question": "How many rubber objects are gray cubes or small brown cylinders?",
+    "gt_answer": "1",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000249.png",
+    "question": "How many other things are there of the same material as the tiny yellow cube?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000235.png",
+    "question": "What number of matte objects are the same size as the cyan rubber sphere?",
+    "gt_answer": "0",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000397.png",
+    "question": "What number of purple spheres have the same material as the yellow cube?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000049.png",
+    "question": "How many things are cubes to the right of the large shiny cylinder or cubes in front of the red matte cube?",
+    "gt_answer": "2",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000323.png",
+    "question": "What number of red things are either big metallic spheres or tiny blocks?",
+    "gt_answer": "0",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000232.png",
+    "question": "There is a tiny gray cylinder; what number of yellow metallic cylinders are in front of it?",
+    "gt_answer": "0",
+    "model_answer": "1",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000316.png",
+    "question": "How many other things are the same size as the blue cylinder?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000074.png",
+    "question": "What number of other things are the same size as the gray object?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000127.png",
+    "question": "What number of things are either cylinders on the left side of the purple rubber thing or red things?",
+    "gt_answer": "4",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000336.png",
+    "question": "What number of other things are there of the same shape as the big brown object?",
+    "gt_answer": "2",
+    "model_answer": "4",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000218.png",
+    "question": "What number of things are either small things in front of the small cyan matte sphere or blue matte balls?",
+    "gt_answer": "3",
+    "model_answer": "6",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000176.png",
+    "question": "How many things are either big blue rubber balls or rubber things that are in front of the large metallic object?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000295.png",
+    "question": "What number of objects are either metallic balls or spheres left of the metallic cube?",
+    "gt_answer": "2",
+    "model_answer": "3",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000055.png",
+    "question": "How many things are green metallic cubes or small rubber balls in front of the shiny cylinder?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000104.png",
+    "question": "What number of other objects are there of the same shape as the blue matte thing?",
+    "gt_answer": "4",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000280.png",
+    "question": "How many other things are there of the same material as the tiny ball?",
+    "gt_answer": "5",
+    "model_answer": "4",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000102.png",
+    "question": "What number of other things are there of the same material as the red block",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000332.png",
+    "question": "How many large objects are either rubber things or green metallic cubes?",
+    "gt_answer": "3",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000047.png",
+    "question": "How many matte objects are both to the right of the big purple block and left of the matte sphere?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000395.png",
+    "question": "How many objects are small yellow cubes or tiny things that are on the right side of the brown matte block?",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000332.png",
+    "question": "How many gray objects are behind the cyan rubber cube and to the left of the red ball?",
+    "gt_answer": "1",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000215.png",
+    "question": "What number of other things are made of the same material as the purple block?",
+    "gt_answer": "5",
+    "model_answer": "2",
+    "last_function": "count"
+  },
+  {
+    "image": "CLEVR_train_000010.png",
+    "question": "How many objects are either small green matte cylinders or small shiny objects to the right of the green matte thing?",
+    "gt_answer": "4",
+    "model_answer": "3",
+    "last_function": "count"
+  }
+]

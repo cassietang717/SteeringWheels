@@ -1,0 +1,368 @@
+[
+  {
+    "image": "CLEVR_train_000071.png",
+    "question": "There is a cylinder right of the matte cylinder; is its size the same as the big yellow metallic thing?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000134.png",
+    "question": "There is a red thing; does it have the same size as the gray thing behind the large cyan object?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000167.png",
+    "question": "There is a blue shiny object that is on the right side of the shiny block; is its shape the same as the big cyan object?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_shape"
+  },
+  {
+    "image": "CLEVR_train_000062.png",
+    "question": "Is the size of the yellow shiny cylinder the same as the yellow rubber ball?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000019.png",
+    "question": "There is a tiny red metallic object that is behind the tiny red metallic sphere; is it the same shape as the tiny red metallic thing that is in front of the large red object?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_shape"
+  },
+  {
+    "image": "CLEVR_train_000061.png",
+    "question": "Do the cylinder right of the cyan sphere and the small cyan matte object have the same size?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000015.png",
+    "question": "There is a metal object that is to the right of the yellow thing; is its shape the same as the large rubber thing to the left of the rubber block?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_shape"
+  },
+  {
+    "image": "CLEVR_train_000041.png",
+    "question": "Does the red shiny object have the same shape as the big green thing?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_shape"
+  },
+  {
+    "image": "CLEVR_train_000041.png",
+    "question": "There is a block that is in front of the metal block; does it have the same size as the rubber block that is on the left side of the tiny gray metallic cylinder?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000060.png",
+    "question": "There is a object that is to the left of the matte sphere; is it the same size as the gray rubber sphere?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000164.png",
+    "question": "Do the thing left of the blue metal block and the object that is in front of the rubber cylinder have the same size?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000034.png",
+    "question": "Do the purple rubber sphere and the cyan thing have the same size?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000116.png",
+    "question": "Is the cylinder the same size as the cyan cube?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000099.png",
+    "question": "There is a purple matte thing; does it have the same size as the metallic object that is on the right side of the purple thing?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000151.png",
+    "question": "There is a cube behind the yellow metal cylinder; is it the same size as the large purple object?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000176.png",
+    "question": "There is a cylinder behind the shiny cylinder; is it the same size as the tiny brown ball?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000043.png",
+    "question": "Does the yellow object have the same shape as the large green object?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_shape"
+  },
+  {
+    "image": "CLEVR_train_000030.png",
+    "question": "Do the small metal thing and the small yellow matte thing have the same shape?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_shape"
+  },
+  {
+    "image": "CLEVR_train_000111.png",
+    "question": "There is a brown thing that is behind the purple cylinder; does it have the same size as the tiny green matte block?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000026.png",
+    "question": "There is a yellow metallic ball that is in front of the big blue object; is it the same size as the yellow metallic thing behind the blue metallic cylinder?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000101.png",
+    "question": "Do the block that is in front of the big shiny ball and the red thing that is left of the yellow cylinder have the same size?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000100.png",
+    "question": "There is a large object that is in front of the large blue thing; is it the same shape as the rubber object behind the big blue cylinder?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_shape",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000068.png",
+    "question": "There is a sphere behind the big yellow shiny thing; does it have the same size as the red thing that is left of the small shiny cylinder?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000066.png",
+    "question": "Do the yellow matte sphere and the blue block have the same size?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000018.png",
+    "question": "Is the size of the shiny cylinder the same as the thing behind the cube?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000024.png",
+    "question": "There is a big rubber object that is behind the large purple rubber cylinder; does it have the same shape as the red rubber thing?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_shape",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000027.png",
+    "question": "There is a shiny thing in front of the brown shiny object; is its size the same as the tiny shiny sphere?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000156.png",
+    "question": "Does the yellow shiny object right of the large blue block have the same size as the blue metallic object that is in front of the big sphere?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000021.png",
+    "question": "Does the matte thing have the same size as the green object?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000040.png",
+    "question": "There is a red cylinder; does it have the same size as the matte thing that is left of the small brown cylinder?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000005.png",
+    "question": "There is a yellow object on the right side of the large yellow rubber cube; is its shape the same as the large gray metal object?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_shape"
+  },
+  {
+    "image": "CLEVR_train_000075.png",
+    "question": "Is the shape of the tiny brown object to the left of the small brown cube the same as the object to the right of the brown cube?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_shape"
+  },
+  {
+    "image": "CLEVR_train_000099.png",
+    "question": "Is the size of the brown shiny cylinder the same as the brown block?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000036.png",
+    "question": "There is a green shiny sphere; does it have the same size as the shiny object to the right of the tiny green shiny ball?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000085.png",
+    "question": "Is the yellow cube the same size as the green cube?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000198.png",
+    "question": "Do the brown matte cube and the shiny thing to the right of the large gray metallic object have the same size?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000198.png",
+    "question": "There is a block to the left of the metal cube; does it have the same size as the cube that is behind the big green cylinder?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000195.png",
+    "question": "Do the big gray metallic object and the red matte thing have the same shape?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_shape",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000154.png",
+    "question": "There is a tiny red metal thing; is it the same shape as the large gray rubber object that is on the left side of the gray rubber cube?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_shape"
+  },
+  {
+    "image": "CLEVR_train_000189.png",
+    "question": "Does the purple metal thing have the same size as the rubber thing that is to the right of the big red thing?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000035.png",
+    "question": "There is a gray metallic cylinder; is its size the same as the sphere that is left of the big matte sphere?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000171.png",
+    "question": "Do the blue shiny thing and the shiny cylinder on the right side of the large red metal cylinder have the same size?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000169.png",
+    "question": "There is a small purple thing that is to the left of the big cyan shiny thing; is it the same shape as the small brown metallic object that is in front of the cyan thing?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_shape"
+  },
+  {
+    "image": "CLEVR_train_000124.png",
+    "question": "Is the size of the red thing that is to the right of the tiny red object the same as the purple sphere to the right of the big cube?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000019.png",
+    "question": "Is the size of the red metal ball the same as the red shiny cylinder to the left of the big cyan metallic block?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000165.png",
+    "question": "Do the small metallic thing right of the gray metal thing and the thing behind the big brown rubber object have the same shape?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_shape"
+  },
+  {
+    "image": "CLEVR_train_000077.png",
+    "question": "Do the matte sphere right of the blue sphere and the big brown metal object have the same size?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000043.png",
+    "question": "Is the size of the red thing the same as the ball in front of the cyan object?",
+    "gt_answer": "yes",
+    "model_answer": "no",
+    "last_function": "equal_size"
+  },
+  {
+    "image": "CLEVR_train_000167.png",
+    "question": "Does the green thing have the same shape as the tiny blue shiny thing that is on the right side of the small metallic block?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_shape",
+    "note": "flipped_from_correct"
+  },
+  {
+    "image": "CLEVR_train_000076.png",
+    "question": "Does the gray sphere in front of the cyan matte object have the same size as the thing on the right side of the tiny blue rubber cylinder?",
+    "gt_answer": "no",
+    "model_answer": "yes",
+    "last_function": "equal_size"
+  }
+]
